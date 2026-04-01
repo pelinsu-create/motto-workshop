@@ -58,6 +58,9 @@ export default function RootLayout({
               <a href="#demo" className="hover:text-navy transition-colors">
                 Workshop
               </a>
+              <Link href="/lab" className="hover:text-navy transition-colors">
+                AI Lab
+              </Link>
               <a href="#about" className="hover:text-navy transition-colors">
                 About
               </a>

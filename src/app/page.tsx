@@ -217,14 +217,10 @@ export default function Home() {
             Pelinsu Pelit
           </h2>
           <p className="text-gray leading-relaxed mb-4">
-            11 years of checking whether research findings are real, whether the sources exist,
-            and whether the conclusions actually hold. That&apos;s UX research &mdash; and it&apos;s
-            exactly what AI-generated content needs.
-          </p>
-          <p className="text-gray leading-relaxed mb-4">
-            I apply verification methods from library science and fact-checking journalism
-            to catch what AI gets wrong, and I build workshop games that teach people
-            to think critically instead of trusting blindly.
+            Over 10 years across fintech, travel, and productivity. I research by making
+            and learn by teaching. I work across discovery research, usability evaluation,
+            and design thinking facilitation &mdash; and increasingly in the overlap between
+            research practice, service design, and AI tooling.
           </p>
         </div>
       </section>
