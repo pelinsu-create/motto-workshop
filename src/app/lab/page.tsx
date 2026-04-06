@@ -112,9 +112,9 @@ export default function Lab() {
       {/* Step 0: Landing */}
       {step === 0 && (
         <section className="py-24 md:py-32 text-center">
-          <p className="section-label mb-4">AI Collaboration Lab</p>
+          <p className="section-label mb-4">Workshop Planner</p>
           <h1 className="text-4xl md:text-5xl font-semibold text-navy leading-tight mb-4">
-            Design your workshop activity<br className="hidden md:block" /> in 60 seconds.
+            Generate a complete workshop activity<br className="hidden md:block" /> ready to facilitate.
           </h1>
           <p className="text-base text-gray max-w-xl mx-auto leading-relaxed mb-8">
             Answer a few questions about your session. AI generates a complete activity with steps, timing, materials, facilitation tips, and cognitive checks &mdash; built on 50+ proven methods.
