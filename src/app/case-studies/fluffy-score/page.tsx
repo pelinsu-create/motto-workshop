@@ -34,6 +34,15 @@ export default function FluffyScoreCaseStudy() {
           healthier homes &mdash; without guessing.
         </p>
 
+        <a
+          href="https://fluffyhome.space/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-accent text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-navy transition-colors mt-6"
+        >
+          Try Fluffy Score &rarr;
+        </a>
+
         <div className="flex flex-wrap gap-3 mt-8">
           {[
             "UX Research",
