@@ -29,8 +29,8 @@ export default function MobileNav() {
       {open && (
         <div className="absolute top-full left-0 w-full bg-white border-b border-border shadow-lg">
           <div className="flex flex-col px-6 py-4 gap-4 text-sm font-medium text-gray">
-            <a href="#demo" onClick={() => setOpen(false)} className="hover:text-navy transition-colors">
-              Workshop
+            <a href="/workshop" onClick={() => setOpen(false)} className="hover:text-navy transition-colors">
+              Insight Hub Workshop
             </a>
             <a href="/lab" onClick={() => setOpen(false)} className="hover:text-navy transition-colors">
               Workshop Planner

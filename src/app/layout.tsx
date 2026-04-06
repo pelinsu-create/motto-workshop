@@ -55,9 +55,9 @@ export default function RootLayout({
 
             {/* Desktop nav */}
             <div className="hidden md:flex gap-8 text-sm font-medium text-gray items-center">
-              <a href="#demo" className="hover:text-navy transition-colors">
-                Workshop
-              </a>
+              <Link href="/workshop" className="hover:text-navy transition-colors">
+                Insight Hub Workshop
+              </Link>
               <Link href="/lab" className="hover:text-navy transition-colors">
                 Workshop Planner
               </Link>
