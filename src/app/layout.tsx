@@ -59,8 +59,11 @@ export default function RootLayout({
                 Workshop
               </a>
               <Link href="/lab" className="hover:text-navy transition-colors">
-                AI Lab
+                Workshop Planner
               </Link>
+              <a href="https://motto-games.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-navy transition-colors">
+                Games
+              </a>
               <a href="#about" className="hover:text-navy transition-colors">
                 About
               </a>
