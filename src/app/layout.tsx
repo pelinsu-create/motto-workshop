@@ -64,6 +64,9 @@ export default function RootLayout({
               <a href="https://motto-games.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-navy transition-colors">
                 Games
               </a>
+              <Link href="/case-studies" className="hover:text-navy transition-colors">
+                Case Studies
+              </Link>
               <a href="#about" className="hover:text-navy transition-colors">
                 About
               </a>

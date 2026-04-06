@@ -1,36 +1,47 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Case Studies | Motto Workshop",
-  description: "Real workshop outcomes and team transformations. Coming soon.",
+  description:
+    "Real projects built with the GROUND research-to-product methodology.",
 };
 
 export default function CaseStudies() {
   return (
     <div className="max-w-5xl mx-auto px-6">
-      <section className="py-24 md:py-32 min-h-[60vh] flex flex-col justify-center">
-        <p className="section-label mb-4">Coming Soon</p>
+      <section className="py-24 md:py-32">
+        <p className="section-label mb-4">Case Studies</p>
         <h1 className="text-4xl md:text-5xl font-semibold text-navy leading-tight mb-6">
-          Case Studies
+          From Research to Product
         </h1>
-        <p className="text-lg text-gray max-w-xl leading-relaxed mb-8">
-          Real workshop outcomes from teams that used this process.
-          Currently working with early clients. Case studies will be published here.
-        </p>
-        <p className="text-sm text-gray max-w-xl leading-relaxed mb-8">
-          In the meantime, check out example scenarios on the{" "}
-          <a href="/#services" className="text-accent hover:text-navy transition-colors underline">services page</a> to
-          see how a typical engagement works.
+        <p className="text-lg text-gray max-w-xl leading-relaxed mb-12">
+          Real projects built with the GROUND methodology. Each case study shows
+          the full process: research, synthesis, storyboarding, and
+          product development.
         </p>
 
-        <a
-          href="https://calendar.app.google/K83wsdYJEWv5mWh47"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-accent text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-navy transition-colors w-fit"
-        >
-          Book a Call
-        </a>
+        <div className="grid md:grid-cols-2 gap-6">
+          <Link
+            href="/case-studies/fluffy-score"
+            className="group bg-surface border border-border rounded-xl p-6 hover:border-accent transition-colors"
+          >
+            <p className="text-xs font-semibold text-accent mb-2 uppercase tracking-wider">
+              AI Product &middot; UX Research
+            </p>
+            <h2 className="text-xl text-navy mb-2 group-hover:text-accent transition-colors">
+              Fluffy Score
+            </h2>
+            <p className="text-sm text-gray leading-relaxed mb-4">
+              5 years of cat sitting + veterinary behavior science = an
+              AI-powered home assessment tool. From field research to working
+              product.
+            </p>
+            <span className="text-sm text-accent font-medium">
+              Read case study &rarr;
+            </span>
+          </Link>
+        </div>
       </section>
     </div>
   );

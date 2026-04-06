@@ -38,6 +38,9 @@ export default function MobileNav() {
             <a href="https://motto-games.vercel.app/" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="hover:text-navy transition-colors">
               Games
             </a>
+            <a href="/case-studies" onClick={() => setOpen(false)} className="hover:text-navy transition-colors">
+              Case Studies
+            </a>
             <a href="#about" onClick={() => setOpen(false)} className="hover:text-navy transition-colors">
               About
             </a>
