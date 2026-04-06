@@ -94,7 +94,7 @@ export default function Lab() {
       setActivity(parsed); setStep(5);
       const n = uses + 1; setUses(n); localStorage.setItem("lab-uses", String(n));
       setTimeout(() => resultRef.current?.scrollIntoView({ behavior: "smooth" }), 100);
-    } catch (err) { console.error("Generation error:", err); setError("Generation failed — please try again. If it keeps failing, try a shorter goal description."); setStep(3); }
+    } catch (err) { console.error("Generation error:", err); setError("Generation failed. Please try again. If it keeps failing, try a shorter goal description."); setStep(3); }
     finally { setLoading(false); setStreamText(""); }
   }
 
@@ -117,7 +117,7 @@ export default function Lab() {
             Generate a complete workshop activity<br className="hidden md:block" /> ready to facilitate.
           </h1>
           <p className="text-base text-gray max-w-xl mx-auto leading-relaxed mb-8">
-            Answer a few questions about your session. AI generates a complete activity with steps, timing, materials, facilitation tips, and cognitive checks &mdash; built on 50+ proven methods.
+            Answer a few questions about your session. AI generates a complete activity with steps, timing, materials, facilitation tips, and cognitive checks, built on 50+ proven methods.
           </p>
 
           <div className="flex justify-center gap-4 mb-10 flex-wrap">
@@ -239,7 +239,7 @@ export default function Lab() {
             {hitPaywall ? (
               <div className="flex-1 text-center">
                 <p className="text-accent font-semibold text-sm mb-2">You&apos;ve used your 3 free generations</p>
-                <a href="https://buy.stripe.com/test_placeholder" className="inline-block bg-accent text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-navy transition-colors">Get More — €5 per activity</a>
+                <a href="https://buy.stripe.com/test_placeholder" className="inline-block bg-accent text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-navy transition-colors">Get More: €5 per activity</a>
               </div>
             ) : (
               <button onClick={generate} className="flex-1 py-3 rounded-lg bg-accent text-white text-sm font-semibold hover:bg-navy transition-colors cursor-pointer">
@@ -394,12 +394,12 @@ export default function Lab() {
               {[
                 { label: "Full Workshop Agenda (5 activities)", id: "agenda" },
                 { label: "Download as PDF Card", id: "pdf" },
-                { label: "Activity Pack: Remote Icebreakers — €15", id: "pack" },
+                { label: "Activity Pack: Remote Icebreakers €15", id: "pack" },
                 { label: "Share with Co-Facilitator", id: "share" },
               ].map(d => (
                 <button key={d.id} onClick={() => {
                   const el = document.getElementById("wl");
-                  if (el) { el.style.display = "block"; el.textContent = `"${d.label}" — noted!`; }
+                  if (el) { el.style.display = "block"; el.textContent = `"${d.label}" noted!`; }
                 }} className="bg-surface border border-border rounded-lg p-3 cursor-pointer text-left hover:border-accent/30 transition-colors">
                   <span className="text-xs font-semibold text-navy">{d.label}</span>
                 </button>

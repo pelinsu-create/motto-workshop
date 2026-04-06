@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary",
     title: "Motto Workshop",
-    description: "AI Collaboration Workshop — Filter. Remix. Prototype.",
+    description: "AI Collaboration Workshop. Filter. Remix. Prototype.",
   },
 };
 

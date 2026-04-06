@@ -11,7 +11,7 @@ export default function Home() {
           Filter. Remix. Prototype.<br className="hidden md:block" /> AI as a thinking partner.
         </h1>
         <p className="text-base text-gray max-w-2xl leading-relaxed mb-8">
-          A 6-hour workshop where you turn scattered bookmarks into a publishable trend report &mdash;
+          A 6-hour workshop where you turn scattered bookmarks into a publishable trend report .
           and learn to verify, structure, challenge, and think critically with AI along the way.
         </p>
         <TrackedCTA
@@ -27,12 +27,12 @@ export default function Home() {
         <h2 className="text-2xl md:text-3xl text-navy mb-6">The Problem</h2>
         <p className="text-gray leading-relaxed mb-4">
           You save LinkedIn posts. Bookmark articles. Add videos to watch later.
-          You have ideas but don&apos;t know where to start. The knowledge is there &mdash;
+          You have ideas but don&apos;t know where to start. The knowledge is there,
           the system to use it isn&apos;t.
         </p>
         <p className="text-gray leading-relaxed">
           In this workshop, we turn that scattered pile into a structured, verifiable,
-          publishable trend report &mdash; and build a system you can keep using.
+          publishable trend report and build a system you can keep using.
         </p>
       </section>
 
@@ -52,11 +52,11 @@ export default function Home() {
             <div className="space-y-2">
               <div className="flex gap-2 items-start text-sm">
                 <span className="text-accent mt-0.5">&#10003;</span>
-                <span className="text-navy">Upload sources to NotebookLM &mdash; get summaries and mindmaps</span>
+                <span className="text-navy">Upload sources to NotebookLM to get summaries and mindmaps</span>
               </div>
               <div className="flex gap-2 items-start text-sm">
                 <span className="text-accent mt-0.5">&#10003;</span>
-                <span className="text-navy">Run the same sources through Insight Extractor &mdash; exact quotes, not paraphrases</span>
+                <span className="text-navy">Run the same sources through Insight Extractor for exact quotes, not paraphrases</span>
               </div>
               <div className="flex gap-2 items-start text-sm">
                 <span className="text-accent mt-0.5">&#10003;</span>
@@ -88,15 +88,15 @@ export default function Home() {
               </div>
               <div className="flex gap-2 items-start text-sm">
                 <span className="text-accent mt-0.5">&#10003;</span>
-                <span className="text-navy">Run Bias Checker on your own analysis &mdash; what are you missing?</span>
+                <span className="text-navy">Run Bias Checker on your own analysis: what are you missing?</span>
               </div>
               <div className="flex gap-2 items-start text-sm">
                 <span className="text-accent mt-0.5">&#10003;</span>
-                <span className="text-navy">Play Hallucination Hunter &mdash; spot fake claims before they spot you</span>
+                <span className="text-navy">Play Hallucination Hunter to spot fake claims before they spot you</span>
               </div>
               <div className="flex gap-2 items-start text-sm">
                 <span className="text-accent mt-0.5">&#10003;</span>
-                <span className="text-navy">Play Bad Idea Bingo + 4 Whats &mdash; from wild ideas to testable concepts</span>
+                <span className="text-navy">Play Bad Idea Bingo + 4 Whats: from wild ideas to testable concepts</span>
               </div>
             </div>
           </div>
@@ -196,7 +196,7 @@ export default function Home() {
             Try the Games
           </h2>
           <p className="text-gray leading-relaxed mb-6">
-            These are the games you&apos;ll play in the workshop. Try them now &mdash; no account needed.
+            These are the games you&apos;ll play in the workshop. Try them now, no account needed.
           </p>
           <a
             href="https://motto-games.vercel.app"
@@ -219,7 +219,7 @@ export default function Home() {
           <p className="text-gray leading-relaxed mb-4">
             Over 10 years across fintech, travel, and productivity. I research by making
             and learn by teaching. I work across discovery research, usability evaluation,
-            and design thinking facilitation &mdash; and increasingly in the overlap between
+            and design thinking facilitation, and increasingly in the overlap between
             research practice, service design, and AI tooling.
           </p>
         </div>

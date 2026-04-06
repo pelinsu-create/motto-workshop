@@ -15,7 +15,7 @@ export default function WorkshopPage() {
         <p className="text-base text-gray max-w-2xl leading-relaxed mb-8">
           Turn scattered bookmarks into a publishable trend report in 6 hours.
           You&apos;ll extract insights from real sources, verify claims, classify trends,
-          spot hallucinations, and build a shareable report &mdash; all using AI as a thinking partner.
+          spot hallucinations, and build a shareable report, all using AI as a thinking partner.
         </p>
         <TrackedCTA
           event="cta-workshop-hero"
@@ -30,12 +30,12 @@ export default function WorkshopPage() {
         <h2 className="text-2xl md:text-3xl text-navy mb-6">The Problem</h2>
         <p className="text-gray leading-relaxed mb-4">
           You save LinkedIn posts. Bookmark articles. Add videos to watch later.
-          You have ideas but don&apos;t know where to start. The knowledge is there &mdash;
+          You have ideas but don&apos;t know where to start. The knowledge is there,
           the system to use it isn&apos;t.
         </p>
         <p className="text-gray leading-relaxed">
           In this workshop, we turn that scattered pile into a structured, verifiable,
-          publishable trend report &mdash; and build a system you can keep using.
+          publishable trend report and build a system you can keep using.
         </p>
       </section>
 
@@ -55,11 +55,11 @@ export default function WorkshopPage() {
             <div className="space-y-2">
               <div className="flex gap-2 items-start text-sm">
                 <span className="text-accent mt-0.5">&#10003;</span>
-                <span className="text-navy">Upload sources to NotebookLM &mdash; get summaries and mindmaps</span>
+                <span className="text-navy">Upload sources to NotebookLM to get summaries and mindmaps</span>
               </div>
               <div className="flex gap-2 items-start text-sm">
                 <span className="text-accent mt-0.5">&#10003;</span>
-                <span className="text-navy">Run the same sources through Insight Extractor &mdash; exact quotes, not paraphrases</span>
+                <span className="text-navy">Run the same sources through Insight Extractor for exact quotes, not paraphrases</span>
               </div>
               <div className="flex gap-2 items-start text-sm">
                 <span className="text-accent mt-0.5">&#10003;</span>
@@ -91,15 +91,15 @@ export default function WorkshopPage() {
               </div>
               <div className="flex gap-2 items-start text-sm">
                 <span className="text-accent mt-0.5">&#10003;</span>
-                <span className="text-navy">Run Bias Checker on your own analysis &mdash; what are you missing?</span>
+                <span className="text-navy">Run Bias Checker on your own analysis: what are you missing?</span>
               </div>
               <div className="flex gap-2 items-start text-sm">
                 <span className="text-accent mt-0.5">&#10003;</span>
-                <span className="text-navy">Play Hallucination Hunter &mdash; spot fake claims before they spot you</span>
+                <span className="text-navy">Play Hallucination Hunter to spot fake claims before they spot you</span>
               </div>
               <div className="flex gap-2 items-start text-sm">
                 <span className="text-accent mt-0.5">&#10003;</span>
-                <span className="text-navy">Play Bad Idea Bingo + 4 Whats &mdash; from wild ideas to testable concepts</span>
+                <span className="text-navy">Play Bad Idea Bingo + 4 Whats: from wild ideas to testable concepts</span>
               </div>
             </div>
           </div>

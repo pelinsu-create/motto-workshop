@@ -31,7 +31,7 @@ export default function FluffyScoreCaseStudy() {
         <p className="text-base text-gray max-w-2xl leading-relaxed">
           How 5 years of cat sitting, veterinary behavior science, and the
           GROUND research system became a product that helps cat owners create
-          healthier homes &mdash; without guessing.
+          healthier homes, without guessing.
         </p>
 
         <a
@@ -55,7 +55,7 @@ export default function FluffyScoreCaseStudy() {
         <div className="grid md:grid-cols-3 gap-8">
           <div>
             <p className="text-xs font-semibold text-accent mb-1 uppercase tracking-wider">Timeline</p>
-            <p className="text-sm text-navy">2021&ndash;2026</p>
+            <p className="text-sm text-navy">2021to2026</p>
           </div>
           <div>
             <p className="text-xs font-semibold text-accent mb-1 uppercase tracking-wider">Methods</p>
@@ -76,8 +76,8 @@ export default function FluffyScoreCaseStudy() {
         </h2>
         <p className="text-gray leading-relaxed mb-8">
           After 5 years of cat sitting in 50+ homes across the Netherlands and
-          Turkey, a pattern emerged: most cats showed signs of stress &mdash;
-          over-grooming, hiding, knocking things over &mdash; not because their
+          Turkey, a pattern emerged: most cats showed signs of stress .
+          over-grooming, hiding, knocking things over, not because their
           owners didn&apos;t care, but because homes weren&apos;t designed for
           how cats actually behave. The science exists (AAFP/ISFM Five Pillars),
           but it never reaches everyday cat owners.
@@ -109,9 +109,9 @@ export default function FluffyScoreCaseStudy() {
           <EvidenceCard
             title="Competitive Analysis"
             items={[
-              "6 colony management tools — all fragmented",
+              "6 colony management tools, all fragmented",
               "ZERO home assessment tools based on Five Pillars",
-              "Expert content exists but passive — no interactive tool",
+              "Expert content exists but passive, no interactive tool",
             ]}
           />
         </div>
@@ -150,9 +150,9 @@ export default function FluffyScoreCaseStudy() {
           <p className="text-xs font-semibold text-accent mb-3 uppercase tracking-wider">Key Insights</p>
           <div className="space-y-3">
             {[
-              "The knowledge gap is a distribution problem — veterinary science has the answers, they just don't reach owners.",
+              "The knowledge gap is a distribution problem: veterinary science has the answers, they just don't reach owners.",
               "Escape routes and sight lines matter more than aesthetics. Shelters that ignore this have 80%+ vacancy.",
-              "Bowl feeding takes <1% of a cat's day vs 33-50% in the wild — this mismatch drives most 'behavioral problems.'",
+              "Bowl feeding takes less than 1% of a cat's day vs 33-50% in the wild. This mismatch drives most 'behavioral problems.'",
             ].map((insight, i) => (
               <div key={i} className="flex gap-3 items-start">
                 <span className="text-accent font-semibold text-sm mt-0.5">{i + 1}.</span>
@@ -175,7 +175,7 @@ export default function FluffyScoreCaseStudy() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {[
-            { panel: 1, file: "panel-1-establishing-shot.png", title: "The Cozy But Boring Living Room", desc: "Miso looks disengaged — half-closed eyes, staring at the wall." },
+            { panel: 1, file: "panel-1-establishing-shot.png", title: "The Cozy But Boring Living Room", desc: "Miso looks disengaged, half-closed eyes, staring at the wall." },
             { panel: 2, file: "panel-2-the-problem.png", title: "Miso Knocks Things Over Again", desc: "Tipped plant, spilled soil. Bored, not bad." },
             { panel: 3, file: "panel-3-discovery.png", title: "Finding Fluffy Score", desc: "A card-based interface with a simple 'Start' button." },
             { panel: 4, file: "panel-4-interaction.png", title: "Taking the Assessment", desc: "Questions mapped to the Five Pillars." },
@@ -221,7 +221,7 @@ export default function FluffyScoreCaseStudy() {
             </ul>
           </div>
           <div className="bg-surface border border-border rounded-xl p-6">
-            <p className="text-xs font-semibold text-accent mb-3 uppercase tracking-wider">Paid Report &mdash; &euro;4.99</p>
+            <p className="text-xs font-semibold text-accent mb-3 uppercase tracking-wider">Paid Report: &euro;4.99</p>
             <ul className="space-y-2">
               {["Room-by-room action plan", "Product recommendations with links", "Behavior explanation per pillar", "PDF export"].map((item) => (
                 <li key={item} className="flex gap-2 items-start text-sm">
@@ -241,7 +241,7 @@ export default function FluffyScoreCaseStudy() {
           Indoor cats &harr; Shelter cats
         </h2>
         <p className="text-gray leading-relaxed mb-8">
-          When indoor cat owners learn enrichment principles, they become better adopters, foster parents, and shelter volunteers &mdash; creating a reinforcing loop.
+          When indoor cat owners learn enrichment principles, they become better adopters, foster parents, and shelter volunteers, creating a reinforcing loop.
         </p>
 
         <div className="bg-surface border border-border rounded-xl p-6 md:p-10 mb-8">
@@ -323,7 +323,7 @@ export default function FluffyScoreCaseStudy() {
             {[
               "Validate with behavior, not opinions. Reddit upvotes showed interest; WhatsApp responses showed intent.",
               "The biggest advantage was filling a gap nobody else did: an interactive tool based on peer-reviewed science.",
-              "AI made this possible as a solo builder — Claude Code handled engineering, I focused on research and design.",
+              "AI made this possible as a solo builder. Claude Code handled engineering, I focused on research and design.",
             ].map((learning, i) => (
               <div key={i} className="flex gap-3 items-start">
                 <span className="text-accent mt-0.5">&#10003;</span>
