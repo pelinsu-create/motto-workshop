@@ -16,10 +16,10 @@ export default function FluffyScoreCaseStudy() {
       {/* Hero */}
       <section className="py-24 md:py-32">
         <Link
-          href="/case-studies"
+          href="/work"
           className="text-sm text-accent hover:text-navy transition-colors mb-6 inline-block"
         >
-          &larr; All Case Studies
+          &larr; All work
         </Link>
         <p className="section-label mb-4">Case Study</p>
         <h1 className="text-4xl md:text-5xl font-semibold text-navy leading-tight mb-4">
@@ -55,7 +55,7 @@ export default function FluffyScoreCaseStudy() {
         <div className="grid md:grid-cols-3 gap-8">
           <div>
             <p className="text-xs font-semibold text-accent mb-1 uppercase tracking-wider">Timeline</p>
-            <p className="text-sm text-navy">2021to2026</p>
+            <p className="text-sm text-navy">2021 to 2026</p>
           </div>
           <div>
             <p className="text-xs font-semibold text-accent mb-1 uppercase tracking-wider">Methods</p>
@@ -76,8 +76,7 @@ export default function FluffyScoreCaseStudy() {
         </h2>
         <p className="text-gray leading-relaxed mb-8">
           After 5 years of cat sitting in 50+ homes across the Netherlands and
-          Turkey, a pattern emerged: most cats showed signs of stress .
-          over-grooming, hiding, knocking things over, not because their
+          Turkey, a pattern emerged: most cats showed signs of stress: over-grooming, hiding, knocking things over. Not because their
           owners didn&apos;t care, but because homes weren&apos;t designed for
           how cats actually behave. The science exists (AAFP/ISFM Five Pillars),
           but it never reaches everyday cat owners.
@@ -341,7 +340,7 @@ export default function FluffyScoreCaseStudy() {
             Want to build something like this?
           </h2>
           <p className="text-gray leading-relaxed mb-6 max-w-lg mx-auto">
-            The Insight Hub Workshop teaches the same research-to-product process.
+            The workshop teaches the same research-to-product process.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

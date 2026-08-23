@@ -18,24 +18,25 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Motto Workshop | AI Collaboration Workshop",
+  title: "Pelinsu Pelit | Senior Product Designer, Netherlands",
   description:
-    "Filter. Remix. Prototype. A 6-hour workshop where you learn to collaborate with AI as a thinking partner.",
+    "Senior product designer, ten years across fintech, travel, logistics and energy. Shipped work inside live design systems, research done first-hand, and AI brought into the practice without breaking it.",
   icons: {
     icon: [
-      { url: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%234A5AE8'/><text x='16' y='23' font-family='system-ui' font-size='20' font-weight='700' fill='white' text-anchor='middle'>m</text></svg>" },
+      { url: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%234A5AE8'/><text x='16' y='23' font-family='system-ui' font-size='20' font-weight='700' fill='white' text-anchor='middle'>p</text></svg>" },
     ],
   },
   openGraph: {
-    title: "Motto Workshop | AI Collaboration Workshop",
-    description: "Filter. Remix. Prototype. Learn to collaborate with AI as a thinking partner.",
+    title: "Pelinsu Pelit | Senior Product Designer, Netherlands",
+    description:
+      "Ten years across fintech, travel, logistics and energy. Shipped work, design systems, and AI in the practice.",
     type: "website",
     url: "https://www.mottoworkshop.com",
   },
   twitter: {
     card: "summary",
-    title: "Motto Workshop",
-    description: "AI Collaboration Workshop. Filter. Remix. Prototype.",
+    title: "Pelinsu Pelit",
+    description: "Senior Product Designer, Netherlands. Shipped work, design systems, and AI in the practice.",
   },
 };
 
@@ -47,36 +48,28 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${playfair.variable} antialiased`}>
-        <nav className="fixed top-0 w-full bg-surface/80 backdrop-blur-sm border-b border-border z-50">
+        <nav className="fixed top-0 w-full bg-surface/85 backdrop-blur-sm border-b border-border z-50">
           <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
             <Link href="/" className="text-navy font-semibold text-lg tracking-tight">
-              motto<span className="text-accent">workshop</span>
+              Pelinsu Pelit
             </Link>
 
             {/* Desktop nav */}
             <div className="hidden md:flex gap-8 text-sm font-medium text-gray items-center">
-              <Link href="/workshop" className="hover:text-navy transition-colors">
-                Insight Hub Workshop
+              <Link href="/work" className="hover:text-navy transition-colors">
+                Work
               </Link>
-              <Link href="/lab" className="hover:text-navy transition-colors">
-                Workshop Planner
-              </Link>
-              <a href="https://motto-games.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-navy transition-colors">
-                Games
-              </a>
-              <Link href="/case-studies" className="hover:text-navy transition-colors">
-                Case Studies
-              </Link>
-              <a href="#about" className="hover:text-navy transition-colors">
+              <Link href="/about" className="hover:text-navy transition-colors">
                 About
-              </a>
+              </Link>
+              <Link href="/workshop" className="hover:text-navy transition-colors">
+                Workshop
+              </Link>
               <a
-                href="https://calendar.app.google/K83wsdYJEWv5mWh47"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:pelinsu@mottoworkshop.com"
                 className="bg-accent text-white px-4 py-2 rounded-lg hover:bg-navy transition-colors"
               >
-                Book a Call
+                Get in touch
               </a>
             </div>
 
@@ -90,15 +83,21 @@ export default function RootLayout({
 
         <footer className="border-t border-border mt-32 py-12 px-6">
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray">
-            <p>
-              &copy; {new Date().getFullYear()} Motto Workshop. Pelinsu Pelit
-            </p>
-            <a
-              href="mailto:pelinsu@mottoworkshop.com"
-              className="text-accent hover:text-navy transition-colors"
-            >
-              pelinsu@mottoworkshop.com
-            </a>
+            <p>&copy; {new Date().getFullYear()} Pelinsu Pelit</p>
+            <div className="flex gap-6 items-center">
+              <Link href="/work" className="hover:text-navy transition-colors">
+                Work
+              </Link>
+              <Link href="/games" className="hover:text-navy transition-colors">
+                Games
+              </Link>
+              <a
+                href="mailto:pelinsu@mottoworkshop.com"
+                className="text-accent hover:text-navy transition-colors"
+              >
+                pelinsu@mottoworkshop.com
+              </a>
+            </div>
           </div>
         </footer>
       </body>

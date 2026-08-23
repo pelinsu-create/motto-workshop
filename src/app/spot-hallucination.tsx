@@ -21,7 +21,7 @@ const claims: Claim[] = [
     text: "A 2024 Stanford study found that teams using AI verification checklists caught 78.3% more errors than teams without any review process.",
     verdict: "fabricated",
     explanation:
-      "This source does not exist. The oddly specific 78.3% is a classic Percentage Tell \u2014 real studies rarely report decimals like this without methodological reason.",
+      "This source does not exist. The oddly specific 78.3% is a classic Percentage Tell. real studies rarely report decimals like this without methodological reason.",
     redFlag: "Percentage Tell",
   },
   {
@@ -34,7 +34,7 @@ const claims: Claim[] = [
     text: "The global AI hallucination detection market grew 318% between 2023 and 2025, reaching $4.2 billion by end of 2025.",
     verdict: "distorted",
     explanation:
-      "The 318% growth figure appears in industry reports. But the $4.2 billion valuation is not attached to the same source \u2014 two separate stats have been merged into one sentence to look like a single finding.",
+      "The 318% growth figure appears in industry reports. But the $4.2 billion valuation is not attached to the same source. two separate stats have been merged into one sentence to look like a single finding.",
     redFlag: "Scope Tell",
   },
   {
@@ -125,7 +125,7 @@ export default function SpotHallucination() {
                     className={`inline-block px-2 py-0.5 rounded text-xs font-semibold border ${verdictColor[claim.verdict]}`}
                   >
                     {verdictLabel[claim.verdict]}
-                    {claim.redFlag && ` \u2014 ${claim.redFlag}`}
+                    {claim.redFlag && `: ${claim.redFlag}`}
                   </span>
                   <p className="text-xs text-gray leading-relaxed">
                     {claim.explanation}
@@ -155,7 +155,7 @@ export default function SpotHallucination() {
                 ? "Perfect. You verified like a professional."
                 : score >= 3
                   ? "Good eye. The subtle ones are where most teams get caught."
-                  : "Most people score 1\u20132. That\u2019s exactly why verification matters."}
+                  : "Most people score 1 or 2. That\u2019s exactly why verification matters."}
             </p>
             <p className="text-sm text-navy font-medium mb-4">
               This is what we teach. 3-Layer Verification: Does the source

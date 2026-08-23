@@ -2,20 +2,27 @@
 
 import { track } from "@vercel/analytics";
 
+export const BOOKING_URL = "https://calendar.app.google/K83wsdYJEWv5mWh47";
+
 export function TrackedCTA({
   children,
   event,
   className,
+  href = BOOKING_URL,
 }: {
   children: React.ReactNode;
   event: string;
   className?: string;
+  /** Defaults to the booking call. Pass an href so every offer is not
+   *  funnelled into the same twenty minute conversation. */
+  href?: string;
 }) {
+  const external = href.startsWith("http");
   return (
     <a
-      href="https://calendar.app.google/K83wsdYJEWv5mWh47"
-      target="_blank"
-      rel="noopener noreferrer"
+      href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
       className={className}
       onClick={() => track(event)}
     >

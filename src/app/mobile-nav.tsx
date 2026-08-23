@@ -1,16 +1,19 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 export default function MobileNav() {
   const [open, setOpen] = useState(false);
+  const close = () => setOpen(false);
 
   return (
     <div className="md:hidden">
       <button
         onClick={() => setOpen(!open)}
         className="text-navy p-2"
-        aria-label="Menu"
+        aria-label={open ? "Close menu" : "Open menu"}
+        aria-expanded={open}
       >
         {open ? (
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -29,29 +32,24 @@ export default function MobileNav() {
       {open && (
         <div className="absolute top-full left-0 w-full bg-white border-b border-border shadow-lg">
           <div className="flex flex-col px-6 py-4 gap-4 text-sm font-medium text-gray">
-            <a href="/workshop" onClick={() => setOpen(false)} className="hover:text-navy transition-colors">
-              Insight Hub Workshop
-            </a>
-            <a href="/lab" onClick={() => setOpen(false)} className="hover:text-navy transition-colors">
-              Workshop Planner
-            </a>
-            <a href="https://motto-games.vercel.app/" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="hover:text-navy transition-colors">
-              Games
-            </a>
-            <a href="/case-studies" onClick={() => setOpen(false)} className="hover:text-navy transition-colors">
-              Case Studies
-            </a>
-            <a href="#about" onClick={() => setOpen(false)} className="hover:text-navy transition-colors">
+            <Link href="/work" onClick={close} className="hover:text-navy transition-colors">
+              Work
+            </Link>
+            <Link href="/about" onClick={close} className="hover:text-navy transition-colors">
               About
-            </a>
+            </Link>
+            <Link href="/workshop" onClick={close} className="hover:text-navy transition-colors">
+              Workshop
+            </Link>
+            <Link href="/games" onClick={close} className="hover:text-navy transition-colors">
+              Games
+            </Link>
             <a
-              href="https://calendar.app.google/K83wsdYJEWv5mWh47"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setOpen(false)}
+              href="mailto:pelinsu@mottoworkshop.com"
+              onClick={close}
               className="bg-accent text-white px-4 py-2 rounded-lg hover:bg-navy transition-colors text-center"
             >
-              Book a Call
+              Get in touch
             </a>
           </div>
         </div>

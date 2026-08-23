@@ -117,7 +117,7 @@ export default function Lab() {
             Generate a complete workshop activity<br className="hidden md:block" /> ready to facilitate.
           </h1>
           <p className="text-base text-gray max-w-xl mx-auto leading-relaxed mb-8">
-            Answer a few questions about your session. AI generates a complete activity with steps, timing, materials, facilitation tips, and cognitive checks, built on 50+ proven methods.
+            Answer a few questions about your session. AI generates a complete activity with steps, timing, materials, facilitation tips, and cognitive checks, built on 50+ named facilitation methods.
           </p>
 
           <div className="flex justify-center gap-4 mb-10 flex-wrap">
@@ -139,9 +139,9 @@ export default function Lab() {
           </button>
 
           <div className="mt-12 text-sm text-gray-light">
-            <span className="font-medium text-gray">Two ways we work:</span>
+            <span className="font-medium text-gray">Two ways to do this:</span>
             <div className="flex justify-center gap-8 mt-3">
-              <div><a href="/" className="text-accent hover:text-navy transition-colors">In-person Workshop</a><br /><span className="text-xs">6-hour facilitated session</span></div>
+              <div><a href="/workshop" className="text-accent hover:text-navy transition-colors">Live Workshop</a><br /><span className="text-xs">2 to 3 hour facilitated session</span></div>
               <div><span className="text-accent font-medium">AI Lab</span> (you are here)<br /><span className="text-xs">Self-service activity generator</span></div>
             </div>
           </div>
@@ -171,7 +171,7 @@ export default function Lab() {
       {step === 2 && (
         <section className="py-16">
           <p className="text-xs text-gray-light mb-2">Step 2 of 3</p>
-          <h2 className="text-2xl md:text-3xl text-navy mb-6">Tell us more</h2>
+          <h2 className="text-2xl md:text-3xl text-navy mb-6">Tell me about the session</h2>
 
           <label className="section-label block mb-2">What&apos;s the workshop goal? *</label>
           <textarea value={goal} onChange={e => setGoal(e.target.value)}
@@ -239,7 +239,8 @@ export default function Lab() {
             {hitPaywall ? (
               <div className="flex-1 text-center">
                 <p className="text-accent font-semibold text-sm mb-2">You&apos;ve used your 3 free generations</p>
-                <a href="https://buy.stripe.com/test_placeholder" className="inline-block bg-accent text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-navy transition-colors">Get More: €5 per activity</a>
+                <p className="text-sm text-gray mb-3 max-w-md mx-auto">If you are planning a real session, tell me about it and I will help you design it properly.</p>
+                <a href="mailto:pelinsu@mottoworkshop.com?subject=Activity%20Lab" className="inline-block bg-accent text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-navy transition-colors">Email me about your session</a>
               </div>
             ) : (
               <button onClick={generate} className="flex-1 py-3 rounded-lg bg-accent text-white text-sm font-semibold hover:bg-navy transition-colors cursor-pointer">

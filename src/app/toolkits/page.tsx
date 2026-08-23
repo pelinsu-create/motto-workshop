@@ -15,8 +15,7 @@ export default function Toolkits() {
         </h1>
         <p className="text-lg text-gray max-w-xl leading-relaxed mb-8">
           An activity library, persona panels, and facilitation guides
-          with built in AI where it helps. Everything you need to run
-          focused workshops on your own.
+          with built in AI where it helps. Enough to run a focused workshop without me in the room.
         </p>
 
         <div className="grid md:grid-cols-3 gap-4 mb-12 max-w-2xl">
@@ -38,7 +37,7 @@ export default function Toolkits() {
           rel="noopener noreferrer"
           className="inline-block bg-accent text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-navy transition-colors w-fit"
         >
-          Get Early Access
+          Book a call about early access
         </a>
       </section>
     </div>
