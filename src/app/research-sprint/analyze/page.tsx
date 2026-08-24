@@ -56,6 +56,50 @@ const METHOD_META: Record<string, { icon: string; name: string }> = {
   gaps: { icon: "🕳️", name: "Gap Analysis" },
 };
 
+// Fictional sample interviews so a visitor can watch a full analysis run
+// without preparing anything. Written to exercise every method: themes,
+// quotes, a genuine contradiction, cross-participant patterns and gaps.
+const SAMPLE_TRANSCRIPTS: Transcript[] = [
+  {
+    id: "P01",
+    name: "Sample: Design lead, fintech",
+    content: `Interviewer: How does your team use AI tools in research right now?
+
+P01: Honestly, everywhere. Transcription, summaries, first-pass analysis. My researchers used to spend a week coding interviews, now they get a draft in an hour. I would never go back.
+
+Interviewer: What do you do with that draft?
+
+P01: That is the uncomfortable part. Mostly we use it as is. There is a deadline, the summary looks plausible, it goes in the deck. I know we should check it against the transcripts. Nobody has time. Last quarter a stat made it into a stakeholder readout and someone asked which participant said it. We could not find the quote. It turned out the tool had merged two different comments into one claim. That was a bad meeting.
+
+Interviewer: Did anything change after that?
+
+P01: We talked about a review step, but it never became a routine. The tools are so fast that slowing down feels like losing the whole benefit. What I actually want is analysis that comes with receipts. Show me the quote, show me who said it, then I can defend it.
+
+Interviewer: What would you stop doing if you had that?
+
+P01: I would stop re-reading transcripts at midnight before readouts. That is my current verification method. Me, at midnight, with search.`,
+  },
+  {
+    id: "P02",
+    name: "Sample: Senior researcher, agency",
+    content: `Interviewer: How does AI show up in your analysis work?
+
+P02: Carefully. I use it for transcription and to find passages, but I do not trust it with interpretation. My clients pay for defensible findings. If I cannot trace a theme back to real quotes from named participants, I cannot put it in a report.
+
+Interviewer: Your colleagues feel the same way?
+
+P02: No, and that is a tension in our studio. The younger researchers run everything through AI and ship the summary. I have caught themes in their reports that no participant actually expressed. Plausible, well written, and invented. When I flag it, the answer is that the deadline was yesterday. They are not wrong about the deadline.
+
+Interviewer: So what happens when a big study lands?
+
+P02: The honest answer is the analysis gets squeezed. A twelve interview study should get a week of analysis. It gets two days, because fieldwork ran over and the readout date never moves. Something has to give, and it is always the rigor. If I could hand the mechanical part to something I trusted, with quotes attached, and spend my two days on interpretation instead, that would change the job.
+
+Interviewer: What would make you trust it?
+
+P02: Named methods. Tell me it did thematic analysis the Braun and Clarke way, show me the codes, show me the quotes per theme with participant IDs. If it hides the working, it is a black box, and I have been burned by black boxes.`,
+  },
+];
+
 export default function Analyze() {
   const [transcripts, setTranscripts] = useState<Transcript[]>([]);
   const [pasteText, setPasteText] = useState("");
@@ -160,6 +204,21 @@ export default function Analyze() {
             </span>
           )}
         </div>
+
+        {transcripts.length === 0 && (
+          <button
+            onClick={() => setTranscripts(SAMPLE_TRANSCRIPTS)}
+            className="w-full mb-4 p-4 rounded-xl border border-accent/30 bg-accent-light/40 text-left hover:border-accent transition-colors"
+          >
+            <span className="text-sm font-semibold text-accent block">
+              No transcripts handy? Load two sample interviews
+            </span>
+            <span className="text-xs text-gray block mt-1">
+              Fictional interviews about AI in research work. Load them, hit Run Analysis,
+              and watch all seven methods work in about a minute.
+            </span>
+          </button>
+        )}
 
         <div className="flex gap-2 mb-4">
           <button
