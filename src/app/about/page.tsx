@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About | Pelinsu Pelit",
@@ -191,9 +192,18 @@ export default function About() {
     <div className="max-w-3xl mx-auto px-6">
       <section className="py-20 md:py-28">
         <p className="section-label mb-4">About</p>
-        <h1 className="text-4xl md:text-5xl font-semibold text-navy leading-tight mb-6">
-          Pelinsu Pelit
-        </h1>
+        <div className="flex items-center gap-5 mb-6">
+          <Image
+            src="/pelinsu.jpg"
+            alt="Portrait of Pelinsu Pelit"
+            width={192}
+            height={192}
+            className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover border border-border shrink-0"
+          />
+          <h1 className="text-4xl md:text-5xl font-semibold text-navy leading-tight">
+            Pelinsu Pelit
+          </h1>
+        </div>
         <p className="text-lg text-gray leading-relaxed mb-4 max-w-2xl">
           I research by making and learn by teaching. Ten years across fintech, travel,
           logistics and energy, working in discovery research, usability evaluation and
