@@ -30,7 +30,7 @@ export default function WorkshopPage() {
       <section className="py-24 md:py-32">
         <p className="section-label mb-4">Workshop</p>
         <h1 className="text-4xl md:text-5xl font-semibold text-navy leading-tight mb-4">
-          Motto Workshop
+          Research Sprint
         </h1>
         <p className="text-base text-gray max-w-2xl leading-relaxed mb-8">
           A two to three hour online session on AI-assisted research, on a topic you
@@ -74,6 +74,23 @@ export default function WorkshopPage() {
           className="inline-block border border-border text-navy px-6 py-3 rounded-lg text-sm font-medium hover:bg-lavender transition-colors"
         >
           Play the games &rarr;
+        </a>
+      </section>
+
+      {/* Transcript Analyzer */}
+      <section className="py-16 border-t border-border">
+        <p className="section-label mb-3">Tool</p>
+        <h2 className="text-2xl md:text-3xl text-navy mb-4">Transcript Analyzer</h2>
+        <p className="text-gray leading-relaxed mb-6 max-w-2xl">
+          The tool side of the same practice. Upload interview transcripts and get
+          structured insights with confidence ratings, quotes, and bias flags. Sample
+          interviews are included, no account needed.
+        </p>
+        <a
+          href="/research-sprint/analyze"
+          className="inline-block bg-accent text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-navy transition-colors"
+        >
+          Try Transcript Analyzer &rarr;
         </a>
       </section>
 

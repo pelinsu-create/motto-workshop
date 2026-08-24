@@ -4,8 +4,8 @@ import Image from "next/image";
 const work = [
   {
     href: "/work/turkish-airlines",
-    img: "/work/tk-terminal-charges.jpg",
-    imgAlt: "Turkish Cargo terminal charges screen",
+    img: "/work/thumb-cargo-3.jpg",
+    imgAlt: "Pastel 3D illustration of an air cargo scene with a plane and freight containers",
     tag: "Product Design · Design Systems · Shipped",
     title: "Designing logistics products people are paid to use",
     year: "2025 to 2026",
@@ -14,8 +14,8 @@ const work = [
   },
   {
     href: "/work/liz-smart-office",
-    img: "/work/liz-insights.webp",
-    imgAlt: "LIZ Smart Office booking insights dashboard",
+    img: "/work/thumb-liz-3.jpg",
+    imgAlt: "Pastel 3D illustration of a hybrid office room with desks and a meeting booth",
     tag: "Product Design · Enterprise SaaS · Shipped",
     title: "Simplifying hybrid working, from booking to admin insights",
     year: "2021 to 2022",
@@ -24,8 +24,8 @@ const work = [
   },
   {
     href: "/case-studies/fluffy-score",
-    img: "/work/fluffy-cat.jpg",
-    imgAlt: "Fluffy Score field research",
+    img: "/work/thumb-fluffy-3.jpg",
+    imgAlt: "Pastel 3D illustration of a cat on a climbing tree, from the Fluffy Score app",
     tag: "AI Product · End to End · Shipped",
     title: "Fluffy Score: an AI home assessment tool",
     year: "2026",
@@ -34,8 +34,8 @@ const work = [
   },
   {
     href: "/work/stakeholder-map",
-    img: "/work/sm-ipp-overview.jpg",
-    imgAlt: "Interactive stakeholder map",
+    img: "/work/thumb-stakeholder-2.jpg",
+    imgAlt: "Pastel 3D illustration of wind turbines and solar panels connected by a network",
     tag: "Research Range · Systems Mapping",
     title: "87 stakeholders, three company types, one map",
     year: "2025 to 2026",
@@ -44,8 +44,8 @@ const work = [
   },
   {
     href: "/work/soft-start",
-    img: "/work/ws-planets-full.jpg",
-    imgAlt: "Planets workshop exercise",
+    img: "/work/thumb-workshop-2.jpg",
+    imgAlt: "Pastel 3D illustration of a workshop room with a sticky note wall and round table",
     tag: "Facilitation · Workshop Design",
     title: "The strategy was fine. The room was not ready for it.",
     year: "2024",
@@ -87,10 +87,57 @@ export default function Home() {
         <p className="text-sm mt-4">
           <a href="/Pelinsu_Pelit_CV.pdf" className="text-accent font-medium hover:text-navy transition-colors">Download CV (PDF)</a>
         </p>
-        <p className="text-base text-navy mt-8 max-w-xl leading-relaxed">
-          Based in Helmond, Netherlands. Open to senior product design and UX design
-          roles, hybrid in the Eindhoven and Amsterdam regions or remote. Permanent or
-          freelance.
+      </section>
+
+      {/* What I do */}
+      <section className="py-16 border-t border-border">
+        <h2 className="text-2xl md:text-3xl text-navy mb-8">How I Work</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div>
+            <div className="w-10 h-10 rounded-lg bg-lavender border border-border flex items-center justify-center mb-3">
+              <svg className="w-5 h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="7" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </div>
+            <h3 className="text-lg text-navy font-semibold mb-2">Research</h3>
+            <p className="text-sm text-gray leading-relaxed">
+              Discovery, usability evaluation, stakeholder systems. Interviews,
+              observation, surveys, and desk research that names its sources.
+            </p>
+          </div>
+          <div>
+            <div className="w-10 h-10 rounded-lg bg-lavender border border-border flex items-center justify-center mb-3">
+              <svg className="w-5 h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <h3 className="text-lg text-navy font-semibold mb-2">Facilitate</h3>
+            <p className="text-sm text-gray leading-relaxed">
+              Twenty plus workshops: kickoffs, journey mapping, innovation sprints.
+              I design the openers as carefully as the agenda.
+            </p>
+          </div>
+          <div>
+            <div className="w-10 h-10 rounded-lg bg-lavender border border-border flex items-center justify-center mb-3">
+              <svg className="w-5 h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+              </svg>
+            </div>
+            <h3 className="text-lg text-navy font-semibold mb-2">Build</h3>
+            <p className="text-sm text-gray leading-relaxed">
+              Research tools, facilitation games, working prototypes. If a study needs
+              software that does not exist yet, I write it.
+            </p>
+          </div>
+        </div>
+        <p className="text-base text-gray leading-relaxed mt-8 max-w-2xl">
+          Five years of cat sitting taught me more about domestic space than any audit.
+          I research with people, animals, and whatever I can build. I make things to see
+          what breaks.
         </p>
       </section>
 
@@ -108,9 +155,9 @@ export default function Home() {
             <Link
               key={item.href}
               href={item.href}
-              className="group flex gap-5 bg-surface border border-border rounded-xl p-6 hover:border-accent transition-colors"
+              className="group flex bg-surface border border-border rounded-xl overflow-hidden hover:border-accent transition-colors"
             >
-              <div className="flex-1 min-w-0">
+              <div className="flex-1 min-w-0 p-6">
                 <div className="flex items-baseline justify-between gap-4 mb-2">
                   <p className="text-xs font-semibold text-accent uppercase tracking-wider">
                     {item.tag}
@@ -122,51 +169,18 @@ export default function Home() {
                 </h3>
                 <p className="text-sm text-gray leading-relaxed">{item.blurb}</p>
               </div>
-              <div className="hidden sm:block shrink-0 self-center">
+              <div className="hidden sm:block relative w-64 md:w-72 shrink-0 self-stretch border-l border-border">
                 <Image
                   src={item.img}
                   alt={item.imgAlt}
-                  width={320}
-                  height={224}
-                  className="w-40 h-28 object-cover object-top rounded-lg border border-border"
+                  fill
+                  sizes="288px"
+                  className="object-cover"
                 />
               </div>
             </Link>
           ))}
         </div>
-      </section>
-
-      {/* What I do */}
-      <section className="py-16 border-t border-border">
-        <h2 className="text-2xl md:text-3xl text-navy mb-8">How I Work</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          <div>
-            <h3 className="text-lg text-navy font-semibold mb-2">Research</h3>
-            <p className="text-sm text-gray leading-relaxed">
-              Discovery, usability evaluation, stakeholder systems. Interviews,
-              observation, surveys, and desk research that names its sources.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-lg text-navy font-semibold mb-2">Facilitate</h3>
-            <p className="text-sm text-gray leading-relaxed">
-              Twenty plus workshops: kickoffs, journey mapping, innovation sprints.
-              I design the openers as carefully as the agenda.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-lg text-navy font-semibold mb-2">Build</h3>
-            <p className="text-sm text-gray leading-relaxed">
-              Research tools, facilitation games, working prototypes. If a study needs
-              software that does not exist yet, I write it.
-            </p>
-          </div>
-        </div>
-        <p className="text-base text-gray leading-relaxed mt-8 max-w-2xl">
-          Five years of cat sitting taught me more about domestic space than any audit.
-          I research with people, animals, and whatever I can build. I make things to see
-          what breaks.
-        </p>
       </section>
 
       {/* Contact sits ahead of the workshop so the hiring path is unobstructed */}
@@ -183,29 +197,66 @@ export default function Home() {
         </a>
       </section>
 
-      {/* Workshop, demoted below the hiring path */}
+      {/* Workshop and tools, demoted below the hiring path */}
       <section className="py-16 border-t border-border">
-        <div className="bg-surface border border-border rounded-xl p-8">
-          <p className="section-label mb-3">Also available</p>
-          <h2 className="text-2xl md:text-3xl text-navy mb-4">Motto Workshop</h2>
-          <p className="text-gray leading-relaxed mb-6 max-w-2xl">
-            A two to three hour session on AI-assisted research technique. Where does AI
-            help, and where do you still need to think for yourself? We work it out on a
-            topic you choose, using verification checklists and games I built for it.
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              href="/workshop"
-              className="inline-block bg-accent text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-navy transition-colors"
-            >
-              About the workshop
-            </Link>
-            <Link
-              href="/games"
-              className="inline-block border border-border text-navy px-6 py-3 rounded-lg text-sm font-medium hover:bg-lavender transition-colors"
-            >
-              Play the games &rarr;
-            </Link>
+        <p className="section-label mb-3">Also available</p>
+        <h2 className="text-2xl md:text-3xl text-navy mb-8">Workshop and tools</h2>
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className="flex flex-col bg-surface border border-border rounded-xl overflow-hidden">
+            <Image
+              src="/work/thumb-lab-3.jpg"
+              alt="Pastel 3D illustration of a playful dispenser machine producing activity cards"
+              width={640}
+              height={427}
+              className="w-full h-44 object-cover border-b border-border"
+            />
+            <div className="flex flex-col flex-1 p-6">
+              <h3 className="text-xl text-navy mb-2">Research Sprint</h3>
+              <p className="text-sm text-gray leading-relaxed mb-5 flex-1">
+                A two to three hour session on AI-assisted research technique. Where does
+                AI help, and where do you still need to think for yourself? We work it out
+                on a topic you choose, using verification checklists and games I built for it.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  href="/workshop"
+                  className="inline-block bg-accent text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-navy transition-colors"
+                >
+                  About the workshop
+                </Link>
+                <Link
+                  href="/games"
+                  className="inline-block border border-border text-navy px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-lavender transition-colors"
+                >
+                  Play the games &rarr;
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col bg-surface border border-border rounded-xl overflow-hidden">
+            <Image
+              src="/work/thumb-sprint-3.jpg"
+              alt="Pastel 3D illustration of a desk with transcripts, a laptop and sorted insight cards"
+              width={640}
+              height={427}
+              className="w-full h-44 object-cover border-b border-border"
+            />
+            <div className="flex flex-col flex-1 p-6">
+              <h3 className="text-xl text-navy mb-2">Transcript Analyzer</h3>
+              <p className="text-sm text-gray leading-relaxed mb-5 flex-1">
+                Upload interview transcripts, get structured insights with confidence
+                ratings. Built because the tool I wanted did not exist. No account needed,
+                and there are sample interviews to try it with.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  href="/research-sprint/analyze"
+                  className="inline-block bg-accent text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-navy transition-colors"
+                >
+                  Try Transcript Analyzer
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

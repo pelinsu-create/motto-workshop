@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 const projects = [
   {
     href: "/work/turkish-airlines",
-    img: "/work/tk-terminal-charges.jpg",
-    imgAlt: "Turkish Cargo terminal charges screen",
+    img: "/work/thumb-cargo-3.jpg",
+    imgAlt: "Pastel 3D illustration of an air cargo scene with a plane and freight containers",
     tag: "Product Design · Design Systems · Shipped",
     title: "Designing logistics products people are paid to use",
     year: "2025 to 2026",
@@ -22,8 +22,8 @@ const projects = [
   },
   {
     href: "/work/liz-smart-office",
-    img: "/work/liz-insights.webp",
-    imgAlt: "LIZ Smart Office booking insights dashboard",
+    img: "/work/thumb-liz-3.jpg",
+    imgAlt: "Pastel 3D illustration of a hybrid office room with desks and a meeting booth",
     tag: "Product Design · Enterprise SaaS · Shipped",
     title: "Simplifying hybrid working, from booking to admin insights",
     year: "2021 to 2022",
@@ -33,8 +33,8 @@ const projects = [
   },
   {
     href: "/case-studies/fluffy-score",
-    img: "/work/fluffy-cat.jpg",
-    imgAlt: "Fluffy Score field research",
+    img: "/work/thumb-fluffy-3.jpg",
+    imgAlt: "Pastel 3D illustration of a cat on a climbing tree, from the Fluffy Score app",
     tag: "AI Product · End to End · Shipped",
     title: "Fluffy Score: an AI home assessment tool",
     year: "2026",
@@ -44,8 +44,8 @@ const projects = [
   },
   {
     href: "/work/stakeholder-map",
-    img: "/work/sm-ipp-overview.jpg",
-    imgAlt: "Interactive stakeholder map",
+    img: "/work/thumb-stakeholder-2.jpg",
+    imgAlt: "Pastel 3D illustration of wind turbines and solar panels connected by a network",
     tag: "Research Range · Systems Mapping",
     title: "87 stakeholders, three company types, one map",
     year: "2025 to 2026",
@@ -55,8 +55,8 @@ const projects = [
   },
   {
     href: "/work/soft-start",
-    img: "/work/ws-planets-full.jpg",
-    imgAlt: "Planets workshop exercise",
+    img: "/work/thumb-workshop-2.jpg",
+    imgAlt: "Pastel 3D illustration of a workshop room with a sticky note wall and round table",
     tag: "Facilitation · Workshop Design",
     title: "The strategy was fine. The room was not ready for it.",
     year: "2024",
@@ -68,13 +68,17 @@ const projects = [
 
 const tools = [
   {
-    href: "/research-sprint",
-    title: "Research Sprint",
+    href: "/research-sprint/analyze",
+    img: "/work/thumb-sprint-3.jpg",
+    imgAlt: "Pastel 3D illustration of a desk with transcripts, a laptop and sorted insight cards",
+    title: "Transcript Analyzer",
     blurb: "Upload interview transcripts, get structured insights with confidence ratings. Built because the tool I wanted did not exist.",
     external: false,
   },
   {
     href: "/lab",
+    img: "/work/thumb-lab-3.jpg",
+    imgAlt: "Pastel 3D illustration of a playful dispenser machine producing activity cards",
     title: "Activity Lab",
     blurb: "Generates a complete workshop activity from a topic and a goal. Three free runs, no account.",
     external: false,
@@ -101,9 +105,9 @@ export default function Work() {
             <Link
               key={p.href}
               href={p.href}
-              className="group flex gap-5 bg-surface border border-border rounded-xl p-6 hover:border-accent transition-colors"
+              className="group flex bg-surface border border-border rounded-xl overflow-hidden hover:border-accent transition-colors"
             >
-              <div className="flex-1 min-w-0">
+              <div className="flex-1 min-w-0 p-6">
                 <div className="flex items-baseline justify-between gap-4 mb-2">
                   <p className="text-xs font-semibold text-accent uppercase tracking-wider">{p.tag}</p>
                   <span className="text-xs text-gray-light shrink-0">{p.year}</span>
@@ -114,13 +118,13 @@ export default function Work() {
                 <p className="text-sm text-gray leading-relaxed mb-3">{p.blurb}</p>
                 <p className="text-xs text-gray-light">{p.role}</p>
               </div>
-              <div className="hidden sm:block shrink-0 self-center">
+              <div className="hidden sm:block relative w-64 md:w-72 shrink-0 self-stretch border-l border-border">
                 <Image
                   src={p.img}
                   alt={p.imgAlt}
-                  width={320}
-                  height={224}
-                  className="w-40 h-28 object-cover object-top rounded-lg border border-border"
+                  fill
+                  sizes="288px"
+                  className="object-cover"
                 />
               </div>
             </Link>
@@ -143,6 +147,13 @@ export default function Work() {
                 rel="noopener noreferrer"
                 className="group block bg-surface border border-border rounded-xl p-5 hover:border-accent transition-colors"
               >
+                <Image
+                  src={t.img}
+                  alt={t.imgAlt}
+                  width={640}
+                  height={480}
+                  className="w-full h-40 object-cover rounded-lg border border-border mb-4"
+                />
                 <h3 className="text-lg text-navy mb-1 group-hover:text-accent transition-colors">
                   {t.title} &rarr;
                 </h3>
@@ -154,6 +165,13 @@ export default function Work() {
                 href={t.href}
                 className="group block bg-surface border border-border rounded-xl p-5 hover:border-accent transition-colors"
               >
+                <Image
+                  src={t.img}
+                  alt={t.imgAlt}
+                  width={640}
+                  height={480}
+                  className="w-full h-40 object-cover rounded-lg border border-border mb-4"
+                />
                 <h3 className="text-lg text-navy mb-1 group-hover:text-accent transition-colors">
                   {t.title}
                 </h3>
