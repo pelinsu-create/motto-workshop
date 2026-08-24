@@ -4,7 +4,7 @@ import Image from "next/image";
 const work = [
   {
     href: "/work/turkish-airlines",
-    img: "/work/thumb-cargo-3.jpg",
+    img: "/work/thumb-cargo-5.jpg",
     imgAlt: "Pastel 3D illustration of an air cargo scene with a plane and freight containers",
     tag: "Product Design · Design Systems · Shipped",
     title: "Designing logistics products people are paid to use",
@@ -14,7 +14,7 @@ const work = [
   },
   {
     href: "/work/liz-smart-office",
-    img: "/work/thumb-liz-3.jpg",
+    img: "/work/thumb-liz-5.jpg",
     imgAlt: "Pastel 3D illustration of a hybrid office room with desks and a meeting booth",
     tag: "Product Design · Enterprise SaaS · Shipped",
     title: "Simplifying hybrid working, from booking to admin insights",
@@ -204,7 +204,7 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-4">
           <div className="flex flex-col bg-surface border border-border rounded-xl overflow-hidden">
             <Image
-              src="/work/thumb-lab-3.jpg"
+              src="/work/thumb-lab-4.jpg"
               alt="Pastel 3D illustration of a playful dispenser machine producing activity cards"
               width={640}
               height={427}
@@ -235,7 +235,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col bg-surface border border-border rounded-xl overflow-hidden">
             <Image
-              src="/work/thumb-sprint-3.jpg"
+              src="/work/thumb-sprint-4.jpg"
               alt="Pastel 3D illustration of a desk with transcripts, a laptop and sorted insight cards"
               width={640}
               height={427}

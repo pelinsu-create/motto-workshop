@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const projects = [
   {
     href: "/work/turkish-airlines",
-    img: "/work/thumb-cargo-3.jpg",
+    img: "/work/thumb-cargo-5.jpg",
     imgAlt: "Pastel 3D illustration of an air cargo scene with a plane and freight containers",
     tag: "Product Design · Design Systems · Shipped",
     title: "Designing logistics products people are paid to use",
@@ -22,7 +22,7 @@ const projects = [
   },
   {
     href: "/work/liz-smart-office",
-    img: "/work/thumb-liz-3.jpg",
+    img: "/work/thumb-liz-5.jpg",
     imgAlt: "Pastel 3D illustration of a hybrid office room with desks and a meeting booth",
     tag: "Product Design · Enterprise SaaS · Shipped",
     title: "Simplifying hybrid working, from booking to admin insights",
@@ -69,7 +69,7 @@ const projects = [
 const tools = [
   {
     href: "/research-sprint/analyze",
-    img: "/work/thumb-sprint-3.jpg",
+    img: "/work/thumb-sprint-4.jpg",
     imgAlt: "Pastel 3D illustration of a desk with transcripts, a laptop and sorted insight cards",
     title: "Transcript Analyzer",
     blurb: "Upload interview transcripts, get structured insights with confidence ratings. Built because the tool I wanted did not exist.",
@@ -77,7 +77,7 @@ const tools = [
   },
   {
     href: "/lab",
-    img: "/work/thumb-lab-3.jpg",
+    img: "/work/thumb-lab-4.jpg",
     imgAlt: "Pastel 3D illustration of a playful dispenser machine producing activity cards",
     title: "Activity Lab",
     blurb: "Generates a complete workshop activity from a topic and a goal. Three free runs, no account.",
