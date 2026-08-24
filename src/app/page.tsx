@@ -24,7 +24,7 @@ const work = [
   },
   {
     href: "/case-studies/fluffy-score",
-    img: "/work/thumb-fluffy-3.jpg",
+    img: "/work/thumb-fluffy-5.jpg",
     imgAlt: "Pastel 3D illustration of a cat on a climbing tree, from the Fluffy Score app",
     tag: "AI Product · End to End · Shipped",
     title: "Fluffy Score: an AI home assessment tool",
