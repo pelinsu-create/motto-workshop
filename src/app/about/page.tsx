@@ -165,6 +165,7 @@ export default function About() {
           >
             See the work
           </Link>
+          <a href="/Pelinsu_Pelit_CV.pdf" className="inline-block border border-border text-navy px-6 py-3 rounded-lg text-sm font-medium hover:bg-lavender transition-colors">Download CV</a>
         </div>
       </section>
     </div>

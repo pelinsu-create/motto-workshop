@@ -73,6 +73,9 @@ export default function Home() {
             Email me
           </a>
         </div>
+        <p className="text-sm mt-4">
+          <a href="/Pelinsu_Pelit_CV.pdf" className="text-accent font-medium hover:text-navy transition-colors">Download CV (PDF)</a>
+        </p>
         <p className="text-base text-navy mt-8 max-w-xl leading-relaxed">
           Based in Helmond, Netherlands. Open to senior product design and UX design
           roles, hybrid in the Eindhoven and Amsterdam regions or remote. Permanent or
