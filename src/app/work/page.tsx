@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Work | Pelinsu Pelit",
@@ -10,6 +11,8 @@ export const metadata: Metadata = {
 const projects = [
   {
     href: "/work/turkish-airlines",
+    img: "/work/tk-terminal-charges.jpg",
+    imgAlt: "Turkish Cargo terminal charges screen",
     tag: "Product Design · Design Systems · Shipped",
     title: "Designing logistics products people are paid to use",
     year: "2025 to 2026",
@@ -19,6 +22,8 @@ const projects = [
   },
   {
     href: "/work/liz-smart-office",
+    img: "/work/liz-insights.webp",
+    imgAlt: "LIZ Smart Office booking insights dashboard",
     tag: "Product Design · Enterprise SaaS · Shipped",
     title: "Simplifying hybrid working, from booking to admin insights",
     year: "2021 to 2022",
@@ -28,6 +33,8 @@ const projects = [
   },
   {
     href: "/case-studies/fluffy-score",
+    img: "/work/fluffy-cat.jpg",
+    imgAlt: "Fluffy Score field research",
     tag: "AI Product · End to End · Shipped",
     title: "Fluffy Score: an AI home assessment tool",
     year: "2026",
@@ -37,6 +44,8 @@ const projects = [
   },
   {
     href: "/work/stakeholder-map",
+    img: "/work/sm-ipp-overview.jpg",
+    imgAlt: "Interactive stakeholder map",
     tag: "Research Range · Systems Mapping",
     title: "87 stakeholders, three company types, one map",
     year: "2025 to 2026",
@@ -46,6 +55,8 @@ const projects = [
   },
   {
     href: "/work/soft-start",
+    img: "/work/ws-planets-full.jpg",
+    imgAlt: "Planets workshop exercise",
     tag: "Facilitation · Workshop Design",
     title: "The strategy was fine. The room was not ready for it.",
     year: "2024",
@@ -90,17 +101,28 @@ export default function Work() {
             <Link
               key={p.href}
               href={p.href}
-              className="group block bg-surface border border-border rounded-xl p-6 hover:border-accent transition-colors"
+              className="group flex gap-5 bg-surface border border-border rounded-xl p-6 hover:border-accent transition-colors"
             >
-              <div className="flex items-baseline justify-between gap-4 mb-2">
-                <p className="text-xs font-semibold text-accent uppercase tracking-wider">{p.tag}</p>
-                <span className="text-xs text-gray-light shrink-0">{p.year}</span>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-baseline justify-between gap-4 mb-2">
+                  <p className="text-xs font-semibold text-accent uppercase tracking-wider">{p.tag}</p>
+                  <span className="text-xs text-gray-light shrink-0">{p.year}</span>
+                </div>
+                <h2 className="text-xl text-navy mb-2 group-hover:text-accent transition-colors">
+                  {p.title}
+                </h2>
+                <p className="text-sm text-gray leading-relaxed mb-3">{p.blurb}</p>
+                <p className="text-xs text-gray-light">{p.role}</p>
               </div>
-              <h2 className="text-xl text-navy mb-2 group-hover:text-accent transition-colors">
-                {p.title}
-              </h2>
-              <p className="text-sm text-gray leading-relaxed mb-3">{p.blurb}</p>
-              <p className="text-xs text-gray-light">{p.role}</p>
+              <div className="hidden sm:block shrink-0 self-center">
+                <Image
+                  src={p.img}
+                  alt={p.imgAlt}
+                  width={320}
+                  height={224}
+                  className="w-40 h-28 object-cover object-top rounded-lg border border-border"
+                />
+              </div>
             </Link>
           ))}
         </div>
