@@ -10,7 +10,7 @@ const work = [
     title: "Designing logistics products people are paid to use",
     year: "2025 to 2026",
     blurb:
-      "Terminal charges, warehouse fees and loadability for Turkish Cargo. Shipped inside a live design system, with AI-assisted practice brought into the team without breaking the system.",
+      "Terminal charges, warehouse fees and loadability for Turkish Cargo. Shipped inside a live design system, with AI-assisted practice brought into the team.",
   },
   {
     href: "/work/liz-smart-office",
@@ -36,7 +36,7 @@ const work = [
     href: "/work/stakeholder-map",
     img: "/work/thumb-stakeholder-2.jpg",
     imgAlt: "Pastel 3D illustration of wind turbines and solar panels connected by a network",
-    tag: "Research Range · Systems Mapping",
+    tag: "Research · Systems Mapping",
     title: "87 stakeholders, three company types, one map",
     year: "2025 to 2026",
     blurb:
@@ -47,7 +47,7 @@ const work = [
     img: "/work/thumb-workshop-2.jpg",
     imgAlt: "Pastel 3D illustration of a workshop room with a sticky note wall and round table",
     tag: "Facilitation · Workshop Design",
-    title: "The strategy was fine. The room was not ready for it.",
+    title: "Getting a room ready in the first twenty minutes",
     year: "2024",
     blurb:
       "Three AI-assisted exercises for the first twenty minutes, tested across three sessions and kept as the standard opener.",
@@ -65,10 +65,10 @@ export default function Home() {
           <br className="hidden md:block" /> people use to do their jobs.
         </h1>
         <p className="text-lg text-gray max-w-2xl leading-relaxed mb-8">
-          Ten years across fintech, travel, logistics and energy. I design end to end
-          inside live design systems, run my own research, and use AI where it earns its
-          place: discovery, prototyping, and keeping generated work honest against the
-          system.
+          Ten years in fintech, travel, logistics and energy. I design end to end, run
+          my own research, and work inside existing design systems. I use AI heavily for
+          discovery and prototyping, and I check what it generates against the design
+          system before it goes anywhere.
         </p>
         <div className="flex flex-wrap gap-3">
           <Link
@@ -103,7 +103,8 @@ export default function Home() {
             <h3 className="text-lg text-navy font-semibold mb-2">Research</h3>
             <p className="text-sm text-gray leading-relaxed">
               Discovery, usability evaluation, stakeholder systems. Interviews,
-              observation, surveys, and desk research that names its sources.
+              observation, surveys and desk research. I cite where every finding
+              comes from.
             </p>
           </div>
           <div>
@@ -117,8 +118,9 @@ export default function Home() {
             </div>
             <h3 className="text-lg text-navy font-semibold mb-2">Facilitate</h3>
             <p className="text-sm text-gray leading-relaxed">
-              Twenty plus workshops: kickoffs, journey mapping, innovation sprints.
-              I design the openers as carefully as the agenda.
+              More than twenty workshops: kickoffs, journey mapping, innovation
+              sprints. I put a lot of work into the first twenty minutes, see the
+              Soft Start project.
             </p>
           </div>
           <div>
@@ -129,15 +131,15 @@ export default function Home() {
             </div>
             <h3 className="text-lg text-navy font-semibold mb-2">Build</h3>
             <p className="text-sm text-gray leading-relaxed">
-              Research tools, facilitation games, working prototypes. If a study needs
-              software that does not exist yet, I write it.
+              Research tools, facilitation games, working prototypes. The Transcript
+              Analyzer and the workshop games on this site are things I built.
             </p>
           </div>
         </div>
         <p className="text-base text-gray leading-relaxed mt-8 max-w-2xl">
-          Five years of cat sitting taught me more about domestic space than any audit.
-          I research with people, animals, and whatever I can build. I make things to see
-          what breaks.
+          I also spent five years cat sitting, in more than 50 homes in the Netherlands
+          and Turkey. That research eventually became Fluffy Score. When I want to
+          understand something, I end up building a small version of it.
         </p>
       </section>
 
@@ -213,9 +215,9 @@ export default function Home() {
             <div className="flex flex-col flex-1 p-6">
               <h3 className="text-xl text-navy mb-2">Research Sprint</h3>
               <p className="text-sm text-gray leading-relaxed mb-5 flex-1">
-                A two to three hour session on AI-assisted research technique. Where does
-                AI help, and where do you still need to think for yourself? We work it out
-                on a topic you choose, using verification checklists and games I built for it.
+                A two to three hour session on AI-assisted research, on a topic you
+                choose. We practice which parts of research you can hand to AI and
+                which parts you should not, with games I built for it.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link
@@ -245,8 +247,8 @@ export default function Home() {
               <h3 className="text-xl text-navy mb-2">Transcript Analyzer</h3>
               <p className="text-sm text-gray leading-relaxed mb-5 flex-1">
                 Upload interview transcripts, get structured insights with confidence
-                ratings. Built because the tool I wanted did not exist. No account needed,
-                and there are sample interviews to try it with.
+                ratings. I built it because I could not find a tool that did this. No
+                account needed.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link

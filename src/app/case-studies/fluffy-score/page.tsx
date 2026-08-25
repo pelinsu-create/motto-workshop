@@ -30,8 +30,7 @@ export default function FluffyScoreCaseStudy() {
         </p>
         <p className="text-base text-gray max-w-2xl leading-relaxed">
           How 5 years of cat sitting, veterinary behavior science, and the
-          GROUND research system became a product that helps cat owners create
-          healthier homes, without guessing.
+          GROUND research system became a working product for cat owners.
         </p>
 
         <a
@@ -76,10 +75,10 @@ export default function FluffyScoreCaseStudy() {
         </h2>
         <p className="text-gray leading-relaxed mb-8">
           After 5 years of cat sitting in 50+ homes across the Netherlands and
-          Turkey, a pattern emerged: most cats showed signs of stress: over-grooming, hiding, knocking things over. Not because their
-          owners didn&apos;t care, but because homes weren&apos;t designed for
-          how cats actually behave. The science exists (AAFP/ISFM Five Pillars),
-          but it never reaches everyday cat owners.
+          Turkey, a pattern emerged. Most cats showed signs of stress:
+          over-grooming, hiding, knocking things over. Their homes were simply
+          not set up for how cats behave. The science exists (AAFP/ISFM Five
+          Pillars) but it rarely reaches everyday cat owners.
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -149,7 +148,6 @@ export default function FluffyScoreCaseStudy() {
           <p className="text-xs font-semibold text-accent mb-3 uppercase tracking-wider">Key Insights</p>
           <div className="space-y-3">
             {[
-              "The knowledge gap is a distribution problem: veterinary science has the answers, they just don't reach owners.",
               "Escape routes and sight lines matter more than aesthetics. Shelters that ignore this have 80%+ vacancy.",
               "Bowl feeding takes less than 1% of a cat's day vs 33-50% in the wild. This mismatch drives most 'behavioral problems.'",
             ].map((insight, i) => (
@@ -320,7 +318,7 @@ export default function FluffyScoreCaseStudy() {
           <p className="text-xs font-semibold text-accent mb-3 uppercase tracking-wider">Key Learnings</p>
           <div className="space-y-3">
             {[
-              "Validate with behavior, not opinions. Reddit upvotes showed interest; WhatsApp responses showed intent.",
+              "Reddit upvotes did not mean much on their own. The WhatsApp responses were the real signal, because people had to actually do something to reply.",
               "The biggest advantage was filling a gap nobody else did: an interactive tool based on peer-reviewed science.",
               "AI made this possible as a solo builder. Claude Code handled engineering, I focused on research and design.",
             ].map((learning, i) => (

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CaseHero, Block, Pull, Steps, Findings, Outcomes, NextCase, Figure, LiveEmbed } from "../case-shell";
+import { CaseHero, Block, Steps, Findings, Outcomes, NextCase, Figure, LiveEmbed } from "../case-shell";
 
 export const metadata: Metadata = {
   title: "Who Uses What, and Why It Varies | Pelinsu Pelit",
@@ -26,16 +26,15 @@ export default function StakeholderMap() {
 
       <Block heading="The Challenge">
         <p>
-          The client builds monitoring and prediction tools for renewable energy companies.
-          The question was not what the product does. It was who actually uses it, and why
-          that changes so much from company to company.
+          The client builds monitoring and prediction tools for renewable energy
+          companies. They wanted to know who actually uses these tools, and why that
+          changes so much from company to company.
         </p>
         <p>
-          A large power company with 30 plants across five countries has a very different
-          actor landscape than a 14-plant independent producer, or a pension fund with a
-          remote portfolio. Same sector. Different systems, roles, tools and tensions.
+          A large power company with 30 plants across five countries looks nothing like
+          a 14-plant independent producer or a pension fund with a remote portfolio,
+          even though they buy the same category of software.
         </p>
-        <Pull>Same tools, different hands.</Pull>
       </Block>
 
       <Block heading="The Approach">
@@ -51,7 +50,7 @@ export default function StakeholderMap() {
             },
             {
               title: "Start from humans",
-              body: "Mapped actors by role first, not by system or process. Who is in the room? What do they need to see? What do they hand off, and to whom?",
+              body: "Mapped actors by role first: who is in the room, what they need to see, and what they hand off to whom.",
             },
             {
               title: "Make it interactive",
@@ -63,8 +62,8 @@ export default function StakeholderMap() {
 
       <Block heading="The Map">
         <p>
-          The map itself, live. Switch between the three company profiles to see how the
-          same sector produces three different actor landscapes.
+          Switch between the three company profiles to see how different the actor
+          landscapes are.
         </p>
         <LiveEmbed
           src="/work/stakeholder-map.html"
@@ -89,7 +88,7 @@ export default function StakeholderMap() {
           items={[
             {
               title: "Size and structure change who holds the tools",
-              body: "A large power company runs a 24/7 central control room with cybersecurity specialists, regional dashboards and full software integration. A mid-size independent producer often has one technical engineer doing the work of three roles. There are not just fewer people. The whole way they work together is different.",
+              body: "A large power company runs a 24/7 central control room with cybersecurity specialists, regional dashboards and full software integration. A mid-size independent producer often has one technical engineer covering the work of three roles, and the handoffs are organised differently too.",
             },
             {
               title: "The same tool sits in different hands",
@@ -97,7 +96,7 @@ export default function StakeholderMap() {
             },
             {
               title: "Tensions are structural, not accidental",
-              body: "Equipment manufacturers often overstate availability figures, a known tension in the sector. Field technicians work offline while control rooms depend on real-time data. These are not edge cases. They are built into how the sector operates.",
+              body: "Equipment manufacturers often overstate availability figures, a known tension in the sector. Field technicians work offline while control rooms depend on real-time data. Both are built into how the sector operates.",
             },
           ]}
         />
@@ -115,16 +114,10 @@ export default function StakeholderMap() {
 
       <Block heading="Reflection">
         <p>
-          Starting from humans, not from systems or features, changed what became visible.
-          The data-flow diagrams in vendor materials hid the people doing the work. When I
-          mapped by role first, tensions appeared that no architecture diagram would show:
-          the field technician working offline while the control room depends on real-time
-          data, the asset manager challenging manufacturer figures with no neutral tool to
-          settle the dispute.
-        </p>
-        <p>
-          I would push the interactive layer further. The map shows how each company type is
-          set up. It does not yet show what breaks between them.
+          Mapping by role first, instead of by system, is what surfaced the tensions
+          above. The data-flow diagrams in vendor materials hid the people doing the
+          work. If I continue, I want the map to also show what breaks between the
+          company types.
         </p>
       </Block>
 

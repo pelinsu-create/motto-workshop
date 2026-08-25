@@ -205,15 +205,15 @@ export default function About() {
           </h1>
         </div>
         <p className="text-lg text-gray leading-relaxed mb-4 max-w-2xl">
-          I research by making and learn by teaching. Ten years across fintech, travel,
-          logistics and energy, working in discovery research, usability evaluation and
+          Most of my research involves building something. Teaching workshops is how I
+          find out whether I actually understood it. Ten years across fintech, travel,
+          logistics and energy, in discovery research, usability evaluation and
           strategic facilitation.
         </p>
         <p className="text-base text-gray leading-relaxed mb-4 max-w-2xl">
-          I trained as an industrial designer, which is probably why I keep building the
-          thing rather than only describing it. Currently working on mental models,
-          archetypes and decision-making frameworks, and on integrating AI into research
-          and co-creation workflows without letting it do the thinking.
+          I trained as an industrial designer. Right now I am working on mental models,
+          archetypes and decision-making frameworks, and on where AI fits into research
+          and co-creation work. I am careful about which parts I hand over to it.
         </p>
         <p className="text-base text-gray leading-relaxed max-w-2xl">
           Based in Helmond, Netherlands. Open to senior product design and UX design roles.

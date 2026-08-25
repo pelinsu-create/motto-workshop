@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CaseHero, Block, Pull, Findings, Outcomes, NextCase, Figure, Gallery } from "../case-shell";
+import { CaseHero, Block, Findings, Outcomes, NextCase, Figure, Gallery } from "../case-shell";
 
 export const metadata: Metadata = {
   title: "LIZ Smart Office | Pelinsu Pelit",
@@ -27,20 +27,18 @@ export default function LizSmartOffice() {
       <Block heading="The Product">
         <p>
           LIZ lets people reserve a desk or workspace, see real-time occupancy, and pull
-          reports on how space is actually used. Hybrid working made the second and third
-          of those the interesting part. Companies were paying for floors nobody sat on,
+          reports on how space is used. Companies were paying for floors nobody sat on,
           and had no evidence either way.
         </p>
       </Block>
 
       <Block heading="My Responsibility">
         <p>
-          Three surfaces, three different problems. I redesigned the workspace manager
+          I worked on three parts of the product. I redesigned the workspace manager
           setup flow and insights page based on customer feedback, fixed usability issues
           in the Booker mobile app, and designed the Teams web app using the Microsoft
           component library.
         </p>
-        <Pull>Same product, three rooms, three sets of rules.</Pull>
       </Block>
 
       <Block heading="Booker App: Simplifying the Date Picker">
@@ -49,23 +47,19 @@ export default function LizSmartOffice() {
           out of the flow. I focused on two components: the date picker and the tab bar.
         </p>
         <p>
-          The date picker was the worst offender. Choosing a date and time to book a space
-          took more steps than it needed, and each extra step was somewhere to hesitate.
-          The redesign made selection direct and removed the steps that were not carrying
-          their weight.
+          The date picker was the worst offender. Choosing a date and time took more
+          steps than it needed, so I cut them and made selection direct.
         </p>
         <p>
-          The tab bar was doing too much. I prioritised the core features so the things
-          people actually came to do were reachable first, and reduced the clutter around
-          them.
+          The tab bar was overloaded. I prioritised the core features and reduced the
+          clutter around them.
         </p>
       </Block>
 
       <Block heading="Admin Insights: Built From Scratch">
         <p>
-          Working with the product manager, I designed an insights page for admins that did
-          not exist before. The question it answers is a specific one: what is really
-          happening with our space?
+          Working with the product manager, I designed an insights page for admins that
+          did not exist before.
         </p>
         <Findings
           items={[
@@ -79,7 +73,7 @@ export default function LizSmartOffice() {
             },
             {
               title: "Summary first, detail underneath",
-              body: "The most important figures sit at the top in a summary, so an admin can grasp the state of the building at a glance and go deeper only when something looks wrong.",
+              body: "The most important figures sit at the top, so an admin can see the state of the building at a glance.",
             },
           ]}
         />
@@ -93,9 +87,8 @@ export default function LizSmartOffice() {
 
       <Block heading="Teams App">
         <p>
-          The Teams app had a constraint the others did not: it had to look like Teams. I
-          designed it with the Microsoft component library so it sat inside the client
-          rather than beside it, which is what makes people actually use an embedded app.
+          The Teams app had to look and feel like Teams. I designed it with the
+          Microsoft component library so it feels native inside the client.
         </p>
         <Gallery
           items={[
@@ -124,7 +117,7 @@ export default function LizSmartOffice() {
             "Booking flow simplified: fewer steps between opening the app and holding a desk",
             "Admin insights page shipped from scratch, giving space decisions an evidence base for the first time",
             "Teams app delivered on the Microsoft component library, native to the client it lives in",
-            "Stakeholder expectations aligned through iterative prototyping sessions rather than sign-off documents",
+            "Stakeholder expectations aligned through iterative prototyping sessions",
           ]}
         />
       </Block>

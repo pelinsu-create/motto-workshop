@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CaseHero, Block, Pull, Findings, Outcomes, NextCase, Figure, Gallery } from "../case-shell";
+import { CaseHero, Block, Findings, Outcomes, NextCase, Figure } from "../case-shell";
 
 export const metadata: Metadata = {
   title: "Soft Start, Sharp Focus | Pelinsu Pelit",
@@ -13,7 +13,7 @@ export default function SoftStart() {
       <CaseHero
         tags="Workshop Design · Facilitation Research · AI-Assisted Design"
         title="Soft Start, Sharp Focus"
-        standfirst="The meeting starts. The people haven't arrived yet."
+        standfirst="Three short exercises that help a team actually settle into a session before the real agenda starts."
         meta={[
           { label: "Year", value: "2024" },
           { label: "Role", value: "Workshop designer, facilitator, researcher" },
@@ -26,17 +26,12 @@ export default function SoftStart() {
 
       <Block heading="The Design Problem">
         <p>
-          In years of facilitation work, I noticed one pattern. The quality of decisions in
-          a workshop depends on the state of the people in the room. People arrived with the
-          previous meeting still in their heads, unfinished tasks, unresolved tension. The
-          session started. But the people had not really arrived.
+          In years of facilitation work I kept seeing the same pattern. People arrived
+          with the previous meeting still in their heads, unfinished tasks, unresolved
+          tension, and the quality of the session suffered for it. Most teams know a
+          proper check-in helps, but they skip it because there were no practical tools
+          that fit in under twenty minutes.
         </p>
-        <p>
-          Connection before content improves how teams work together. Most teams know this
-          but skip it, because there were no practical tools to make it happen in under
-          twenty minutes.
-        </p>
-        <Pull>The strategy was fine. The room wasn&apos;t ready for it.</Pull>
       </Block>
 
       <Block heading="The Toolkit">
@@ -76,12 +71,9 @@ export default function SoftStart() {
 
       <Block heading="What Made It Work">
         <p>
-          <strong className="text-navy">The first twenty minutes belong to the group, not the agenda.</strong>{" "}
-          People need space to arrive before the work begins.
-        </p>
-        <p>
-          <strong className="text-navy">AI generates the prompts but does not facilitate.</strong>{" "}
-          The tool supports the facilitator. It does not replace them.
+          The first twenty minutes are for the group, before the agenda starts. People
+          need a moment to arrive. AI writes the prompts, and the facilitator runs the
+          room. That split worked well in all three sessions.
         </p>
       </Block>
 
@@ -111,9 +103,8 @@ export default function SoftStart() {
 
       <Block heading="What Comes Next">
         <p>
-          This project asks what a group needs before it can think together. I designed tools
-          for part of that question. I want to go further: what does &ldquo;the room&rdquo;
-          mean when people work across distances, materials and boundaries?
+          Next I want to explore what a shared room means when people work across
+          distances and boundaries.
         </p>
       </Block>
 

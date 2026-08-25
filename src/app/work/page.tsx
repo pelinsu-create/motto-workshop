@@ -46,7 +46,7 @@ const projects = [
     href: "/work/stakeholder-map",
     img: "/work/thumb-stakeholder-2.jpg",
     imgAlt: "Pastel 3D illustration of wind turbines and solar panels connected by a network",
-    tag: "Research Range · Systems Mapping",
+    tag: "Research · Systems Mapping",
     title: "87 stakeholders, three company types, one map",
     year: "2025 to 2026",
     role: "UX Researcher · Client work",
@@ -58,7 +58,7 @@ const projects = [
     img: "/work/thumb-workshop-2.jpg",
     imgAlt: "Pastel 3D illustration of a workshop room with a sticky note wall and round table",
     tag: "Facilitation · Workshop Design",
-    title: "The strategy was fine. The room was not ready for it.",
+    title: "Getting a room ready in the first twenty minutes",
     year: "2024",
     role: "Workshop Designer · Facilitator",
     blurb:
@@ -72,7 +72,7 @@ const tools = [
     img: "/work/thumb-sprint-4.jpg",
     imgAlt: "Pastel 3D illustration of a desk with transcripts, a laptop and sorted insight cards",
     title: "Transcript Analyzer",
-    blurb: "Upload interview transcripts, get structured insights with confidence ratings. Built because the tool I wanted did not exist.",
+    blurb: "Upload interview transcripts, get structured insights with confidence ratings. I built it because I could not find a tool that did this.",
     external: false,
   },
   {
@@ -94,8 +94,9 @@ export default function Work() {
           Selected projects
         </h1>
         <p className="text-lg text-gray max-w-2xl leading-relaxed">
-          Five projects. Product design first, then the research and facilitation range
-          behind it. Each one names the role I held, what shipped, and what it changed.
+          Five projects. Product design comes first, then research and facilitation
+          work. For each one I wrote down what my role was, what shipped, and what
+          happened after.
         </p>
       </section>
 
@@ -135,7 +136,7 @@ export default function Work() {
       <section className="py-16 border-t border-border mt-12">
         <h2 className="text-2xl md:text-3xl text-navy mb-3">Things I built</h2>
         <p className="text-gray leading-relaxed mb-8 max-w-2xl">
-          Two working tools, not concepts. Try them, no account needed.
+          Both of these are live. You can try them without an account.
         </p>
         <div className="grid sm:grid-cols-2 gap-4">
           {tools.map((t) =>

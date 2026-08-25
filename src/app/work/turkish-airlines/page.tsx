@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CaseHero, Block, Pull, Findings, Outcomes, NextCase, Figure } from "../case-shell";
+import { CaseHero, Block, Findings, Outcomes, NextCase, Figure } from "../case-shell";
 
 export const metadata: Metadata = {
   title: "Turkish Cargo | Pelinsu Pelit",
@@ -13,7 +13,7 @@ export default function TurkishAirlines() {
       <CaseHero
         tags="Product Design · Design Systems · Logistics"
         title="Designing logistics products people are paid to use"
-        standfirst="Freight forwarders do not browse. They are mid-shipment, on a deadline, working out what a warehouse will charge them and whether the cargo fits on the plane."
+        standfirst="Freight forwarders are mid-shipment, on a deadline, working out what a warehouse will charge them and whether the cargo fits on the plane."
         meta={[
           { label: "Year", value: "2025 to 2026" },
           { label: "Role", value: "Product Designer, contract" },
@@ -26,19 +26,15 @@ export default function TurkishAirlines() {
 
       <Block heading="The Difference With Internal Products">
         <p>
-          Consumer products compete for attention. Logistics products compete with the
-          workaround. If a screen is slow or ambiguous, a forwarder does not churn. They
-          phone someone, or open a spreadsheet beside it, and stop trusting the tool. The
-          failure is quiet and it does not appear in adoption numbers.
+          Freight forwarders use these screens because it is their job. If a screen is
+          slow or confusing they do not churn. They call someone, or keep a spreadsheet
+          open next to the tool, and quietly stop trusting it. None of that shows up in
+          adoption numbers, so I spent research time finding where people had already
+          routed around the product.
         </p>
-        <p>
-          That changes what research is for. The question is rarely whether someone likes
-          the product. It is where they have already routed around it, and why.
-        </p>
-        <Pull>Nobody chooses a freight tool. They only decide whether to trust it.</Pull>
       </Block>
 
-      <Block heading="Terminal Charges: Money, Owed by Whom, and When">
+      <Block heading="Terminal Charges">
         <p>
           A single master air waybill can carry several house waybills, each with its own
           warehouse charges, each independently paid or unpaid. The user needs to answer
@@ -51,12 +47,12 @@ export default function TurkishAirlines() {
               body: "Status sits on the collapsed row, so the total owed can be read down the list. Expanding a row is for checking the breakdown, not for discovering whether you owe.",
             },
             {
-              title: "The summary is the answer, the accordion is the evidence",
+              title: "Summary first, breakdown underneath",
               body: "The fee summary carries the number the user came for. Fee details underneath let them defend it to a client or an accounts team.",
             },
             {
               title: "Say plainly when a figure is not binding",
-              body: "Terminal charges vary by date, time and exchange rate. The interface states that the amounts are informational rather than official, because a number that looks authoritative and later changes is worse than one that never claimed to be final.",
+              body: "Terminal charges vary by date, time and exchange rate. The interface states that the amounts are informational rather than official.",
             },
           ]}
         />
@@ -105,23 +101,17 @@ export default function TurkishAirlines() {
 
       <Block heading="Working Inside a Design System">
         <p>
-          Turkish Cargo has an established design system in active use across teams.
-          Designing inside one is a different job from designing without one, and the
-          constraint is the point. Consistency is what makes an unfamiliar screen legible
-          to someone opening it under time pressure.
-        </p>
-        <p>
-          The work was to improve these products without quietly forking the system, which
-          is the usual cost of moving fast in a large organisation.
+          Turkish Cargo has an established design system in active use across teams. My
+          job was to improve these products without forking it. Consistency is what makes
+          an unfamiliar screen legible to someone opening it under time pressure.
         </p>
       </Block>
 
       <Block heading="Bringing AI Into the Practice">
         <p>
           The second thread was integrating AI-assisted design practice into that system.
-          The interesting constraint: a design system is a set of agreements, and
-          generative tools are very good at producing plausible output that ignores
-          agreements.
+          A design system is a set of agreements, and generative tools are good at
+          producing plausible output that ignores them.
         </p>
         <Findings
           items={[
@@ -131,7 +121,7 @@ export default function TurkishAirlines() {
             },
             {
               title: "It is least reliable where the system is silent",
-              body: "Novel flows are exactly where output looks most convincing and is least anchored. Those needed more review, not less.",
+              body: "Novel flows are where output looks convincing but has nothing to anchor it. Those needed more review.",
             },
             {
               title: "The system turned out to be the quality gate",
@@ -151,7 +141,7 @@ export default function TurkishAirlines() {
         />
       </Block>
 
-      <NextCase href="/work/soft-start" title="The strategy was fine. The room was not ready for it." />
+      <NextCase href="/work/soft-start" title="Getting a room ready in the first twenty minutes" />
     </div>
   );
 }

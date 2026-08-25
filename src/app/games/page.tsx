@@ -148,7 +148,7 @@ function HallucinationHunter() {
           <p className="text-navy font-semibold">
             {score} of {claims.length} right.{" "}
             <span className="font-normal text-gray">
-              Most people miss one or two. That is the point of the game.
+              Most people miss one or two.
             </span>
           </p>
           {round < ROUNDS.length - 1 ? (
@@ -378,7 +378,7 @@ const GAMES = [
     id: "hunter",
     name: "Hallucination Hunter",
     tag: "Verification",
-    blurb: "Eight claims, some fabricated. Catch them before they catch you.",
+    blurb: "Eight research claims. Some are fabricated. See how many you can spot.",
   },
   {
     id: "bingo",
@@ -405,8 +405,8 @@ export default function Games() {
           Games from the workshop
         </h1>
         <p className="text-lg text-gray max-w-2xl leading-relaxed">
-          I built these for Motto Workshop sessions. They work on their own too.
-          Bring a real challenge, play a round, no account needed.
+          I built these for Motto Workshop sessions, but you can play them here on
+          their own. No account needed.
         </p>
       </section>
 
@@ -439,8 +439,8 @@ export default function Games() {
 
       <section className="py-12 border-t border-border mb-16">
         <p className="text-gray leading-relaxed max-w-2xl">
-          In the workshop we play these against your own project, with the arguing
-          that makes them work.{" "}
+          In the workshop we play these against your own project and discuss the
+          answers as a group, which is where most of the value is.{" "}
           <a href="/workshop" className="text-accent font-medium hover:text-navy transition-colors">
             About the workshop
           </a>

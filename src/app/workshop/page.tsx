@@ -34,7 +34,8 @@ export default function WorkshopPage() {
         </h1>
         <p className="text-base text-gray max-w-2xl leading-relaxed mb-8">
           A two to three hour online session on AI-assisted research, on a topic you
-          choose. Where does AI help, and where do you still need to think for yourself?
+          choose. We practice which parts of research you can hand to AI and which
+          parts you should not, with verification checklists and games I built for it.
         </p>
         <TrackedCTA
           event="cta-workshop-hero"
@@ -82,9 +83,9 @@ export default function WorkshopPage() {
         <p className="section-label mb-3">Tool</p>
         <h2 className="text-2xl md:text-3xl text-navy mb-4">Transcript Analyzer</h2>
         <p className="text-gray leading-relaxed mb-6 max-w-2xl">
-          The tool side of the same practice. Upload interview transcripts and get
-          structured insights with confidence ratings, quotes, and bias flags. Sample
-          interviews are included, no account needed.
+          Upload interview transcripts and get structured insights with confidence
+          ratings, quotes, and bias flags. Sample interviews are included, no account
+          needed.
         </p>
         <a
           href="/research-sprint/analyze"
