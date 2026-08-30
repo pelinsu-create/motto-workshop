@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import Reveal from "./reveal";
 
 const work = [
   {
@@ -10,7 +11,7 @@ const work = [
     title: "Designing logistics products people are paid to use",
     year: "2025 to 2026",
     blurb:
-      "Terminal charges, warehouse fees and loadability for Turkish Cargo. Shipped inside a live design system, with AI-assisted practice brought into the team.",
+      "Terminal charges, warehouse fees and loadability for Turkish Cargo, shipped inside a live design system.",
   },
   {
     href: "/work/liz-smart-office",
@@ -20,7 +21,7 @@ const work = [
     title: "Simplifying hybrid working, from booking to admin insights",
     year: "2021 to 2022",
     blurb:
-      "Booker app usability, an admin insights page built from scratch, and a Teams app shipped on the Microsoft component library.",
+      "Booker app usability, an admin insights page, and a Teams app on the Microsoft component library.",
   },
   {
     href: "/case-studies/fluffy-score",
@@ -30,7 +31,7 @@ const work = [
     title: "Fluffy Score: an AI home assessment tool",
     year: "2026",
     blurb:
-      "Five years of field research and veterinary behaviour science, taken to a working product I researched, designed and built myself.",
+      "Five years of field research, taken to a working product I built myself.",
   },
   {
     href: "/work/stakeholder-map",
@@ -40,7 +41,7 @@ const work = [
     title: "87 stakeholders, three company types, one map",
     year: "2025 to 2026",
     blurb:
-      "The client used it to decide which roles and relationships their product should support first.",
+      "The client used it to decide which roles their product should support first.",
   },
   {
     href: "/work/soft-start",
@@ -50,7 +51,7 @@ const work = [
     title: "Getting a room ready in the first twenty minutes",
     year: "2024",
     blurb:
-      "Three AI-assisted exercises for the first twenty minutes, tested across three sessions and kept as the standard opener.",
+      "Three AI-assisted exercises for the first twenty minutes, kept as the standard opener.",
   },
 ];
 
@@ -59,32 +60,38 @@ export default function Home() {
     <div className="max-w-3xl mx-auto px-6">
       {/* Hero */}
       <section className="py-24 md:py-32">
-        <p className="section-label mb-4">Senior Product Designer</p>
-        <h1 className="text-4xl md:text-5xl font-semibold text-navy leading-tight mb-6">
+        <p className="section-label mb-4 fade-rise">Senior Product Designer</p>
+        <h1
+          className="text-4xl md:text-5xl font-semibold text-navy leading-tight mb-6 fade-rise"
+          style={{ animationDelay: "70ms" }}
+        >
           I design the products
           <br className="hidden md:block" /> people use to do their jobs.
         </h1>
-        <p className="text-lg text-gray max-w-2xl leading-relaxed mb-8">
+        <p
+          className="text-lg text-gray max-w-2xl leading-relaxed mb-8 fade-rise"
+          style={{ animationDelay: "140ms" }}
+        >
           Ten years in fintech, travel, logistics and energy. I design end to end, run
           my own research, and work inside existing design systems. I use AI heavily for
           discovery and prototyping, and I check what it generates against the design
           system before it goes anywhere.
         </p>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-3 fade-rise" style={{ animationDelay: "210ms" }}>
           <Link
             href="/work"
-            className="inline-block bg-accent text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-navy transition-colors"
+            className="inline-block bg-accent text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-navy btn-press"
           >
             See five projects
           </Link>
           <a
             href="mailto:pelinsu@mottoworkshop.com"
-            className="inline-block border border-border text-navy px-6 py-3 rounded-lg text-sm font-medium hover:bg-lavender transition-colors"
+            className="inline-block border border-border text-navy px-6 py-3 rounded-lg text-sm font-medium hover:bg-lavender btn-press"
           >
             Email me
           </a>
         </div>
-        <p className="text-sm mt-4">
+        <p className="text-sm mt-4 fade-rise" style={{ animationDelay: "260ms" }}>
           <a href="/Pelinsu_Pelit_CV.pdf" className="text-accent font-medium hover:text-navy transition-colors">Download CV (PDF)</a>
         </p>
       </section>
@@ -102,9 +109,8 @@ export default function Home() {
             </div>
             <h3 className="text-lg text-navy font-semibold mb-2">Research</h3>
             <p className="text-sm text-gray leading-relaxed">
-              Discovery, usability evaluation, stakeholder systems. Interviews,
-              observation, surveys and desk research. I cite where every finding
-              comes from.
+              Interviews, observation, surveys and desk research, and I cite
+              where every finding comes from.
             </p>
           </div>
           <div>
@@ -119,8 +125,7 @@ export default function Home() {
             <h3 className="text-lg text-navy font-semibold mb-2">Facilitate</h3>
             <p className="text-sm text-gray leading-relaxed">
               More than twenty workshops: kickoffs, journey mapping, innovation
-              sprints. I put a lot of work into the first twenty minutes, see the
-              Soft Start project.
+              sprints.
             </p>
           </div>
           <div>
@@ -131,15 +136,14 @@ export default function Home() {
             </div>
             <h3 className="text-lg text-navy font-semibold mb-2">Build</h3>
             <p className="text-sm text-gray leading-relaxed">
-              Research tools, facilitation games, working prototypes. The Transcript
-              Analyzer and the workshop games on this site are things I built.
+              The Bias Checker and the workshop games on this site are things
+              I built.
             </p>
           </div>
         </div>
         <p className="text-base text-gray leading-relaxed mt-8 max-w-2xl">
-          I also spent five years cat sitting, in more than 50 homes in the Netherlands
-          and Turkey. That research eventually became Fluffy Score. When I want to
-          understand something, I end up building a small version of it.
+          I also spent five years cat sitting, in more than 50 homes. When I want
+          to understand something, I end up building a small version of it.
         </p>
       </section>
 
@@ -148,39 +152,40 @@ export default function Home() {
         <div className="flex items-baseline justify-between mb-10">
           <h2 className="text-2xl md:text-3xl text-navy">Selected Work</h2>
           <Link href="/work" className="text-sm text-accent font-medium hover:text-navy transition-colors">
-            All work &rarr;
+            All work <span className="arrow-nudge" aria-hidden="true">&rarr;</span>
           </Link>
         </div>
 
         <div className="space-y-4">
-          {work.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="group flex bg-surface border border-border rounded-xl overflow-hidden hover:border-accent transition-colors"
-            >
-              <div className="flex-1 min-w-0 p-6">
-                <div className="flex items-baseline justify-between gap-4 mb-2">
-                  <p className="text-xs font-semibold text-accent uppercase tracking-wider">
-                    {item.tag}
-                  </p>
-                  <span className="text-xs text-gray-light shrink-0">{item.year}</span>
+          {work.map((item, i) => (
+            <Reveal key={item.href} delay={Math.min(i * 70, 210)}>
+              <Link
+                href={item.href}
+                className="group flex bg-surface border border-border rounded-xl overflow-hidden hover:border-accent card-lift"
+              >
+                <div className="flex-1 min-w-0 p-6">
+                  <div className="flex items-baseline justify-between gap-4 mb-2">
+                    <p className="text-xs font-semibold text-accent uppercase tracking-wider">
+                      {item.tag}
+                    </p>
+                    <span className="text-xs text-gray-light shrink-0">{item.year}</span>
+                  </div>
+                  <h3 className="text-xl text-navy mb-2 group-hover:text-accent transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-gray leading-relaxed">{item.blurb}</p>
                 </div>
-                <h3 className="text-xl text-navy mb-2 group-hover:text-accent transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-gray leading-relaxed">{item.blurb}</p>
-              </div>
-              <div className="hidden sm:block relative w-64 md:w-72 shrink-0 self-stretch border-l border-border">
-                <Image
-                  src={item.img}
-                  alt={item.imgAlt}
-                  fill
-                  sizes="288px"
-                  className="object-cover"
-                />
-              </div>
-            </Link>
+                <div className="hidden sm:block relative w-64 md:w-72 shrink-0 self-stretch border-l border-border overflow-hidden">
+                  <Image
+                    src={item.img}
+                    alt={item.imgAlt}
+                    fill
+                    sizes="288px"
+                    className="object-cover card-img"
+                  />
+                </div>
+              </Link>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -193,7 +198,7 @@ export default function Home() {
         </p>
         <a
           href="mailto:pelinsu@mottoworkshop.com"
-          className="inline-block bg-accent text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-navy transition-colors"
+          className="inline-block bg-accent text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-navy btn-press"
         >
           pelinsu@mottoworkshop.com
         </a>
@@ -204,7 +209,7 @@ export default function Home() {
         <p className="section-label mb-3">Also available</p>
         <h2 className="text-2xl md:text-3xl text-navy mb-8">Workshop and tools</h2>
         <div className="grid md:grid-cols-2 gap-4">
-          <div className="flex flex-col bg-surface border border-border rounded-xl overflow-hidden">
+          <Reveal className="flex flex-col bg-surface border border-border rounded-xl overflow-hidden">
             <Image
               src="/work/thumb-lab-4.jpg"
               alt="Pastel 3D illustration of a playful dispenser machine producing activity cards"
@@ -222,44 +227,48 @@ export default function Home() {
               <div className="flex flex-wrap gap-3">
                 <Link
                   href="/workshop"
-                  className="inline-block bg-accent text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-navy transition-colors"
+                  className="inline-block bg-accent text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-navy btn-press"
                 >
                   About the workshop
                 </Link>
                 <Link
                   href="/games"
-                  className="inline-block border border-border text-navy px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-lavender transition-colors"
+                  className="inline-block border border-border text-navy px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-lavender btn-press"
                 >
-                  Play the games &rarr;
+                  Play the games <span className="arrow-nudge" aria-hidden="true">&rarr;</span>
                 </Link>
               </div>
             </div>
-          </div>
-          <div className="flex flex-col bg-surface border border-border rounded-xl overflow-hidden">
+          </Reveal>
+          <Reveal
+            delay={80}
+            className="flex flex-col bg-surface border border-border rounded-xl overflow-hidden"
+          >
             <Image
               src="/work/thumb-sprint-4.jpg"
-              alt="Pastel 3D illustration of a desk with transcripts, a laptop and sorted insight cards"
+              alt="Pastel 3D illustration of a desk with a laptop and sorted cards, illustrating the Bias Checker tool"
               width={640}
               height={427}
               className="w-full h-44 object-cover border-b border-border"
             />
             <div className="flex flex-col flex-1 p-6">
-              <h3 className="text-xl text-navy mb-2">Transcript Analyzer</h3>
+              <h3 className="text-xl text-navy mb-2">Bias Checker</h3>
               <p className="text-sm text-gray leading-relaxed mb-5 flex-1">
-                Upload interview transcripts, get structured insights with confidence
-                ratings. I built it because I could not find a tool that did this. No
-                account needed.
+                Paste your discussion guide, survey or screener before fieldwork. It
+                checks every question against 20 research biases and suggests a
+                minimal fix for each problem. It runs on the bias watchlist I use in
+                my own studies. No account needed.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link
-                  href="/research-sprint/analyze"
-                  className="inline-block bg-accent text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-navy transition-colors"
+                  href="/bias-check"
+                  className="inline-block bg-accent text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-navy btn-press"
                 >
-                  Try Transcript Analyzer
+                  Try Bias Checker
                 </Link>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
     </div>

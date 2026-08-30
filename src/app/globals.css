@@ -13,6 +13,13 @@
   --surface: #ffffff;
   --tag-bg: #eeedf5;
   --lavender: #f0eff5;
+
+  /* Motion tokens. Quiet, decelerating movement across the whole site. */
+  --motion-duration-micro: 180ms; /* hovers, presses, small state changes */
+  --motion-duration-reveal: 500ms; /* scroll reveals and content entrances */
+  --motion-ease-out: cubic-bezier(0.22, 0.61, 0.36, 1); /* decelerate curve, elements settle without bounce */
+  --motion-rise: 12px; /* distance content travels while fading in */
+  --shadow-lift: 0 10px 30px -12px rgba(18, 25, 58, 0.18); /* deeper card shadow while hovered */
 }
 
 @theme inline {
@@ -48,4 +55,115 @@ h1, h2, h3 {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent);
+}
+
+/* Keyboard focus stays clearly visible everywhere */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Load-time entrance. Pure CSS, so it still completes if JS never runs. */
+@keyframes fade-rise {
+  from {
+    opacity: 0;
+    transform: translateY(var(--motion-rise));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fade-rise {
+  animation: fade-rise var(--motion-duration-reveal) var(--motion-ease-out) both;
+}
+
+/* Scroll reveal, driven by the Reveal component. The hidden state only
+   applies once JS has added the js class to the html element, so content
+   is never stuck at opacity 0 if JavaScript fails. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(var(--motion-rise));
+  transition:
+    opacity var(--motion-duration-reveal) var(--motion-ease-out),
+    transform var(--motion-duration-reveal) var(--motion-ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Clickable cards: slight lift, deeper shadow, image eases to 1.02 */
+.card-lift {
+  transition:
+    transform var(--motion-duration-micro) var(--motion-ease-out),
+    box-shadow var(--motion-duration-micro) var(--motion-ease-out),
+    border-color var(--motion-duration-micro) var(--motion-ease-out);
+}
+.card-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lift);
+}
+.card-img {
+  transition: transform var(--motion-duration-reveal) var(--motion-ease-out);
+}
+.card-lift:hover .card-img {
+  transform: scale(1.02);
+}
+
+/* Buttons and selectable options: quiet press feedback */
+.btn-press {
+  transition:
+    background-color var(--motion-duration-micro) var(--motion-ease-out),
+    border-color var(--motion-duration-micro) var(--motion-ease-out),
+    color var(--motion-duration-micro) var(--motion-ease-out),
+    transform var(--motion-duration-micro) var(--motion-ease-out);
+}
+.btn-press:active {
+  transform: translateY(1px);
+}
+
+/* Inline arrow that nudges forward while its link is hovered */
+.arrow-nudge {
+  display: inline-block;
+  transition: transform var(--motion-duration-micro) var(--motion-ease-out);
+}
+a:hover .arrow-nudge {
+  transform: translateX(2px);
+}
+
+/* Reduced motion: no transforms, no reveals, content simply visible.
+   The animation catch-all also stills page-level keyframes like the
+   Bias Checker loading dots while keeping their end state on screen. */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+  .fade-rise {
+    animation: none;
+  }
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .card-lift,
+  .card-lift:hover {
+    transform: none;
+  }
+  .card-img,
+  .card-lift:hover .card-img {
+    transform: none;
+    transition: none;
+  }
+  .btn-press:active {
+    transform: none;
+  }
+  .arrow-nudge,
+  a:hover .arrow-nudge {
+    transform: none;
+    transition: none;
+  }
 }

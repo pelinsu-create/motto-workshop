@@ -46,8 +46,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${playfair.variable} antialiased`}>
+        {/* Marks JS as available before paint. Scroll reveals only hide
+            content behind this class, so a failed script load leaves the
+            page fully visible. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js')",
+          }}
+        />
         <nav className="fixed top-0 w-full bg-surface/85 backdrop-blur-sm border-b border-border z-50">
           <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
             <Link href="/" className="text-navy font-semibold text-lg tracking-tight">

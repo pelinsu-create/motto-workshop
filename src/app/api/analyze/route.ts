@@ -222,7 +222,7 @@ ${methodInstructions}`;
 
     const client = getClient();
     const response = await client.messages.create({
-      model: "claude-sonnet-4-20250514",
+      model: "claude-sonnet-5",
       max_tokens: 8192,
       system: [
         { type: "text", text: systemPrompt, cache_control: { type: "ephemeral" } },
@@ -230,7 +230,10 @@ ${methodInstructions}`;
       messages: [{ role: "user", content: userMessage }],
     });
 
-    const text = response.content[0].type === "text" ? response.content[0].text : "";
+    const text = response.content
+      .filter((block) => block.type === "text")
+      .map((block) => (block.type === "text" ? block.text : ""))
+      .join("");
 
     let parsed: Record<string, unknown>;
     try {
