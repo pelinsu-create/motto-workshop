@@ -2,6 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import Reveal from "../reveal";
+import Sparkle from "../sparkle";
+import {
+  activityLabGlyphs,
+  biasCheckerGlyphs,
+  cargoGlyphs,
+  fluffyGlyphs,
+  officeGlyphs,
+  stakeholderGlyphs,
+  workshopGlyphs,
+} from "../delight-icons";
 
 export const metadata: Metadata = {
   title: "Work | Pelinsu Pelit",
@@ -20,6 +30,7 @@ const projects = [
     role: "Product Designer, contract",
     blurb:
       "Terminal charges, warehouse fees and loadability checks for Turkish Cargo, shipped inside a live design system.",
+    icons: cargoGlyphs,
   },
   {
     href: "/work/liz-smart-office",
@@ -31,6 +42,7 @@ const projects = [
     role: "UX/UI Designer",
     blurb:
       "Booker app usability, an admin insights page, and a Teams app on the Microsoft component library.",
+    icons: officeGlyphs,
   },
   {
     href: "/case-studies/fluffy-score",
@@ -42,6 +54,7 @@ const projects = [
     role: "Research, design and build",
     blurb:
       "Five years of field research, taken to a working product I built myself.",
+    icons: fluffyGlyphs,
   },
   {
     href: "/work/stakeholder-map",
@@ -53,6 +66,7 @@ const projects = [
     role: "UX Researcher · Client work",
     blurb:
       "An interactive map the client used to decide which roles their product should support first.",
+    icons: stakeholderGlyphs,
   },
   {
     href: "/work/soft-start",
@@ -64,6 +78,7 @@ const projects = [
     role: "Workshop Designer · Facilitator",
     blurb:
       "Three AI-assisted exercises for the first twenty minutes, kept as the standard opener.",
+    icons: workshopGlyphs,
   },
 ];
 
@@ -75,6 +90,7 @@ const tools = [
     title: "Bias Checker",
     blurb: "Checks your discussion guide, survey or screener against 20 research biases before fieldwork. It runs on the bias watchlist I use in my own studies.",
     external: false,
+    icons: biasCheckerGlyphs,
   },
   {
     href: "/lab",
@@ -83,6 +99,7 @@ const tools = [
     title: "Activity Lab",
     blurb: "Generates a complete workshop activity from a topic and a goal. Three free runs, no account.",
     external: false,
+    icons: activityLabGlyphs,
   },
 ];
 
@@ -111,31 +128,33 @@ export default function Work() {
         <div className="space-y-4">
           {projects.map((p, i) => (
             <Reveal key={p.href} delay={Math.min(i * 70, 210)}>
-              <Link
-                href={p.href}
-                className="group flex bg-surface border border-border rounded-xl overflow-hidden hover:border-accent card-lift"
-              >
-                <div className="flex-1 min-w-0 p-6">
-                  <div className="flex items-baseline justify-between gap-4 mb-2">
-                    <p className="text-xs font-semibold text-accent uppercase tracking-wider">{p.tag}</p>
-                    <span className="text-xs text-gray-light shrink-0">{p.year}</span>
+              <Sparkle icons={p.icons} density={5} className="block">
+                <Link
+                  href={p.href}
+                  className="group flex bg-surface border border-border rounded-xl overflow-hidden hover:border-accent card-lift"
+                >
+                  <div className="flex-1 min-w-0 p-6">
+                    <div className="flex items-baseline justify-between gap-4 mb-2">
+                      <p className="text-xs font-semibold text-accent uppercase tracking-wider">{p.tag}</p>
+                      <span className="text-xs text-gray-light shrink-0">{p.year}</span>
+                    </div>
+                    <h2 className="text-xl text-navy mb-2 group-hover:text-accent transition-colors">
+                      {p.title}
+                    </h2>
+                    <p className="text-sm text-gray leading-relaxed mb-3">{p.blurb}</p>
+                    <p className="text-xs text-gray-light">{p.role}</p>
                   </div>
-                  <h2 className="text-xl text-navy mb-2 group-hover:text-accent transition-colors">
-                    {p.title}
-                  </h2>
-                  <p className="text-sm text-gray leading-relaxed mb-3">{p.blurb}</p>
-                  <p className="text-xs text-gray-light">{p.role}</p>
-                </div>
-                <div className="hidden sm:block relative w-64 md:w-72 shrink-0 self-stretch border-l border-border overflow-hidden">
-                  <Image
-                    src={p.img}
-                    alt={p.imgAlt}
-                    fill
-                    sizes="288px"
-                    className="object-cover card-img"
-                  />
-                </div>
-              </Link>
+                  <div className="hidden sm:block relative w-64 md:w-72 shrink-0 self-stretch border-l border-border overflow-hidden">
+                    <Image
+                      src={p.img}
+                      alt={p.imgAlt}
+                      fill
+                      sizes="288px"
+                      className="object-cover card-img"
+                    />
+                  </div>
+                </Link>
+              </Sparkle>
             </Reveal>
           ))}
         </div>
@@ -150,43 +169,47 @@ export default function Work() {
           {tools.map((t, i) =>
             t.external ? (
               <Reveal key={t.href} delay={i * 80}>
-                <a
-                  href={t.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group block bg-surface border border-border rounded-xl p-5 hover:border-accent card-lift"
-                >
-                  <Image
-                    src={t.img}
-                    alt={t.imgAlt}
-                    width={640}
-                    height={480}
-                    className="w-full h-40 object-cover rounded-lg border border-border mb-4"
-                  />
-                  <h3 className="text-lg text-navy mb-1 group-hover:text-accent transition-colors">
-                    {t.title} <span className="arrow-nudge" aria-hidden="true">&rarr;</span>
-                  </h3>
-                  <p className="text-sm text-gray leading-relaxed">{t.blurb}</p>
-                </a>
+                <Sparkle icons={t.icons} density={4} className="block">
+                  <a
+                    href={t.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block bg-surface border border-border rounded-xl p-5 hover:border-accent card-lift"
+                  >
+                    <Image
+                      src={t.img}
+                      alt={t.imgAlt}
+                      width={640}
+                      height={480}
+                      className="w-full h-40 object-cover rounded-lg border border-border mb-4"
+                    />
+                    <h3 className="text-lg text-navy mb-1 group-hover:text-accent transition-colors">
+                      {t.title} <span className="arrow-nudge" aria-hidden="true">&rarr;</span>
+                    </h3>
+                    <p className="text-sm text-gray leading-relaxed">{t.blurb}</p>
+                  </a>
+                </Sparkle>
               </Reveal>
             ) : (
               <Reveal key={t.href} delay={i * 80}>
-                <Link
-                  href={t.href}
-                  className="group block bg-surface border border-border rounded-xl p-5 hover:border-accent card-lift"
-                >
-                  <Image
-                    src={t.img}
-                    alt={t.imgAlt}
-                    width={640}
-                    height={480}
-                    className="w-full h-40 object-cover rounded-lg border border-border mb-4"
-                  />
-                  <h3 className="text-lg text-navy mb-1 group-hover:text-accent transition-colors">
-                    {t.title}
-                  </h3>
-                  <p className="text-sm text-gray leading-relaxed">{t.blurb}</p>
-                </Link>
+                <Sparkle icons={t.icons} density={4} className="block">
+                  <Link
+                    href={t.href}
+                    className="group block bg-surface border border-border rounded-xl p-5 hover:border-accent card-lift"
+                  >
+                    <Image
+                      src={t.img}
+                      alt={t.imgAlt}
+                      width={640}
+                      height={480}
+                      className="w-full h-40 object-cover rounded-lg border border-border mb-4"
+                    />
+                    <h3 className="text-lg text-navy mb-1 group-hover:text-accent transition-colors">
+                      {t.title}
+                    </h3>
+                    <p className="text-sm text-gray leading-relaxed">{t.blurb}</p>
+                  </Link>
+                </Sparkle>
               </Reveal>
             )
           )}

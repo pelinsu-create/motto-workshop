@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import Sparkle from "../sparkle";
 
 export const metadata: Metadata = {
   title: "About | Pelinsu Pelit",
@@ -193,13 +194,15 @@ export default function About() {
       <section className="py-20 md:py-28">
         <p className="section-label mb-4">About</p>
         <div className="flex items-center gap-5 mb-6">
-          <Image
-            src="/pelinsu.jpg"
-            alt="Portrait of Pelinsu Pelit"
-            width={192}
-            height={192}
-            className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover border border-border shrink-0"
-          />
+          <Sparkle variant="mixed" className="shrink-0">
+            <Image
+              src="/pelinsu.jpg"
+              alt="Portrait of Pelinsu Pelit"
+              width={192}
+              height={192}
+              className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover border border-border"
+            />
+          </Sparkle>
           <h1 className="text-4xl md:text-5xl font-semibold text-navy leading-tight">
             Pelinsu Pelit
           </h1>

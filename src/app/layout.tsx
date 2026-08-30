@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import Link from "next/link";
 import "./globals.css";
 import MobileNav from "./mobile-nav";
+import Sparkle from "./sparkle";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -58,9 +59,11 @@ export default function RootLayout({
         />
         <nav className="fixed top-0 w-full bg-surface/85 backdrop-blur-sm border-b border-border z-50">
           <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-            <Link href="/" className="text-navy font-semibold text-lg tracking-tight">
-              Pelinsu Pelit
-            </Link>
+            <Sparkle variant="sparkles" density={3}>
+              <Link href="/" className="text-navy font-semibold text-lg tracking-tight">
+                Pelinsu Pelit
+              </Link>
+            </Sparkle>
 
             {/* Desktop nav */}
             <div className="hidden md:flex gap-8 text-sm font-medium text-gray items-center">
@@ -73,12 +76,14 @@ export default function RootLayout({
               <Link href="/workshop" className="hover:text-navy transition-colors">
                 Workshop
               </Link>
-              <a
-                href="mailto:pelinsu@mottoworkshop.com"
-                className="bg-accent text-white px-4 py-2 rounded-lg hover:bg-navy transition-colors"
-              >
-                Get in touch
-              </a>
+              <Sparkle variant="hearts" density={3}>
+                <a
+                  href="mailto:pelinsu@mottoworkshop.com"
+                  className="bg-accent text-white px-4 py-2 rounded-lg hover:bg-navy transition-colors inline-block"
+                >
+                  Get in touch
+                </a>
+              </Sparkle>
             </div>
 
             {/* Mobile nav */}

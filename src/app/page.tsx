@@ -1,6 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import Reveal from "./reveal";
+import Sparkle from "./sparkle";
+import {
+  biasCheckerGlyphs,
+  cargoGlyphs,
+  fluffyGlyphs,
+  officeGlyphs,
+  stakeholderGlyphs,
+  workshopGlyphs,
+} from "./delight-icons";
 
 const work = [
   {
@@ -12,6 +21,7 @@ const work = [
     year: "2025 to 2026",
     blurb:
       "Terminal charges, warehouse fees and loadability for Turkish Cargo, shipped inside a live design system.",
+    icons: cargoGlyphs,
   },
   {
     href: "/work/liz-smart-office",
@@ -22,6 +32,7 @@ const work = [
     year: "2021 to 2022",
     blurb:
       "Booker app usability, an admin insights page, and a Teams app on the Microsoft component library.",
+    icons: officeGlyphs,
   },
   {
     href: "/case-studies/fluffy-score",
@@ -32,6 +43,7 @@ const work = [
     year: "2026",
     blurb:
       "Five years of field research, taken to a working product I built myself.",
+    icons: fluffyGlyphs,
   },
   {
     href: "/work/stakeholder-map",
@@ -42,6 +54,7 @@ const work = [
     year: "2025 to 2026",
     blurb:
       "The client used it to decide which roles their product should support first.",
+    icons: stakeholderGlyphs,
   },
   {
     href: "/work/soft-start",
@@ -52,6 +65,7 @@ const work = [
     year: "2024",
     blurb:
       "Three AI-assisted exercises for the first twenty minutes, kept as the standard opener.",
+    icons: workshopGlyphs,
   },
 ];
 
@@ -159,32 +173,34 @@ export default function Home() {
         <div className="space-y-4">
           {work.map((item, i) => (
             <Reveal key={item.href} delay={Math.min(i * 70, 210)}>
-              <Link
-                href={item.href}
-                className="group flex bg-surface border border-border rounded-xl overflow-hidden hover:border-accent card-lift"
-              >
-                <div className="flex-1 min-w-0 p-6">
-                  <div className="flex items-baseline justify-between gap-4 mb-2">
-                    <p className="text-xs font-semibold text-accent uppercase tracking-wider">
-                      {item.tag}
-                    </p>
-                    <span className="text-xs text-gray-light shrink-0">{item.year}</span>
+              <Sparkle icons={item.icons} density={5} className="block">
+                <Link
+                  href={item.href}
+                  className="group flex bg-surface border border-border rounded-xl overflow-hidden hover:border-accent card-lift"
+                >
+                  <div className="flex-1 min-w-0 p-6">
+                    <div className="flex items-baseline justify-between gap-4 mb-2">
+                      <p className="text-xs font-semibold text-accent uppercase tracking-wider">
+                        {item.tag}
+                      </p>
+                      <span className="text-xs text-gray-light shrink-0">{item.year}</span>
+                    </div>
+                    <h3 className="text-xl text-navy mb-2 group-hover:text-accent transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-gray leading-relaxed">{item.blurb}</p>
                   </div>
-                  <h3 className="text-xl text-navy mb-2 group-hover:text-accent transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-gray leading-relaxed">{item.blurb}</p>
-                </div>
-                <div className="hidden sm:block relative w-64 md:w-72 shrink-0 self-stretch border-l border-border overflow-hidden">
-                  <Image
-                    src={item.img}
-                    alt={item.imgAlt}
-                    fill
-                    sizes="288px"
-                    className="object-cover card-img"
-                  />
-                </div>
-              </Link>
+                  <div className="hidden sm:block relative w-64 md:w-72 shrink-0 self-stretch border-l border-border overflow-hidden">
+                    <Image
+                      src={item.img}
+                      alt={item.imgAlt}
+                      fill
+                      sizes="288px"
+                      className="object-cover card-img"
+                    />
+                  </div>
+                </Link>
+              </Sparkle>
             </Reveal>
           ))}
         </div>
@@ -240,34 +256,35 @@ export default function Home() {
               </div>
             </div>
           </Reveal>
-          <Reveal
-            delay={80}
-            className="flex flex-col bg-surface border border-border rounded-xl overflow-hidden"
-          >
-            <Image
-              src="/work/thumb-sprint-4.jpg"
-              alt="Pastel 3D illustration of a desk with a laptop and sorted cards, illustrating the Bias Checker tool"
-              width={640}
-              height={427}
-              className="w-full h-44 object-cover border-b border-border"
-            />
-            <div className="flex flex-col flex-1 p-6">
-              <h3 className="text-xl text-navy mb-2">Bias Checker</h3>
-              <p className="text-sm text-gray leading-relaxed mb-5 flex-1">
-                Paste your discussion guide, survey or screener before fieldwork. It
-                checks every question against 20 research biases and suggests a
-                minimal fix for each problem. It runs on the bias watchlist I use in
-                my own studies. No account needed.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <Link
-                  href="/bias-check"
-                  className="inline-block bg-accent text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-navy btn-press"
-                >
-                  Try Bias Checker
-                </Link>
+          <Reveal delay={80} className="h-full">
+            <Sparkle icons={biasCheckerGlyphs} density={4} className="block h-full">
+              <div className="flex flex-col h-full bg-surface border border-border rounded-xl overflow-hidden">
+                <Image
+                  src="/work/thumb-sprint-4.jpg"
+                  alt="Pastel 3D illustration of a desk with a laptop and sorted cards, illustrating the Bias Checker tool"
+                  width={640}
+                  height={427}
+                  className="w-full h-44 object-cover border-b border-border"
+                />
+                <div className="flex flex-col flex-1 p-6">
+                  <h3 className="text-xl text-navy mb-2">Bias Checker</h3>
+                  <p className="text-sm text-gray leading-relaxed mb-5 flex-1">
+                    Paste your discussion guide, survey or screener before fieldwork. It
+                    checks every question against 20 research biases and suggests a
+                    minimal fix for each problem. It runs on the bias watchlist I use in
+                    my own studies. No account needed.
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    <Link
+                      href="/bias-check"
+                      className="inline-block bg-accent text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-navy btn-press"
+                    >
+                      Try Bias Checker
+                    </Link>
+                  </div>
+                </div>
               </div>
-            </div>
+            </Sparkle>
           </Reveal>
         </div>
       </section>

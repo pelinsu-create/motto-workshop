@@ -19,7 +19,9 @@
   --motion-duration-reveal: 500ms; /* scroll reveals and content entrances */
   --motion-ease-out: cubic-bezier(0.22, 0.61, 0.36, 1); /* decelerate curve, elements settle without bounce */
   --motion-rise: 12px; /* distance content travels while fading in */
+  --motion-duration-delight: 700ms; /* lifetime of one hover particle from the Sparkle component */
   --shadow-lift: 0 10px 30px -12px rgba(18, 25, 58, 0.18); /* deeper card shadow while hovered */
+  --delight-pink: #f2a9c4; /* soft warm pink for hearts and delight particles, sits with the pastel palette */
 }
 
 @theme inline {
@@ -124,6 +126,33 @@ h1, h2, h3 {
   transform: translateY(1px);
 }
 
+/* Delight particles, spawned by the Sparkle component on hover.
+   Each particle floats up, scales from 0.4 to 1 and fades out. */
+.sparkle-wrap {
+  position: relative;
+  display: inline-block;
+}
+.sparkle-particle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 20;
+  animation: sparkle-float var(--motion-duration-delight) var(--motion-ease-out) both;
+}
+@keyframes sparkle-float {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.4) rotate(var(--spin, 0deg));
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--drift-x, 0px)), calc(-50% + var(--float-y, -16px)))
+      scale(1) rotate(var(--spin, 0deg));
+  }
+}
+
 /* Inline arrow that nudges forward while its link is hovered */
 .arrow-nudge {
   display: inline-block;
@@ -160,6 +189,9 @@ a:hover .arrow-nudge {
   }
   .btn-press:active {
     transform: none;
+  }
+  .sparkle-particle {
+    display: none;
   }
   .arrow-nudge,
   a:hover .arrow-nudge {
