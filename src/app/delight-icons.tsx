@@ -110,6 +110,13 @@ const cardGlyph = (
   </svg>
 );
 
+const targetGlyph = (
+  <svg viewBox="0 0 24 24" width="100%" height="100%" {...line}>
+    <circle cx="12" cy="12" r="9" />
+    <circle cx="12" cy="12" r="2" fill="currentColor" stroke="none" />
+  </svg>
+);
+
 /* Project themed sets for the work and tool cards */
 export const cargoGlyphs = [planeGlyph, boxGlyph];
 export const officeGlyphs = [calendarGlyph, deskGlyph];
@@ -118,3 +125,4 @@ export const stakeholderGlyphs = [turbineGlyph, nodesGlyph];
 export const workshopGlyphs = [stickyGlyph, sparkleGlyph];
 export const biasCheckerGlyphs = [magnifierGlyph, checkGlyph];
 export const activityLabGlyphs = [cardGlyph, sparkleGlyph];
+export const xyzGlyphs = [targetGlyph, checkGlyph];

@@ -11,6 +11,7 @@ import {
   officeGlyphs,
   stakeholderGlyphs,
   workshopGlyphs,
+  xyzGlyphs,
 } from "../delight-icons";
 
 export const metadata: Metadata = {
@@ -101,6 +102,15 @@ const tools = [
     external: false,
     icons: activityLabGlyphs,
   },
+  {
+    href: "/xyz",
+    img: "/work/thumb-workshop-2.jpg",
+    imgAlt: "Pastel 3D illustration of a planning room with a sticky note wall and whiteboard, for the XYZ Hypothesis Builder tool",
+    title: "XYZ Hypothesis Builder",
+    blurb: "Turn a vague product idea into one testable sentence: at least X% of Y will Z. It steers you from opinions to observable behavior, recommends a cheap pretotype, and makes you set kill criteria before you test. No account needed.",
+    external: false,
+    icons: xyzGlyphs,
+  },
 ];
 
 export default function Work() {
@@ -163,7 +173,7 @@ export default function Work() {
       <section className="py-16 border-t border-border mt-12">
         <h2 className="text-2xl md:text-3xl text-navy mb-3">Things I built</h2>
         <p className="text-gray leading-relaxed mb-8 max-w-2xl">
-          Both of these are live. You can try them without an account.
+          All three are live. You can try them without an account.
         </p>
         <div className="grid sm:grid-cols-2 gap-4">
           {tools.map((t, i) =>
