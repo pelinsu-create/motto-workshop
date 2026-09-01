@@ -11,6 +11,7 @@ export default function ContactSection() {
       <h2 className={`${caveat.className} notebook-heading font-semibold text-3xl md:text-4xl text-navy mb-6`}>
         Get in touch
       </h2>
+      <div>
       <div
         className="note inline-block bg-note-cream p-6 sm:p-7 mt-2"
         style={{ "--tilt": "0.7deg" } as CSSProperties}
@@ -32,6 +33,7 @@ export default function ContactSection() {
             Book a call
           </TrackedCTA>
         </div>
+      </div>
       </div>
     </section>
   );
