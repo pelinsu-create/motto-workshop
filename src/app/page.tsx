@@ -139,7 +139,7 @@ export default function Home() {
 
       {/* What I do: three notes pinned under the hero */}
       <section className="py-16 border-t border-border">
-        <h2 className="text-2xl md:text-3xl text-navy mb-10">How I Work</h2>
+        <h2 className={`${caveat.className} notebook-heading font-semibold text-3xl md:text-4xl text-navy mb-10`}>How I Work</h2>
         <div className="grid gap-8 md:grid-cols-3 md:gap-5">
           <Reveal className="h-full">
             <div className="note h-full bg-note-mint p-6" style={{ "--tilt": "-1.4deg" } as CSSProperties}>
@@ -258,7 +258,7 @@ export default function Home() {
 
       {/* Contact sits ahead of the workshop so the hiring path is unobstructed */}
       <section className="py-16 border-t border-border">
-        <h2 className="text-2xl md:text-3xl text-navy mb-4">Get in touch</h2>
+        <h2 className={`${caveat.className} notebook-heading font-semibold text-3xl md:text-4xl text-navy mb-4`}>Get in touch</h2>
         <p className="text-gray leading-relaxed mb-6 max-w-xl">
           Hiring a senior product designer, or want to talk about a project?
         </p>
