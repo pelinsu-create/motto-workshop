@@ -113,7 +113,7 @@ export default function Lab() {
 
   function Chip({ selected, onClick, children }: { selected: boolean; onClick: () => void; children: React.ReactNode }) {
     return (
-      <button onClick={onClick} className={`px-4 py-2.5 rounded-lg border text-sm transition-all cursor-pointer btn-press ${selected ? "border-accent bg-accent-light text-accent font-semibold" : "border-border bg-surface text-gray hover:border-accent/40"}`}>
+      <button onClick={onClick} className={`px-4 py-2.5 rounded-lg border text-sm transition-all cursor-pointer btn-press ${selected ? "border-accent bg-accent-light text-accent font-semibold" : "border-border bg-surface text-gray hover:border-gray/40"}`}>
         {children}
       </button>
     );
@@ -177,7 +177,7 @@ export default function Lab() {
               <div className="grid grid-cols-2 gap-3">
                 {WORKSHOP_TYPES.map(t => (
                   <button key={t.id} onClick={() => { setWorkshopType(t.id); setStep(2); }}
-                    className="bg-surface border border-border rounded-xl p-5 text-left cursor-pointer hover:border-accent/40 transition-colors btn-press">
+                    className="bg-surface border border-border rounded-xl p-5 text-left cursor-pointer hover:border-gray/40 transition-colors btn-press">
                     <div className="text-xl mb-1">{t.icon}</div>
                     <div className="text-sm font-semibold text-navy">{t.label}</div>
                     <div className="text-xs text-gray-light mt-1">{t.desc}</div>
@@ -209,7 +209,7 @@ export default function Lab() {
             </CardSection>
             <CardBody>
               <div className="flex gap-3">
-                <button onClick={() => setStep(1)} className="px-5 py-2.5 rounded-lg border border-border text-gray text-sm cursor-pointer hover:border-accent/40 transition-colors btn-press">← Back</button>
+                <button onClick={() => setStep(1)} className="px-5 py-2.5 rounded-lg border border-border text-gray text-sm cursor-pointer hover:border-gray/40 transition-colors btn-press">← Back</button>
                 <button onClick={() => { if (goal.trim()) setStep(3); }}
                   className={`flex-1 py-3 rounded-lg text-sm font-semibold transition-colors cursor-pointer btn-press ${goal.trim() ? "bg-accent text-white hover:bg-navy" : "bg-border text-gray-light cursor-default"}`}>
                   Next →
@@ -265,7 +265,7 @@ export default function Lab() {
             </CardSection>
             <CardBody>
               <div className="flex gap-3">
-                <button onClick={() => setStep(2)} className="px-5 py-2.5 rounded-lg border border-border text-gray text-sm cursor-pointer hover:border-accent/40 transition-colors btn-press">← Back</button>
+                <button onClick={() => setStep(2)} className="px-5 py-2.5 rounded-lg border border-border text-gray text-sm cursor-pointer hover:border-gray/40 transition-colors btn-press">← Back</button>
                 {hitPaywall ? (
                   <div className="flex-1 text-center">
                     <p className="text-accent font-semibold text-sm mb-2">You&apos;ve used your 3 free generations</p>
@@ -420,7 +420,7 @@ export default function Lab() {
 
           {/* Actions */}
           <button onClick={() => { setActivity(null); setStep(1); setGoal(""); setWorkshopType(""); setFocus([]); }}
-            className="w-full py-3 rounded-lg border border-border text-gray text-sm cursor-pointer hover:border-accent/40 transition-colors mb-8 btn-press">
+            className="w-full py-3 rounded-lg border border-border text-gray text-sm cursor-pointer hover:border-gray/40 transition-colors mb-8 btn-press">
             Generate Another Activity ({freeLeft > 0 ? `${freeLeft - 1} free` : "€5"})
           </button>
 
@@ -437,7 +437,7 @@ export default function Lab() {
                 <button key={d.id} onClick={() => {
                   const el = document.getElementById("wl");
                   if (el) { el.style.display = "block"; el.textContent = `"${d.label}" noted!`; }
-                }} className="bg-surface border border-border rounded-lg p-3 cursor-pointer text-left hover:border-accent/30 transition-colors btn-press">
+                }} className="bg-surface border border-border rounded-lg p-3 cursor-pointer text-left hover:border-gray/30 transition-colors btn-press">
                   <span className="text-xs font-semibold text-navy">{d.label}</span>
                 </button>
               ))}

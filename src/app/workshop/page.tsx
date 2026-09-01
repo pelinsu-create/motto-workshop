@@ -165,7 +165,7 @@ export default function WorkshopPage() {
                   {i + 1}
                 </span>
                 <h3 className="text-lg text-navy font-semibold mb-0.5">{part.name}</h3>
-                <p className="text-xs font-semibold text-accent uppercase tracking-wider mb-2">
+                <p className="text-xs font-semibold text-gray uppercase tracking-wider mb-2">
                   {part.subtitle}
                 </p>
                 <p className="text-sm text-navy-mid leading-relaxed mb-3">{part.line}</p>

@@ -243,7 +243,7 @@ export default function Analyze() {
             {transcripts.length === 0 && (
               <button
                 onClick={() => setTranscripts(SAMPLE_TRANSCRIPTS)}
-                className="w-full mb-4 p-4 rounded-xl border border-accent/30 bg-accent-light/40 text-left hover:border-accent transition-colors btn-press"
+                className="w-full mb-4 p-4 rounded-xl border border-accent/30 bg-accent-light/40 text-left hover:border-gray transition-colors btn-press"
               >
                 <span className="text-sm font-semibold text-accent block">
                   No transcripts handy? Load two sample interviews
@@ -314,7 +314,7 @@ export default function Analyze() {
                 />
                 <button
                   onClick={() => fileRef.current?.click()}
-                  className="w-full border-2 border-dashed border-border rounded-xl py-10 text-center hover:border-accent/40 transition-colors cursor-pointer"
+                  className="w-full border-2 border-dashed border-border rounded-xl py-10 text-center hover:border-gray/40 transition-colors cursor-pointer"
                 >
                   <span className="text-2xl block mb-2">📄</span>
                   <span className="text-sm text-gray">Click to upload .txt or .md files</span>
@@ -378,7 +378,7 @@ export default function Analyze() {
                     className={`text-left p-3 rounded-xl border transition-colors btn-press ${
                       selected
                         ? "border-accent bg-accent-light/50 text-accent"
-                        : "border-border bg-surface text-gray hover:border-accent/30"
+                        : "border-border bg-surface text-gray hover:border-gray/30"
                     }`}
                   >
                     <span className="text-lg block mb-1">{m.icon}</span>

@@ -98,7 +98,7 @@ function HallucinationHunter() {
         Four claims. Mark the ones you think are fabricated, then check your answers.
         Each verdict names the tell that gives it away.
       </p>
-      <p className="text-xs font-semibold text-accent uppercase tracking-wider mb-4">
+      <p className="text-xs font-semibold text-gray uppercase tracking-wider mb-4">
         {ROUNDS[round].title}
       </p>
       <div className="space-y-3 mb-6">
@@ -113,7 +113,7 @@ function HallucinationHunter() {
                 disabled={revealed}
                 className={`w-full text-left p-4 rounded-xl border transition-colors ${
                   picked ? "border-accent bg-accent-light" : "border-border bg-surface"
-                } ${revealed ? "cursor-default" : "cursor-pointer hover:border-accent"}`}
+                } ${revealed ? "cursor-default" : "cursor-pointer hover:border-gray"}`}
               >
                 <span className="text-sm text-navy leading-relaxed">{claim.text}</span>
                 {picked && !revealed && (
@@ -254,7 +254,7 @@ function BadIdeaBingo() {
                   disabled={pick !== null}
                   className={`text-left p-4 rounded-xl border text-sm leading-relaxed transition-colors ${
                     pick === null
-                      ? "border-border bg-surface hover:border-accent cursor-pointer"
+                      ? "border-border bg-surface hover:border-gray cursor-pointer"
                       : isGem
                       ? "border-accent bg-accent-light"
                       : isTrap
@@ -359,7 +359,7 @@ function HatRoulette() {
           {data.hats.map((hat, i) => (
             <div key={i} className="rounded-xl border border-border bg-surface overflow-hidden">
               <div className="border-b border-border px-4 py-2.5">
-                <p className="text-xs font-semibold text-accent uppercase tracking-wider">
+                <p className="text-xs font-semibold text-gray uppercase tracking-wider">
                   {hat.role}
                 </p>
               </div>

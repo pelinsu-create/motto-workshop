@@ -200,8 +200,8 @@ export function NextCase({ href, title }: { href: string; title: string }) {
   return (
     <section className="py-14 border-t border-border">
       <Link href={href} className="group block">
-        <p className="text-xs font-semibold text-accent uppercase tracking-wider mb-2">Next project</p>
-        <p className="text-2xl text-navy group-hover:text-accent transition-colors font-serif">
+        <p className="text-xs font-semibold text-gray uppercase tracking-wider mb-2">Next project</p>
+        <p className="text-2xl text-navy group-hover:underline decoration-2 underline-offset-4 font-serif">
           {title} &rarr;
         </p>
       </Link>

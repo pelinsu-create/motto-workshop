@@ -116,7 +116,7 @@ export default function ServiceTabs() {
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
               active === s.id
                 ? "bg-accent text-white"
-                : "bg-surface border border-border text-gray hover:text-navy hover:border-accent/30"
+                : "bg-surface border border-border text-gray hover:text-navy hover:border-gray/30"
             }`}
           >
             {s.tab}

@@ -230,7 +230,7 @@ export default function Home() {
                     </p>
                     <span className="text-xs text-gray-light shrink-0">{item.year}</span>
                   </div>
-                  <h3 className="text-xl text-navy mb-2 group-hover:text-accent transition-colors">
+                  <h3 className="text-xl text-navy mb-2 group-hover:underline decoration-2 underline-offset-4">
                     {item.title}
                   </h3>
                   <p className="text-sm text-gray leading-relaxed">{item.blurb}</p>

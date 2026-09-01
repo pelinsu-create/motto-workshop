@@ -158,7 +158,7 @@ export default function BiasCheck() {
                     className={`p-3 rounded-xl border text-sm font-medium btn-press ${
                       selected
                         ? "border-accent bg-accent-light/50 text-accent"
-                        : "border-border bg-surface text-gray hover:border-accent/30 hover:bg-lavender/40"
+                        : "border-border bg-surface text-gray hover:border-gray/30 hover:bg-lavender/40"
                     }`}
                   >
                     {t.label}

@@ -164,7 +164,7 @@ export default function Work() {
                     <p className="text-xs font-semibold text-gray uppercase tracking-wider">{p.tag}</p>
                     <span className="text-xs text-gray-light shrink-0">{p.year}</span>
                   </div>
-                  <h2 className="text-xl text-navy mb-2 group-hover:text-accent transition-colors">
+                  <h2 className="text-xl text-navy mb-2 group-hover:underline decoration-2 underline-offset-4">
                     {p.title}
                   </h2>
                   <p className="text-sm text-gray leading-relaxed mb-3">{p.blurb}</p>
@@ -217,7 +217,7 @@ export default function Work() {
                     height={800}
                     className="w-full h-36 object-cover rounded-lg mb-4"
                   />
-                  <h3 className="text-lg text-navy mb-1 group-hover:text-accent transition-colors">
+                  <h3 className="text-lg text-navy mb-1 group-hover:underline decoration-2 underline-offset-4">
                     {t.title} <span className="arrow-nudge" aria-hidden="true">&rarr;</span>
                   </h3>
                   <p className="text-sm text-gray leading-relaxed">{t.blurb}</p>
@@ -241,7 +241,7 @@ export default function Work() {
                     height={800}
                     className="w-full h-36 object-cover rounded-lg mb-4"
                   />
-                  <h3 className="text-lg text-navy mb-1 group-hover:text-accent transition-colors">
+                  <h3 className="text-lg text-navy mb-1 group-hover:underline decoration-2 underline-offset-4">
                     {t.title}
                   </h3>
                   <p className="text-sm text-gray leading-relaxed">{t.blurb}</p>

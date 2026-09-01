@@ -429,7 +429,7 @@ export default function XyzBuilder() {
                 ) : (
                   <div className="space-y-4">
                     <div>
-                      <p className="text-xs font-semibold text-accent uppercase tracking-wider mb-1">
+                      <p className="text-xs font-semibold text-gray uppercase tracking-wider mb-1">
                         Hypothesis
                       </p>
                       <p className="text-base text-navy font-medium leading-relaxed">
@@ -438,7 +438,7 @@ export default function XyzBuilder() {
                     </div>
                     {recommendedMeta && (
                       <div className="fade-rise">
-                        <p className="text-xs font-semibold text-accent uppercase tracking-wider mb-1">
+                        <p className="text-xs font-semibold text-gray uppercase tracking-wider mb-1">
                           Pretotype
                         </p>
                         <p className="text-sm text-navy font-medium">{recommendedMeta.name}</p>
@@ -449,7 +449,7 @@ export default function XyzBuilder() {
                     )}
                     {hasKillLine && (
                       <div className="fade-rise">
-                        <p className="text-xs font-semibold text-accent uppercase tracking-wider mb-1">
+                        <p className="text-xs font-semibold text-gray uppercase tracking-wider mb-1">
                           Kill criteria
                         </p>
                         <p className="text-sm text-navy leading-relaxed">{killSentence}</p>
@@ -602,7 +602,7 @@ function YesNoQuestion({
               className={`px-5 py-2 rounded-lg border text-sm font-medium btn-press ${
                 selected
                   ? "border-accent bg-accent-light/50 text-accent"
-                  : "border-border bg-surface text-gray hover:border-accent/30 hover:bg-lavender/40"
+                  : "border-border bg-surface text-gray hover:border-gray/30 hover:bg-lavender/40"
               }`}
             >
               {option === "yes" ? "Yes" : "No"}
