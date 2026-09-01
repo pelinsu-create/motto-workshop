@@ -3,6 +3,7 @@ import type { CSSProperties } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { caveat } from "../notebook-font";
+import ContactSection from "../contact-section";
 
 export const metadata: Metadata = {
   title: "About | Pelinsu Pelit",
@@ -240,30 +241,7 @@ export default function About() {
           </div>
         </section>
 
-        <section className="pt-10 pb-14 doodle-divider">
-          <h2 className={`${headingClass} mb-6`}>Get in touch</h2>
-          {/* Contact card pinned into the journal like a post-it */}
-          <div className="note inline-block bg-note-cream p-6 sm:p-7 mt-2" style={{ "--tilt": "0.7deg" } as CSSProperties}>
-            <p className="text-gray leading-relaxed mb-6 max-w-xl">
-              Hiring a senior product designer, or want to talk about a project?
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <a
-                href="mailto:pelinsu@mottoworkshop.com"
-                className="inline-block bg-accent text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-navy transition-colors"
-              >
-                pelinsu@mottoworkshop.com
-              </a>
-              <Link
-                href="/work"
-                className="inline-block border border-border text-navy px-6 py-3 rounded-lg text-sm font-medium hover:bg-lavender transition-colors"
-              >
-                See the work
-              </Link>
-              <a href="/Pelinsu_Pelit_CV.pdf" className="inline-block border border-border text-navy px-6 py-3 rounded-lg text-sm font-medium hover:bg-lavender transition-colors">Download CV</a>
-            </div>
-          </div>
-        </section>
+        <ContactSection />
       </div>
     </div>
   );

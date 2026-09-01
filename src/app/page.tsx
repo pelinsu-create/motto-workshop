@@ -5,6 +5,7 @@ import Reveal from "./reveal";
 import HoverGif from "./hover-gif";
 import { caveat } from "./notebook-font";
 import { TrackedCTA } from "./tracked-cta";
+import ContactSection from "./contact-section";
 
 const work = [
   {
@@ -258,18 +259,7 @@ export default function Home() {
       </section>
 
       {/* Contact sits ahead of the workshop so the hiring path is unobstructed */}
-      <section className="py-16 border-t border-border">
-        <h2 className={`${caveat.className} notebook-heading font-semibold text-3xl md:text-4xl text-navy mb-4`}>Get in touch</h2>
-        <p className="text-gray leading-relaxed mb-6 max-w-xl">
-          Hiring a senior product designer, or want to talk about a project?
-        </p>
-        <a
-          href="mailto:pelinsu@mottoworkshop.com"
-          className="inline-block bg-accent text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-navy btn-press"
-        >
-          pelinsu@mottoworkshop.com
-        </a>
-      </section>
+      <ContactSection />
 
       {/* Workshop and tools, demoted below the hiring path, on its own
           journal spread so it matches the Selected Work section */}
