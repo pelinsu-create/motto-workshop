@@ -144,9 +144,8 @@ export default function Work() {
           className="text-lg text-gray max-w-2xl leading-relaxed fade-rise"
           style={{ animationDelay: "140ms" }}
         >
-          Five projects. Product design comes first, then research and facilitation
-          work. For each one I wrote down what my role was, what shipped, and what
-          happened after.
+          Five projects. For each one I wrote down what my role was, what shipped,
+          and what happened after.
         </p>
       </section>
 
