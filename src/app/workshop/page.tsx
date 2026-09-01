@@ -119,12 +119,10 @@ export default function WorkshopPage() {
             className="text-base text-gray max-w-2xl leading-relaxed mb-8 fade-rise"
             style={{ animationDelay: "140ms" }}
           >
-            A three hour online session where you build your own AI insight system, on
-            a topic you choose. We collect your scattered knowledge in one place, turn
-            it into insights that fit your context, and pre-prototype a system that
-            keeps producing them. Along the way we practice which parts you can hand
-            to AI and which parts you should not, with verification checklists and
-            games I built for it.
+            Three hours, online, your topic. We collect the content you keep saving,
+            turn it into insights with AI, and sketch a system that keeps producing
+            them. You leave with the start of your own AI insight system, plus my
+            checklists and games for deciding what to trust AI with.
           </p>
           <div className="fade-rise" style={{ animationDelay: "210ms" }}>
             <TrackedCTA

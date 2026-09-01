@@ -12,8 +12,9 @@ type HoverGifProps = {
 };
 
 // Shows the static thumbnail until the surrounding card link is hovered or
-// focused, then swaps in the animated GIF. The GIF only downloads on first
-// hover, so the page stays light for people who never interact.
+// focused, then swaps in the animation. The animation only downloads on
+// first hover, so the page stays light for people who never interact.
+// animSrc may be an mp4 (rendered as a silent looping video) or a gif.
 export default function HoverGif({
   staticSrc,
   animSrc,
@@ -23,6 +24,7 @@ export default function HoverGif({
 }: HoverGifProps) {
   const [active, setActive] = useState(false);
   const marker = useRef<HTMLSpanElement>(null);
+  const isVideo = animSrc.endsWith(".mp4") || animSrc.endsWith(".webm");
 
   useEffect(() => {
     const card = marker.current?.closest("a");
@@ -43,6 +45,23 @@ export default function HoverGif({
       card.removeEventListener("blur", off);
     };
   }, []);
+
+  if (active && isVideo) {
+    return (
+      <>
+        <span ref={marker} className="hidden" aria-hidden="true" />
+        <video
+          src={animSrc}
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-label={alt}
+          className={`absolute inset-0 h-full w-full ${className ?? ""}`}
+        />
+      </>
+    );
+  }
 
   return (
     <>

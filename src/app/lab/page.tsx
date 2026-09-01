@@ -1,6 +1,17 @@
 "use client";
 
 import { useState, useRef } from "react";
+import { caveat } from "../notebook-font";
+import {
+  MethodCard,
+  CardVisual,
+  CardTitle,
+  CardBody,
+  CardTip,
+  CardSection,
+  Pill,
+  type PillTone,
+} from "../method-card";
 
 interface ActivityStep { step: number; title: string; duration: string; instruction: string; }
 interface Opening { title: string; duration: string; instruction: string; }
@@ -47,6 +58,8 @@ const ENERGIES = [
   { id: "medium", label: "Medium", icon: "☀️" },
   { id: "high", label: "High energy", icon: "⚡" },
 ];
+
+const META_TONES: PillTone[] = ["accent", "navy", "rose", "mustard", "accent"];
 
 export default function Lab() {
   const [step, setStep] = useState(0);
@@ -100,24 +113,28 @@ export default function Lab() {
 
   function Chip({ selected, onClick, children }: { selected: boolean; onClick: () => void; children: React.ReactNode }) {
     return (
-      <button onClick={onClick} className={`px-4 py-2.5 rounded-lg border text-sm transition-all cursor-pointer ${selected ? "border-accent bg-accent-light text-accent font-semibold" : "border-border bg-surface text-gray hover:border-accent/40"}`}>
+      <button onClick={onClick} className={`px-4 py-2.5 rounded-lg border text-sm transition-all cursor-pointer btn-press ${selected ? "border-accent bg-accent-light text-accent font-semibold" : "border-border bg-surface text-gray hover:border-accent/40"}`}>
         {children}
       </button>
     );
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-6">
+    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+      {/* The lab sits on the same dot-grid journal spread as /work */}
+      <div className="notebook-page relative px-5 sm:px-8 md:px-12">
+        <span className="tape-corner tape-corner-tl" aria-hidden="true" />
+        <span className="tape-corner tape-corner-tr" aria-hidden="true" />
 
       {/* Step 0: Landing */}
       {step === 0 && (
-        <section className="py-24 md:py-32 text-center">
+        <section className="py-20 md:py-24 text-center">
           <p className="section-label mb-4">Workshop Planner</p>
-          <h1 className="text-4xl md:text-5xl font-semibold text-navy leading-tight mb-4">
-            Generate a complete workshop activity<br className="hidden md:block" /> ready to facilitate.
+          <h1 className={`${caveat.className} notebook-heading font-semibold text-4xl md:text-5xl text-navy leading-tight mb-4`}>
+            Generate a complete workshop activity ready to facilitate.
           </h1>
           <p className="text-base text-gray max-w-xl mx-auto leading-relaxed mb-8">
-            Answer a few questions about your session. AI generates a complete activity with steps, timing, materials, facilitation tips, and cognitive checks, built on 50+ named facilitation methods.
+            Answer a few questions about your session. AI generates a complete activity with steps, timing, materials, facilitation tips, and cognitive checks, built on 50+ named facilitation methods. Every activity comes out as a method card you can run from directly.
           </p>
 
           <div className="flex justify-center gap-4 mb-10 flex-wrap">
@@ -134,11 +151,11 @@ export default function Lab() {
             ))}
           </div>
 
-          <button onClick={() => setStep(1)} className="bg-accent text-white px-8 py-3.5 rounded-lg text-sm font-semibold hover:bg-navy transition-colors cursor-pointer">
+          <button onClick={() => setStep(1)} className="bg-accent text-white px-8 py-3.5 rounded-lg text-sm font-semibold hover:bg-navy transition-colors cursor-pointer btn-press">
             Start Designing →
           </button>
 
-          <div className="mt-12 text-sm text-gray-light">
+          <div className="mt-12 mb-8 text-sm text-gray-light">
             <span className="font-medium text-gray">Two ways to do this:</span>
             <div className="flex justify-center gap-8 mt-3">
               <div><a href="/workshop" className="text-accent hover:text-navy transition-colors">Live Workshop</a><br /><span className="text-xs">2 to 3 hour facilitated session</span></div>
@@ -151,103 +168,118 @@ export default function Lab() {
       {/* Step 1: Workshop Type */}
       {step === 1 && (
         <section className="py-16">
-          <p className="text-xs text-gray-light mb-2">Step 1 of 3</p>
-          <h2 className="text-2xl md:text-3xl text-navy mb-2">What type of workshop?</h2>
-          <p className="text-sm text-gray mb-6">Select the one that best describes your session.</p>
-          <div className="grid grid-cols-2 gap-3">
-            {WORKSHOP_TYPES.map(t => (
-              <button key={t.id} onClick={() => { setWorkshopType(t.id); setStep(2); }}
-                className="bg-surface border border-border rounded-xl p-5 text-left cursor-pointer hover:border-accent/40 transition-colors">
-                <div className="text-xl mb-1">{t.icon}</div>
-                <div className="text-sm font-semibold text-navy">{t.label}</div>
-                <div className="text-xs text-gray-light mt-1">{t.desc}</div>
-              </button>
-            ))}
-          </div>
+          <MethodCard>
+            <CardSection
+              title="Step 1 of 3: What type of workshop?"
+              hint="Select the one that best describes your session."
+              last
+            >
+              <div className="grid grid-cols-2 gap-3">
+                {WORKSHOP_TYPES.map(t => (
+                  <button key={t.id} onClick={() => { setWorkshopType(t.id); setStep(2); }}
+                    className="bg-surface border border-border rounded-xl p-5 text-left cursor-pointer hover:border-accent/40 transition-colors btn-press">
+                    <div className="text-xl mb-1">{t.icon}</div>
+                    <div className="text-sm font-semibold text-navy">{t.label}</div>
+                    <div className="text-xs text-gray-light mt-1">{t.desc}</div>
+                  </button>
+                ))}
+              </div>
+            </CardSection>
+          </MethodCard>
         </section>
       )}
 
       {/* Step 2: Goal + Participants */}
       {step === 2 && (
         <section className="py-16">
-          <p className="text-xs text-gray-light mb-2">Step 2 of 3</p>
-          <h2 className="text-2xl md:text-3xl text-navy mb-6">Tell me about the session</h2>
+          <MethodCard>
+            <CardSection
+              title="Step 2 of 3: Tell me about the session"
+              hint="The goal drives the whole activity, so give it a real sentence."
+            >
+              <label className="section-label block mb-2">What&apos;s the workshop goal? *</label>
+              <textarea value={goal} onChange={e => setGoal(e.target.value)}
+                placeholder="e.g., Align product and engineering on Q2 priorities after conflicting roadmap feedback..."
+                rows={3} className="w-full p-3 rounded-lg border border-border bg-surface text-foreground text-sm font-sans resize-y outline-none focus:border-accent/50 mb-5 leading-relaxed" />
 
-          <label className="section-label block mb-2">What&apos;s the workshop goal? *</label>
-          <textarea value={goal} onChange={e => setGoal(e.target.value)}
-            placeholder="e.g., Align product and engineering on Q2 priorities after conflicting roadmap feedback..."
-            rows={3} className="w-full p-3 rounded-lg border border-border bg-surface text-foreground text-sm font-sans resize-y outline-none focus:border-accent/50 mb-5 leading-relaxed" />
-
-          <label className="section-label block mb-2">Who&apos;s participating?</label>
-          <input value={participants} onChange={e => setParticipants(e.target.value)}
-            placeholder="e.g., Product managers, engineers, designers, 1 VP"
-            className="w-full p-3 rounded-lg border border-border bg-surface text-foreground text-sm font-sans outline-none focus:border-accent/50 mb-6" />
-
-          <div className="flex gap-3">
-            <button onClick={() => setStep(1)} className="px-5 py-2.5 rounded-lg border border-border text-gray text-sm cursor-pointer hover:border-accent/40 transition-colors">← Back</button>
-            <button onClick={() => { if (goal.trim()) setStep(3); }}
-              className={`flex-1 py-3 rounded-lg text-sm font-semibold transition-colors cursor-pointer ${goal.trim() ? "bg-accent text-white hover:bg-navy" : "bg-border text-gray-light cursor-default"}`}>
-              Next →
-            </button>
-          </div>
+              <label className="section-label block mb-2">Who&apos;s participating?</label>
+              <input value={participants} onChange={e => setParticipants(e.target.value)}
+                placeholder="e.g., Product managers, engineers, designers, 1 VP"
+                className="w-full p-3 rounded-lg border border-border bg-surface text-foreground text-sm font-sans outline-none focus:border-accent/50" />
+            </CardSection>
+            <CardBody>
+              <div className="flex gap-3">
+                <button onClick={() => setStep(1)} className="px-5 py-2.5 rounded-lg border border-border text-gray text-sm cursor-pointer hover:border-accent/40 transition-colors btn-press">← Back</button>
+                <button onClick={() => { if (goal.trim()) setStep(3); }}
+                  className={`flex-1 py-3 rounded-lg text-sm font-semibold transition-colors cursor-pointer btn-press ${goal.trim() ? "bg-accent text-white hover:bg-navy" : "bg-border text-gray-light cursor-default"}`}>
+                  Next →
+                </button>
+              </div>
+            </CardBody>
+          </MethodCard>
         </section>
       )}
 
       {/* Step 3: Constraints + Focus */}
       {step === 3 && (
         <section className="py-16">
-          <p className="text-xs text-gray-light mb-2">Step 3 of 3</p>
-          <h2 className="text-2xl md:text-3xl text-navy mb-6">Fine-tune your activity</h2>
-
-          <label className="section-label block mb-2">Group size</label>
-          <div className="flex flex-wrap gap-2 mb-5">
-            {["3-5", "6-10", "11-20", "20+"].map(s => (
-              <Chip key={s} selected={groupSize === s} onClick={() => setGroupSize(s)}>{s} people</Chip>
-            ))}
-          </div>
-
-          <label className="section-label block mb-2">Duration</label>
-          <div className="flex flex-wrap gap-2 mb-5">
-            {["15 min", "30 min", "45 min", "60 min", "90 min", "120 min"].map(d => (
-              <Chip key={d} selected={duration === d} onClick={() => setDuration(d)}>{d}</Chip>
-            ))}
-          </div>
-
-          <label className="section-label block mb-2">Format</label>
-          <div className="flex flex-wrap gap-2 mb-5">
-            {FORMATS.map(f => (
-              <Chip key={f.id} selected={format === f.id} onClick={() => setFormat(f.id)}>{f.icon} {f.label}</Chip>
-            ))}
-          </div>
-
-          <label className="section-label block mb-2">Energy level</label>
-          <div className="flex flex-wrap gap-2 mb-5">
-            {ENERGIES.map(e => (
-              <Chip key={e.id} selected={energy === e.id} onClick={() => setEnergy(e.id)}>{e.icon} {e.label}</Chip>
-            ))}
-          </div>
-
-          <label className="section-label block mb-2">Focus areas <span className="font-normal normal-case text-gray-light">(select multiple)</span></label>
-          <div className="flex flex-wrap gap-2 mb-8">
-            {FOCUS_AREAS.map(f => (
-              <Chip key={f.id} selected={focus.includes(f.id)} onClick={() => toggleFocus(f.id)}>{f.icon} {f.label}</Chip>
-            ))}
-          </div>
-
-          <div className="flex gap-3">
-            <button onClick={() => setStep(2)} className="px-5 py-2.5 rounded-lg border border-border text-gray text-sm cursor-pointer hover:border-accent/40 transition-colors">← Back</button>
-            {hitPaywall ? (
-              <div className="flex-1 text-center">
-                <p className="text-accent font-semibold text-sm mb-2">You&apos;ve used your 3 free generations</p>
-                <p className="text-sm text-gray mb-3 max-w-md mx-auto">If you are planning a real session, tell me about it and I will help you design it properly.</p>
-                <a href="mailto:pelinsu@mottoworkshop.com?subject=Activity%20Lab" className="inline-block bg-accent text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-navy transition-colors">Email me about your session</a>
+          <MethodCard>
+            <CardSection
+              title="Step 3 of 3: Fine-tune your activity"
+              hint="Everything here is optional. The choices you pick become the card's tags."
+            >
+              <label className="section-label block mb-2">Group size</label>
+              <div className="flex flex-wrap gap-2 mb-5">
+                {["3-5", "6-10", "11-20", "20+"].map(s => (
+                  <Chip key={s} selected={groupSize === s} onClick={() => setGroupSize(s)}>{s} people</Chip>
+                ))}
               </div>
-            ) : (
-              <button onClick={generate} className="flex-1 py-3 rounded-lg bg-accent text-white text-sm font-semibold hover:bg-navy transition-colors cursor-pointer">
-                Generate Activity ({freeLeft} free left)
-              </button>
-            )}
-          </div>
+
+              <label className="section-label block mb-2">Duration</label>
+              <div className="flex flex-wrap gap-2 mb-5">
+                {["15 min", "30 min", "45 min", "60 min", "90 min", "120 min"].map(d => (
+                  <Chip key={d} selected={duration === d} onClick={() => setDuration(d)}>{d}</Chip>
+                ))}
+              </div>
+
+              <label className="section-label block mb-2">Format</label>
+              <div className="flex flex-wrap gap-2 mb-5">
+                {FORMATS.map(f => (
+                  <Chip key={f.id} selected={format === f.id} onClick={() => setFormat(f.id)}>{f.icon} {f.label}</Chip>
+                ))}
+              </div>
+
+              <label className="section-label block mb-2">Energy level</label>
+              <div className="flex flex-wrap gap-2 mb-5">
+                {ENERGIES.map(e => (
+                  <Chip key={e.id} selected={energy === e.id} onClick={() => setEnergy(e.id)}>{e.icon} {e.label}</Chip>
+                ))}
+              </div>
+
+              <label className="section-label block mb-2">Focus areas <span className="font-normal normal-case text-gray-light">(select multiple)</span></label>
+              <div className="flex flex-wrap gap-2">
+                {FOCUS_AREAS.map(f => (
+                  <Chip key={f.id} selected={focus.includes(f.id)} onClick={() => toggleFocus(f.id)}>{f.icon} {f.label}</Chip>
+                ))}
+              </div>
+            </CardSection>
+            <CardBody>
+              <div className="flex gap-3">
+                <button onClick={() => setStep(2)} className="px-5 py-2.5 rounded-lg border border-border text-gray text-sm cursor-pointer hover:border-accent/40 transition-colors btn-press">← Back</button>
+                {hitPaywall ? (
+                  <div className="flex-1 text-center">
+                    <p className="text-accent font-semibold text-sm mb-2">You&apos;ve used your 3 free generations</p>
+                    <p className="text-sm text-gray mb-3 max-w-md mx-auto">If you are planning a real session, tell me about it and I will help you design it properly.</p>
+                    <a href="mailto:pelinsu@mottoworkshop.com?subject=Activity%20Lab" className="inline-block bg-accent text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-navy transition-colors">Email me about your session</a>
+                  </div>
+                ) : (
+                  <button onClick={generate} className="flex-1 py-3 rounded-lg bg-accent text-white text-sm font-semibold hover:bg-navy transition-colors cursor-pointer btn-press">
+                    Generate Activity ({freeLeft} free left)
+                  </button>
+                )}
+              </div>
+            </CardBody>
+          </MethodCard>
         </section>
       )}
 
@@ -269,29 +301,37 @@ export default function Lab() {
         </section>
       )}
 
-      {/* Step 5: Result */}
+      {/* Step 5: Result, rendered as a method card from the handbook */}
       {step === 5 && activity && (
         <section ref={resultRef} className="py-12 animate-[fadeUp_0.4s_ease]">
-          {/* Header */}
-          <div className="bg-surface rounded-2xl border-2 border-accent/20 p-6 mb-4">
-            <p className="section-label mb-1">Generated Activity</p>
-            <h2 className="text-2xl md:text-3xl text-navy mb-1">{activity.title}</h2>
-            <p className="text-sm text-gray mb-4">{activity.subtitle}</p>
-            <div className="flex flex-wrap gap-2">
+          {/* Header card: visual panel, title band, pill tags, overview, tip */}
+          <MethodCard className="mb-4">
+            <CardVisual bg="bg-note-peach" className="h-24">
+              <img
+                src="/work/icon-lab.jpg"
+                alt=""
+                className="h-full w-full object-cover"
+              />
+            </CardVisual>
+            <CardTitle kicker="Generated Activity">{activity.title}</CardTitle>
+            <div className="flex flex-wrap gap-1.5 border-b border-border px-5 py-3">
               {[
-                { l: activity.duration, i: "⏱" }, { l: activity.groupSize, i: "👥" },
-                { l: activity.format, i: "📍" }, { l: `${activity.energy} energy`, i: "⚡" },
-                { l: activity.workshopType, i: "🏷" },
-              ].map((t, i) => (
-                <span key={i} className="bg-tag-bg px-3 py-1 rounded-lg text-xs text-gray">{t.i} {t.l}</span>
+                activity.duration, activity.groupSize, activity.format,
+                `${activity.energy} energy`, activity.workshopType,
+              ].filter(Boolean).map((label, i) => (
+                <Pill key={`${label}-${i}`} tone={META_TONES[i % META_TONES.length]}>{label}</Pill>
               ))}
             </div>
-          </div>
-
-          {/* Overview */}
-          <div className="bg-surface rounded-xl border border-border p-5 mb-3">
-            <p className="text-sm text-foreground leading-relaxed">{activity.overview}</p>
-          </div>
+            <CardBody>
+              <p className="text-sm font-medium text-navy mb-2">{activity.subtitle}</p>
+              <p className="text-sm text-gray leading-relaxed">{activity.overview}</p>
+            </CardBody>
+            {activity.cognitiveCheck && (
+              <CardTip label="Cognitive check." tint="bg-note-lavender">
+                {activity.cognitiveCheck}
+              </CardTip>
+            )}
+          </MethodCard>
 
           {/* Materials + Outputs */}
           <div className="grid grid-cols-2 gap-3 mb-3">
@@ -321,25 +361,29 @@ export default function Lab() {
           )}
 
           {/* Steps */}
-          <div className="bg-surface rounded-xl border border-border p-5 mb-3">
-            <p className="section-label mb-4">📝 Steps</p>
-            {activity.steps?.map((s, i) => (
-              <div key={i} className={`flex gap-3 ${i < activity.steps.length - 1 ? "mb-4 pb-4 border-b border-border" : ""}`}>
-                <div className="w-7 h-7 rounded-full bg-accent-light text-accent flex items-center justify-center text-xs font-bold shrink-0">{s.step}</div>
-                <div className="flex-1">
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm font-semibold text-navy">{s.title}</span>
-                    <span className="text-xs text-gray-light">{s.duration}</span>
+          <div className="bg-surface rounded-xl border border-border overflow-hidden mb-3">
+            <div className="border-b border-border px-5 py-3">
+              <p className="section-label">📝 Steps</p>
+            </div>
+            <div className="p-5">
+              {activity.steps?.map((s, i) => (
+                <div key={i} className={`flex gap-3 ${i < activity.steps.length - 1 ? "mb-4 pb-4 border-b border-border" : ""}`}>
+                  <div className="w-7 h-7 rounded-full bg-accent-light text-accent flex items-center justify-center text-xs font-bold shrink-0">{s.step}</div>
+                  <div className="flex-1">
+                    <div className="flex justify-between mb-1">
+                      <span className="text-sm font-semibold text-navy">{s.title}</span>
+                      <span className="text-xs text-gray-light">{s.duration}</span>
+                    </div>
+                    <p className="text-xs text-gray leading-relaxed">{s.instruction}</p>
                   </div>
-                  <p className="text-xs text-gray leading-relaxed">{s.instruction}</p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           {/* Closing */}
           {activity.closing && (
-            <div className="bg-surface rounded-xl border border-green-200 p-4 mb-3">
+            <div className="bg-note-mint rounded-xl border border-border p-4 mb-3">
               <div className="flex justify-between items-center mb-2">
                 <p className="text-xs font-semibold uppercase tracking-wider text-green-600">🌆 Closing: {activity.closing.title}</p>
                 <span className="text-xs text-gray-light">{activity.closing.duration}</span>
@@ -360,14 +404,6 @@ export default function Lab() {
             </div>
           </div>
 
-          {/* Cognitive Check */}
-          {activity.cognitiveCheck && (
-            <div className="bg-lavender rounded-xl border border-accent/15 p-4 mb-3">
-              <p className="text-xs font-semibold uppercase tracking-wider text-purple-600 mb-1">🧠 Cognitive Check</p>
-              <p className="text-sm text-foreground leading-relaxed">{activity.cognitiveCheck}</p>
-            </div>
-          )}
-
           {/* Variations + Based On */}
           <div className="flex gap-3 mb-8">
             {activity.variations?.length > 0 && (
@@ -384,12 +420,12 @@ export default function Lab() {
 
           {/* Actions */}
           <button onClick={() => { setActivity(null); setStep(1); setGoal(""); setWorkshopType(""); setFocus([]); }}
-            className="w-full py-3 rounded-lg border border-border text-gray text-sm cursor-pointer hover:border-accent/40 transition-colors mb-8">
+            className="w-full py-3 rounded-lg border border-border text-gray text-sm cursor-pointer hover:border-accent/40 transition-colors mb-8 btn-press">
             Generate Another Activity ({freeLeft > 0 ? `${freeLeft - 1} free` : "€5"})
           </button>
 
           {/* Fake doors */}
-          <div className="border-t border-border pt-6">
+          <div className="pt-2 pb-10 doodle-divider">
             <p className="text-xs font-semibold uppercase tracking-wider text-gray-light mb-3">Coming Soon</p>
             <div className="grid grid-cols-2 gap-2">
               {[
@@ -401,7 +437,7 @@ export default function Lab() {
                 <button key={d.id} onClick={() => {
                   const el = document.getElementById("wl");
                   if (el) { el.style.display = "block"; el.textContent = `"${d.label}" noted!`; }
-                }} className="bg-surface border border-border rounded-lg p-3 cursor-pointer text-left hover:border-accent/30 transition-colors">
+                }} className="bg-surface border border-border rounded-lg p-3 cursor-pointer text-left hover:border-accent/30 transition-colors btn-press">
                   <span className="text-xs font-semibold text-navy">{d.label}</span>
                 </button>
               ))}
@@ -411,7 +447,8 @@ export default function Lab() {
         </section>
       )}
 
-      {error && <p className="mt-6 text-red-500 text-sm text-center">{error}</p>}
+      {error && <p className="mt-6 pb-10 text-red-500 text-sm text-center">{error}</p>}
+      </div>
     </div>
   );
 }

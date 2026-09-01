@@ -1,6 +1,15 @@
 "use client";
 
 import { useState, useRef, useCallback } from "react";
+import {
+  MethodCard,
+  CardVisual,
+  CardTitle,
+  CardTags,
+  CardBody,
+  CardTip,
+  CardSection,
+} from "../../method-card";
 
 interface Transcript {
   id: string;
@@ -185,228 +194,266 @@ export default function Analyze() {
   );
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-12">
-      <p className="section-label mb-3">Interview Analyzer</p>
-      <h1 className="text-3xl font-bold text-navy mb-2">Upload your transcripts</h1>
-      <p className="text-gray mb-10">
-        Paste or upload interview transcripts, choose your analysis methods, and get
-        structured insights.
-      </p>
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+      {/* The tool sits on the same dot-grid journal spread as /work */}
+      <div className="notebook-page relative px-5 sm:px-8 md:px-12 pt-14 pb-12">
+        <span className="tape-corner tape-corner-tl" aria-hidden="true" />
+        <span className="tape-corner tape-corner-tr" aria-hidden="true" />
 
-      {/* Step 1: Transcripts */}
-      <div className="bg-surface border border-border rounded-xl p-6 mb-6">
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-sm font-semibold text-navy font-sans">Step 1: Add Transcripts</h2>
-          {transcripts.length > 0 && (
-            <span className="text-xs text-gray-light">
-              {transcripts.length} transcript{transcripts.length !== 1 && "s"} &middot;{" "}
-              {totalWords.toLocaleString()} words
+        {/* The tool introduces itself as a card from the methods handbook */}
+        <MethodCard className="mb-8 fade-rise">
+          <CardVisual bg="bg-accent-light" className="h-24">
+            <span className="text-5xl" role="img" aria-label="Page with text">
+              &#128196;
             </span>
-          )}
-        </div>
+          </CardVisual>
+          <CardTitle as="h1" kicker="Interview Analyzer">
+            Upload your transcripts
+          </CardTitle>
+          <CardTags
+            tags={[
+              { label: "7 methods", tone: "accent" },
+              { label: "Quotes with IDs", tone: "navy" },
+              { label: "Named frameworks", tone: "mustard" },
+            ]}
+          />
+          <CardBody className="text-sm text-gray leading-relaxed">
+            Paste or upload interview transcripts, choose your analysis methods, and get
+            structured insights.
+          </CardBody>
+          <CardTip label="Ask for receipts.">
+            every theme comes back with quotes and participant IDs you can trace.
+          </CardTip>
+        </MethodCard>
 
-        {transcripts.length === 0 && (
-          <button
-            onClick={() => setTranscripts(SAMPLE_TRANSCRIPTS)}
-            className="w-full mb-4 p-4 rounded-xl border border-accent/30 bg-accent-light/40 text-left hover:border-accent transition-colors"
-          >
-            <span className="text-sm font-semibold text-accent block">
-              No transcripts handy? Load two sample interviews
-            </span>
-            <span className="text-xs text-gray block mt-1">
-              Fictional interviews about AI in research work. Load them, hit Run Analysis,
-              and watch all seven methods work in about a minute.
-            </span>
-          </button>
-        )}
-
-        <div className="flex gap-2 mb-4">
-          <button
-            onClick={() => setInputMode("paste")}
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-              inputMode === "paste"
-                ? "bg-accent-light text-accent border border-accent/20"
-                : "border border-border text-gray hover:bg-lavender"
-            }`}
-          >
-            Paste text
-          </button>
-          <button
-            onClick={() => setInputMode("upload")}
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-              inputMode === "upload"
-                ? "bg-accent-light text-accent border border-accent/20"
-                : "border border-border text-gray hover:bg-lavender"
-            }`}
-          >
-            Upload files
-          </button>
-        </div>
-
-        {inputMode === "paste" ? (
-          <div>
-            <input
-              type="text"
-              placeholder="Participant name (optional, e.g. P01, Maria, Senior Dev)"
-              value={pasteName}
-              onChange={(e) => setPasteName(e.target.value)}
-              className="w-full border border-border rounded-lg px-4 py-2.5 text-sm text-navy bg-surface placeholder:text-gray-light mb-3 outline-none focus:border-accent/40 transition-colors"
-            />
-            <textarea
-              placeholder="Paste interview transcript here..."
-              value={pasteText}
-              onChange={(e) => setPasteText(e.target.value)}
-              rows={8}
-              className="w-full border border-border rounded-lg px-4 py-3 text-sm text-navy bg-surface placeholder:text-gray-light mb-3 outline-none focus:border-accent/40 transition-colors resize-y font-mono"
-            />
-            <button
-              onClick={addTranscript}
-              disabled={!pasteText.trim()}
-              className="bg-accent text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-navy transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-            >
-              Add Transcript
-            </button>
-          </div>
-        ) : (
-          <div>
-            <input
-              ref={fileRef}
-              type="file"
-              accept=".txt,.md,.text"
-              multiple
-              onChange={handleFiles}
-              className="hidden"
-            />
-            <button
-              onClick={() => fileRef.current?.click()}
-              className="w-full border-2 border-dashed border-border rounded-xl py-10 text-center hover:border-accent/40 transition-colors cursor-pointer"
-            >
-              <span className="text-2xl block mb-2">📄</span>
-              <span className="text-sm text-gray">Click to upload .txt or .md files</span>
-              <span className="text-xs text-gray-light block mt-1">Multiple files supported</span>
-            </button>
-          </div>
-        )}
-
-        {transcripts.length > 0 && (
-          <div className="mt-4 space-y-2">
-            {transcripts.map((t) => (
-              <div
-                key={t.id}
-                className="flex items-center justify-between bg-lavender/30 rounded-lg px-4 py-2.5"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="text-xs font-semibold text-accent bg-accent-light px-2 py-0.5 rounded">
-                    {t.id}
-                  </span>
-                  <span className="text-sm text-navy font-medium">{t.name}</span>
-                  <span className="text-xs text-gray-light">
-                    {t.content.split(/\s+/).length.toLocaleString()} words
-                  </span>
-                </div>
-                <button
-                  onClick={() => removeTranscript(t.id)}
-                  className="text-gray-light hover:text-red-500 transition-colors text-sm"
-                >
-                  ✕
-                </button>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-
-      {/* Step 2: Methods */}
-      <div className="bg-surface border border-border rounded-xl p-6 mb-6">
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-sm font-semibold text-navy font-sans">Step 2: Choose Analysis Methods</h2>
-          <button
-            onClick={() =>
-              setMethods(methods.length === METHODS.length ? [] : METHODS.map((m) => m.id))
+        {/* Step 1: Transcripts */}
+        <MethodCard className="mb-6">
+          <CardSection
+            title="Step 1: Add Transcripts"
+            last
+            action={
+              transcripts.length > 0 ? (
+                <span className="text-xs text-gray-light shrink-0">
+                  {transcripts.length} transcript{transcripts.length !== 1 && "s"} &middot;{" "}
+                  {totalWords.toLocaleString()} words
+                </span>
+              ) : undefined
             }
-            className="text-xs text-accent hover:text-navy transition-colors"
           >
-            {methods.length === METHODS.length ? "Deselect all" : "Select all"}
-          </button>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-          {METHODS.map((m) => {
-            const selected = methods.includes(m.id);
-            return (
+            {transcripts.length === 0 && (
               <button
-                key={m.id}
-                onClick={() => toggleMethod(m.id)}
-                className={`text-left p-3 rounded-xl border transition-colors ${
-                  selected
-                    ? "border-accent bg-accent-light/50 text-accent"
-                    : "border-border bg-surface text-gray hover:border-accent/30"
+                onClick={() => setTranscripts(SAMPLE_TRANSCRIPTS)}
+                className="w-full mb-4 p-4 rounded-xl border border-accent/30 bg-accent-light/40 text-left hover:border-accent transition-colors btn-press"
+              >
+                <span className="text-sm font-semibold text-accent block">
+                  No transcripts handy? Load two sample interviews
+                </span>
+                <span className="text-xs text-gray block mt-1">
+                  Fictional interviews about AI in research work. Load them, hit Run Analysis,
+                  and watch all seven methods work in about a minute.
+                </span>
+              </button>
+            )}
+
+            <div className="flex gap-2 mb-4">
+              <button
+                onClick={() => setInputMode("paste")}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors btn-press ${
+                  inputMode === "paste"
+                    ? "bg-accent-light text-accent border border-accent/20"
+                    : "border border-border text-gray hover:bg-lavender"
                 }`}
               >
-                <span className="text-lg block mb-1">{m.icon}</span>
-                <span
-                  className={`text-xs font-semibold block ${selected ? "text-accent" : "text-navy"}`}
-                >
-                  {m.name}
-                </span>
-                <span className="text-xs text-gray-light block mt-0.5">{m.source}</span>
+                Paste text
               </button>
-            );
-          })}
-        </div>
-      </div>
+              <button
+                onClick={() => setInputMode("upload")}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors btn-press ${
+                  inputMode === "upload"
+                    ? "bg-accent-light text-accent border border-accent/20"
+                    : "border border-border text-gray hover:bg-lavender"
+                }`}
+              >
+                Upload files
+              </button>
+            </div>
 
-      {/* Step 3: Context */}
-      <div className="bg-surface border border-border rounded-xl p-6 mb-6">
-        <h2 className="text-sm font-semibold text-navy font-sans mb-3">
-          Step 3: Research Context <span className="text-gray-light font-normal">(optional)</span>
-        </h2>
-        <textarea
-          placeholder="What was the research question? Who are the participants? Any context that helps the analysis..."
-          value={context}
-          onChange={(e) => setContext(e.target.value)}
-          rows={3}
-          className="w-full border border-border rounded-lg px-4 py-3 text-sm text-navy bg-surface placeholder:text-gray-light outline-none focus:border-accent/40 transition-colors resize-y"
-        />
-      </div>
+            {inputMode === "paste" ? (
+              <div>
+                <input
+                  type="text"
+                  placeholder="Participant name (optional, e.g. P01, Maria, Senior Dev)"
+                  value={pasteName}
+                  onChange={(e) => setPasteName(e.target.value)}
+                  className="w-full border border-border rounded-lg px-4 py-2.5 text-sm text-navy bg-surface placeholder:text-gray-light mb-3 outline-none focus:border-accent/40 transition-colors"
+                />
+                <textarea
+                  placeholder="Paste interview transcript here..."
+                  value={pasteText}
+                  onChange={(e) => setPasteText(e.target.value)}
+                  rows={8}
+                  className="w-full border border-border rounded-lg px-4 py-3 text-sm text-navy bg-surface placeholder:text-gray-light mb-3 outline-none focus:border-accent/40 transition-colors resize-y font-mono"
+                />
+                <button
+                  onClick={addTranscript}
+                  disabled={!pasteText.trim()}
+                  className="bg-accent text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-navy transition-colors disabled:opacity-40 disabled:cursor-not-allowed btn-press"
+                >
+                  Add Transcript
+                </button>
+              </div>
+            ) : (
+              <div>
+                <input
+                  ref={fileRef}
+                  type="file"
+                  accept=".txt,.md,.text"
+                  multiple
+                  onChange={handleFiles}
+                  className="hidden"
+                />
+                <button
+                  onClick={() => fileRef.current?.click()}
+                  className="w-full border-2 border-dashed border-border rounded-xl py-10 text-center hover:border-accent/40 transition-colors cursor-pointer"
+                >
+                  <span className="text-2xl block mb-2">📄</span>
+                  <span className="text-sm text-gray">Click to upload .txt or .md files</span>
+                  <span className="text-xs text-gray-light block mt-1">Multiple files supported</span>
+                </button>
+              </div>
+            )}
 
-      <button
-        onClick={runAnalysis}
-        disabled={transcripts.length === 0 || methods.length === 0 || loading}
-        className="w-full bg-accent text-white py-4 rounded-xl text-sm font-semibold hover:bg-navy transition-colors disabled:opacity-40 disabled:cursor-not-allowed mb-6"
-      >
-        {loading
-          ? "Analyzing transcripts..."
-          : `Run Analysis: ${methods.length} method${methods.length !== 1 ? "s" : ""} on ${transcripts.length} transcript${transcripts.length !== 1 ? "s" : ""}`}
-      </button>
+            {transcripts.length > 0 && (
+              <div className="mt-4 space-y-2">
+                {transcripts.map((t) => (
+                  <div
+                    key={t.id}
+                    className="flex items-center justify-between bg-lavender/30 rounded-lg px-4 py-2.5"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="text-xs font-semibold text-accent bg-accent-light px-2.5 py-0.5 rounded-full">
+                        {t.id}
+                      </span>
+                      <span className="text-sm text-navy font-medium">{t.name}</span>
+                      <span className="text-xs text-gray-light">
+                        {t.content.split(/\s+/).length.toLocaleString()} words
+                      </span>
+                    </div>
+                    <button
+                      onClick={() => removeTranscript(t.id)}
+                      className="text-gray-light hover:text-red-500 transition-colors text-sm"
+                    >
+                      ✕
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+          </CardSection>
+        </MethodCard>
 
-      {loading && (
-        <div className="bg-accent-light/30 border border-accent/10 rounded-xl p-6 text-center mb-6">
-          <div className="flex justify-center gap-1.5 mb-3">
-            {[0, 0.15, 0.3].map((delay, i) => (
-              <div
-                key={i}
-                className="w-2 h-2 rounded-full bg-accent"
-                style={{ animation: `bounce 0.5s ease ${delay}s infinite alternate` }}
-              />
-            ))}
+        {/* Step 2: Methods */}
+        <MethodCard className="mb-6">
+          <CardSection
+            title="Step 2: Choose Analysis Methods"
+            last
+            action={
+              <button
+                onClick={() =>
+                  setMethods(methods.length === METHODS.length ? [] : METHODS.map((m) => m.id))
+                }
+                className="text-xs text-accent hover:text-navy transition-colors shrink-0"
+              >
+                {methods.length === METHODS.length ? "Deselect all" : "Select all"}
+              </button>
+            }
+          >
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              {METHODS.map((m) => {
+                const selected = methods.includes(m.id);
+                return (
+                  <button
+                    key={m.id}
+                    onClick={() => toggleMethod(m.id)}
+                    className={`text-left p-3 rounded-xl border transition-colors btn-press ${
+                      selected
+                        ? "border-accent bg-accent-light/50 text-accent"
+                        : "border-border bg-surface text-gray hover:border-accent/30"
+                    }`}
+                  >
+                    <span className="text-lg block mb-1">{m.icon}</span>
+                    <span
+                      className={`text-xs font-semibold block ${selected ? "text-accent" : "text-navy"}`}
+                    >
+                      {m.name}
+                    </span>
+                    <span className="text-xs text-gray-light block mt-0.5">{m.source}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </CardSection>
+        </MethodCard>
+
+        {/* Step 3: Context */}
+        <MethodCard className="mb-6">
+          <CardSection
+            title={
+              <>
+                Step 3: Research Context <span className="text-gray-light font-normal">(optional)</span>
+              </>
+            }
+            last
+          >
+            <textarea
+              placeholder="What was the research question? Who are the participants? Any context that helps the analysis..."
+              value={context}
+              onChange={(e) => setContext(e.target.value)}
+              rows={3}
+              className="w-full border border-border rounded-lg px-4 py-3 text-sm text-navy bg-surface placeholder:text-gray-light outline-none focus:border-accent/40 transition-colors resize-y"
+            />
+          </CardSection>
+        </MethodCard>
+
+        <button
+          onClick={runAnalysis}
+          disabled={transcripts.length === 0 || methods.length === 0 || loading}
+          className="w-full bg-accent text-white py-4 rounded-xl text-sm font-semibold hover:bg-navy transition-colors disabled:opacity-40 disabled:cursor-not-allowed mb-6 btn-press"
+        >
+          {loading
+            ? "Analyzing transcripts..."
+            : `Run Analysis: ${methods.length} method${methods.length !== 1 ? "s" : ""} on ${transcripts.length} transcript${transcripts.length !== 1 ? "s" : ""}`}
+        </button>
+
+        {loading && (
+          <div className="bg-accent-light/30 border border-accent/10 rounded-xl p-6 text-center mb-6">
+            <div className="flex justify-center gap-1.5 mb-3">
+              {[0, 0.15, 0.3].map((delay, i) => (
+                <div
+                  key={i}
+                  className="w-2 h-2 rounded-full bg-accent"
+                  style={{ animation: `bounce 0.5s ease ${delay}s infinite alternate` }}
+                />
+              ))}
+            </div>
+            <p className="text-sm text-accent font-medium">
+              Running {methods.length} analysis methods across {transcripts.length} transcripts...
+            </p>
+            <p className="text-xs text-gray-light mt-1">This usually takes 30-60 seconds</p>
           </div>
-          <p className="text-sm text-accent font-medium">
-            Running {methods.length} analysis methods across {transcripts.length} transcripts...
-          </p>
-          <p className="text-xs text-gray-light mt-1">This usually takes 30-60 seconds</p>
-        </div>
-      )}
+        )}
 
-      {error && (
-        <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-6">
-          <p className="text-sm text-red-700">
-            The analysis did not complete. {error} Try again with fewer transcripts, or
-            email me if it keeps failing.
-          </p>
-        </div>
-      )}
+        {error && (
+          <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-6">
+            <p className="text-sm text-red-700">
+              The analysis did not complete. {error} Try again with fewer transcripts, or
+              email me if it keeps failing.
+            </p>
+          </div>
+        )}
 
-      {results && <ResultsView results={results} />}
+        {results && <ResultsView results={results} />}
+      </div>
 
       <style jsx>{`
         @keyframes bounce {
@@ -436,7 +483,7 @@ function ResultsView({ results }: { results: Results }) {
         <h2 className="text-2xl font-bold text-navy">Analysis Results</h2>
         <button
           onClick={exportJson}
-          className="border border-border text-navy px-4 py-2 rounded-lg text-sm font-medium hover:bg-lavender transition-colors"
+          className="border border-border text-navy px-4 py-2 rounded-lg text-sm font-medium hover:bg-lavender transition-colors btn-press"
         >
           Export JSON
         </button>
@@ -450,7 +497,7 @@ function ResultsView({ results }: { results: Results }) {
                 <div className="flex items-center gap-2 mb-2">
                   <h4 className="text-sm font-semibold text-navy font-sans">{theme.name}</h4>
                   <span
-                    className={`text-xs px-2 py-0.5 rounded-full ${
+                    className={`text-xs px-2.5 py-0.5 rounded-full ${
                       theme.confidence === "High"
                         ? "bg-emerald-100 text-emerald-700"
                         : theme.confidence === "Medium"
@@ -557,11 +604,11 @@ function ResultsView({ results }: { results: Results }) {
                 <p className="text-sm text-navy italic">&ldquo;{q.quote}&rdquo;</p>
                 <div className="flex gap-3 mt-1">
                   <span className="text-xs text-accent font-medium">{q.participant}</span>
-                  <span className="text-xs text-gray-light bg-tag-bg px-2 py-0.5 rounded">
+                  <span className="text-xs text-gray-light bg-tag-bg px-2.5 py-0.5 rounded-full">
                     {q.theme}
                   </span>
                   <span
-                    className={`text-xs px-2 py-0.5 rounded ${
+                    className={`text-xs px-2.5 py-0.5 rounded-full ${
                       q.sentiment === "positive"
                         ? "bg-emerald-50 text-emerald-600"
                         : q.sentiment === "negative"
@@ -624,7 +671,7 @@ function ResultsView({ results }: { results: Results }) {
             {results.gaps.gaps.map((g, i) => (
               <div key={i} className="flex items-start gap-3 bg-lavender/30 rounded-lg p-4">
                 <span
-                  className={`text-xs font-semibold px-2 py-0.5 rounded shrink-0 mt-0.5 ${
+                  className={`text-xs font-semibold px-2.5 py-0.5 rounded-full shrink-0 mt-0.5 ${
                     g.priority === "High"
                       ? "bg-red-100 text-red-700"
                       : g.priority === "Medium"
@@ -650,10 +697,10 @@ function ResultsView({ results }: { results: Results }) {
 function Section({ id, children }: { id: string; children: React.ReactNode }) {
   const meta = METHOD_META[id];
   return (
-    <div className="bg-surface border border-border rounded-xl overflow-hidden">
-      <div className="border-b border-border px-6 py-4 flex items-center gap-3">
+    <div className="rounded-xl border border-border bg-surface overflow-hidden">
+      <div className="border-b border-border px-6 py-3.5 flex items-center gap-3">
         <span className="text-xl">{meta.icon}</span>
-        <h3 className="text-sm font-semibold text-navy font-sans">{meta.name}</h3>
+        <h3 className="font-sans text-sm font-semibold text-navy">{meta.name}</h3>
       </div>
       <div className="p-6">{children}</div>
     </div>

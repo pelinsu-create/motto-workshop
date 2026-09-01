@@ -11,7 +11,7 @@ const work = [
     tilt: "-0.7deg",
     stick: "3deg",
     img: "/work/thumb-cargo-5.jpg",
-    anim: "/work/anim-cargo.gif",
+    anim: "/work/anim-cargo.mp4",
     imgAlt: "Pastel 3D illustration of an air cargo scene with a plane and freight containers",
     tag: "Product Design · Design Systems · Shipped",
     title: "Designing logistics products people are paid to use",
@@ -24,7 +24,7 @@ const work = [
     tilt: "0.5deg",
     stick: "-2.5deg",
     img: "/work/thumb-liz-5.jpg",
-    anim: "/work/anim-liz.gif",
+    anim: "/work/anim-liz.mp4",
     imgAlt: "Pastel 3D illustration of a hybrid office room with desks and a meeting booth",
     tag: "Product Design · Enterprise SaaS · Shipped",
     title: "Simplifying hybrid working, from booking to admin insights",
@@ -37,7 +37,7 @@ const work = [
     tilt: "-0.4deg",
     stick: "2.5deg",
     img: "/work/thumb-fluffy-5.jpg",
-    anim: "/work/anim-fluffy.gif",
+    anim: "/work/anim-fluffy.mp4",
     imgAlt: "Pastel 3D illustration of a cat on a climbing tree, from the Fluffy Score app",
     tag: "AI Product · End to End · Shipped",
     title: "Fluffy Score: an AI home assessment tool",
@@ -50,7 +50,7 @@ const work = [
     tilt: "0.6deg",
     stick: "-3deg",
     img: "/work/thumb-stakeholder-2.jpg",
-    anim: "/work/anim-stakeholder.gif",
+    anim: "/work/anim-stakeholder.mp4",
     imgAlt: "Pastel 3D illustration of wind turbines and solar panels connected by a network",
     tag: "Research · Systems Mapping",
     title: "87 stakeholders, three company types, one map",
@@ -63,7 +63,7 @@ const work = [
     tilt: "-0.5deg",
     stick: "2deg",
     img: "/work/thumb-workshop-2.jpg",
-    anim: "/work/anim-workshop.gif",
+    anim: "/work/anim-workshop.mp4",
     imgAlt: "Pastel 3D illustration of a workshop room with a sticky note wall and round table",
     tag: "Facilitation · Workshop Design",
     title: "Getting a room ready in the first twenty minutes",
@@ -284,9 +284,14 @@ export default function Home() {
               style={{ "--tilt": "-0.6deg" } as CSSProperties}
             >
             <span className="tape" aria-hidden="true" />
-            <div className="flex h-36 items-center justify-center bg-white/55 m-4 mb-0 rounded-lg">
-              <span className="text-6xl" role="img" aria-label="Puzzle piece">&#129513;</span>
-            </div>
+            <Image
+              src="/work/icon-sprint.jpg"
+              alt="Pastel 3D puzzle piece icon"
+              width={800}
+              height={800}
+              className="h-36 object-cover m-4 mb-0 rounded-lg"
+              style={{ width: "calc(100% - 2rem)" }}
+            />
             <div className="flex flex-col flex-1 p-6">
               <h3 className="text-xl text-navy mb-2">Research Sprint</h3>
               <p className="text-sm text-gray leading-relaxed mb-5 flex-1">
@@ -317,9 +322,14 @@ export default function Home() {
                 style={{ "--tilt": "0.8deg" } as CSSProperties}
               >
                 <span className="tape tape-pink" aria-hidden="true" />
-                <div className="flex h-36 items-center justify-center bg-white/55 m-4 mb-0 rounded-lg">
-                  <span className="text-6xl" role="img" aria-label="Balance scale">&#9878;&#65039;</span>
-                </div>
+                <Image
+                  src="/work/icon-bias.jpg"
+                  alt="Pastel 3D balance scale icon"
+                  width={800}
+                  height={800}
+                  className="h-36 object-cover m-4 mb-0 rounded-lg"
+                  style={{ width: "calc(100% - 2rem)" }}
+                />
                 <div className="flex flex-col flex-1 p-6">
                   <h3 className="text-xl text-navy mb-2">Bias Checker</h3>
                   <p className="text-sm text-gray leading-relaxed mb-5 flex-1">

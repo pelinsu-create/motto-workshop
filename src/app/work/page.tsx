@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Reveal from "../reveal";
 import HoverGif from "../hover-gif";
 import { caveat } from "../notebook-font";
@@ -15,7 +16,7 @@ const projects = [
   {
     href: "/work/turkish-airlines",
     img: "/work/thumb-cargo-5.jpg",
-    anim: "/work/anim-cargo.gif",
+    anim: "/work/anim-cargo.mp4",
     imgAlt: "Pastel 3D illustration of an air cargo scene where a small plane takes off past freight containers",
     tag: "Product Design · Design Systems · Shipped",
     title: "Designing logistics products people are paid to use",
@@ -30,7 +31,7 @@ const projects = [
   {
     href: "/work/liz-smart-office",
     img: "/work/thumb-liz-5.jpg",
-    anim: "/work/anim-liz.gif",
+    anim: "/work/anim-liz.mp4",
     imgAlt: "Pastel 3D illustration of a hybrid office room with desks and a meeting booth",
     tag: "Product Design · Enterprise SaaS · Shipped",
     title: "Simplifying hybrid working, from booking to admin insights",
@@ -45,7 +46,7 @@ const projects = [
   {
     href: "/case-studies/fluffy-score",
     img: "/work/thumb-fluffy-5.jpg",
-    anim: "/work/anim-fluffy.gif",
+    anim: "/work/anim-fluffy.mp4",
     imgAlt: "Pastel 3D illustration of a kitten hopping around a climbing tree, from the Fluffy Score app",
     tag: "AI Product · End to End · Shipped",
     title: "Fluffy Score: an AI home assessment tool",
@@ -60,7 +61,7 @@ const projects = [
   {
     href: "/work/stakeholder-map",
     img: "/work/thumb-stakeholder-2.jpg",
-    anim: "/work/anim-stakeholder.gif",
+    anim: "/work/anim-stakeholder.mp4",
     imgAlt: "Pastel 3D illustration of spinning wind turbines and solar panels connected by a network",
     tag: "Research · Systems Mapping",
     title: "87 stakeholders, three company types, one map",
@@ -75,7 +76,7 @@ const projects = [
   {
     href: "/work/soft-start",
     img: "/work/thumb-workshop-2.jpg",
-    anim: "/work/anim-workshop.gif",
+    anim: "/work/anim-workshop.mp4",
     imgAlt: "Pastel 3D illustration of a workshop room with a sticky note wall and round table",
     tag: "Facilitation · Workshop Design",
     title: "Getting a room ready in the first twenty minutes",
@@ -92,8 +93,8 @@ const projects = [
 const tools = [
   {
     href: "/bias-check",
-    icon: "⚖️",
-    iconAlt: "Balance scale",
+    img: "/work/icon-bias.jpg",
+    imgAlt: "Pastel 3D balance scale icon",
     tint: "bg-note-mint",
     tilt: "-0.8deg",
     title: "Bias Checker",
@@ -102,8 +103,8 @@ const tools = [
   },
   {
     href: "/lab",
-    icon: "\u{1F3B2}",
-    iconAlt: "Game die",
+    img: "/work/icon-lab.jpg",
+    imgAlt: "Pastel 3D game die icon",
     tint: "bg-note-peach",
     tilt: "0.7deg",
     title: "Activity Lab",
@@ -112,8 +113,8 @@ const tools = [
   },
   {
     href: "/xyz",
-    icon: "\u{1F3AF}",
-    iconAlt: "Target with arrow",
+    img: "/work/icon-xyz.jpg",
+    imgAlt: "Pastel 3D target with arrow icon",
     tint: "bg-note-lavender",
     tilt: "-0.6deg",
     title: "XYZ Hypothesis Builder",
@@ -209,9 +210,13 @@ export default function Work() {
                     className={i % 2 === 0 ? "tape" : "tape tape-pink"}
                     aria-hidden="true"
                   />
-                  <div className="flex h-36 items-center justify-center rounded-lg bg-white/55 mb-4">
-                    <span className="text-6xl" role="img" aria-label={t.iconAlt}>{t.icon}</span>
-                  </div>
+                  <Image
+                    src={t.img}
+                    alt={t.imgAlt}
+                    width={800}
+                    height={800}
+                    className="w-full h-36 object-cover rounded-lg mb-4"
+                  />
                   <h3 className="text-lg text-navy mb-1 group-hover:text-accent transition-colors">
                     {t.title} <span className="arrow-nudge" aria-hidden="true">&rarr;</span>
                   </h3>
@@ -229,9 +234,13 @@ export default function Work() {
                     className={i % 2 === 0 ? "tape" : "tape tape-pink"}
                     aria-hidden="true"
                   />
-                  <div className="flex h-36 items-center justify-center rounded-lg bg-white/55 mb-4">
-                    <span className="text-6xl" role="img" aria-label={t.iconAlt}>{t.icon}</span>
-                  </div>
+                  <Image
+                    src={t.img}
+                    alt={t.imgAlt}
+                    width={800}
+                    height={800}
+                    className="w-full h-36 object-cover rounded-lg mb-4"
+                  />
                   <h3 className="text-lg text-navy mb-1 group-hover:text-accent transition-colors">
                     {t.title}
                   </h3>

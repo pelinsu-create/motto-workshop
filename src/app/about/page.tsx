@@ -132,10 +132,10 @@ export default function About() {
             <div className="polaroid shrink-0" style={{ "--tilt": "-2.4deg" } as CSSProperties}>
               <span className="tape tape-pink" aria-hidden="true" />
               <Image
-                src="/pelinsu.jpg"
-                alt="Portrait of Pelinsu Pelit"
-                width={192}
-                height={192}
+                src="/pelinsu-journey.jpg"
+                alt="Pelinsu Pelit in the desert at sunset"
+                width={480}
+                height={480}
                 className="w-20 h-20 md:w-24 md:h-24 object-cover"
               />
             </div>

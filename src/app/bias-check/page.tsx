@@ -1,6 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import {
+  MethodCard,
+  CardVisual,
+  CardTitle,
+  CardTags,
+  CardBody,
+  CardTip,
+  CardSection,
+} from "../method-card";
 
 type InstrumentType = "interview" | "survey" | "screener" | "usability";
 type Severity = "blocker" | "warning" | "info";
@@ -99,121 +108,147 @@ export default function BiasCheck() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-12">
-      <p className="section-label mb-3">Bias Checker</p>
-      <h1 className="text-3xl font-bold text-navy mb-2">
-        Check your questions before you ask them
-      </h1>
-      <p className="text-gray mb-10">
-        Paste a discussion guide, survey, screener or usability test tasks. Every
-        question gets checked against 20 UX research biases: leading wording, double
-        questions, opinion traps, recall problems. You get findings by severity and a
-        minimal rewrite for each.
-      </p>
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+      {/* The tool sits on the same dot-grid journal spread as /work */}
+      <div className="notebook-page relative px-5 sm:px-8 md:px-12 pt-14 pb-12">
+        <span className="tape-corner tape-corner-tl" aria-hidden="true" />
+        <span className="tape-corner tape-corner-tr" aria-hidden="true" />
 
-      {/* Instrument type */}
-      <div className="bg-surface border border-border rounded-xl p-6 mb-6">
-        <h2 className="text-sm font-semibold text-navy font-sans mb-4">
-          What are you checking?
-        </h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          {INSTRUMENT_TYPES.map((t) => {
-            const selected = instrumentType === t.id;
-            return (
-              <button
-                key={t.id}
-                onClick={() => setInstrumentType(t.id)}
-                className={`p-3 rounded-xl border text-sm font-medium btn-press ${
-                  selected
-                    ? "border-accent bg-accent-light/50 text-accent"
-                    : "border-border bg-surface text-gray hover:border-accent/30 hover:bg-lavender/40"
-                }`}
-              >
-                {t.label}
-              </button>
-            );
-          })}
-        </div>
-      </div>
+        {/* The tool introduces itself as a card from the methods handbook */}
+        <MethodCard className="mb-8 fade-rise">
+          <CardVisual bg="bg-note-mint" className="h-28">
+            <img
+              src="/work/icon-bias.jpg"
+              alt=""
+              className="h-full w-full object-cover"
+            />
+          </CardVisual>
+          <CardTitle as="h1" kicker="Bias Checker">
+            Check your questions before you ask them
+          </CardTitle>
+          <CardTags
+            tags={[
+              { label: "Pre-fieldwork", tone: "accent" },
+              { label: "20 biases", tone: "navy" },
+              { label: "Minimal rewrites", tone: "mustard" },
+            ]}
+          />
+          <CardBody className="text-sm text-gray leading-relaxed">
+            Paste a discussion guide, survey, screener or usability test tasks. Every
+            question gets checked against 20 UX research biases: leading wording, double
+            questions, opinion traps, recall problems. You get findings by severity and a
+            minimal rewrite for each.
+          </CardBody>
+          <CardTip label="Paste the whole thing.">
+            intro and probes included. The checker reads around them and focuses on the
+            questions.
+          </CardTip>
+        </MethodCard>
 
-      {/* Questions */}
-      <div className="bg-surface border border-border rounded-xl p-6 mb-6">
-        <h2 className="text-sm font-semibold text-navy font-sans mb-3">Your questions</h2>
-        <textarea
-          placeholder="Paste the whole thing, intro and probes included. The checker reads around them and focuses on the questions."
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          rows={12}
-          className="w-full border border-border rounded-lg px-4 py-3 text-sm text-navy bg-surface placeholder:text-gray-light outline-none focus:border-accent/40 transition-colors resize-y font-mono"
-        />
-      </div>
+        {/* The form sits in ruled sections of one card */}
+        <MethodCard className="mb-6">
+          <CardSection title="What are you checking?">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {INSTRUMENT_TYPES.map((t) => {
+                const selected = instrumentType === t.id;
+                return (
+                  <button
+                    key={t.id}
+                    onClick={() => setInstrumentType(t.id)}
+                    className={`p-3 rounded-xl border text-sm font-medium btn-press ${
+                      selected
+                        ? "border-accent bg-accent-light/50 text-accent"
+                        : "border-border bg-surface text-gray hover:border-accent/30 hover:bg-lavender/40"
+                    }`}
+                  >
+                    {t.label}
+                  </button>
+                );
+              })}
+            </div>
+          </CardSection>
+          <CardSection title="Your questions" last>
+            <textarea
+              placeholder="Paste the whole thing, intro and probes included. The checker reads around them and focuses on the questions."
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+              rows={12}
+              className="w-full border border-border rounded-lg px-4 py-3 text-sm text-navy bg-surface placeholder:text-gray-light outline-none focus:border-accent/40 transition-colors resize-y font-mono"
+            />
+          </CardSection>
+        </MethodCard>
 
-      <button
-        onClick={runCheck}
-        disabled={!text.trim() || loading}
-        className="w-full bg-accent text-white py-4 rounded-xl text-sm font-semibold hover:bg-navy btn-press disabled:opacity-40 disabled:cursor-not-allowed mb-6"
-      >
-        Check my questions
-      </button>
+        <button
+          onClick={runCheck}
+          disabled={!text.trim() || loading}
+          className="w-full bg-accent text-white py-4 rounded-xl text-sm font-semibold hover:bg-navy btn-press disabled:opacity-40 disabled:cursor-not-allowed mb-6"
+        >
+          Check my questions
+        </button>
 
-      {loading && (
-        <div className="bg-accent-light/30 border border-accent/10 rounded-xl p-6 text-center mb-6">
-          <div className="flex justify-center gap-1.5 mb-3">
-            {[0, 0.15, 0.3].map((delay, i) => (
-              <div
-                key={i}
-                className="w-2 h-2 rounded-full bg-accent"
-                style={{ animation: `bounce 0.5s ease ${delay}s infinite alternate` }}
-              />
-            ))}
+        {loading && (
+          <div className="bg-accent-light/30 border border-accent/10 rounded-xl p-6 text-center mb-6">
+            <div className="flex justify-center gap-1.5 mb-3">
+              {[0, 0.15, 0.3].map((delay, i) => (
+                <div
+                  key={i}
+                  className="w-2 h-2 rounded-full bg-accent"
+                  style={{ animation: `bounce 0.5s ease ${delay}s infinite alternate` }}
+                />
+              ))}
+            </div>
+            <p className="text-sm text-accent font-medium">
+              Reading your questions against 20 biases...
+            </p>
+            <p className="text-xs text-gray-light mt-1">This usually takes under a minute</p>
           </div>
-          <p className="text-sm text-accent font-medium">
-            Reading your questions against 20 biases...
-          </p>
-          <p className="text-xs text-gray-light mt-1">This usually takes under a minute</p>
-        </div>
-      )}
+        )}
 
-      {error && (
-        <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-6">
-          <p className="text-sm text-red-700">
-            The check did not complete. Try again, or email me if it keeps failing.
-          </p>
-        </div>
-      )}
+        {error && (
+          <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-6">
+            <p className="text-sm text-red-700">
+              The check did not complete. Try again, or email me if it keeps failing.
+            </p>
+          </div>
+        )}
 
-      {!loading && !error && !results && (
-        <div className="border-2 border-dashed border-border rounded-xl p-10 text-center mb-6">
-          <p className="text-sm text-gray">
-            Your report appears here. Paste your questions above and run the check.
-          </p>
-        </div>
-      )}
+        {!loading && !error && !results && (
+          <div className="border-2 border-dashed border-border rounded-xl p-10 text-center mb-6">
+            <p className="text-sm text-gray">
+              Your report appears here. Paste your questions above and run the check.
+            </p>
+          </div>
+        )}
 
-      {results && <ResultsView results={results} />}
+        {results && <ResultsView results={results} />}
 
-      <p className="text-xs text-gray-light text-center mt-8 mb-12">
-        Nothing is stored. Your text is analyzed, the report is generated, and the text
-        is discarded.
-      </p>
+        <p className="text-xs text-gray-light text-center mt-8 mb-12">
+          Nothing is stored. Your text is analyzed, the report is generated, and the text
+          is discarded.
+        </p>
 
-      {/* How it works */}
-      <div className="bg-surface border border-border rounded-xl p-6">
-        <h2 className="text-sm font-semibold text-navy font-sans mb-4">How it works</h2>
-        <ol className="space-y-3">
-          {[
-            "Paste your guide, survey, screener or test tasks before fieldwork.",
-            "Each question is checked against 20 UX research biases and common question mistakes: leading wording, double questions, asking people to predict their own behavior, screeners that give away the right answer.",
-            "You get a verdict, findings grouped by severity, and a minimal rewrite for each problem that keeps your voice.",
-          ].map((step, i) => (
-            <li key={i} className="flex gap-3 text-sm text-gray">
-              <span className="text-xs font-semibold text-accent bg-accent-light px-2 py-0.5 rounded shrink-0 mt-0.5">
-                {i + 1}
-              </span>
-              {step}
-            </li>
-          ))}
-        </ol>
+        {/* How it works */}
+        <MethodCard>
+          <CardSection title="How it works" last>
+            <ol className="space-y-3">
+              {[
+                "Paste your guide, survey, screener or test tasks before fieldwork.",
+                "Each question is checked against 20 UX research biases and common question mistakes: leading wording, double questions, asking people to predict their own behavior, screeners that give away the right answer.",
+                "You get a verdict, findings grouped by severity, and a minimal rewrite for each problem that keeps your voice.",
+              ].map((step, i) => (
+                <li key={i} className="flex gap-3 text-sm text-gray">
+                  <span className="text-xs font-semibold text-accent bg-accent-light px-2 py-0.5 rounded-full shrink-0 mt-0.5">
+                    {i + 1}
+                  </span>
+                  {step}
+                </li>
+              ))}
+            </ol>
+          </CardSection>
+          <CardTip label="Run it twice." tint="bg-note-lavender">
+            fix the blockers, then check the fixed guide once more before fieldwork.
+          </CardTip>
+        </MethodCard>
       </div>
 
       <style jsx>{`
@@ -250,24 +285,22 @@ function ResultsView({ results }: { results: Results }) {
       {groups.map((group, gi) => (
         <div
           key={group.severity}
-          className="bg-surface border border-border rounded-xl overflow-hidden fade-rise"
+          className="fade-rise"
           style={{ animationDelay: `${120 + gi * 90}ms` }}
         >
-          <div className="border-b border-border px-6 py-4">
-            <h3 className="text-sm font-semibold text-navy font-sans">
-              {group.heading}
-            </h3>
-            <p className="text-xs text-gray mt-0.5">{group.explainer}</p>
-          </div>
-          <div className="p-6 space-y-4">
-            {group.findings.map((f, i) => (
-              <FindingCard
-                key={i}
-                finding={f}
-                delay={120 + gi * 90 + Math.min(i, 5) * 60}
-              />
-            ))}
-          </div>
+          <MethodCard>
+            <CardSection title={group.heading} hint={group.explainer} last>
+              <div className="space-y-4">
+                {group.findings.map((f, i) => (
+                  <FindingCard
+                    key={i}
+                    finding={f}
+                    delay={120 + gi * 90 + Math.min(i, 5) * 60}
+                  />
+                ))}
+              </div>
+            </CardSection>
+          </MethodCard>
         </div>
       ))}
 
@@ -286,28 +319,23 @@ function ResultsView({ results }: { results: Results }) {
       )}
 
       {results.goodPractices && results.goodPractices.length > 0 && (
-        <div
-          className="bg-surface border border-border rounded-xl overflow-hidden fade-rise"
-          style={{ animationDelay: `${tailDelay + 60}ms` }}
-        >
-          <div className="border-b border-border px-6 py-4">
-            <h3 className="text-sm font-semibold text-navy font-sans">
-              What your guide already does well
-            </h3>
-            <p className="text-xs text-gray mt-0.5">
-              Kept so you do not accidentally rewrite the good parts.
-            </p>
-          </div>
-          <div className="p-6">
-            <ul className="space-y-2">
-              {results.goodPractices.map((practice, i) => (
-                <li key={i} className="text-sm text-gray flex gap-2">
-                  <span className="text-emerald-600 shrink-0">✓</span>
-                  {practice}
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="fade-rise" style={{ animationDelay: `${tailDelay + 60}ms` }}>
+          <MethodCard>
+            <CardSection
+              title="What your guide already does well"
+              hint="Kept so you do not accidentally rewrite the good parts."
+              last
+            >
+              <ul className="space-y-2">
+                {results.goodPractices.map((practice, i) => (
+                  <li key={i} className="text-sm text-gray flex gap-2">
+                    <span className="text-emerald-600 shrink-0">✓</span>
+                    {practice}
+                  </li>
+                ))}
+              </ul>
+            </CardSection>
+          </MethodCard>
         </div>
       )}
     </div>
@@ -321,7 +349,7 @@ function FindingCard({ finding, delay = 0 }: { finding: Finding; delay?: number 
       style={{ animationDelay: `${delay}ms` }}
     >
       <div className="flex items-center gap-2 mb-2 flex-wrap">
-        <span className={`text-xs font-semibold px-2 py-0.5 rounded ${SEVERITY_BADGE[finding.severity]}`}>
+        <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full ${SEVERITY_BADGE[finding.severity]}`}>
           {finding.ruleId}
         </span>
         <span className="text-xs font-medium text-accent">{finding.bias}</span>
@@ -329,7 +357,7 @@ function FindingCard({ finding, delay = 0 }: { finding: Finding; delay?: number 
           <span className="text-xs text-gray-light">{finding.section}</span>
         )}
         <span
-          className={`text-xs px-2 py-0.5 rounded ml-auto ${
+          className={`text-xs px-2.5 py-0.5 rounded-full ml-auto ${
             CONFIDENCE_BADGE[finding.confidence] || CONFIDENCE_BADGE.low
           }`}
         >

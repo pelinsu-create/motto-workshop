@@ -1,6 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import type { CSSProperties } from "react";
+import { caveat } from "../notebook-font";
+import { MethodCard, CardTitle, CardBody, Pill, type PillTone } from "../method-card";
 
 /* ------------------------------------------------------------------ */
 /* Hallucination Hunter: curated rounds, no API. The fake claims are  */
@@ -139,7 +142,7 @@ function HallucinationHunter() {
       {!revealed ? (
         <button
           onClick={() => setRevealed(true)}
-          className="bg-accent text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-navy transition-colors"
+          className="bg-accent text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-navy transition-colors btn-press"
         >
           Check my answers
         </button>
@@ -154,14 +157,14 @@ function HallucinationHunter() {
           {round < ROUNDS.length - 1 ? (
             <button
               onClick={() => reset(round + 1)}
-              className="border border-border text-navy px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-lavender transition-colors"
+              className="border border-border text-navy px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-lavender transition-colors btn-press"
             >
               Next round
             </button>
           ) : (
             <button
               onClick={() => reset(0)}
-              className="border border-border text-navy px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-lavender transition-colors"
+              className="border border-border text-navy px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-lavender transition-colors btn-press"
             >
               Play again
             </button>
@@ -228,7 +231,7 @@ function BadIdeaBingo() {
       <button
         onClick={play}
         disabled={loading || challenge.trim().length < 8}
-        className="bg-accent text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-navy transition-colors disabled:opacity-50"
+        className="bg-accent text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-navy transition-colors disabled:opacity-50 btn-press"
       >
         {loading ? "Dealing nine ideas..." : data ? "New round" : "Deal nine ideas"}
       </button>
@@ -342,7 +345,7 @@ function HatRoulette() {
       <button
         onClick={play}
         disabled={loading || challenge.trim().length < 8}
-        className="bg-accent text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-navy transition-colors disabled:opacity-50"
+        className="bg-accent text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-navy transition-colors disabled:opacity-50 btn-press"
       >
         {loading ? "Spinning three hats..." : data ? "Spin again" : "Spin three hats"}
       </button>
@@ -354,15 +357,19 @@ function HatRoulette() {
       {data && (
         <div className="grid md:grid-cols-3 gap-4 mt-6">
           {data.hats.map((hat, i) => (
-            <div key={i} className="bg-surface border border-border rounded-xl p-5">
-              <p className="text-xs font-semibold text-accent uppercase tracking-wider mb-2">
-                {hat.role}
-              </p>
-              <p className="text-sm text-navy leading-relaxed mb-3">{hat.reaction}</p>
-              <p className="text-sm text-gray leading-relaxed">
-                <span className="font-semibold text-navy">Their question: </span>
-                {hat.question}
-              </p>
+            <div key={i} className="rounded-xl border border-border bg-surface overflow-hidden">
+              <div className="border-b border-border px-4 py-2.5">
+                <p className="text-xs font-semibold text-accent uppercase tracking-wider">
+                  {hat.role}
+                </p>
+              </div>
+              <div className="p-4">
+                <p className="text-sm text-navy leading-relaxed mb-3">{hat.reaction}</p>
+                <p className="text-sm text-gray leading-relaxed">
+                  <span className="font-semibold text-navy">Their question: </span>
+                  {hat.question}
+                </p>
+              </div>
             </div>
           ))}
         </div>
@@ -372,80 +379,178 @@ function HatRoulette() {
 }
 
 /* ------------------------------------------------------------------ */
+/* The three games as method cards from the handbook, dressed as the  */
+/* site's taped notes: visual panel, title band, pill tags, body, and */
+/* a TIP footer, each card tilted slightly on the notebook spread.    */
+/* ------------------------------------------------------------------ */
 
-const GAMES = [
+type Game = {
+  id: string;
+  name: string;
+  kicker: string;
+  blurb: string;
+  panel: string;
+  icon: string;
+  iconAlt: string;
+  tilt: string;
+  tags: { label: string; tone: PillTone }[];
+  tipLabel: string;
+  tipText: string;
+};
+
+const GAMES: Game[] = [
   {
     id: "hunter",
     name: "Hallucination Hunter",
-    tag: "Verification",
+    kicker: "Verification",
     blurb: "Eight research claims. Some are fabricated. See how many you can spot.",
+    panel: "bg-accent-light",
+    icon: "\u{1F50D}",
+    iconAlt: "Magnifying glass",
+    tilt: "-0.8deg",
+    tags: [
+      { label: "Verification", tone: "accent" },
+      { label: "Speedy", tone: "mustard" },
+      { label: "Solo-friendly", tone: "navy" },
+    ],
+    tipLabel: "Check before you cite.",
+    tipText: "one search settles what a debate cannot.",
   },
   {
     id: "bingo",
     name: "Bad Idea Bingo",
-    tag: "Critique",
+    kicker: "Critique",
     blurb: "Nine solutions to your challenge. One gem, one trap. Find the gem.",
+    panel: "bg-note-cream",
+    icon: "\u{1F48E}",
+    iconAlt: "Gem stone",
+    tilt: "0.6deg",
+    tags: [
+      { label: "Critique", tone: "rose" },
+      { label: "Playful", tone: "mustard" },
+      { label: "AI-powered", tone: "accent" },
+    ],
+    tipLabel: "Argue for the gem.",
+    tipText: "saying why an idea wins teaches more than picking it.",
   },
   {
     id: "hats",
     name: "Hat Roulette",
-    tag: "Perspective",
+    kicker: "Perspective",
     blurb: "Three stakeholders react honestly to a decision you are about to make.",
+    panel: "bg-[#fbdde9]",
+    icon: "\u{1F3A9}",
+    iconAlt: "Top hat",
+    tilt: "-0.5deg",
+    tags: [
+      { label: "Perspective", tone: "navy" },
+      { label: "Customisable", tone: "mustard" },
+      { label: "AI-powered", tone: "accent" },
+    ],
+    tipLabel: "Invite the missing voice.",
+    tipText: "take the hardest question back to the real stakeholder.",
   },
 ];
 
 export default function Games() {
   const [active, setActive] = useState("hunter");
+  const activeGame = GAMES.find((g) => g.id === active) ?? GAMES[0];
 
   return (
-    <div className="max-w-3xl mx-auto px-6">
-      <section className="py-20 md:py-28">
-        <p className="section-label mb-4">Workshop Games</p>
-        <h1 className="text-4xl md:text-5xl font-semibold text-navy leading-tight mb-6">
-          Games from the workshop
-        </h1>
-        <p className="text-lg text-gray max-w-2xl leading-relaxed">
-          I built these for Motto Workshop sessions, but you can play them here on
-          their own. No account needed.
-        </p>
-      </section>
+    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+      {/* The page reads as one dot-grid journal spread, taped down at the
+          top corners, with the game cards laid onto it like taped notes. */}
+      <div className="notebook-page relative px-5 sm:px-8 md:px-12">
+        <span className="tape-corner tape-corner-tl" aria-hidden="true" />
+        <span className="tape-corner tape-corner-tr" aria-hidden="true" />
 
-      <div className="flex flex-wrap gap-3 mb-10">
-        {GAMES.map((g) => (
-          <button
-            key={g.id}
-            onClick={() => setActive(g.id)}
-            aria-pressed={active === g.id}
-            className={`text-left p-4 rounded-xl border flex-1 min-w-[200px] transition-colors cursor-pointer ${
-              active === g.id
-                ? "border-accent bg-accent-light"
-                : "border-border bg-surface hover:border-accent"
-            }`}
+        <section className="pt-14 pb-12 md:pt-20">
+          <p className="section-label mb-4 fade-rise">Workshop Games</p>
+          <h1
+            className={`${caveat.className} notebook-heading font-semibold text-4xl md:text-5xl text-navy leading-tight mb-6 fade-rise`}
+            style={{ animationDelay: "70ms" }}
           >
-            <p className="text-xs font-semibold text-accent uppercase tracking-wider mb-1">
-              {g.tag}
-            </p>
-            <p className="text-navy font-semibold mb-1">{g.name}</p>
-            <p className="text-xs text-gray leading-relaxed">{g.blurb}</p>
-          </button>
-        ))}
+            Games from the workshop
+          </h1>
+          <p
+            className="text-lg text-gray max-w-2xl leading-relaxed fade-rise"
+            style={{ animationDelay: "140ms" }}
+          >
+            I built these for Motto Workshop sessions, but you can play them here on
+            their own. No account needed. Pick a card.
+          </p>
+        </section>
+
+        {/* Method-card deck: three taped notes, one per game */}
+        <div className="grid gap-6 sm:grid-cols-3 mb-10 pt-3">
+          {GAMES.map((g, i) => (
+            <button
+              key={g.id}
+              onClick={() => setActive(g.id)}
+              aria-pressed={active === g.id}
+              className={`note card-lift btn-press relative flex flex-col text-left cursor-pointer bg-surface ${
+                active === g.id ? "ring-2 ring-accent" : ""
+              }`}
+              style={{ "--tilt": g.tilt } as CSSProperties}
+            >
+              <span
+                className={i % 2 === 0 ? "tape" : "tape tape-pink"}
+                aria-hidden="true"
+              />
+              <span
+                className={`flex h-20 items-center justify-center rounded-t-[4px] border-b border-border ${g.panel}`}
+                aria-hidden="true"
+              >
+                <span className="text-4xl">{g.icon}</span>
+              </span>
+              <span className="block border-b border-border px-4 py-2.5">
+                <span className="block font-serif text-lg leading-snug text-navy">
+                  {g.name}
+                </span>
+              </span>
+              <span className="flex flex-wrap gap-1.5 border-b border-border px-4 py-2.5">
+                {g.tags.map((t) => (
+                  <Pill key={t.label} tone={t.tone}>
+                    {t.label}
+                  </Pill>
+                ))}
+              </span>
+              <span className="block flex-1 px-4 py-3 text-xs leading-relaxed text-gray">
+                {g.blurb}
+              </span>
+              <span className="block rounded-b-[4px] border-t border-border bg-note-cream px-4 py-2.5 text-xs leading-relaxed text-navy">
+                <span className="font-bold">TIP: </span>
+                <span className="font-medium italic">{g.tipLabel} </span>
+                <span className="text-navy/80">{g.tipText}</span>
+              </span>
+            </button>
+          ))}
+        </div>
+
+        {/* The chosen card, opened to its full page */}
+        <section className="pb-6">
+          <MethodCard>
+            <CardTitle kicker={`Now playing: ${activeGame.kicker}`}>
+              {activeGame.name}
+            </CardTitle>
+            <CardBody>
+              {active === "hunter" && <HallucinationHunter />}
+              {active === "bingo" && <BadIdeaBingo />}
+              {active === "hats" && <HatRoulette />}
+            </CardBody>
+          </MethodCard>
+        </section>
+
+        <section className="pt-8 pb-14 doodle-divider">
+          <p className="text-gray leading-relaxed max-w-2xl">
+            In the workshop we play these against your own project and discuss the
+            answers as a group, which is where most of the value is.{" "}
+            <a href="/workshop" className="text-accent font-medium hover:text-navy transition-colors">
+              About the workshop
+            </a>
+          </p>
+        </section>
       </div>
-
-      <section className="pb-16">
-        {active === "hunter" && <HallucinationHunter />}
-        {active === "bingo" && <BadIdeaBingo />}
-        {active === "hats" && <HatRoulette />}
-      </section>
-
-      <section className="py-12 border-t border-border mb-16">
-        <p className="text-gray leading-relaxed max-w-2xl">
-          In the workshop we play these against your own project and discuss the
-          answers as a group, which is where most of the value is.{" "}
-          <a href="/workshop" className="text-accent font-medium hover:text-navy transition-colors">
-            About the workshop
-          </a>
-        </p>
-      </section>
     </div>
   );
 }
