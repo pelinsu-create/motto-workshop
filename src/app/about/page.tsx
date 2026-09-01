@@ -157,7 +157,7 @@ export default function About() {
             className="text-base text-gray leading-relaxed mb-4 max-w-2xl fade-rise"
             style={{ animationDelay: "180ms" }}
           >
-            I trained as an industrial designer. Right now I am working on mental models,
+            Right now I am working on mental models,
             archetypes and decision-making frameworks, and on where AI fits into research
             and co-creation work. I am careful about which parts I hand over to it.
           </p>

@@ -15,7 +15,7 @@ const work = [
     img: "/work/thumb-cargo-5.jpg",
     anim: "/work/anim-cargo.mp4",
     imgAlt: "Pastel 3D illustration of an air cargo scene with a plane and freight containers",
-    tag: "Product Design · Design Systems · Shipped",
+    tag: "Product Design",
     title: "Designing logistics products people are paid to use",
     year: "2025 to 2026",
     blurb:
@@ -28,7 +28,7 @@ const work = [
     img: "/work/thumb-liz-5.jpg",
     anim: "/work/anim-liz.mp4",
     imgAlt: "Pastel 3D illustration of a hybrid office room with desks and a meeting booth",
-    tag: "Product Design · Enterprise SaaS · Shipped",
+    tag: "Enterprise SaaS",
     title: "Simplifying hybrid working, from booking to admin insights",
     year: "2021 to 2022",
     blurb:
@@ -41,7 +41,7 @@ const work = [
     img: "/work/thumb-fluffy-5.jpg",
     anim: "/work/anim-fluffy.mp4",
     imgAlt: "Pastel 3D illustration of a cat on a climbing tree, from the Fluffy Score app",
-    tag: "AI Product · End to End · Shipped",
+    tag: "AI Product",
     title: "Fluffy Score: an AI home assessment tool",
     year: "2026",
     blurb:
@@ -54,7 +54,7 @@ const work = [
     img: "/work/thumb-stakeholder-2.jpg",
     anim: "/work/anim-stakeholder.mp4",
     imgAlt: "Pastel 3D illustration of wind turbines and solar panels connected by a network",
-    tag: "Research · Systems Mapping",
+    tag: "Research",
     title: "87 stakeholders, three company types, one map",
     year: "2025 to 2026",
     blurb:
@@ -67,7 +67,7 @@ const work = [
     img: "/work/thumb-workshop-2.jpg",
     anim: "/work/anim-workshop.mp4",
     imgAlt: "Pastel 3D illustration of a workshop room with a sticky note wall and round table",
-    tag: "Facilitation · Workshop Design",
+    tag: "Facilitation",
     title: "Getting a room ready in the first twenty minutes",
     year: "2024",
     blurb:
