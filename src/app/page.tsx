@@ -134,9 +134,6 @@ export default function Home() {
             Book a call
           </TrackedCTA>
         </div>
-        <p className="text-sm mt-4 fade-rise" style={{ animationDelay: "260ms" }}>
-          <a href="/Pelinsu_Pelit_CV.pdf" className="text-accent font-medium hover:text-navy transition-colors">Download CV (PDF)</a>
-        </p>
       </section>
 
       {/* What I do: three notes pinned under the hero */}

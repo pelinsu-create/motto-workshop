@@ -99,7 +99,6 @@ export default function RootLayout({
               <Link href="/games" className="hover:text-navy transition-colors">
                 Games
               </Link>
-              <a href="/Pelinsu_Pelit_CV.pdf" className="hover:text-navy transition-colors">CV</a>
               <a
                 href="mailto:pelinsu@mottoworkshop.com"
                 className="text-accent hover:text-navy transition-colors"

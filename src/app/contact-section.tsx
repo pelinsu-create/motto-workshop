@@ -31,12 +31,6 @@ export default function ContactSection() {
           >
             Book a call
           </TrackedCTA>
-          <a
-            href="/Pelinsu_Pelit_CV.pdf"
-            className="inline-block border border-border text-navy px-6 py-3 rounded-lg text-sm font-medium hover:bg-lavender btn-press"
-          >
-            Download CV
-          </a>
         </div>
       </div>
     </section>
