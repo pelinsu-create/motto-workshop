@@ -244,7 +244,6 @@ export default function About() {
           <h2 className={`${headingClass} mb-6`}>Get in touch</h2>
           {/* Contact card pinned into the journal like a post-it */}
           <div className="note inline-block bg-note-cream p-6 sm:p-7 mt-2" style={{ "--tilt": "0.7deg" } as CSSProperties}>
-            <span className="pin pin-pink" aria-hidden="true" />
             <p className="text-gray leading-relaxed mb-6 max-w-xl">
               Hiring a senior product designer, or want to talk about a project?
             </p>

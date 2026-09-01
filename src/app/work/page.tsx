@@ -3,6 +3,7 @@ import type { CSSProperties } from "react";
 import Link from "next/link";
 import Reveal from "../reveal";
 import HoverGif from "../hover-gif";
+import { caveat } from "../notebook-font";
 
 export const metadata: Metadata = {
   title: "Work | Pelinsu Pelit",
@@ -123,11 +124,17 @@ const tools = [
 
 export default function Work() {
   return (
-    <div className="max-w-3xl mx-auto px-6">
-      <section className="py-20 md:py-28">
+    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+      {/* The whole page reads as one dot-grid journal spread, taped down at
+          the top corners, with the project post-its pinned onto it. */}
+      <div className="notebook-page relative px-5 sm:px-8 md:px-12">
+        <span className="tape-corner tape-corner-tl" aria-hidden="true" />
+        <span className="tape-corner tape-corner-tr" aria-hidden="true" />
+
+      <section className="pt-14 pb-12 md:pt-20">
         <p className="section-label mb-4 fade-rise">Work</p>
         <h1
-          className="text-4xl md:text-5xl font-semibold text-navy leading-tight mb-6 fade-rise"
+          className={`${caveat.className} notebook-heading font-semibold text-4xl md:text-5xl text-navy leading-tight mb-6 fade-rise`}
           style={{ animationDelay: "70ms" }}
         >
           Selected projects
@@ -151,13 +158,9 @@ export default function Work() {
                 className={`group note flex items-center ${p.tint}`}
                 style={{ "--tilt": p.tilt } as CSSProperties}
               >
-                <span
-                  className={i % 2 === 0 ? "pin" : "pin pin-pink"}
-                  aria-hidden="true"
-                />
                 <div className="flex-1 min-w-0 p-6">
                   <div className="flex items-baseline justify-between gap-4 mb-2">
-                    <p className="text-xs font-semibold text-accent uppercase tracking-wider">{p.tag}</p>
+                    <p className="text-xs font-semibold text-gray uppercase tracking-wider">{p.tag}</p>
                     <span className="text-xs text-gray-light shrink-0">{p.year}</span>
                   </div>
                   <h2 className="text-xl text-navy mb-2 group-hover:text-accent transition-colors">
@@ -186,8 +189,8 @@ export default function Work() {
         </div>
       </section>
 
-      <section className="py-16 border-t border-border mt-12">
-        <h2 className="text-2xl md:text-3xl text-navy mb-3">Things I built</h2>
+      <section className="pt-10 pb-14 mt-8 doodle-divider">
+        <h2 className={`${caveat.className} notebook-heading font-semibold text-3xl md:text-4xl text-navy mb-3`}>Things I built</h2>
         <p className="text-gray leading-relaxed mb-8 max-w-2xl">
           All three are live. You can try them without an account.
         </p>
@@ -239,6 +242,7 @@ export default function Work() {
           )}
         </div>
       </section>
+      </div>
     </div>
   );
 }

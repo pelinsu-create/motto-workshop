@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Reveal from "./reveal";
 import HoverGif from "./hover-gif";
+import { caveat } from "./notebook-font";
 
 const work = [
   {
@@ -203,10 +204,12 @@ export default function Home() {
         </Reveal>
       </section>
 
-      {/* Selected work */}
-      <section className="py-16 border-t border-border">
+      {/* Selected work: a journal spread the project post-its are pinned onto */}
+      <section className="py-14 doodle-divider">
+        <div className="notebook-page relative px-5 sm:px-8 py-10">
+        <span className="tape-corner tape-corner-tl" aria-hidden="true" />
         <div className="flex items-baseline justify-between mb-10">
-          <h2 className="text-2xl md:text-3xl text-navy">Selected Work</h2>
+          <h2 className={`${caveat.className} notebook-heading font-semibold text-3xl md:text-4xl text-navy`}>Selected Work</h2>
           <Link href="/work" className="text-sm text-accent font-medium hover:text-navy transition-colors">
             All work <span className="arrow-nudge" aria-hidden="true">&rarr;</span>
           </Link>
@@ -220,13 +223,9 @@ export default function Home() {
                 className="group note flex items-center bg-surface"
                 style={{ "--tilt": item.tilt } as CSSProperties}
               >
-                <span
-                  className={i % 2 === 0 ? "pin" : "pin pin-pink"}
-                  aria-hidden="true"
-                />
                 <div className="flex-1 min-w-0 p-6">
                   <div className="flex items-baseline justify-between gap-4 mb-2">
-                    <p className="text-xs font-semibold text-accent uppercase tracking-wider">
+                    <p className="text-xs font-semibold text-gray uppercase tracking-wider">
                       {item.tag}
                     </p>
                     <span className="text-xs text-gray-light shrink-0">{item.year}</span>
@@ -254,6 +253,7 @@ export default function Home() {
             </Reveal>
           ))}
         </div>
+        </div>
       </section>
 
       {/* Contact sits ahead of the workshop so the hiring path is unobstructed */}
@@ -270,10 +270,13 @@ export default function Home() {
         </a>
       </section>
 
-      {/* Workshop and tools, demoted below the hiring path */}
-      <section className="py-16 border-t border-border">
+      {/* Workshop and tools, demoted below the hiring path, on its own
+          journal spread so it matches the Selected Work section */}
+      <section className="py-14 doodle-divider">
+        <div className="notebook-page relative px-5 sm:px-8 py-10">
+        <span className="tape-corner tape-corner-tr" aria-hidden="true" />
         <p className="section-label mb-3">Also available</p>
-        <h2 className="text-2xl md:text-3xl text-navy mb-8">Workshop and tools</h2>
+        <h2 className={`${caveat.className} notebook-heading font-semibold text-3xl md:text-4xl text-navy mb-8`}>Workshop and tools</h2>
         <div className="grid md:grid-cols-2 gap-4">
           <Reveal className="h-full">
             <div
@@ -336,6 +339,7 @@ export default function Home() {
                 </div>
               </div>
           </Reveal>
+        </div>
         </div>
       </section>
     </div>

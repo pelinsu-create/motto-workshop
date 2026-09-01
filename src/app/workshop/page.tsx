@@ -7,30 +7,60 @@ const headingClass = `${caveat.className} notebook-heading font-semibold text-3x
 const PARTS = [
   {
     name: "Filter",
-    line: "Process real sources with AI, extract claims with exact quotes, and check what is real with 3-Layer Verification and the 4 Hallucination Red Flags.",
+    subtitle: "Collect and organize",
+    line: "Bring your knowledge together in one center.",
+    bullets: [
+      "Gather your information in one place",
+      "Build your own source list",
+      "Try the mindmap feature",
+      "Check what is real with the 3 Layer Verification checklist",
+    ],
+    tools: "NotebookLM + Gemini",
     tint: "bg-note-mint",
     tilt: "-1.2deg",
   },
   {
     name: "Remix",
-    line: "Structure the insights, classify fad versus trend versus megatrend, and run Bias Checker on your own analysis.",
+    subtitle: "Contextualize and turn into insight",
+    line: "Transform what you collected for your own context or for the wider trends.",
+    bullets: [
+      "Produce insights with the 4 Question Context Frame",
+      "Analyze with different lenses, beyond generic summary prompts",
+      "Build a tagging and knowledge system",
+      "Run Bias Checker on your own analysis",
+    ],
+    tools: "ChatGPT + Claude + Notion",
     tint: "bg-note-peach",
     tilt: "0.9deg",
   },
   {
-    name: "Prototype",
-    line: "Turn the findings into a shareable trend report and a weekly routine you keep using after the session.",
+    name: "Pre-Prototype",
+    subtitle: "Make your knowledge reusable",
+    line: "Design an AI system that keeps producing insights in a reusable, sustainable way.",
+    bullets: [
+      "Techniques for choosing between ideas",
+      "Visualize and pre-prototype with Claude",
+      "Continuous learning and ways to read market signals",
+    ],
+    tools: "ChatGPT + Claude + Notion",
     tint: "bg-note-lavender",
     tilt: "-0.7deg",
   },
 ];
 
+const AUDIENCE = [
+  "You want to add independent projects to your portfolio",
+  "You want to find and compare project, service or content ideas and watch their market signals",
+  "You keep saving content you never return to, and want to turn that backlog into a sustainable knowledge system",
+];
+
 const TAKEAWAYS = [
-  "A trend report you built yourself",
+  "Your knowledge collected in one center",
+  "Your own source list",
+  "The 4 Question Context Frame",
+  "A tagging and knowledge system",
   "Reusable AI prompt templates",
-  "3-Layer Verification checklist",
-  "4 Hallucination Red Flag cards",
-  "A weekly research routine",
+  "A pre-prototype of your own AI insight system",
 ];
 
 function CheckBox() {
@@ -89,9 +119,12 @@ export default function WorkshopPage() {
             className="text-base text-gray max-w-2xl leading-relaxed mb-8 fade-rise"
             style={{ animationDelay: "140ms" }}
           >
-            A two to three hour online session on AI-assisted research, on a topic you
-            choose. We practice which parts of research you can hand to AI and which
-            parts you should not, with verification checklists and games I built for it.
+            A three hour online session where you build your own AI insight system, on
+            a topic you choose. We collect your scattered knowledge in one place, turn
+            it into insights that fit your context, and pre-prototype a system that
+            keeps producing them. Along the way we practice which parts you can hand
+            to AI and which parts you should not, with verification checklists and
+            games I built for it.
           </p>
           <div className="fade-rise" style={{ animationDelay: "210ms" }}>
             <TrackedCTA
@@ -103,14 +136,27 @@ export default function WorkshopPage() {
           </div>
         </section>
 
-        {/* Three parts, each pasted in on its own post-it */}
+        {/* Who the session is for, a checklist in the journal */}
         <section className="py-10 doodle-divider">
-          <h2 className={`${headingClass} mb-8`}>Three Parts</h2>
+          <h2 className={`${headingClass} mb-4`}>Who Is It For?</h2>
+          <div className="space-y-3 max-w-2xl">
+            {AUDIENCE.map((item) => (
+              <div key={item} className="flex gap-2.5 items-start text-sm">
+                <CheckBox />
+                <span className="text-navy leading-relaxed">{item}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* The three hour agenda, each part pasted in on its own post-it */}
+        <section className="py-10 doodle-divider">
+          <h2 className={`${headingClass} mb-8`}>The Three Hour Workshop</h2>
           <div className="grid gap-6 md:grid-cols-3 md:gap-5">
             {PARTS.map((part, i) => (
               <div
                 key={part.name}
-                className={`note h-full p-6 ${part.tint}`}
+                className={`note h-full p-6 flex flex-col ${part.tint}`}
                 style={{ "--tilt": part.tilt } as CSSProperties}
               >
                 <span
@@ -120,8 +166,22 @@ export default function WorkshopPage() {
                 <span className="w-7 h-7 rounded-full bg-white/70 text-accent text-xs font-semibold flex items-center justify-center mb-3">
                   {i + 1}
                 </span>
-                <h3 className="text-lg text-navy font-semibold mb-1">{part.name}</h3>
-                <p className="text-sm text-navy-mid leading-relaxed">{part.line}</p>
+                <h3 className="text-lg text-navy font-semibold mb-0.5">{part.name}</h3>
+                <p className="text-xs font-semibold text-accent uppercase tracking-wider mb-2">
+                  {part.subtitle}
+                </p>
+                <p className="text-sm text-navy-mid leading-relaxed mb-3">{part.line}</p>
+                <ul className="space-y-1.5 mb-4 flex-1">
+                  {part.bullets.map((b) => (
+                    <li key={b} className="flex gap-2 items-start text-sm text-navy-mid leading-relaxed">
+                      <span className="mt-2 w-1 h-1 rounded-full bg-accent shrink-0" aria-hidden="true" />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-xs font-medium text-gray border-t border-navy/10 pt-2.5">
+                  {part.tools}
+                </p>
               </div>
             ))}
           </div>
@@ -181,7 +241,7 @@ export default function WorkshopPage() {
           <div className="grid sm:grid-cols-2 gap-x-8 gap-y-5">
             <div>
               <p className="text-xs font-semibold text-accent mb-1 uppercase tracking-wider">Format</p>
-              <p className="text-sm text-navy">Online, 2 to 3 hours, max 12 people</p>
+              <p className="text-sm text-navy">Online, 3 hours, max 12 people</p>
             </div>
             <div>
               <p className="text-xs font-semibold text-accent mb-1 uppercase tracking-wider">Topic</p>
@@ -189,11 +249,11 @@ export default function WorkshopPage() {
             </div>
             <div>
               <p className="text-xs font-semibold text-accent mb-1 uppercase tracking-wider">Tools</p>
-              <p className="text-sm text-navy">Claude, NotebookLM, the games</p>
+              <p className="text-sm text-navy">NotebookLM, Gemini, ChatGPT, Claude, Notion, the games</p>
             </div>
             <div>
               <p className="text-xs font-semibold text-accent mb-1 uppercase tracking-wider">You need</p>
-              <p className="text-sm text-navy">A Claude account. NotebookLM is free.</p>
+              <p className="text-sm text-navy">Claude and ChatGPT accounts. NotebookLM and Notion have free plans.</p>
             </div>
           </div>
         </section>
@@ -201,7 +261,6 @@ export default function WorkshopPage() {
         {/* CTA on a pinned sticky note */}
         <section className="pt-10 pb-14 doodle-divider">
           <div className="note bg-note-mint p-8 text-center" style={{ "--tilt": "-0.6deg" } as CSSProperties}>
-            <span className="pin" aria-hidden="true" />
             <h2 className={`${headingClass} mb-4`}>Interested?</h2>
             <p className="text-gray leading-relaxed mb-6 max-w-lg mx-auto">
               Book a call and we&apos;ll find a date that works.
