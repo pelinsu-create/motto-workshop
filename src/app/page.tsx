@@ -149,12 +149,7 @@ export default function Home() {
           <Reveal className="h-full">
             <div className="note h-full bg-note-mint p-6" style={{ "--tilt": "-1.4deg" } as CSSProperties}>
               <span className="tape" aria-hidden="true" />
-              <div className="w-10 h-10 rounded-lg bg-surface/70 flex items-center justify-center mb-3">
-                <svg className="w-5 h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <circle cx="11" cy="11" r="7" />
-                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                </svg>
-              </div>
+              <Image src="/home/icon-research.jpg" alt="" width={96} height={96} className="w-12 h-12 rounded-lg object-cover mb-3" aria-hidden="true" />
               <h3 className="text-lg text-navy font-semibold mb-2">Research</h3>
               <p className="text-sm text-navy-mid leading-relaxed">
                 Interviews, observation, surveys and desk research, and I cite
@@ -164,14 +159,7 @@ export default function Home() {
           </Reveal>
           <Reveal delay={70} className="h-full">
             <div className="note h-full bg-note-peach p-6" style={{ "--tilt": "1.1deg" } as CSSProperties}>
-              <div className="w-10 h-10 rounded-lg bg-surface/70 flex items-center justify-center mb-3">
-                <svg className="w-5 h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                  <circle cx="9" cy="7" r="4" />
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                </svg>
-              </div>
+              <Image src="/home/icon-facilitate.jpg" alt="" width={96} height={96} className="w-12 h-12 rounded-lg object-cover mb-3" aria-hidden="true" />
               <h3 className="text-lg text-navy font-semibold mb-2">Facilitate</h3>
               <p className="text-sm text-navy-mid leading-relaxed">
                 More than twenty workshops: kickoffs, journey mapping, innovation
@@ -182,11 +170,7 @@ export default function Home() {
           <Reveal delay={140} className="h-full">
             <div className="note h-full bg-note-lavender p-6" style={{ "--tilt": "-0.8deg" } as CSSProperties}>
               <span className="tape tape-pink" aria-hidden="true" />
-              <div className="w-10 h-10 rounded-lg bg-surface/70 flex items-center justify-center mb-3">
-                <svg className="w-5 h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-                </svg>
-              </div>
+              <Image src="/home/icon-build.jpg" alt="" width={96} height={96} className="w-12 h-12 rounded-lg object-cover mb-3" aria-hidden="true" />
               <h3 className="text-lg text-navy font-semibold mb-2">Build</h3>
               <p className="text-sm text-navy-mid leading-relaxed">
                 The Bias Checker and the workshop games on this site are things

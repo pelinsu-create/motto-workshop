@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import type { ReactNode } from "react";
@@ -200,12 +201,19 @@ export function Outcomes({ items }: { items: string[] }) {
 export function NextCase({ href, title }: { href: string; title: string }) {
   return (
     <section className="py-14 border-t border-border">
-      <Link href={href} className="group block">
-        <p className="text-xs font-semibold text-gray uppercase tracking-wider mb-2">Next project</p>
-        <p className="text-2xl text-navy group-hover:underline decoration-2 underline-offset-4 font-serif">
-          {title} &rarr;
-        </p>
-      </Link>
+      <div>
+        <Link
+          href={href}
+          className="group note inline-block bg-note-yellow p-6 pr-8"
+          style={{ "--tilt": "-0.6deg" } as CSSProperties}
+        >
+          <span className="tape" aria-hidden="true" />
+          <p className="text-xs font-semibold text-gray uppercase tracking-wider mb-2">Next project</p>
+          <p className="text-2xl text-navy group-hover:underline decoration-2 underline-offset-4 font-serif">
+            {title} <span className="arrow-nudge" aria-hidden="true">&rarr;</span>
+          </p>
+        </Link>
+      </div>
     </section>
   );
 }
