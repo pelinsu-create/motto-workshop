@@ -168,7 +168,6 @@ export default function Work() {
                     {p.title}
                   </h2>
                   <p className="text-sm text-gray leading-relaxed mb-3">{p.blurb}</p>
-                  <p className="text-xs text-gray-light">{p.role}</p>
                 </div>
                 <div className="hidden sm:block shrink-0 py-4 pr-2 -mr-3 md:-mr-4">
                   <div
