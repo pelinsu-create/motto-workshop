@@ -268,7 +268,7 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-4">
           <Reveal className="h-full">
             <div
-              className="note flex flex-col h-full bg-note-cream"
+              className="note flex flex-col h-full bg-note-yellow"
               style={{ "--tilt": "-0.6deg" } as CSSProperties}
             >
             <span className="tape" aria-hidden="true" />
@@ -306,7 +306,7 @@ export default function Home() {
           </Reveal>
           <Reveal delay={80} className="h-full">
               <div
-                className="note flex flex-col h-full bg-note-mint"
+                className="note flex flex-col h-full bg-note-yellow"
                 style={{ "--tilt": "0.8deg" } as CSSProperties}
               >
                 <span className="tape tape-pink" aria-hidden="true" />

@@ -29,6 +29,7 @@
   --note-mint: #ddf0e6;
   --note-peach: #fce4d8;
   --note-lavender: #e7e3f6;
+  --note-yellow: #fdf0b8;
   --shadow-note: 0 1px 2px rgba(18, 25, 58, 0.08), 0 10px 20px -12px rgba(18, 25, 58, 0.3); /* soft paper shadow, note lifted slightly off the wall */
 }
 
@@ -49,6 +50,7 @@
   --color-note-mint: var(--note-mint);
   --color-note-peach: var(--note-peach);
   --color-note-lavender: var(--note-lavender);
+  --color-note-yellow: var(--note-yellow);
   --font-sans: var(--font-inter);
   --font-serif: var(--font-playfair);
 }
