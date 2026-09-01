@@ -33,14 +33,6 @@ function Icon({ children, className = "w-5 h-5" }: { children: React.ReactNode; 
 
 const check = <path d="M20 6 9 17l-5-5" />;
 
-const graduationCap = (
-  <>
-    <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
-    <path d="M22 10v6" />
-    <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
-  </>
-);
-
 const experience = [
   {
     org: "Senkron Digital",
@@ -216,9 +208,7 @@ export default function About() {
             <div>
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 mb-1">
                 <h3 className="text-lg text-navy font-semibold flex items-center gap-2">
-                  <span className="text-accent shrink-0">
-                    <Icon>{graduationCap}</Icon>
-                  </span>
+                  <Image src="/home/icon-education.jpg" alt="" width={96} height={96} className="w-8 h-8 rounded-md object-cover shrink-0" aria-hidden="true" />
                   Anadolu University
                 </h3>
                 <span className="text-xs text-gray-light">2007 to 2014</span>
@@ -228,9 +218,7 @@ export default function About() {
             <div>
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 mb-1">
                 <h3 className="text-lg text-navy font-semibold flex items-center gap-2">
-                  <span className="text-accent shrink-0">
-                    <Icon>{graduationCap}</Icon>
-                  </span>
+                  <Image src="/home/icon-education.jpg" alt="" width={96} height={96} className="w-8 h-8 rounded-md object-cover shrink-0" aria-hidden="true" />
                   Adam Mickiewicz University
                 </h3>
                 <span className="text-xs text-gray-light">2011 to 2012</span>
