@@ -117,7 +117,13 @@ export default function Home() {
               priority
               className="w-32 h-32 md:w-36 md:h-36 object-cover"
             />
-            <p className="text-xs text-gray text-center mt-2">Pelinsu</p>
+            <p className={`${caveat.className} text-lg leading-none text-navy text-center mt-2 flex items-center justify-center gap-1.5`}>
+              <svg className="w-4 h-4 text-gray -scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M4 19c6 1 12-2 15-11" />
+                <path d="M15.5 9.5 19 8l.5 3.8" />
+              </svg>
+              Pelinsu
+            </p>
           </div>
         </div>
         <div className="flex flex-wrap gap-3 fade-rise" style={{ animationDelay: "210ms" }}>
