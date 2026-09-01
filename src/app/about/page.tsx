@@ -39,63 +39,54 @@ const experience = [
     role: "UX Consultant",
     when: "Apr 2026 to present",
     note: "Market and UX research on energy asset management tools. Mapped 87 stakeholders across three company types.",
-    icon: "⚡", iconAlt: "Lightning bolt",
   },
   {
     org: "Turkish Airlines",
     role: "Product Designer",
     when: "Sep 2025 to Apr 2026",
     note: "Logistics products and employee experience. Integrated AI-assisted practice into the existing design system.",
-    icon: "✈️", iconAlt: "Airplane",
   },
   {
     org: "Gordion Technology",
     role: "UX Researcher & Designer",
     when: "Jul 2024 to Sep 2025",
     note: "AI-powered research demos, model benchmarking against real customer interviews, sector service blueprints, five-year research review into mental models.",
-    icon: "✨", iconAlt: "Sparkles",
   },
   {
     org: "Fluffy Hub",
     role: "Founder & Product Designer",
     when: "2021 to 2022",
     note: "Field research and prototyping for community cat colonies. Pivoted after market validation showed limited traction.",
-    icon: "🐱", iconAlt: "Cat face",
   },
   {
     org: "LIZ Smart Office",
     role: "UX/UI Designer",
     when: "Oct 2021 to Oct 2022",
     note: "Onboarding flow for the enterprise admin panel. Stakeholder alignment through iterative prototyping.",
-    icon: "🏢", iconAlt: "Office building",
   },
   {
     org: "Rodeo Project Management, Amsterdam",
     role: "UX Designer & Researcher",
     when: "Nov 2019 to Aug 2020",
     note: "Heuristic evaluation reduced setup time by 30%. Led the planner module redesign.",
-    icon: "📅", iconAlt: "Calendar",
   },
   {
     org: "iyzico, PayU Group",
     role: "UX Designer & Researcher",
     when: "Jan 2018 to Oct 2018",
     note: "Mobile payment redesign improved acquisition by 20%. A/B testing and content architecture.",
-    icon: "💳", iconAlt: "Credit card",
   },
   {
     org: "Commencis",
     role: "UX Consultant",
     when: "Aug 2017 to Dec 2017",
     note: "Comparative usability testing and workshop facilitation for a mobile banking app.",
-    icon: "🏦", iconAlt: "Bank",
   },
   {
     org: "Userspots",
     role: "UX Researcher & Service Designer",
     when: "Jun 2014 to Aug 2017",
     note: "Facilitated 20+ workshops: kickoffs, journey mapping, innovation sprints. E-commerce UX and conversion.",
-    icon: "🧩", iconAlt: "Puzzle piece",
   },
 ];
 
@@ -164,11 +155,8 @@ export default function About() {
           <h2 className={headingClass}>Experience</h2>
           <div className="space-y-6">
             {experience.map((e) => (
-              <div key={e.org + e.when} className="flex gap-4 border-b border-border pb-6 last:border-0">
-                <div className="w-12 h-12 rounded-lg bg-white/55 border border-border flex items-center justify-center shrink-0">
-                  <span className="text-2xl" role="img" aria-label={e.iconAlt}>{e.icon}</span>
-                </div>
-                <div className="flex-1 min-w-0">
+              <div key={e.org + e.when} className="border-b border-border pb-6 last:border-0">
+                <div className="min-w-0">
                   <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-1">
                     <h3 className="text-lg text-navy font-semibold">{e.org}</h3>
                     <span className="text-xs text-gray-light shrink-0">{e.when}</span>
