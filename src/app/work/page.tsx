@@ -2,17 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import Reveal from "../reveal";
-import Sparkle from "../sparkle";
-import {
-  activityLabGlyphs,
-  biasCheckerGlyphs,
-  cargoGlyphs,
-  fluffyGlyphs,
-  officeGlyphs,
-  stakeholderGlyphs,
-  workshopGlyphs,
-  xyzGlyphs,
-} from "../delight-icons";
+import HoverGif from "../hover-gif";
 
 export const metadata: Metadata = {
   title: "Work | Pelinsu Pelit",
@@ -24,18 +14,19 @@ const projects = [
   {
     href: "/work/turkish-airlines",
     img: "/work/thumb-cargo-5.jpg",
-    imgAlt: "Pastel 3D illustration of an air cargo scene with a plane and freight containers",
+    anim: "/work/anim-cargo.gif",
+    imgAlt: "Pastel 3D illustration of an air cargo scene where a small plane takes off past freight containers",
     tag: "Product Design · Design Systems · Shipped",
     title: "Designing logistics products people are paid to use",
     year: "2025 to 2026",
     role: "Product Designer, contract",
     blurb:
       "Terminal charges, warehouse fees and loadability checks for Turkish Cargo, shipped inside a live design system.",
-    icons: cargoGlyphs,
   },
   {
     href: "/work/liz-smart-office",
     img: "/work/thumb-liz-5.jpg",
+    anim: "/work/anim-liz.gif",
     imgAlt: "Pastel 3D illustration of a hybrid office room with desks and a meeting booth",
     tag: "Product Design · Enterprise SaaS · Shipped",
     title: "Simplifying hybrid working, from booking to admin insights",
@@ -43,35 +34,35 @@ const projects = [
     role: "UX/UI Designer",
     blurb:
       "Booker app usability, an admin insights page, and a Teams app on the Microsoft component library.",
-    icons: officeGlyphs,
   },
   {
     href: "/case-studies/fluffy-score",
     img: "/work/thumb-fluffy-5.jpg",
-    imgAlt: "Pastel 3D illustration of a cat on a climbing tree, from the Fluffy Score app",
+    anim: "/work/anim-fluffy.gif",
+    imgAlt: "Pastel 3D illustration of a kitten hopping around a climbing tree, from the Fluffy Score app",
     tag: "AI Product · End to End · Shipped",
     title: "Fluffy Score: an AI home assessment tool",
     year: "2026",
     role: "Research, design and build",
     blurb:
       "Five years of field research, taken to a working product I built myself.",
-    icons: fluffyGlyphs,
   },
   {
     href: "/work/stakeholder-map",
     img: "/work/thumb-stakeholder-2.jpg",
-    imgAlt: "Pastel 3D illustration of wind turbines and solar panels connected by a network",
+    anim: "/work/anim-stakeholder.gif",
+    imgAlt: "Pastel 3D illustration of spinning wind turbines and solar panels connected by a network",
     tag: "Research · Systems Mapping",
     title: "87 stakeholders, three company types, one map",
     year: "2025 to 2026",
     role: "UX Researcher · Client work",
     blurb:
       "An interactive map the client used to decide which roles their product should support first.",
-    icons: stakeholderGlyphs,
   },
   {
     href: "/work/soft-start",
     img: "/work/thumb-workshop-2.jpg",
+    anim: "/work/anim-workshop.gif",
     imgAlt: "Pastel 3D illustration of a workshop room with a sticky note wall and round table",
     tag: "Facilitation · Workshop Design",
     title: "Getting a room ready in the first twenty minutes",
@@ -79,7 +70,6 @@ const projects = [
     role: "Workshop Designer · Facilitator",
     blurb:
       "Three AI-assisted exercises for the first twenty minutes, kept as the standard opener.",
-    icons: workshopGlyphs,
   },
 ];
 
@@ -91,7 +81,6 @@ const tools = [
     title: "Bias Checker",
     blurb: "Checks your discussion guide, survey or screener against 20 research biases before fieldwork. It runs on the bias watchlist I use in my own studies.",
     external: false,
-    icons: biasCheckerGlyphs,
   },
   {
     href: "/lab",
@@ -100,16 +89,14 @@ const tools = [
     title: "Activity Lab",
     blurb: "Generates a complete workshop activity from a topic and a goal. Three free runs, no account.",
     external: false,
-    icons: activityLabGlyphs,
   },
   {
     href: "/xyz",
-    img: "/work/thumb-workshop-2.jpg",
-    imgAlt: "Pastel 3D illustration of a planning room with a sticky note wall and whiteboard, for the XYZ Hypothesis Builder tool",
+    img: "/work/thumb-xyz-1.jpg",
+    imgAlt: "Pastel 3D illustration of a small whiteboard with a percent, arrow and checkmark formula next to a target and beaker, for the XYZ Hypothesis Builder tool",
     title: "XYZ Hypothesis Builder",
     blurb: "Turn a vague product idea into one testable sentence: at least X% of Y will Z. It steers you from opinions to observable behavior, recommends a cheap pretotype, and makes you set kill criteria before you test. No account needed.",
     external: false,
-    icons: xyzGlyphs,
   },
 ];
 
@@ -138,7 +125,6 @@ export default function Work() {
         <div className="space-y-4">
           {projects.map((p, i) => (
             <Reveal key={p.href} delay={Math.min(i * 70, 210)}>
-              <Sparkle icons={p.icons} density={5} className="block">
                 <Link
                   href={p.href}
                   className="group flex bg-surface border border-border rounded-xl overflow-hidden hover:border-accent card-lift"
@@ -155,16 +141,15 @@ export default function Work() {
                     <p className="text-xs text-gray-light">{p.role}</p>
                   </div>
                   <div className="hidden sm:block relative w-64 md:w-72 shrink-0 self-stretch border-l border-border overflow-hidden">
-                    <Image
-                      src={p.img}
+                    <HoverGif
+                      staticSrc={p.img}
+                      animSrc={p.anim}
                       alt={p.imgAlt}
-                      fill
                       sizes="288px"
                       className="object-cover card-img"
                     />
                   </div>
                 </Link>
-              </Sparkle>
             </Reveal>
           ))}
         </div>
@@ -179,7 +164,6 @@ export default function Work() {
           {tools.map((t, i) =>
             t.external ? (
               <Reveal key={t.href} delay={i * 80}>
-                <Sparkle icons={t.icons} density={4} className="block">
                   <a
                     href={t.href}
                     target="_blank"
@@ -198,11 +182,9 @@ export default function Work() {
                     </h3>
                     <p className="text-sm text-gray leading-relaxed">{t.blurb}</p>
                   </a>
-                </Sparkle>
               </Reveal>
             ) : (
               <Reveal key={t.href} delay={i * 80}>
-                <Sparkle icons={t.icons} density={4} className="block">
                   <Link
                     href={t.href}
                     className="group block bg-surface border border-border rounded-xl p-5 hover:border-accent card-lift"
@@ -219,7 +201,6 @@ export default function Work() {
                     </h3>
                     <p className="text-sm text-gray leading-relaxed">{t.blurb}</p>
                   </Link>
-                </Sparkle>
               </Reveal>
             )
           )}
