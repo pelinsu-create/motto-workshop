@@ -148,10 +148,9 @@ export default function About() {
             className="text-lg text-gray leading-relaxed mb-4 max-w-2xl fade-rise"
             style={{ animationDelay: "140ms" }}
           >
-            Most of my research involves building something. Teaching workshops is how I
-            find out whether I actually understood it. Ten years across fintech, travel,
-            logistics and energy, in discovery research, usability evaluation and
-            strategic facilitation.
+            Most of my research involves building something. Ten years across fintech,
+            travel, logistics and energy, in discovery research, usability evaluation
+            and strategic facilitation.
           </p>
           <p
             className="text-base text-gray leading-relaxed mb-4 max-w-2xl fade-rise"
