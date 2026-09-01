@@ -4,6 +4,7 @@ import Image from "next/image";
 import Reveal from "./reveal";
 import HoverGif from "./hover-gif";
 import { caveat } from "./notebook-font";
+import { TrackedCTA } from "./tracked-cta";
 
 const work = [
   {
@@ -125,12 +126,12 @@ export default function Home() {
           >
             See five projects
           </Link>
-          <a
-            href="mailto:pelinsu@mottoworkshop.com"
+          <TrackedCTA
+            event="hero_book_call"
             className="inline-block border border-border text-navy px-6 py-3 rounded-lg text-sm font-medium hover:bg-lavender btn-press"
           >
-            Email me
-          </a>
+            Book a call
+          </TrackedCTA>
         </div>
         <p className="text-sm mt-4 fade-rise" style={{ animationDelay: "260ms" }}>
           <a href="/Pelinsu_Pelit_CV.pdf" className="text-accent font-medium hover:text-navy transition-colors">Download CV (PDF)</a>

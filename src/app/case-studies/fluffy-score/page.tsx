@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { caveat } from "../../notebook-font";
 
 export const metadata: Metadata = {
   title: "Fluffy Score Case Study | Motto Workshop",
@@ -70,7 +71,7 @@ export default function FluffyScoreCaseStudy() {
       {/* Step 1: The Problem */}
       <section className="py-16 border-t border-border">
         <StepLabel number={1} title="The Problem" />
-        <h2 className="text-2xl md:text-3xl text-navy mb-6">
+        <h2 className={`${caveat.className} notebook-heading font-semibold text-3xl md:text-4xl text-navy mb-6`}>
           Your cat is stressed. Your home is probably why.
         </h2>
         <p className="text-gray leading-relaxed mb-8">
@@ -91,7 +92,7 @@ export default function FluffyScoreCaseStudy() {
       {/* Step 2: Research */}
       <section className="py-16 border-t border-border">
         <StepLabel number={2} title="Research & Evidence" />
-        <h2 className="text-2xl md:text-3xl text-navy mb-6">
+        <h2 className={`${caveat.className} notebook-heading font-semibold text-3xl md:text-4xl text-navy mb-6`}>
           Grounding decisions in data
         </h2>
 
@@ -125,7 +126,7 @@ export default function FluffyScoreCaseStudy() {
       {/* Step 3: Synthesis */}
       <section className="py-16 border-t border-border">
         <StepLabel number={3} title="Synthesis" />
-        <h2 className="text-2xl md:text-3xl text-navy mb-6">
+        <h2 className={`${caveat.className} notebook-heading font-semibold text-3xl md:text-4xl text-navy mb-6`}>
           Five Pillars &rarr; scoring model
         </h2>
 
@@ -163,7 +164,7 @@ export default function FluffyScoreCaseStudy() {
       {/* Step 4: Storyboard */}
       <section className="py-16 border-t border-border">
         <StepLabel number={4} title="Storyboard" />
-        <h2 className="text-2xl md:text-3xl text-navy mb-6">
+        <h2 className={`${caveat.className} notebook-heading font-semibold text-3xl md:text-4xl text-navy mb-6`}>
           Visualizing the user journey
         </h2>
         <p className="text-gray leading-relaxed mb-8">
@@ -196,7 +197,7 @@ export default function FluffyScoreCaseStudy() {
       {/* Step 5: Prototype */}
       <section className="py-16 border-t border-border">
         <StepLabel number={5} title="Prototype & Build" />
-        <h2 className="text-2xl md:text-3xl text-navy mb-6">
+        <h2 className={`${caveat.className} notebook-heading font-semibold text-3xl md:text-4xl text-navy mb-6`}>
           From storyboard to working product
         </h2>
 
@@ -234,7 +235,7 @@ export default function FluffyScoreCaseStudy() {
       {/* Step 6: Causal Loop */}
       <section className="py-16 border-t border-border">
         <StepLabel number={6} title="Systems Thinking" />
-        <h2 className="text-2xl md:text-3xl text-navy mb-6">
+        <h2 className={`${caveat.className} notebook-heading font-semibold text-3xl md:text-4xl text-navy mb-6`}>
           Indoor cats &harr; Shelter cats
         </h2>
         <p className="text-gray leading-relaxed mb-8">
@@ -299,7 +300,7 @@ export default function FluffyScoreCaseStudy() {
       {/* Step 7: Results */}
       <section className="py-16 border-t border-border">
         <StepLabel number={7} title="Validation & Results" />
-        <h2 className="text-2xl md:text-3xl text-navy mb-6">What happened</h2>
+        <h2 className={`${caveat.className} notebook-heading font-semibold text-3xl md:text-4xl text-navy mb-6`}>What happened</h2>
 
         <div className="grid md:grid-cols-3 gap-6 mb-8">
           {[
@@ -334,7 +335,7 @@ export default function FluffyScoreCaseStudy() {
       {/* CTA */}
       <section className="py-16 border-t border-border">
         <div className="bg-surface border border-border rounded-xl p-8 text-center">
-          <h2 className="text-2xl md:text-3xl text-navy mb-4">
+          <h2 className={`${caveat.className} notebook-heading font-semibold text-3xl md:text-4xl text-navy mb-4`}>
             Want to build something like this?
           </h2>
           <p className="text-gray leading-relaxed mb-6 max-w-lg mx-auto">

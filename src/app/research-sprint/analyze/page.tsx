@@ -10,6 +10,7 @@ import {
   CardTip,
   CardSection,
 } from "../../method-card";
+import { caveat } from "../../notebook-font";
 
 interface Transcript {
   id: string;
@@ -480,7 +481,7 @@ function ResultsView({ results }: { results: Results }) {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-navy">Analysis Results</h2>
+        <h2 className={`${caveat.className} notebook-heading font-semibold text-3xl md:text-4xl text-navy`}>Analysis Results</h2>
         <button
           onClick={exportJson}
           className="border border-border text-navy px-4 py-2 rounded-lg text-sm font-medium hover:bg-lavender transition-colors btn-press"

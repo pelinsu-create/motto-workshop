@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { caveat } from "./notebook-font";
 
 type Claim = {
   text: string;
@@ -85,7 +86,7 @@ export default function SpotHallucination() {
     <section id="spot" className="py-20 border-t border-border">
       <div className="max-w-2xl">
         <p className="section-label mb-3">Try It</p>
-        <h2 className="text-3xl md:text-4xl text-navy mb-4">
+        <h2 className={`${caveat.className} notebook-heading font-semibold text-3xl md:text-4xl text-navy mb-4`}>
           Spot the Hallucination
         </h2>
         <p className="text-gray leading-relaxed mb-8">
