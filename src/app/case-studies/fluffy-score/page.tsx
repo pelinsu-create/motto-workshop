@@ -332,6 +332,80 @@ export default function FluffyScoreCaseStudy() {
         </div>
       </section>
 
+      {/* Step 8: Trust patterns, Sep 2026 */}
+      <section className="py-16 border-t border-border">
+        <StepLabel number={8} title="Designing for Trust" />
+        <h2 className={`${caveat.className} notebook-heading font-semibold text-3xl md:text-4xl text-navy mb-6`}>
+          Making the certificate honest
+        </h2>
+        <p className="text-gray leading-relaxed mb-6 max-w-2xl">
+          In September 2026 the focus shifted to host certification: property owners
+          paying for a pet friendly certificate. A certificate is only worth what its
+          honesty is worth, so I audited the flow against intelligent interface
+          patterns and shipped five trust changes in one day.
+        </p>
+        <div className="bg-surface border border-border rounded-xl p-6 mb-6">
+          <div className="space-y-3">
+            {[
+              "Confidence language on every pillar: the assessment can now say a pillar needs an in person check, or cannot be scored from a description at all. Declining to score is presented as honesty.",
+              "Photo evidence caps: on safety critical pillars, claims without a photo cannot earn full confidence.",
+              "A claim summary before the certificate: the host confirms the answers describe the property truthfully, and can go back to correct them.",
+              "Improvement history on the certificate, clearly labeled as self reported.",
+              "One removal: the flow claimed every certificate was personally reviewed before issuance. That was not true, so the line was rewritten to what actually happens.",
+            ].map((item, i) => (
+              <div key={i} className="flex gap-3 items-start">
+                <span className="text-accent mt-0.5">&#10003;</span>
+                <p className="text-sm text-navy leading-relaxed">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Step 9: Evals */}
+      <section className="py-16 border-t border-border">
+        <StepLabel number={9} title="Measuring It" />
+        <h2 className={`${caveat.className} notebook-heading font-semibold text-3xl md:text-4xl text-navy mb-6`}>
+          The eval suite that caught a real bug
+        </h2>
+        <p className="text-gray leading-relaxed mb-6 max-w-2xl">
+          The same day, I built an evaluation harness for the assessment: ten fixture
+          conversations replayed against the production prompts, graded on six
+          dimensions with deterministic checks first and an LLM judge only where
+          judgment is needed. One command runs it before any prompt change ships.
+        </p>
+        <div className="grid md:grid-cols-3 gap-6 mb-8">
+          {[
+            { stat: "22", label: "Checks in the first run" },
+            { stat: "18", label: "Passed, incl. all safety checks" },
+            { stat: "1", label: "Real bug the evals caught" },
+          ].map((s) => (
+            <div key={s.label} className="bg-accent/5 border border-accent/20 rounded-xl p-6 text-center">
+              <p className="text-3xl font-semibold text-navy mb-1">{s.stat}</p>
+              <p className="text-xs text-gray">{s.label}</p>
+            </div>
+          ))}
+        </div>
+        <div className="bg-surface border border-border rounded-xl p-6">
+          <p className="text-xs font-semibold text-accent mb-3 uppercase tracking-wider">What the evals found</p>
+          <p className="text-sm text-navy leading-relaxed mb-3">
+            The build was green and the prompts read correctly, but the trust layer
+            never actually appeared: in host mode the model batched all five pillars
+            into one final message and skipped the per pillar confidence cards
+            entirely. Vet safety, gaming resistance and prompt injection all passed.
+            The feature I was proudest of simply did not happen.
+          </p>
+          <p className="text-sm text-navy leading-relaxed mb-3">
+            Fixing the prompt cadence and rerunning took the failing dimensions from
+            0 of 2 to 2 of 2 with no regressions. The suite now runs on every prompt
+            change, and every incident becomes a new regression case.
+          </p>
+          <p className="text-sm text-navy-mid leading-relaxed italic">
+            A green build says the code compiles. An eval says the behavior exists.
+          </p>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 border-t border-border">
         <div className="bg-surface border border-border rounded-xl p-8 text-center">
