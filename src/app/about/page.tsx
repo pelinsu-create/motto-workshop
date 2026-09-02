@@ -107,8 +107,6 @@ export default function About() {
       {/* The whole page reads as one dot-grid journal page, taped down at
           the top corners. Copy is unchanged, this is a visual restyle. */}
       <div className="notebook-page relative px-5 sm:px-8 md:px-12">
-        <span className="tape-corner tape-corner-tl" aria-hidden="true" />
-        <span className="tape-corner tape-corner-tr" aria-hidden="true" />
 
         <section className="pt-14 pb-12 md:pt-20">
           <p className="section-label mb-4 fade-rise">About</p>

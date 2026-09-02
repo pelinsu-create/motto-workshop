@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import Reveal from "../reveal";
 import HoverGif from "../hover-gif";
-import { caveat } from "../notebook-font";
 
 export const metadata: Metadata = {
   title: "Work | Pelinsu Pelit",
@@ -95,7 +94,7 @@ const tools = [
     href: "/bias-check",
     img: "/work/icon-bias.jpg",
     imgAlt: "Pastel 3D balance scale icon",
-    tint: "bg-note-yellow",
+    tint: "bg-surface",
     tilt: "-0.8deg",
     title: "Bias Checker",
     blurb: "Checks your discussion guide, survey or screener against 20 research biases before fieldwork. It runs on the bias watchlist I use in my own studies.",
@@ -105,7 +104,7 @@ const tools = [
     href: "/lab",
     img: "/work/icon-lab.jpg",
     imgAlt: "Pastel 3D game die icon",
-    tint: "bg-note-yellow",
+    tint: "bg-surface",
     tilt: "0.7deg",
     title: "Activity Lab",
     blurb: "Generates a complete workshop activity from a topic and a goal. Three free runs, no account.",
@@ -115,7 +114,7 @@ const tools = [
     href: "/xyz",
     img: "/work/icon-xyz.jpg",
     imgAlt: "Pastel 3D target with arrow icon",
-    tint: "bg-note-yellow",
+    tint: "bg-surface",
     tilt: "-0.6deg",
     title: "XYZ Hypothesis Builder",
     blurb: "Turn a vague product idea into one testable sentence: at least X% of Y will Z. It steers you from opinions to observable behavior, recommends a cheap pretotype, and makes you set kill criteria before you test. No account needed.",
@@ -126,16 +125,12 @@ const tools = [
 export default function Work() {
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-      {/* The whole page reads as one dot-grid journal spread, taped down at
-          the top corners, with the project post-its pinned onto it. */}
+      {/* The whole page reads as one dot-grid journal spread, with the project post-its pinned onto it. */}
       <div className="notebook-page relative px-5 sm:px-8 md:px-12">
-        <span className="tape-corner tape-corner-tl" aria-hidden="true" />
-        <span className="tape-corner tape-corner-tr" aria-hidden="true" />
-
       <section className="pt-14 pb-12 md:pt-20">
         <p className="section-label mb-4 fade-rise">Work</p>
         <h1
-          className={`${caveat.className} notebook-heading font-semibold text-4xl md:text-5xl text-navy leading-tight mb-6 fade-rise`}
+          className="text-4xl md:text-5xl font-semibold text-navy leading-tight mb-6 fade-rise"
           style={{ animationDelay: "70ms" }}
         >
           Selected projects
@@ -189,7 +184,7 @@ export default function Work() {
       </section>
 
       <section className="pt-10 pb-14 mt-8 doodle-divider">
-        <h2 className={`${caveat.className} notebook-heading font-semibold text-3xl md:text-4xl text-navy mb-3`}>Things I built</h2>
+        <h2 className="text-2xl md:text-3xl text-navy mb-3">Things I built</h2>
         <p className="text-gray leading-relaxed mb-8 max-w-2xl">
           All three are live. You can try them without an account.
         </p>
@@ -204,10 +199,6 @@ export default function Work() {
                   className={`group note block p-5 ${t.tint}`}
                   style={{ "--tilt": t.tilt } as CSSProperties}
                 >
-                  <span
-                    className={i % 2 === 0 ? "tape" : "tape tape-pink"}
-                    aria-hidden="true"
-                  />
                   <Image
                     src={t.img}
                     alt={t.imgAlt}
@@ -228,10 +219,6 @@ export default function Work() {
                   className={`group note block p-5 ${t.tint}`}
                   style={{ "--tilt": t.tilt } as CSSProperties}
                 >
-                  <span
-                    className={i % 2 === 0 ? "tape" : "tape tape-pink"}
-                    aria-hidden="true"
-                  />
                   <Image
                     src={t.img}
                     alt={t.imgAlt}

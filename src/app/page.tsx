@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import Reveal from "./reveal";
 import HoverGif from "./hover-gif";
-import { caveat } from "./notebook-font";
 import { TrackedCTA } from "./tracked-cta";
 import ContactSection from "./contact-section";
 
@@ -117,7 +116,7 @@ export default function Home() {
               priority
               className="w-32 h-32 md:w-36 md:h-36 object-cover"
             />
-            <p className={`${caveat.className} text-lg leading-none text-navy text-center mt-2 flex items-center justify-center gap-1.5`}>
+            <p className="text-sm font-medium text-navy text-center mt-2 flex items-center justify-center gap-1.5">
               <svg className="w-4 h-4 text-gray -scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M4 19c6 1 12-2 15-11" />
                 <path d="M15.5 9.5 19 8l.5 3.8" />
@@ -144,7 +143,7 @@ export default function Home() {
 
       {/* What I do: three notes pinned under the hero */}
       <section className="py-16 border-t border-border">
-        <h2 className={`${caveat.className} notebook-heading font-semibold text-3xl md:text-4xl text-navy mb-10`}>How I Work</h2>
+        <h2 className="text-2xl md:text-3xl text-navy mb-10">How I Work</h2>
         <div className="grid gap-8 md:grid-cols-3 md:gap-5">
           <Reveal className="h-full">
             <div className="note h-full bg-note-mint p-6" style={{ "--tilt": "-1.4deg" } as CSSProperties}>
@@ -196,9 +195,8 @@ export default function Home() {
       {/* Selected work: a journal spread the project post-its are pinned onto */}
       <section className="py-14 doodle-divider">
         <div className="notebook-page relative px-5 sm:px-8 py-10">
-        <span className="tape-corner tape-corner-tl" aria-hidden="true" />
         <div className="flex items-baseline justify-between mb-10">
-          <h2 className={`${caveat.className} notebook-heading font-semibold text-3xl md:text-4xl text-navy`}>Selected Work</h2>
+          <h2 className="text-2xl md:text-3xl text-navy">Selected Work</h2>
           <Link href="/work" className="text-sm text-accent font-medium hover:text-navy transition-colors">
             All work <span className="arrow-nudge" aria-hidden="true">&rarr;</span>
           </Link>
@@ -252,16 +250,14 @@ export default function Home() {
           journal spread so it matches the Selected Work section */}
       <section className="py-14 doodle-divider">
         <div className="notebook-page relative px-5 sm:px-8 py-10">
-        <span className="tape-corner tape-corner-tr" aria-hidden="true" />
         <p className="section-label mb-3">Also available</p>
-        <h2 className={`${caveat.className} notebook-heading font-semibold text-3xl md:text-4xl text-navy mb-8`}>Workshop and tools</h2>
+        <h2 className="text-2xl md:text-3xl text-navy mb-8">Workshop and tools</h2>
         <div className="grid md:grid-cols-2 gap-4">
           <Reveal className="h-full">
             <div
-              className="note flex flex-col h-full bg-note-yellow"
+              className="note flex flex-col h-full bg-surface"
               style={{ "--tilt": "-0.6deg" } as CSSProperties}
             >
-            <span className="tape" aria-hidden="true" />
             <Image
               src="/work/icon-sprint.jpg"
               alt="Pastel 3D puzzle piece icon"
@@ -296,10 +292,9 @@ export default function Home() {
           </Reveal>
           <Reveal delay={80} className="h-full">
               <div
-                className="note flex flex-col h-full bg-note-yellow"
+                className="note flex flex-col h-full bg-surface"
                 style={{ "--tilt": "0.8deg" } as CSSProperties}
               >
-                <span className="tape tape-pink" aria-hidden="true" />
                 <Image
                   src="/work/icon-bias.jpg"
                   alt="Pastel 3D balance scale icon"

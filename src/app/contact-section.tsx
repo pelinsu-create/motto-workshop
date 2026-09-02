@@ -1,5 +1,4 @@
 import type { CSSProperties } from "react";
-import { caveat } from "./notebook-font";
 import { TrackedCTA } from "./tracked-cta";
 
 /* The one Get in touch block, used on every page that offers contact.
@@ -8,7 +7,7 @@ import { TrackedCTA } from "./tracked-cta";
 export default function ContactSection() {
   return (
     <section className="py-16 doodle-divider">
-      <h2 className={`${caveat.className} notebook-heading font-semibold text-3xl md:text-4xl text-navy mb-6`}>
+      <h2 className="text-2xl md:text-3xl text-navy mb-6">
         Get in touch
       </h2>
       <div>
