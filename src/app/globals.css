@@ -194,10 +194,6 @@ h1, h2, h3 {
   background: rgba(59, 91, 219, 0.13);
   pointer-events: none;
 }
-.tape-pink {
-  background: rgba(242, 169, 196, 0.45);
-  transform: translateX(-50%) rotate(2deg);
-}
 
 /* Push pin holding a note to the wall, seen at a slight angle: a domed
    head, a short neck, and a thin needle piercing the paper. Decorative. */

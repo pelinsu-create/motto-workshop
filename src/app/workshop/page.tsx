@@ -157,7 +157,7 @@ export default function WorkshopPage() {
                 style={{ "--tilt": part.tilt } as CSSProperties}
               >
                 <span
-                  className={i % 2 === 0 ? "tape" : "tape tape-pink"}
+                  className="tape"
                   aria-hidden="true"
                 />
                 <span className="w-7 h-7 rounded-full bg-white/70 text-accent text-xs font-semibold flex items-center justify-center mb-3">

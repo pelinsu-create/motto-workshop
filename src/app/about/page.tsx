@@ -111,7 +111,7 @@ export default function About() {
           <p className="section-label mb-4 fade-rise">About</p>
           <div className="flex items-center gap-6 mb-6 fade-rise" style={{ animationDelay: "70ms" }}>
             <div className="polaroid shrink-0" style={{ "--tilt": "-2.4deg" } as CSSProperties}>
-              <span className="tape tape-pink" aria-hidden="true" />
+              <span className="tape" aria-hidden="true" />
               <Image
                 src="/pelinsu-journey.jpg"
                 alt="Pelinsu Pelit in the desert at sunset"

@@ -494,7 +494,7 @@ export default function Games() {
               style={{ "--tilt": g.tilt } as CSSProperties}
             >
               <span
-                className={i % 2 === 0 ? "tape" : "tape tape-pink"}
+                className="tape"
                 aria-hidden="true"
               />
               <span

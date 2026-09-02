@@ -107,7 +107,7 @@ export default function Home() {
             className="polaroid shrink-0 self-center md:self-auto md:mt-3"
             style={{ "--tilt": "2.4deg" } as CSSProperties}
           >
-            <span className="tape tape-pink" aria-hidden="true" />
+            <span className="tape" aria-hidden="true" />
             <Image
               src="/pelinsu.jpg"
               alt="Pelinsu Pelit"
@@ -168,7 +168,7 @@ export default function Home() {
           </Reveal>
           <Reveal delay={140} className="h-full">
             <div className="note h-full bg-note-mint p-6" style={{ "--tilt": "-0.8deg" } as CSSProperties}>
-              <span className="tape tape-pink" aria-hidden="true" />
+              <span className="tape" aria-hidden="true" />
               <Image src="/home/icon-build.jpg" alt="" width={96} height={96} className="w-12 h-12 rounded-lg object-cover mb-3" aria-hidden="true" />
               <h3 className="text-lg text-navy font-semibold mb-2">Build</h3>
               <p className="text-sm text-navy-mid leading-relaxed">
