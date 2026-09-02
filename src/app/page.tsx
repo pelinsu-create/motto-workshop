@@ -269,9 +269,9 @@ export default function Home() {
             <div className="flex flex-col flex-1 p-6">
               <h3 className="text-xl text-navy mb-2">Research Sprint</h3>
               <p className="text-sm text-gray leading-relaxed mb-5 flex-1">
-                A two to three hour session on AI-assisted research, on a topic you
-                choose. We practice which parts of research you can hand to AI and
-                which parts you should not, with games I built for it.
+                A three hour hands-on sprint for teams that do research. We practice
+                what to hand to AI, what to keep, and how to check what comes back,
+                with games I built for it.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link

@@ -1,17 +1,24 @@
+import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import { TrackedCTA } from "../tracked-cta";
+
+export const metadata: Metadata = {
+  title: "Research Sprint Workshop | Pelinsu Pelit",
+  description:
+    "A three hour hands-on sprint for teams that do research. Practice what to hand to AI, what to keep, and how to check what comes back.",
+};
 
 const headingClass = "text-2xl md:text-3xl text-navy";
 
 const PARTS = [
   {
-    name: "Filter",
-    subtitle: "Collect and organize",
-    line: "Bring your knowledge together in one center.",
+    name: "Collect",
+    subtitle: "Get everything into one place",
+    line: "Scattered links, notes and documents become one working source of truth.",
     bullets: [
-      "Gather your information in one place",
-      "Build your own source list",
-      "Try the mindmap feature",
+      "Bring your sources into one center",
+      "Build a source list your team can maintain",
+      "Map what you have with a mindmap",
       "Check what is real with the 3 Layer Verification checklist",
     ],
     tools: "NotebookLM + Gemini",
@@ -19,47 +26,47 @@ const PARTS = [
     tilt: "-1.2deg",
   },
   {
-    name: "Remix",
-    subtitle: "Contextualize and turn into insight",
-    line: "Transform what you collected for your own context or for the wider trends.",
+    name: "Analyze",
+    subtitle: "Turn it into insights you can defend",
+    line: "Move past generic summaries and make the thinking visible.",
     bullets: [
       "Produce insights with the 4 Question Context Frame",
-      "Analyze with different lenses, beyond generic summary prompts",
-      "Build a tagging and knowledge system",
+      "Analyze with different lenses, beyond summary prompts",
+      "Draw your team's line on synthetic users and AI shortcuts",
       "Run Bias Checker on your own analysis",
     ],
-    tools: "ChatGPT + Claude + Notion",
+    tools: "ChatGPT + Claude + Bias Checker",
     tint: "bg-note-peach",
     tilt: "0.9deg",
   },
   {
-    name: "Pre-Prototype",
-    subtitle: "Make your knowledge reusable",
-    line: "Design an AI system that keeps producing insights in a reusable, sustainable way.",
+    name: "Keep",
+    subtitle: "Make it reusable and write the rules",
+    line: "The session ends with rules and templates your team keeps using.",
     bullets: [
-      "Techniques for choosing between ideas",
-      "Visualize and pre-prototype with Claude",
-      "Continuous learning and ways to read market signals",
+      "Write your team AI charter: what you hand over, what you never do, how you verify",
+      "Reusable prompt templates for your own projects",
+      "Pre-prototype your insight system with Claude",
     ],
-    tools: "ChatGPT + Claude + Notion",
+    tools: "Claude + Notion",
     tint: "bg-note-lavender",
     tilt: "-0.7deg",
   },
 ];
 
 const AUDIENCE = [
-  "You want to add independent projects to your portfolio",
-  "You want to find and compare project, service or content ideas and watch their market signals",
-  "You keep saving content you never return to, and want to turn that backlog into a sustainable knowledge system",
+  "Your team uses AI for research or design work and everyone does it a little differently",
+  "Product managers and designers run their own research and want guardrails they can trust",
+  "You keep saving content you never return to, and want a system that produces insights instead of bookmarks",
 ];
 
 const TAKEAWAYS = [
+  "A one page team AI charter: what you hand to AI, what you never do, how you verify",
   "Your knowledge collected in one center",
-  "Your own source list",
+  "A source list your team can maintain",
   "The 4 Question Context Frame",
-  "A tagging and knowledge system",
   "Reusable AI prompt templates",
-  "A pre-prototype of your own AI insight system",
+  "My verification checklists and the games, to keep practicing",
 ];
 
 function CheckBox() {
@@ -104,6 +111,12 @@ export default function WorkshopPage() {
               >
                 Research Sprint
               </h1>
+              <p
+                className="text-lg text-navy-mid leading-snug fade-rise"
+                style={{ animationDelay: "100ms" }}
+              >
+                A three hour hands-on sprint for teams that do research.
+              </p>
             </div>
             {/* A die-cut emoji sticker pasted next to the title */}
             <span
@@ -118,10 +131,10 @@ export default function WorkshopPage() {
             className="text-base text-gray max-w-2xl leading-relaxed mb-8 fade-rise"
             style={{ animationDelay: "140ms" }}
           >
-            Three hours, online, your topic. We collect the content you keep saving,
-            turn it into insights with AI, and sketch a system that keeps producing
-            them. You leave with the start of your own AI insight system, plus my
-            checklists and games for deciding what to trust AI with.
+            Your team already uses AI somewhere in its research. This session makes
+            that use deliberate. We practice what to hand to AI, what to keep doing
+            yourselves, and how to check what comes back, on your own topic, with
+            checklists and games I built for it.
           </p>
           <div className="fade-rise" style={{ animationDelay: "210ms" }}>
             <TrackedCTA
@@ -251,6 +264,14 @@ export default function WorkshopPage() {
             <div>
               <p className="text-xs font-semibold text-accent mb-1 uppercase tracking-wider">You need</p>
               <p className="text-sm text-navy">Claude and ChatGPT accounts. NotebookLM and Notion have free plans.</p>
+            </div>
+            <div>
+              <p className="text-xs font-semibold text-accent mb-1 uppercase tracking-wider">Who</p>
+              <p className="text-sm text-navy">Mixed teams work best: researchers, designers, product managers.</p>
+            </div>
+            <div>
+              <p className="text-xs font-semibold text-accent mb-1 uppercase tracking-wider">Good to know</p>
+              <p className="text-sm text-navy">A documented, hands-on step toward the AI literacy the EU AI Act expects from teams that use AI.</p>
             </div>
           </div>
         </section>
