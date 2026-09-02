@@ -1,8 +1,7 @@
 import type { CSSProperties } from "react";
 import { TrackedCTA } from "../tracked-cta";
-import { caveat } from "../notebook-font";
 
-const headingClass = `${caveat.className} notebook-heading font-semibold text-3xl md:text-4xl text-navy`;
+const headingClass = "text-2xl md:text-3xl text-navy";
 
 const PARTS = [
   {

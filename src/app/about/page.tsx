@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { caveat } from "../notebook-font";
 import ContactSection from "../contact-section";
 
 export const metadata: Metadata = {
@@ -11,7 +10,7 @@ export const metadata: Metadata = {
     "Senior Product Designer. Ten years across fintech, travel, logistics and energy. Based in Helmond, Netherlands.",
 };
 
-const headingClass = `${caveat.className} notebook-heading font-semibold text-3xl md:text-4xl text-navy mb-8`;
+const headingClass = "text-2xl md:text-3xl text-navy mb-8";
 
 function Icon({ children, className = "w-5 h-5" }: { children: React.ReactNode; className?: string }) {
   return (
