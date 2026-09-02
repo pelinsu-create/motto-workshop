@@ -6,7 +6,7 @@ import { TrackedCTA } from "./tracked-cta";
    site-wide: email first, booking second, CV last. */
 export default function ContactSection() {
   return (
-    <section className="py-16 doodle-divider">
+    <section className="py-16 border-t border-border">
       <h2 className="text-2xl md:text-3xl text-navy mb-6">
         Get in touch
       </h2>

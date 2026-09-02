@@ -425,7 +425,7 @@ export default function Lab() {
           </button>
 
           {/* Fake doors */}
-          <div className="pt-2 pb-10 doodle-divider">
+          <div className="pt-2 pb-10 border-t border-border">
             <p className="text-xs font-semibold uppercase tracking-wider text-gray-light mb-3">Coming Soon</p>
             <div className="grid grid-cols-2 gap-2">
               {[

@@ -193,7 +193,7 @@ export default function Home() {
       </section>
 
       {/* Selected work: a journal spread the project post-its are pinned onto */}
-      <section className="py-14 doodle-divider">
+      <section className="py-14 border-t border-border">
         <div className="notebook-page relative px-5 sm:px-8 py-10">
         <div className="flex items-baseline justify-between mb-10">
           <h2 className="text-2xl md:text-3xl text-navy">Selected Work</h2>
@@ -248,7 +248,7 @@ export default function Home() {
 
       {/* Workshop and tools, demoted below the hiring path, on its own
           journal spread so it matches the Selected Work section */}
-      <section className="py-14 doodle-divider">
+      <section className="py-14 border-t border-border">
         <div className="notebook-page relative px-5 sm:px-8 py-10">
         <p className="section-label mb-3">Also available</p>
         <h2 className="text-2xl md:text-3xl text-navy mb-8">Workshop and tools</h2>

@@ -148,7 +148,7 @@ export default function About() {
           </p>
         </section>
 
-        <section className="py-10 doodle-divider">
+        <section className="py-10 border-t border-border">
           <h2 className={headingClass}>Experience</h2>
           <div className="space-y-6">
             {experience.map((e) => (
@@ -166,7 +166,7 @@ export default function About() {
           </div>
         </section>
 
-        <section className="py-10 doodle-divider">
+        <section className="py-10 border-t border-border">
           <h2 className={headingClass}>What I do</h2>
           {/* The checklist is pasted into the journal on a taped post-it */}
           <div className="note bg-note-mint p-6 sm:p-7" style={{ "--tilt": "-0.8deg" } as CSSProperties}>
@@ -187,7 +187,7 @@ export default function About() {
           </div>
         </section>
 
-        <section className="py-10 doodle-divider">
+        <section className="py-10 border-t border-border">
           <h2 className={headingClass}>Education</h2>
           <div className="space-y-5">
             <div>

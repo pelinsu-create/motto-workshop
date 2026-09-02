@@ -134,7 +134,7 @@ export default function WorkshopPage() {
         </section>
 
         {/* Who the session is for, a checklist in the journal */}
-        <section className="py-10 doodle-divider">
+        <section className="py-10 border-t border-border">
           <h2 className={`${headingClass} mb-4`}>Who Is It For?</h2>
           <div className="space-y-3 max-w-2xl">
             {AUDIENCE.map((item) => (
@@ -147,7 +147,7 @@ export default function WorkshopPage() {
         </section>
 
         {/* The three hour agenda, each part pasted in on its own post-it */}
-        <section className="py-10 doodle-divider">
+        <section className="py-10 border-t border-border">
           <h2 className={`${headingClass} mb-8`}>The Three Hour Workshop</h2>
           <div className="grid gap-6 md:grid-cols-3 md:gap-5">
             {PARTS.map((part, i) => (
@@ -185,7 +185,7 @@ export default function WorkshopPage() {
         </section>
 
         {/* Games */}
-        <section className="py-10 doodle-divider">
+        <section className="py-10 border-t border-border">
           <h2 className={`${headingClass} mb-4`}>Try the Games First</h2>
           <p className="text-gray leading-relaxed mb-6 max-w-2xl">
             Hallucination Hunter, Bad Idea Bingo and Hat Roulette are playable now, free,
@@ -200,7 +200,7 @@ export default function WorkshopPage() {
         </section>
 
         {/* Transcript Analyzer */}
-        <section className="py-10 doodle-divider">
+        <section className="py-10 border-t border-border">
           <p className="section-label mb-3">Tool</p>
           <h2 className={`${headingClass} mb-4`}>Transcript Analyzer</h2>
           <p className="text-gray leading-relaxed mb-6 max-w-2xl">
@@ -217,7 +217,7 @@ export default function WorkshopPage() {
         </section>
 
         {/* What you leave with, a checklist on a taped post-it */}
-        <section className="py-10 doodle-divider">
+        <section className="py-10 border-t border-border">
           <h2 className={`${headingClass} mb-8`}>What You Leave With</h2>
           <div className="note bg-note-cream p-6 sm:p-7" style={{ "--tilt": "0.8deg" } as CSSProperties}>
             <span className="tape" aria-hidden="true" />
@@ -233,7 +233,7 @@ export default function WorkshopPage() {
         </section>
 
         {/* Details, compact */}
-        <section className="py-10 doodle-divider">
+        <section className="py-10 border-t border-border">
           <h2 className={`${headingClass} mb-8`}>Details</h2>
           <div className="grid sm:grid-cols-2 gap-x-8 gap-y-5">
             <div>
@@ -256,7 +256,7 @@ export default function WorkshopPage() {
         </section>
 
         {/* CTA on a pinned sticky note */}
-        <section className="pt-10 pb-14 doodle-divider">
+        <section className="pt-10 pb-14 border-t border-border">
           <div className="note bg-note-mint p-8 text-center" style={{ "--tilt": "-0.6deg" } as CSSProperties}>
             <h2 className={`${headingClass} mb-4`}>Interested?</h2>
             <p className="text-gray leading-relaxed mb-6 max-w-lg mx-auto">

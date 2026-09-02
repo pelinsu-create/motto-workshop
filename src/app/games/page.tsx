@@ -541,7 +541,7 @@ export default function Games() {
           </MethodCard>
         </section>
 
-        <section className="pt-8 pb-14 doodle-divider">
+        <section className="pt-8 pb-14 border-t border-border">
           <p className="text-gray leading-relaxed max-w-2xl">
             In the workshop we play these against your own project and discuss the
             answers as a group, which is where most of the value is.{" "}

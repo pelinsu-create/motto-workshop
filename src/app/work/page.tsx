@@ -183,7 +183,7 @@ export default function Work() {
         </div>
       </section>
 
-      <section className="pt-10 pb-14 mt-8 doodle-divider">
+      <section className="pt-10 pb-14 mt-8 border-t border-border">
         <h2 className="text-2xl md:text-3xl text-navy mb-3">Things I built</h2>
         <p className="text-gray leading-relaxed mb-8 max-w-2xl">
           All three are live. You can try them without an account.
