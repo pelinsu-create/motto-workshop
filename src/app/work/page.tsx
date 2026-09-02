@@ -96,8 +96,8 @@ const tools = [
     imgAlt: "Pastel 3D balance scale icon",
     tint: "bg-surface",
     tilt: "-0.8deg",
-    title: "Bias Checker",
-    blurb: "Checks your discussion guide, survey or screener against 20 research biases before fieldwork. It runs on the bias watchlist I use in my own studies.",
+    title: "Guide Builder + Bias Checker",
+    blurb: "Drafts an interview guide, survey or screener from your research goal, then checks the draft against 20 research biases in one click. It runs on the bias watchlist I use in my own studies.",
     external: false,
   },
   {

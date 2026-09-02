@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Bias Checker | Motto Workshop",
+  title: "Guide Builder and Bias Checker | Motto Workshop",
   description:
-    "Check your discussion guide, survey or screener before fieldwork. A free linter that flags 20 UX research biases in your questions and suggests minimal rewrites. No account, nothing stored.",
+    "Draft an interview guide, survey or screener from your research goal, then check it against 20 UX research biases before fieldwork. Neutral wording, behavior over opinion, minimal rewrites. No account, nothing stored.",
 };
 
 export default function BiasCheckLayout({

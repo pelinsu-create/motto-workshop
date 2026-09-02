@@ -124,6 +124,13 @@ export default function XyzBuilder() {
   const [sharpening, setSharpening] = useState(false);
   const [sharpenResults, setSharpenResults] = useState<SharpenResults | null>(null);
   const [sharpenError, setSharpenError] = useState(false);
+  const [insight, setInsight] = useState("");
+  const [drafting, setDrafting] = useState(false);
+  const [drafted, setDrafted] = useState(false);
+  const [draftError, setDraftError] = useState(false);
+  const [xRationale, setXRationale] = useState("");
+  const [insightOpinionNote, setInsightOpinionNote] = useState("");
+  const [assumptions, setAssumptions] = useState<string[]>([]);
 
   const showStep2 = idea.trim().length > 0;
   const showStep3 = showStep2 && y.trim().length > 0;
@@ -167,6 +174,52 @@ export default function XyzBuilder() {
       setTimeout(() => setCopied(false), 2000);
     } catch {
       // Clipboard unavailable, e.g. denied permission. The button simply stays quiet.
+    }
+  }
+
+  async function draftFromInsight() {
+    if (!insight.trim() || drafting) return;
+    setDrafting(true);
+    setDraftError(false);
+    setDrafted(false);
+    try {
+      const res = await fetch("/api/xyz-from-insight", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ insight: insight.trim() }),
+      });
+      if (!res.ok) throw new Error("Draft failed");
+      const data = await res.json();
+      if (
+        !data ||
+        typeof data.idea !== "string" ||
+        typeof data.y !== "string" ||
+        typeof data.z !== "string"
+      ) {
+        throw new Error("Malformed draft");
+      }
+      setIdea(data.idea);
+      setY(data.y);
+      setZ(data.z);
+      setX(String(data.x_suggestion ?? "").replace(/[^\d.]/g, ""));
+      setXRationale(typeof data.x_rationale === "string" ? data.x_rationale : "");
+      setInsightOpinionNote(
+        data.opinion_flag === true && typeof data.opinion_note === "string"
+          ? data.opinion_note
+          : ""
+      );
+      setAssumptions(
+        Array.isArray(data.assumptions)
+          ? data.assumptions.filter((a: unknown): a is string => typeof a === "string")
+          : []
+      );
+      setSharpenResults(null);
+      setSharpenError(false);
+      setDrafted(true);
+    } catch {
+      setDraftError(true);
+    } finally {
+      setDrafting(false);
     }
   }
 
@@ -229,7 +282,8 @@ export default function XyzBuilder() {
           <CardBody className="text-sm text-gray leading-relaxed">
             A guided form based on Alberto Savoia&apos;s pretotyping method. You leave with
             one sentence, at least X% of Y will Z, a matching test, and a kill line you
-            wrote before the data came in.
+            wrote before the data came in. You can also paste a research insight and let
+            the tool draft the first version for you.
           </CardBody>
           <CardTip label="The threshold comes first.">
             decide what would convince a skeptic before the data comes in.
@@ -239,6 +293,70 @@ export default function XyzBuilder() {
         <div className="grid lg:grid-cols-[1fr_22rem] gap-6 items-start">
           {/* Steps column */}
           <div className="space-y-6 min-w-0">
+            {/* Optional entry point: draft the hypothesis from a research insight */}
+            <div className="rounded-xl border border-border bg-surface overflow-hidden">
+              <div className="flex items-baseline justify-between gap-3 border-b border-border px-5 py-3">
+                <div>
+                  <h2 className="font-sans text-sm font-semibold text-navy">
+                    Start from an insight
+                  </h2>
+                  <p className="mt-0.5 text-xs text-gray">
+                    Have research already? Paste it and get a draft hypothesis to edit.
+                    Or skip this and start typing at Step 1.
+                  </p>
+                </div>
+                <span className="shrink-0 inline-block rounded-full bg-tag-bg px-3 py-1 text-[0.68rem] font-semibold leading-none text-navy">
+                  Optional
+                </span>
+              </div>
+              <div className="px-5 py-4">
+                <textarea
+                  value={insight}
+                  onChange={(e) => setInsight(e.target.value)}
+                  rows={3}
+                  maxLength={4000}
+                  className="w-full border border-border rounded-lg px-4 py-3 text-sm text-navy bg-surface placeholder:text-gray-light outline-none focus:border-accent/40 transition-colors resize-y"
+                  placeholder="Paste a research insight, interview finding, or observation"
+                />
+                <div className="mt-3 flex flex-wrap items-center gap-3">
+                  <button
+                    onClick={draftFromInsight}
+                    disabled={drafting || !insight.trim()}
+                    className="bg-accent text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-navy btn-press disabled:opacity-40 disabled:cursor-not-allowed"
+                  >
+                    {drafting ? "Drafting..." : "Draft my hypothesis"}
+                  </button>
+                  {drafting && (
+                    <p className="text-xs text-accent font-medium">
+                      Reading the insight, drafting Y, Z, and a starting threshold...
+                    </p>
+                  )}
+                </div>
+                {draftError && (
+                  <div className="mt-3 bg-red-50 border border-red-200 rounded-lg p-3">
+                    <p className="text-xs text-red-700">
+                      The draft did not complete. Nothing was changed. Try again, or
+                      fill in the steps by hand below.
+                    </p>
+                  </div>
+                )}
+                {drafted && !drafting && (
+                  <div className="mt-3 bg-accent-light/50 border border-accent/20 rounded-lg p-3 fade-rise">
+                    <p className="text-xs text-navy leading-relaxed">
+                      Draft ready. The steps below are prefilled from your insight,
+                      review and edit each one.
+                      {xRationale && (
+                        <>
+                          {" "}
+                          X starts at {x.trim() || "?"}%: {xRationale}
+                        </>
+                      )}
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+
             {/* Step 1: idea */}
             <StepCard
               title="Step 1: The idea"
@@ -286,18 +404,26 @@ export default function XyzBuilder() {
                 <input
                   type="text"
                   value={z}
-                  onChange={(e) => setZ(e.target.value)}
+                  onChange={(e) => {
+                    setZ(e.target.value);
+                    setInsightOpinionNote("");
+                  }}
                   className="w-full border border-border rounded-lg px-4 py-3 text-sm text-navy bg-surface placeholder:text-gray-light outline-none focus:border-accent/40 transition-colors"
                   placeholder="join the waitlist with their email"
                 />
-                {opinionCaught && (
+                {(opinionCaught || insightOpinionNote) && (
                   <div className="mt-3 bg-amber-50 border border-amber-200 rounded-lg p-3 fade-rise">
-                    <p className="text-xs text-amber-700">
-                      That is an opinion, not a behavior. People say they are interested
-                      to be kind, then never come back. Replace it with something you can
-                      count: clicks the link, joins the waitlist, pays a deposit, shows
-                      up.
-                    </p>
+                    {insightOpinionNote && (
+                      <p className="text-xs text-amber-700">{insightOpinionNote}</p>
+                    )}
+                    {opinionCaught && (
+                      <p className={`text-xs text-amber-700 ${insightOpinionNote ? "mt-2" : ""}`}>
+                        That is an opinion, not a behavior. People say they are interested
+                        to be kind, then never come back. Replace it with something you can
+                        count: clicks the link, joins the waitlist, pays a deposit, shows
+                        up.
+                      </p>
+                    )}
                   </div>
                 )}
               </StepCard>
@@ -469,6 +595,32 @@ export default function XyzBuilder() {
               </CardTip>
             </MethodCard>
 
+            {assumptions.length > 0 && (
+              <div className="rounded-xl border border-border bg-surface overflow-hidden fade-rise">
+                <div className="border-b border-border px-5 py-3">
+                  <h3 className="font-sans text-sm font-semibold text-navy">
+                    Assumptions this test should surface
+                  </h3>
+                  <p className="mt-0.5 text-xs text-gray">
+                    Hiding inside the insight you pasted.
+                  </p>
+                </div>
+                <ul className="px-5 py-4 space-y-2">
+                  {assumptions.map((a, i) => (
+                    <li
+                      key={i}
+                      className="flex gap-2 text-xs text-gray leading-relaxed"
+                    >
+                      <span className="shrink-0 text-accent" aria-hidden="true">
+                        &#8226;
+                      </span>
+                      <span>{a}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
             {cardComplete && (
               <div className="fade-rise space-y-4">
                 <button
@@ -563,9 +715,9 @@ export default function XyzBuilder() {
         </div>
 
         <p className="text-xs text-gray-light text-center mt-12">
-          The form runs in your browser and nothing is stored. Only the sharpen step
-          sends your text to the AI, and that text is discarded after the critique comes
-          back.
+          The form runs in your browser and nothing is stored. Only the insight draft
+          and the sharpen step send your text to the AI, and that text is discarded
+          after the response comes back.
         </p>
       </div>
 

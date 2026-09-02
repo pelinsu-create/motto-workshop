@@ -304,19 +304,19 @@ export default function Home() {
                   style={{ width: "calc(100% - 2rem)" }}
                 />
                 <div className="flex flex-col flex-1 p-6">
-                  <h3 className="text-xl text-navy mb-2">Bias Checker</h3>
+                  <h3 className="text-xl text-navy mb-2">Guide Builder + Bias Checker</h3>
                   <p className="text-sm text-gray leading-relaxed mb-5 flex-1">
-                    Paste your discussion guide, survey or screener before fieldwork. It
-                    checks every question against 20 research biases and suggests a
-                    minimal fix for each problem. It runs on the bias watchlist I use in
-                    my own studies. No account needed.
+                    Describe your research goal and it drafts an interview guide, survey
+                    or screener. Then one click checks the draft, or any guide you paste,
+                    against 20 research biases and suggests a minimal fix for each
+                    problem. No account needed.
                   </p>
                   <div className="flex flex-wrap gap-3">
                     <Link
                       href="/bias-check"
                       className="inline-block bg-accent text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-navy btn-press"
                     >
-                      Try Bias Checker
+                      Try the tool
                     </Link>
                   </div>
                 </div>
