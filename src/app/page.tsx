@@ -146,7 +146,7 @@ export default function Home() {
         <h2 className="text-2xl md:text-3xl text-navy mb-10">How I Work</h2>
         <div className="grid gap-8 md:grid-cols-3 md:gap-5">
           <Reveal className="h-full">
-            <div className="note h-full bg-note-mint p-6" style={{ "--tilt": "-1.4deg" } as CSSProperties}>
+            <div className="note h-full bg-surface p-6" style={{ "--tilt": "-1.4deg" } as CSSProperties}>
               <span className="tape" aria-hidden="true" />
               <Image src="/home/icon-research.jpg" alt="" width={96} height={96} className="w-12 h-12 rounded-lg object-cover mb-3" aria-hidden="true" />
               <h3 className="text-lg text-navy font-semibold mb-2">Research</h3>
@@ -157,7 +157,7 @@ export default function Home() {
             </div>
           </Reveal>
           <Reveal delay={70} className="h-full">
-            <div className="note h-full bg-note-mint p-6" style={{ "--tilt": "1.1deg" } as CSSProperties}>
+            <div className="note h-full bg-surface p-6" style={{ "--tilt": "1.1deg" } as CSSProperties}>
               <Image src="/home/icon-facilitate.jpg" alt="" width={96} height={96} className="w-12 h-12 rounded-lg object-cover mb-3" aria-hidden="true" />
               <h3 className="text-lg text-navy font-semibold mb-2">Facilitate</h3>
               <p className="text-sm text-navy-mid leading-relaxed">
@@ -167,7 +167,7 @@ export default function Home() {
             </div>
           </Reveal>
           <Reveal delay={140} className="h-full">
-            <div className="note h-full bg-note-mint p-6" style={{ "--tilt": "-0.8deg" } as CSSProperties}>
+            <div className="note h-full bg-surface p-6" style={{ "--tilt": "-0.8deg" } as CSSProperties}>
               <span className="tape" aria-hidden="true" />
               <Image src="/home/icon-build.jpg" alt="" width={96} height={96} className="w-12 h-12 rounded-lg object-cover mb-3" aria-hidden="true" />
               <h3 className="text-lg text-navy font-semibold mb-2">Build</h3>
