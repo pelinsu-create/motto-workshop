@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import type { CSSProperties } from "react";
-import { caveat } from "../notebook-font";
 import { MethodCard, CardTitle, CardBody, Pill, type PillTone } from "../method-card";
 
 /* ------------------------------------------------------------------ */
@@ -467,7 +466,7 @@ export default function Games() {
         <section className="pt-14 pb-12 md:pt-20">
           <p className="section-label mb-4 fade-rise">Workshop Games</p>
           <h1
-            className={`${caveat.className} notebook-heading font-semibold text-4xl md:text-5xl text-navy leading-tight mb-6 fade-rise`}
+            className={`font-semibold text-4xl md:text-5xl text-navy leading-tight mb-6 fade-rise`}
             style={{ animationDelay: "70ms" }}
           >
             Games from the workshop

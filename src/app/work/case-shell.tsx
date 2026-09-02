@@ -2,7 +2,6 @@ import type { CSSProperties } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { caveat } from "../notebook-font";
 
 /** One full-width image with a caption beneath it. */
 export function Figure({
@@ -140,7 +139,7 @@ export function CaseHero({
 export function Block({ heading, children }: { heading: string; children: ReactNode }) {
   return (
     <section className="py-14 border-t border-border">
-      <h2 className={`${caveat.className} notebook-heading font-semibold text-3xl md:text-4xl text-navy mb-6`}>{heading}</h2>
+      <h2 className={`text-2xl md:text-3xl text-navy mb-6`}>{heading}</h2>
       <div className="space-y-4 text-gray leading-relaxed">{children}</div>
     </section>
   );
