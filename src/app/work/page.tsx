@@ -101,16 +101,6 @@ const tools = [
     external: false,
   },
   {
-    href: "/lab",
-    img: "/work/icon-lab.jpg",
-    imgAlt: "Pastel 3D game die icon",
-    tint: "bg-surface",
-    tilt: "0.7deg",
-    title: "Activity Lab",
-    blurb: "Generates a complete workshop activity from a topic and a goal. Three free runs, no account.",
-    external: false,
-  },
-  {
     href: "/xyz",
     img: "/work/icon-xyz.jpg",
     imgAlt: "Pastel 3D target with arrow icon",
@@ -186,7 +176,7 @@ export default function Work() {
       <section className="pt-10 pb-14 mt-8 border-t border-border">
         <h2 className="text-2xl md:text-3xl text-navy mb-3">Things I built</h2>
         <p className="text-gray leading-relaxed mb-8 max-w-2xl">
-          All three are live. You can try them without an account.
+          Both are live. You can try them without an account.
         </p>
         <div className="grid sm:grid-cols-2 gap-6">
           {tools.map((t, i) =>
