@@ -18,7 +18,7 @@ const work = [
     title: "Designing logistics products people are paid to use",
     year: "2025 to 2026",
     blurb:
-      "Terminal charges, warehouse fees and loadability for Turkish Cargo, shipped inside a live design system.",
+      "Three freight products for Turkish Cargo: terminal charges, warehouse fees and loadability, shipped inside a live design system.",
   },
   {
     href: "/work/liz-smart-office",
@@ -31,7 +31,7 @@ const work = [
     title: "Simplifying hybrid working, from booking to admin insights",
     year: "2021 to 2022",
     blurb:
-      "Booker app usability, an admin insights page, and a Teams app on the Microsoft component library.",
+      "Three parts of one product: booker usability, an insights page built from scratch, and a Teams app on the Microsoft component library.",
   },
   {
     href: "/case-studies/fluffy-score",
@@ -44,7 +44,7 @@ const work = [
     title: "Fluffy Score: an AI home assessment tool",
     year: "2026",
     blurb:
-      "Five years of field research, taken to a working product I built myself.",
+      "Five years of field research in more than 50 homes, scored across five pillars in a product I built myself.",
   },
   {
     href: "/work/stakeholder-map",
@@ -79,6 +79,12 @@ export default function Home() {
     <div className="max-w-3xl mx-auto px-6">
       {/* Hero: the intro lives on a sticky note wall */}
       <section className="py-24 md:py-32">
+        <div className="mb-5 fade-rise">
+          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3.5 py-1.5 text-xs font-medium text-navy">
+            <span className="h-2 w-2 rounded-full bg-success" aria-hidden="true" />
+            Open to senior roles and projects
+          </span>
+        </div>
         <p className="section-label mb-4 fade-rise">Senior Product Designer</p>
         <h1
           className="text-4xl md:text-5xl font-semibold text-navy leading-tight mb-10 fade-rise"

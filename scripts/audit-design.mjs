@@ -37,6 +37,7 @@ const EXTERNAL_TOKENS = new Set([
   "--font-serif",
   "--font-inter",
   "--font-playfair",
+  "--font-caveat",
 ]);
 
 /* Text on background pairs that must pass WCAG AA 4.5:1. */

@@ -29,7 +29,7 @@ export default function ContactSection() {
             event="contact_book_call"
             className="inline-block border border-border text-navy px-6 py-3 rounded-lg text-sm font-medium hover:bg-lavender btn-press"
           >
-            Book a call
+            Book a 20-minute call
           </TrackedCTA>
         </div>
       </div>
