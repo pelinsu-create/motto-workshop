@@ -33,6 +33,22 @@ but the primary consumer is a model.
   not permission to improvise. Stop and ask, then the answer gets written down.
 - Run `npm run audit:design` after generating. Fix failures before showing work.
 
+## Proof (2026-09-03)
+
+The same component (an office hours booking card) was generated twice by the
+same model: once from a verbal description only, once after reading this
+folder. Deterministic drift count (raw hex, rgba, arbitrary classes, default
+palette classes, off-token shadows and sizes):
+
+- Without spec: 24 drift hits, 0 system classes. Invented near-miss colors
+  (navy #1a2342 vs token #12193a, accent #2f5fe3 vs #3b5bdb), Georgia instead
+  of Playfair, custom shadows and durations, untracked CTA, rebuilt the card
+  from scratch.
+- With spec: 0 drift hits, composed MethodCard, Pill and TrackedCTA with a
+  correctly named event.
+
+One run each, so treat it as a demonstration, not a measurement.
+
 ## Sync routine
 
 The audit script cross-checks `globals.css` against `tokens.md`: a token that
