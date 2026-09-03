@@ -114,6 +114,7 @@ decision.
 |---|---|---|
 | `--font-sans` (`--font-inter`) | Inter 300 400 500 600 | Body, UI, labels |
 | `--font-serif` (`--font-playfair`) | Playfair Display 400 600 700 | h1, h2, h3 (applied globally) |
+| `--font-caveat` | Caveat 600 (next/font, src/app/notebook-font.ts) | Hand lettered accents on notebook pages only, never body text |
 
 Type scale: use the Tailwind default scale only (text-xs to text-5xl). The
 one exception in the codebase is the pill at 0.68rem, documented in
