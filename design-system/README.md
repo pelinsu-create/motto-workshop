@@ -49,6 +49,13 @@ palette classes, off-token shadows and sizes):
 
 One run each, so treat it as a demonstration, not a measurement.
 
+## Living showcase
+
+`/design-system` on the site renders the system from the live tokens
+(`src/app/design-system/`). Swatch values are read from the CSS custom
+properties at runtime, so the page cannot drift from globals.css. When a
+token or component is added, add it to the showcase in the same change.
+
 ## Sync routine
 
 The audit script cross-checks `globals.css` against `tokens.md`: a token that
