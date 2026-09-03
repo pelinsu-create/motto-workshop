@@ -437,7 +437,7 @@ const GAMES: Game[] = [
     name: "Hat Roulette",
     kicker: "Perspective",
     blurb: "Three stakeholders react honestly to a decision you are about to make.",
-    panel: "bg-[#fbdde9]",
+    panel: "bg-note-rose",
     icon: "\u{1F3A9}",
     iconAlt: "Top hat",
     tilt: "-0.5deg",

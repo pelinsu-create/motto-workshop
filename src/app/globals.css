@@ -30,6 +30,17 @@
   --note-peach: #fce4d8;
   --note-lavender: #e7e3f6;
   --note-yellow: #fdf0b8;
+  --note-rose: #fbdde9; /* soft rose paper, the pink sibling of the note family */
+
+  /* Pill ink colors. Dark text tones tuned to pass contrast on their
+     pastel pill backgrounds. Always pair ink with its named paper. */
+  --ink-rose: #9e4067; /* text on note-rose pills, 4.9:1 on note-rose */
+  --ink-mustard: #8a6a15; /* text on note-cream pills */
+
+  /* Positive and diagram tones. Used by inline SVG maps (causal loops)
+     and any success state. Green stays reserved for these, never decorative. */
+  --success: #0f7a56; /* text safe green, 5:1 on success-light */
+  --success-light: #edfcf5;
   --shadow-note: 0 1px 2px rgba(18, 25, 58, 0.08), 0 10px 20px -12px rgba(18, 25, 58, 0.3); /* soft paper shadow, note lifted slightly off the wall */
 }
 
@@ -51,6 +62,11 @@
   --color-note-peach: var(--note-peach);
   --color-note-lavender: var(--note-lavender);
   --color-note-yellow: var(--note-yellow);
+  --color-note-rose: var(--note-rose);
+  --color-ink-rose: var(--ink-rose);
+  --color-ink-mustard: var(--ink-mustard);
+  --color-success: var(--success);
+  --color-success-light: var(--success-light);
   --font-sans: var(--font-inter);
   --font-serif: var(--font-playfair);
 }

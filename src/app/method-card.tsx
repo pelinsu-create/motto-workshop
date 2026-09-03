@@ -73,8 +73,8 @@ export type PillTone = "accent" | "navy" | "rose" | "mustard";
 const PILL_TONES: Record<PillTone, string> = {
   accent: "bg-accent-light text-accent",
   navy: "bg-tag-bg text-navy",
-  rose: "bg-[#fbdde9] text-[#a94a72]",
-  mustard: "bg-note-cream text-[#8a6a15]",
+  rose: "bg-note-rose text-ink-rose",
+  mustard: "bg-note-cream text-ink-mustard",
 };
 
 export function Pill({
