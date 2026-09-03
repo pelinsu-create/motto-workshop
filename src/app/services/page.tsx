@@ -34,11 +34,11 @@ const WEEKS = [
   {
     name: "Read everything",
     subtitle: "Week two",
-    line: "Everything the company already holds gets read, including the material nobody has opened in a year.",
+    line: "Everything the company already holds gets read, including the material nobody has opened in a year, and the category around it.",
     bullets: [
       "Support tickets, churn analysis, past research",
       "Product analytics you already collect",
-      "Competitor and category material",
+      "Direct and indirect competitors, read from their documentation",
     ],
     tint: "bg-note-peach",
     tilt: "0.9deg",
@@ -71,6 +71,10 @@ const DELIVERABLES = [
     body: "What nobody in the company actually knows, ordered by which decision it threatens. This is the part that says where the evidence runs out instead of covering the hole with a plausible summary.",
   },
   {
+    title: "A competitive read that separates real gaps from adoption gaps",
+    body: "Most competitive analysis compares your own team's complaints against competitors' marketing pages, and that comparison reliably produces a story where you are behind. I read the product documentation first, yours and theirs. A feature that already exists but nobody uses gets named as an adoption problem, not rebuilt as a missing one.",
+  },
+  {
     title: "A theme map with confidence levels",
     body: "Themes marked high, medium or low confidence, each traceable to a named source. If a finding cannot be traced, it does not ship as a finding.",
   },
@@ -83,6 +87,7 @@ const DELIVERABLES = [
 const NOT = [
   "Not new customer research. This audits what already exists inside your company. Talking to your customers is the next step, not this one.",
   "Not a strategy deck. You get evidence and named gaps, not a recommendation dressed up as certainty.",
+  "Not a feature comparison chart. Competitors get read for how they actually work, not scored on a grid that flatters whoever made it.",
   "Not an analytics project. What you already collect gets read, not rebuilt.",
   "Not a review of people. Findings attach to sources and processes, never to individuals.",
 ];
@@ -243,8 +248,9 @@ export default function ServicesPage() {
                 A delivered research engagement
               </Link>
               {" "}
-              for a renewable energy client: desk research turned into a map of 87
-              stakeholders, used to decide which roles the product should support first.
+              for a renewable energy client: a sector report and three competitor case
+              study libraries turned into a map of 87 stakeholders across three company
+              types, used to decide which roles the product should support first.
             </p>
             <p className="text-sm text-navy leading-relaxed">
               <Link href="/research-sprint/analyze" className="text-accent hover:text-navy transition-colors font-medium">
