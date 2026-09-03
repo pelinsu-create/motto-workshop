@@ -22,7 +22,7 @@ const projects = [
     year: "2025 to 2026",
     role: "Product Designer, contract",
     blurb:
-      "Terminal charges, warehouse fees and loadability checks for Turkish Cargo, shipped inside a live design system.",
+      "Three freight products for Turkish Cargo: terminal charges, warehouse fees and loadability, shipped inside a live design system.",
     tint: "bg-surface",
     tilt: "-0.7deg",
     stick: "3deg",
@@ -37,7 +37,7 @@ const projects = [
     year: "2021 to 2022",
     role: "UX/UI Designer",
     blurb:
-      "Booker app usability, an admin insights page, and a Teams app on the Microsoft component library.",
+      "Three parts of one product: booker usability, an insights page built from scratch, and a Teams app on the Microsoft component library.",
     tint: "bg-surface",
     tilt: "0.5deg",
     stick: "-2.5deg",
@@ -52,7 +52,7 @@ const projects = [
     year: "2026",
     role: "Research, design and build",
     blurb:
-      "Five years of field research, taken to a working product I built myself.",
+      "Five years of field research in more than 50 homes, scored across five pillars in a product I built myself.",
     tint: "bg-surface",
     tilt: "-0.4deg",
     stick: "2.5deg",
@@ -108,6 +108,16 @@ const tools = [
     tilt: "-0.6deg",
     title: "XYZ Hypothesis Builder",
     blurb: "Turn a vague product idea into one testable sentence: at least X% of Y will Z. It steers you from opinions to observable behavior, recommends a cheap pretotype, and makes you set kill criteria before you test. No account needed.",
+    external: false,
+  },
+  {
+    href: "/research-sprint/analyze",
+    img: "/work/icon-sprint.jpg",
+    imgAlt: "Pastel 3D puzzle piece icon",
+    tint: "bg-surface",
+    tilt: "0.7deg",
+    title: "Transcript Analyzer",
+    blurb: "Upload interview transcripts and get structured insights back: themes with confidence ratings, quotes tagged by participant, contradictions between participants, and bias flags. Sample interviews are included, so you can watch a full analysis run without preparing anything.",
     external: false,
   },
 ];
@@ -176,7 +186,7 @@ export default function Work() {
       <section className="pt-10 pb-14 mt-8 border-t border-border">
         <h2 className="text-2xl md:text-3xl text-navy mb-3">Things I built</h2>
         <p className="text-gray leading-relaxed mb-8 max-w-2xl">
-          Both are live. You can try them without an account.
+          All three are live. You can try them without an account.
         </p>
         <div className="grid sm:grid-cols-2 gap-6">
           {tools.map((t, i) =>

@@ -78,24 +78,40 @@ export default function Home() {
   return (
     <div className="max-w-3xl mx-auto px-6">
       {/* Hero: the intro lives on a sticky note wall */}
-      <section className="py-24 md:py-32">
+      <section className="pt-12 pb-20 md:py-32">
         <div className="mb-5 fade-rise">
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3.5 py-1.5 text-xs font-medium text-navy">
             <span className="h-2 w-2 rounded-full bg-success" aria-hidden="true" />
             Open to senior roles and projects
           </span>
         </div>
-        <p className="section-label mb-4 fade-rise">Senior Product Designer</p>
+        <p className="section-label mb-4 fade-rise">Senior Product Designer, Netherlands</p>
         <h1
-          className="text-4xl md:text-5xl font-semibold text-navy leading-tight mb-10 fade-rise"
+          className="text-4xl md:text-5xl font-semibold text-navy leading-tight mb-8 fade-rise"
           style={{ animationDelay: "70ms" }}
         >
           I design the products
           <br className="hidden md:block" /> people use to do their jobs.
         </h1>
+        {/* Actions sit directly under the headline so they stay above the fold
+            on a phone, where the note and the photo would push them off. */}
+        <div className="flex flex-wrap gap-3 mb-10 fade-rise" style={{ animationDelay: "140ms" }}>
+          <Link
+            href="/work"
+            className="inline-block bg-accent text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-navy btn-press"
+          >
+            See five projects
+          </Link>
+          <TrackedCTA
+            event="hero_book_call"
+            className="inline-block border border-border text-navy px-6 py-3 rounded-lg text-sm font-medium hover:bg-lavender btn-press"
+          >
+            Book a call
+          </TrackedCTA>
+        </div>
         <div
-          className="flex flex-col gap-10 md:flex-row md:items-start md:gap-8 mb-10 fade-rise"
-          style={{ animationDelay: "140ms" }}
+          className="flex flex-col gap-8 md:flex-row md:items-start md:gap-8 fade-rise"
+          style={{ animationDelay: "200ms" }}
         >
           <div
             className="note bg-note-cream p-6 md:p-7 md:max-w-xl"
@@ -130,20 +146,6 @@ export default function Home() {
               Pelinsu
             </p>
           </div>
-        </div>
-        <div className="flex flex-wrap gap-3 fade-rise" style={{ animationDelay: "210ms" }}>
-          <Link
-            href="/work"
-            className="inline-block bg-accent text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-navy btn-press"
-          >
-            See five projects
-          </Link>
-          <TrackedCTA
-            event="hero_book_call"
-            className="inline-block border border-border text-navy px-6 py-3 rounded-lg text-sm font-medium hover:bg-lavender btn-press"
-          >
-            Book a call
-          </TrackedCTA>
         </div>
       </section>
 
