@@ -166,7 +166,7 @@ export default function ServiceTabs() {
           </div>
         )}
 
-        <p className="text-xs text-gray-light pt-4 border-t border-border">
+        <p className="text-xs text-gray pt-4 border-t border-border">
           {current.footer}
         </p>
       </div>

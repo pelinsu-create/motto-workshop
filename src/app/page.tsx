@@ -215,7 +215,7 @@ export default function Home() {
                     <p className="text-xs font-semibold text-gray uppercase tracking-wider">
                       {item.tag}
                     </p>
-                    <span className="text-xs text-gray-light shrink-0">{item.year}</span>
+                    <span className="text-xs text-gray shrink-0">{item.year}</span>
                   </div>
                   <h3 className="text-xl text-navy mb-2 group-hover:underline decoration-2 underline-offset-4">
                     {item.title}

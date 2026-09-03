@@ -21,11 +21,15 @@ const TOKENS_MD = join(ROOT, "design-system", "tokens.md");
 
 /* Files allowed to keep raw values, each with a reason and an expiry rule. */
 const ALLOW = {
-  "src/app/case-studies/fluffy-score/page.tsx":
-    "inline SVG causal loop mirrors token values; migrate to var() refs on next edit",
   "src/app/api/capture-email/route.ts":
     "HTML email template; email clients cannot read CSS variables, keep values matched to tokens.md by hand",
 };
+
+/* Tailwind default palette classes are drift, except the documented
+   feedback families (see tokens.md, Feedback palette). */
+const PALETTE =
+  /(?:bg|text|border|from|to|via|ring|fill|stroke|placeholder|decoration|outline)-((?:slate|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose|gray)-\d{2,3})\b/g;
+const FEEDBACK_OK = /^(?:red|amber|emerald)-(?:50|100|200|300|400|500|600|700|800)$/;
 
 /* Tokens defined outside the :root block (next/font, @theme aliases). */
 const EXTERNAL_TOKENS = new Set([
@@ -89,6 +93,9 @@ for (const file of walk(APP)) {
     if (/\[#|\[rgba?/.test(line)) hits.push("arbitrary color class");
     for (const m of line.matchAll(/\[(\d+)px\]/g)) {
       if (Number(m[1]) > 4) hits.push(`arbitrary size [${m[1]}px]`);
+    }
+    for (const m of line.matchAll(PALETTE)) {
+      if (!FEEDBACK_OK.test(m[1])) hits.push(`default palette class ${m[0]}`);
     }
     for (const h of hits) {
       if (ALLOW[r]) allowed.push(`${spot} ${h} (allowed: ${ALLOW[r]})`);

@@ -19,7 +19,7 @@ off-scale px value in TSX.
 | `--accent` | #3b5bdb | The one blue: links, primary buttons, focus outline, checkmarks, diagram lines |
 | `--accent-light` | #e8edff | Accent-tinted fills: pills, diagram node fills |
 | `--gray` | #6b7280 | Secondary text, section labels, nav links at rest |
-| `--gray-light` | #9ca3af | Tertiary text, timestamps, disabled feel |
+| `--gray-light` | #9ca3af | Placeholder text and disabled states ONLY. At 2.5:1 on white it fails AA, so never use it for readable text; small readable text uses `--gray` |
 | `--border` | #ddd9e8 | All rules and borders, one weight of separation |
 | `--surface` | #ffffff | Cards, notes wall paper, nav bar, polaroid frames |
 | `--tag-bg` | #eeedf5 | Neutral pill background (navy text) |
@@ -38,6 +38,13 @@ backgrounds and card visual panels, never for text.
 | `--note-lavender` | #e7e3f6 |
 | `--note-yellow` | #fdf0b8 |
 | `--note-rose` | #fbdde9 |
+
+Washi tape tints, shared by `.tape` and the `.tape-corner` strips:
+
+| Token | Value |
+|---|---|
+| `--tape-blue` | rgba(59, 91, 219, 0.13) |
+| `--tape-pink` | rgba(242, 169, 196, 0.45) |
 
 ## Color: pill inks
 
@@ -58,6 +65,25 @@ positive outcomes). Never decorative.
 |---|---|---|
 | `--success` | #0f7a56 | Success text, green diagram strokes and labels |
 | `--success-light` | #edfcf5 | Success-tinted fills, green diagram node fills |
+
+## Color: feedback palette (tool pages)
+
+The interactive tools (bias check, xyz, research sprint analyze, games) show
+AI results with severity colors. Documented decision: these use the Tailwind
+default `red`, `amber` and `emerald` families, tints 50 to 800 only.
+
+| Family | Meaning | Typical recipe |
+|---|---|---|
+| red | Error, high severity, fabricated | `bg-red-50 border-red-200 text-red-700` |
+| amber | Warning, medium severity | `bg-amber-50 border-amber-200 text-amber-700` |
+| emerald | Positive result, verified, low severity | `bg-emerald-50 text-emerald-700` |
+
+Rules: text tints 600 to 800 on 50 to 100 backgrounds; never on the site
+background directly; every other Tailwind default family (blue, slate, pink
+and so on) stays banned and fails the audit. Note the overlap with
+`--success`: `--success` is for site-level success text and diagram greens,
+emerald is for tool result panels. Converging these two greens is an open
+decision.
 
 ## Color: delight
 

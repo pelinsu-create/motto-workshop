@@ -714,7 +714,7 @@ export default function XyzBuilder() {
           </div>
         </div>
 
-        <p className="text-xs text-gray-light text-center mt-12">
+        <p className="text-xs text-gray text-center mt-12">
           The form runs in your browser and nothing is stored. Only the insight draft
           and the sharpen step send your text to the AI, and that text is discarded
           after the response comes back.

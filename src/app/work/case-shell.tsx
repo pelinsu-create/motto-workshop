@@ -28,7 +28,7 @@ export function Figure({
           className="w-full h-auto"
         />
       </div>
-      <figcaption className="text-xs text-gray-light mt-3">{caption}</figcaption>
+      <figcaption className="text-xs text-gray mt-3">{caption}</figcaption>
     </figure>
   );
 }
@@ -56,7 +56,7 @@ export function LiveEmbed({
           className="w-full block"
         />
       </div>
-      <figcaption className="text-xs text-gray-light mt-3 flex flex-wrap gap-x-3 gap-y-1 items-baseline">
+      <figcaption className="text-xs text-gray mt-3 flex flex-wrap gap-x-3 gap-y-1 items-baseline">
         <span>{caption}</span>
         <a
           href={src}
@@ -97,7 +97,7 @@ export function Gallery({
               className="w-full h-auto"
             />
           </div>
-          <figcaption className="text-xs text-gray-light mt-2">{it.caption}</figcaption>
+          <figcaption className="text-xs text-gray mt-2">{it.caption}</figcaption>
         </figure>
       ))}
     </div>

@@ -72,7 +72,7 @@ export default function EmailCapture() {
           {sending ? "..." : "Send me the info"}
         </button>
       </form>
-      {error && <p className="text-sm text-red-500 mt-3">{error}</p>}
+      {error && <p className="text-sm text-red-700 mt-3">{error}</p>}
     </div>
   );
 }

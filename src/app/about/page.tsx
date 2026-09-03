@@ -156,7 +156,7 @@ export default function About() {
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-1">
                     <h3 className="text-lg text-navy font-semibold">{e.org}</h3>
-                    <span className="text-xs text-gray-light shrink-0">{e.when}</span>
+                    <span className="text-xs text-gray shrink-0">{e.when}</span>
                   </div>
                   <p className="text-sm text-accent font-medium mb-2">{e.role}</p>
                   <p className="text-sm text-gray leading-relaxed">{e.note}</p>
@@ -196,7 +196,7 @@ export default function About() {
                   <Image src="/home/icon-education.jpg" alt="" width={96} height={96} className="w-8 h-8 rounded-md object-cover shrink-0" aria-hidden="true" />
                   Anadolu University
                 </h3>
-                <span className="text-xs text-gray-light">2007 to 2014</span>
+                <span className="text-xs text-gray">2007 to 2014</span>
               </div>
               <p className="text-sm text-gray pl-7">Industrial Design</p>
             </div>
@@ -206,7 +206,7 @@ export default function About() {
                   <Image src="/home/icon-education.jpg" alt="" width={96} height={96} className="w-8 h-8 rounded-md object-cover shrink-0" aria-hidden="true" />
                   Adam Mickiewicz University
                 </h3>
-                <span className="text-xs text-gray-light">2011 to 2012</span>
+                <span className="text-xs text-gray">2011 to 2012</span>
               </div>
               <p className="text-sm text-gray pl-7">Graphic Design, exchange programme</p>
             </div>

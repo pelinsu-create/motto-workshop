@@ -245,53 +245,53 @@ export default function FluffyScoreCaseStudy() {
           <svg viewBox="0 0 800 500" className="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                <polygon points="0 0, 10 3.5, 0 7" fill="#3b5bdb" />
+                <polygon points="0 0, 10 3.5, 0 7" fill="var(--accent)" />
               </marker>
               <marker id="arrow-green" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                <polygon points="0 0, 10 3.5, 0 7" fill="#1a9e72" />
+                <polygon points="0 0, 10 3.5, 0 7" fill="var(--success)" />
               </marker>
             </defs>
 
-            <text x="400" y="250" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="13" fontWeight="600" fill="#3b5bdb">REINFORCING</text>
-            <text x="400" y="268" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="13" fontWeight="600" fill="#3b5bdb">LOOP</text>
-            <circle cx="400" cy="258" r="35" fill="none" stroke="#3b5bdb" strokeWidth="1.5" strokeDasharray="4 3" />
+            <text x="400" y="250" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="13" fontWeight="600" fill="var(--accent)">REINFORCING</text>
+            <text x="400" y="268" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="13" fontWeight="600" fill="var(--accent)">LOOP</text>
+            <circle cx="400" cy="258" r="35" fill="none" stroke="var(--accent)" strokeWidth="1.5" strokeDasharray="4 3" />
 
-            <rect x="280" y="40" width="240" height="56" rx="12" fill="#e8edff" stroke="#3b5bdb" strokeWidth="1.5" />
-            <text x="400" y="65" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="13" fontWeight="600" fill="#12193a">Indoor Cat Owners</text>
-            <text x="400" y="82" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="11" fill="#6b7280">Learn Five Pillars via Fluffy Score</text>
+            <rect x="280" y="40" width="240" height="56" rx="12" fill="var(--accent-light)" stroke="var(--accent)" strokeWidth="1.5" />
+            <text x="400" y="65" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="13" fontWeight="600" fill="var(--navy)">Indoor Cat Owners</text>
+            <text x="400" y="82" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="11" fill="var(--gray)">Learn Five Pillars via Fluffy Score</text>
 
-            <rect x="560" y="140" width="220" height="56" rx="12" fill="#edfcf5" stroke="#1a9e72" strokeWidth="1.5" />
-            <text x="670" y="165" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="13" fontWeight="600" fill="#12193a">Better Home Environments</text>
-            <text x="670" y="182" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="11" fill="#6b7280">Enriched, stress-free spaces</text>
+            <rect x="560" y="140" width="220" height="56" rx="12" fill="var(--success-light)" stroke="var(--success)" strokeWidth="1.5" />
+            <text x="670" y="165" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="13" fontWeight="600" fill="var(--navy)">Better Home Environments</text>
+            <text x="670" y="182" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="11" fill="var(--gray)">Enriched, stress-free spaces</text>
 
-            <rect x="560" y="300" width="220" height="56" rx="12" fill="#e8edff" stroke="#3b5bdb" strokeWidth="1.5" />
-            <text x="670" y="325" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="13" fontWeight="600" fill="#12193a">Informed Adopters & Fosters</text>
-            <text x="670" y="342" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="11" fill="#6b7280">Know what cats actually need</text>
+            <rect x="560" y="300" width="220" height="56" rx="12" fill="var(--accent-light)" stroke="var(--accent)" strokeWidth="1.5" />
+            <text x="670" y="325" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="13" fontWeight="600" fill="var(--navy)">Informed Adopters & Fosters</text>
+            <text x="670" y="342" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="11" fill="var(--gray)">Know what cats actually need</text>
 
-            <rect x="280" y="400" width="240" height="56" rx="12" fill="#edfcf5" stroke="#1a9e72" strokeWidth="1.5" />
-            <text x="400" y="425" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="13" fontWeight="600" fill="#12193a">Shelter Cats Get Better Homes</text>
-            <text x="400" y="442" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="11" fill="#6b7280">Lower return rates, less stress</text>
+            <rect x="280" y="400" width="240" height="56" rx="12" fill="var(--success-light)" stroke="var(--success)" strokeWidth="1.5" />
+            <text x="400" y="425" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="13" fontWeight="600" fill="var(--navy)">Shelter Cats Get Better Homes</text>
+            <text x="400" y="442" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="11" fill="var(--gray)">Lower return rates, less stress</text>
 
-            <rect x="20" y="300" width="220" height="56" rx="12" fill="#e8edff" stroke="#3b5bdb" strokeWidth="1.5" />
-            <text x="130" y="325" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="13" fontWeight="600" fill="#12193a">Shelter Environments Improve</text>
-            <text x="130" y="342" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="11" fill="#6b7280">Same framework, institutional scale</text>
+            <rect x="20" y="300" width="220" height="56" rx="12" fill="var(--accent-light)" stroke="var(--accent)" strokeWidth="1.5" />
+            <text x="130" y="325" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="13" fontWeight="600" fill="var(--navy)">Shelter Environments Improve</text>
+            <text x="130" y="342" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="11" fill="var(--gray)">Same framework, institutional scale</text>
 
-            <rect x="20" y="140" width="220" height="56" rx="12" fill="#edfcf5" stroke="#1a9e72" strokeWidth="1.5" />
-            <text x="130" y="165" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="13" fontWeight="600" fill="#12193a">Community Awareness Grows</text>
-            <text x="130" y="182" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="11" fill="#6b7280">Word of mouth, shared reports</text>
+            <rect x="20" y="140" width="220" height="56" rx="12" fill="var(--success-light)" stroke="var(--success)" strokeWidth="1.5" />
+            <text x="130" y="165" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="13" fontWeight="600" fill="var(--navy)">Community Awareness Grows</text>
+            <text x="130" y="182" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="11" fill="var(--gray)">Word of mouth, shared reports</text>
 
-            <path d="M 520 75 Q 570 75 570 140" fill="none" stroke="#3b5bdb" strokeWidth="2" markerEnd="url(#arrow)" />
-            <text x="558" y="105" fontFamily="Inter, sans-serif" fontSize="10" fill="#3b5bdb" fontWeight="500">+</text>
-            <path d="M 670 196 L 670 298" fill="none" stroke="#1a9e72" strokeWidth="2" markerEnd="url(#arrow-green)" />
-            <text x="680" y="250" fontFamily="Inter, sans-serif" fontSize="10" fill="#1a9e72" fontWeight="500">+</text>
-            <path d="M 560 340 Q 520 380 520 400" fill="none" stroke="#3b5bdb" strokeWidth="2" markerEnd="url(#arrow)" />
-            <text x="545" y="380" fontFamily="Inter, sans-serif" fontSize="10" fill="#3b5bdb" fontWeight="500">+</text>
-            <path d="M 280 428 Q 230 428 230 356" fill="none" stroke="#1a9e72" strokeWidth="2" markerEnd="url(#arrow-green)" />
-            <text x="242" y="395" fontFamily="Inter, sans-serif" fontSize="10" fill="#1a9e72" fontWeight="500">+</text>
-            <path d="M 130 300 L 130 198" fill="none" stroke="#3b5bdb" strokeWidth="2" markerEnd="url(#arrow)" />
-            <text x="140" y="250" fontFamily="Inter, sans-serif" fontSize="10" fill="#3b5bdb" fontWeight="500">+</text>
-            <path d="M 240 155 Q 280 120 280 75" fill="none" stroke="#1a9e72" strokeWidth="2" markerEnd="url(#arrow-green)" />
-            <text x="252" y="105" fontFamily="Inter, sans-serif" fontSize="10" fill="#1a9e72" fontWeight="500">+</text>
+            <path d="M 520 75 Q 570 75 570 140" fill="none" stroke="var(--accent)" strokeWidth="2" markerEnd="url(#arrow)" />
+            <text x="558" y="105" fontFamily="Inter, sans-serif" fontSize="10" fill="var(--accent)" fontWeight="500">+</text>
+            <path d="M 670 196 L 670 298" fill="none" stroke="var(--success)" strokeWidth="2" markerEnd="url(#arrow-green)" />
+            <text x="680" y="250" fontFamily="Inter, sans-serif" fontSize="10" fill="var(--success)" fontWeight="500">+</text>
+            <path d="M 560 340 Q 520 380 520 400" fill="none" stroke="var(--accent)" strokeWidth="2" markerEnd="url(#arrow)" />
+            <text x="545" y="380" fontFamily="Inter, sans-serif" fontSize="10" fill="var(--accent)" fontWeight="500">+</text>
+            <path d="M 280 428 Q 230 428 230 356" fill="none" stroke="var(--success)" strokeWidth="2" markerEnd="url(#arrow-green)" />
+            <text x="242" y="395" fontFamily="Inter, sans-serif" fontSize="10" fill="var(--success)" fontWeight="500">+</text>
+            <path d="M 130 300 L 130 198" fill="none" stroke="var(--accent)" strokeWidth="2" markerEnd="url(#arrow)" />
+            <text x="140" y="250" fontFamily="Inter, sans-serif" fontSize="10" fill="var(--accent)" fontWeight="500">+</text>
+            <path d="M 240 155 Q 280 120 280 75" fill="none" stroke="var(--success)" strokeWidth="2" markerEnd="url(#arrow-green)" />
+            <text x="252" y="105" fontFamily="Inter, sans-serif" fontSize="10" fill="var(--success)" fontWeight="500">+</text>
           </svg>
         </div>
       </section>

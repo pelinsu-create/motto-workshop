@@ -23,13 +23,16 @@ Ordered. A higher rule beats every rule below it.
 
 ## Accepted exceptions (documented drift)
 
-- `src/app/case-studies/fluffy-score/page.tsx`: inline SVG causal loop uses
-  literal hex mirroring accent/success/navy/gray tokens. Allowed until next
-  edit of that file; then migrate fills and strokes to `var(--...)`. Its green
-  #1a9e72 predates the `--success` token (#0f7a56); swap during migration.
 - `src/app/api/capture-email/route.ts`: HTML email template. Email clients
   cannot read CSS variables, so literal values are allowed there; keep them
   matched to tokens.md by hand when tokens change.
+- `--gray-light` fails AA on white; it is restricted to placeholder text and
+  disabled states, where visible labels or the disabled exemption cover it.
+- Tool result panels use the Tailwind default red/amber/emerald feedback
+  families (see tokens.md); converging emerald with `--success` is an open
+  decision.
+- Decorative single-use literals in globals.css (pin gradients, dot grid)
+  stay as audit warnings so they remain visible.
 - Decorative literal values inside globals.css (pin gradients, tape tints,
   dot grid rgba): allowed because globals.css is the token home; the audit
   reports them as warnings so they stay visible.

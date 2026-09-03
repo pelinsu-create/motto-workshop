@@ -107,13 +107,13 @@ const SEVERITY_GROUPS: { severity: Severity; heading: string; explainer: string 
 const SEVERITY_BADGE: Record<Severity, string> = {
   blocker: "bg-red-100 text-red-700",
   warning: "bg-amber-100 text-amber-700",
-  info: "bg-gray-100 text-gray",
+  info: "bg-tag-bg text-gray",
 };
 
 const CONFIDENCE_BADGE: Record<string, string> = {
   high: "bg-emerald-50 text-emerald-600",
   medium: "bg-amber-50 text-amber-600",
-  low: "bg-gray-100 text-gray",
+  low: "bg-tag-bg text-gray",
 };
 
 // Flattens a generated guide into plain text, for the clipboard and
@@ -345,7 +345,7 @@ export default function BiasCheck() {
                 <p className="text-sm text-accent font-medium">
                   Reading your questions against 20 biases...
                 </p>
-                <p className="text-xs text-gray-light mt-1">This usually takes under a minute</p>
+                <p className="text-xs text-gray mt-1">This usually takes under a minute</p>
               </div>
             )}
 
@@ -418,7 +418,7 @@ export default function BiasCheck() {
                         >
                           {t.label}
                         </span>
-                        <span className="block text-xs text-gray-light mt-0.5">{t.hint}</span>
+                        <span className="block text-xs text-gray mt-0.5">{t.hint}</span>
                       </button>
                     );
                   })}
@@ -477,7 +477,7 @@ export default function BiasCheck() {
                 <p className="text-sm text-accent font-medium">
                   Drafting neutral, behavior-first questions...
                 </p>
-                <p className="text-xs text-gray-light mt-1">This usually takes under a minute</p>
+                <p className="text-xs text-gray mt-1">This usually takes under a minute</p>
               </div>
             )}
 
@@ -508,7 +508,7 @@ export default function BiasCheck() {
           </>
         )}
 
-        <p className="text-xs text-gray-light text-center mt-8 mb-12">
+        <p className="text-xs text-gray text-center mt-8 mb-12">
           Nothing is stored. Your text is analyzed, the report is generated, and the text
           is discarded.
         </p>
@@ -584,12 +584,12 @@ function GuideView({
                   <div className="flex items-start gap-2 mb-1.5">
                     <p className="text-sm text-navy leading-relaxed flex-1">{q.text}</p>
                     {q.type && (
-                      <span className="text-xs px-2.5 py-0.5 rounded-full bg-gray-100 text-gray shrink-0">
+                      <span className="text-xs px-2.5 py-0.5 rounded-full bg-tag-bg text-gray shrink-0">
                         {q.type}
                       </span>
                     )}
                   </div>
-                  {q.why && <p className="text-xs text-gray-light">{q.why}</p>}
+                  {q.why && <p className="text-xs text-gray">{q.why}</p>}
                 </div>
               ))}
             </div>
@@ -725,7 +725,7 @@ function FindingCard({ finding, delay = 0 }: { finding: Finding; delay?: number 
         </span>
         <span className="text-xs font-medium text-accent">{finding.bias}</span>
         {finding.section && (
-          <span className="text-xs text-gray-light">{finding.section}</span>
+          <span className="text-xs text-gray">{finding.section}</span>
         )}
         <span
           className={`text-xs px-2.5 py-0.5 rounded-full ml-auto ${

@@ -233,7 +233,7 @@ export default function Analyze() {
             last
             action={
               transcripts.length > 0 ? (
-                <span className="text-xs text-gray-light shrink-0">
+                <span className="text-xs text-gray shrink-0">
                   {transcripts.length} transcript{transcripts.length !== 1 && "s"} &middot;{" "}
                   {totalWords.toLocaleString()} words
                 </span>
@@ -318,7 +318,7 @@ export default function Analyze() {
                 >
                   <span className="text-2xl block mb-2">📄</span>
                   <span className="text-sm text-gray">Click to upload .txt or .md files</span>
-                  <span className="text-xs text-gray-light block mt-1">Multiple files supported</span>
+                  <span className="text-xs text-gray block mt-1">Multiple files supported</span>
                 </button>
               </div>
             )}
@@ -335,13 +335,13 @@ export default function Analyze() {
                         {t.id}
                       </span>
                       <span className="text-sm text-navy font-medium">{t.name}</span>
-                      <span className="text-xs text-gray-light">
+                      <span className="text-xs text-gray">
                         {t.content.split(/\s+/).length.toLocaleString()} words
                       </span>
                     </div>
                     <button
                       onClick={() => removeTranscript(t.id)}
-                      className="text-gray-light hover:text-red-500 transition-colors text-sm"
+                      className="text-gray hover:text-red-700 transition-colors text-sm"
                     >
                       ✕
                     </button>
@@ -387,7 +387,7 @@ export default function Analyze() {
                     >
                       {m.name}
                     </span>
-                    <span className="text-xs text-gray-light block mt-0.5">{m.source}</span>
+                    <span className="text-xs text-gray block mt-0.5">{m.source}</span>
                   </button>
                 );
               })}
@@ -400,7 +400,7 @@ export default function Analyze() {
           <CardSection
             title={
               <>
-                Step 3: Research Context <span className="text-gray-light font-normal">(optional)</span>
+                Step 3: Research Context <span className="text-gray font-normal">(optional)</span>
               </>
             }
             last
@@ -439,7 +439,7 @@ export default function Analyze() {
             <p className="text-sm text-accent font-medium">
               Running {methods.length} analysis methods across {transcripts.length} transcripts...
             </p>
-            <p className="text-xs text-gray-light mt-1">This usually takes 30-60 seconds</p>
+            <p className="text-xs text-gray mt-1">This usually takes 30-60 seconds</p>
           </div>
         )}
 
@@ -545,7 +545,7 @@ function ResultsView({ results }: { results: Results }) {
                     </li>
                   ))}
                 </ul>
-                <p className="text-xs text-gray-light mt-2">
+                <p className="text-xs text-gray mt-2">
                   Participants: {c.participants.join(", ")}
                 </p>
               </div>
@@ -604,7 +604,7 @@ function ResultsView({ results }: { results: Results }) {
                 <p className="text-sm text-navy italic">&ldquo;{q.quote}&rdquo;</p>
                 <div className="flex gap-3 mt-1">
                   <span className="text-xs text-accent font-medium">{q.participant}</span>
-                  <span className="text-xs text-gray-light bg-tag-bg px-2.5 py-0.5 rounded-full">
+                  <span className="text-xs text-gray bg-tag-bg px-2.5 py-0.5 rounded-full">
                     {q.theme}
                   </span>
                   <span
@@ -613,7 +613,7 @@ function ResultsView({ results }: { results: Results }) {
                         ? "bg-emerald-50 text-emerald-600"
                         : q.sentiment === "negative"
                         ? "bg-red-50 text-red-600"
-                        : "bg-gray-100 text-gray"
+                        : "bg-tag-bg text-gray"
                     }`}
                   >
                     {q.sentiment}
@@ -657,7 +657,7 @@ function ResultsView({ results }: { results: Results }) {
                 <div>
                   <h4 className="text-sm font-semibold text-navy font-sans">{p.pattern}</h4>
                   <p className="text-sm text-gray mt-1">{p.evidence}</p>
-                  <p className="text-xs text-gray-light mt-1">{p.participants.join(", ")}</p>
+                  <p className="text-xs text-gray mt-1">{p.participants.join(", ")}</p>
                 </div>
               </div>
             ))}
@@ -676,7 +676,7 @@ function ResultsView({ results }: { results: Results }) {
                       ? "bg-red-100 text-red-700"
                       : g.priority === "Medium"
                       ? "bg-amber-100 text-amber-700"
-                      : "bg-gray-100 text-gray"
+                      : "bg-tag-bg text-gray"
                   }`}
                 >
                   {g.priority}

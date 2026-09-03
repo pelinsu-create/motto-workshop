@@ -32,6 +32,10 @@
   --note-yellow: #fdf0b8;
   --note-rose: #fbdde9; /* soft rose paper, the pink sibling of the note family */
 
+  /* Washi tape tints. Shared by .tape and the .tape-corner strips. */
+  --tape-blue: rgba(59, 91, 219, 0.13);
+  --tape-pink: rgba(242, 169, 196, 0.45);
+
   /* Pill ink colors. Dark text tones tuned to pass contrast on their
      pastel pill backgrounds. Always pair ink with its named paper. */
   --ink-rose: #9e4067; /* text on note-rose pills, 4.9:1 on note-rose */
@@ -207,7 +211,7 @@ h1, h2, h3 {
   width: 5rem;
   height: 1.3rem;
   transform: translateX(-50%) rotate(-2deg);
-  background: rgba(59, 91, 219, 0.13);
+  background: var(--tape-blue);
   pointer-events: none;
 }
 
@@ -312,7 +316,7 @@ a:focus-visible .sticker {
   position: absolute;
   width: 4.75rem;
   height: 1.35rem;
-  background: rgba(59, 91, 219, 0.13);
+  background: var(--tape-blue);
   pointer-events: none;
   z-index: 1;
 }
@@ -325,7 +329,7 @@ a:focus-visible .sticker {
   top: 0.4rem;
   right: -1.1rem;
   transform: rotate(45deg);
-  background: rgba(242, 169, 196, 0.45);
+  background: var(--tape-pink);
 }
 
 /* Inline arrow that nudges forward while its link is hovered */

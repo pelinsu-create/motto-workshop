@@ -146,7 +146,7 @@ export default function Work() {
                 <div className="flex-1 min-w-0 p-6">
                   <div className="flex items-baseline justify-between gap-4 mb-2">
                     <p className="text-xs font-semibold text-gray uppercase tracking-wider">{p.tag}</p>
-                    <span className="text-xs text-gray-light shrink-0">{p.year}</span>
+                    <span className="text-xs text-gray shrink-0">{p.year}</span>
                   </div>
                   <h2 className="text-xl text-navy mb-2 group-hover:underline decoration-2 underline-offset-4">
                     {p.title}
