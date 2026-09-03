@@ -8,10 +8,13 @@ Who this site serves and what matters to them. Read before any customer-facing w
 - Evidence hierarchy they respond to: live tools they can try beats case studies beats claims. Never weaken it with hype
 - The differentiator is verification: she uses AI heavily AND checks what it generates (bias checks, evals, kill criteria). Every surface should quietly reinforce this, never shout it
 
-## Secondary: teams buying the Research Sprint workshop
-- Buyer is a design/product team lead whose team already uses AI inconsistently
-- They need: clear outcome (team AI charter), format facts (3 hours, online, up to 12), price anchor via call, and one modest EU AI Act literacy line. No compliance theater
-- CTA is Book a call. No payment flows until behavior validates demand (pretotype rule)
+## Secondary: companies buying the Context Audit (paid offer since 2026-09-03)
+- The Research Sprint workshop did not sell on its own. It is no longer the paid offer, it is the kick-off session inside the audit. /workshop stays live and reachable from /services and /games
+- Buyer is a product or research lead with a decision that has a date and evidence scattered across teams. They buy alone, from a project budget, not from an L&D budget
+- They need: a concrete three week shape, deliverables they can picture, an explicit "what this is not" list, and proof before they trust. Price is a fixed fee quoted after a call, never published, never hourly
+- Lead with the differentiator: an evidence base their AI tools can read, plus the contradiction log and the gap list. Most researchers hand over a deck
+- CTA is Book a 20-minute call. No payment flows until behavior validates demand (pretotype rule)
+- The site is the supporting signal, not the test. Direct outbound decides. Kill criteria and thresholds live in `deliverables/blueprints/2026-09-03-context-audit-xyz.md`
 
 ## Tertiary: researchers and designers using the free tools
 - Guide Builder + Bias Checker and XYZ Hypothesis Builder are free, no account

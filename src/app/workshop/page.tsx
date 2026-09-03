@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import { TrackedCTA } from "../tracked-cta";
+import CheckBox from "../checkbox";
 
 export const metadata: Metadata = {
   title: "Research Sprint Workshop | Pelinsu Pelit",
@@ -68,27 +69,6 @@ const TAKEAWAYS = [
   "Reusable AI prompt templates",
   "My verification checklists and the games, to keep practicing",
 ];
-
-function CheckBox() {
-  return (
-    <span
-      className="mt-0.5 shrink-0 w-4 h-4 rounded-[3px] border border-accent/60 bg-white/60 text-accent flex items-center justify-center"
-      aria-hidden="true"
-    >
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="3"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="w-3 h-3"
-      >
-        <path d="M20 6 9 17l-5-5" />
-      </svg>
-    </span>
-  );
-}
 
 export default function WorkshopPage() {
   return (

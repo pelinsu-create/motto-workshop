@@ -38,8 +38,8 @@ export default function MobileNav() {
             <Link href="/about" onClick={close} className="hover:text-navy transition-colors">
               About
             </Link>
-            <Link href="/workshop" onClick={close} className="hover:text-navy transition-colors">
-              Workshop
+            <Link href="/services" onClick={close} className="hover:text-navy transition-colors">
+              Services
             </Link>
             <Link href="/games" onClick={close} className="hover:text-navy transition-colors">
               Games

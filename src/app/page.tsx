@@ -257,7 +257,7 @@ export default function Home() {
       <section className="py-14 border-t border-border">
         <div className="notebook-page relative px-5 sm:px-8 py-10">
         <p className="section-label mb-3">Also available</p>
-        <h2 className="text-2xl md:text-3xl text-navy mb-8">Workshop and tools</h2>
+        <h2 className="text-2xl md:text-3xl text-navy mb-8">Services and tools</h2>
         <div className="grid md:grid-cols-2 gap-4">
           <Reveal className="h-full">
             <div
@@ -265,26 +265,26 @@ export default function Home() {
               style={{ "--tilt": "-0.6deg" } as CSSProperties}
             >
             <Image
-              src="/work/icon-sprint.jpg"
-              alt="Pastel 3D puzzle piece icon"
+              src="/work/icon-lab.jpg"
+              alt="Pastel 3D laboratory flask icon"
               width={800}
               height={800}
               className="h-36 object-cover m-4 mb-0 rounded-lg"
               style={{ width: "calc(100% - 2rem)" }}
             />
             <div className="flex flex-col flex-1 p-6">
-              <h3 className="text-xl text-navy mb-2">Research Sprint</h3>
+              <h3 className="text-xl text-navy mb-2">Context Audit</h3>
               <p className="text-sm text-gray leading-relaxed mb-5 flex-1">
-                A three hour hands-on sprint for teams that do research. We practice
-                what to hand to AI, what to keep, and how to check what comes back,
-                with games I built for it.
+                Three weeks to turn what your company already knows into evidence you
+                can decide with. Internal interviews, the material nobody reopened, and
+                one evidence base your team and your AI tools can read.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link
-                  href="/workshop"
+                  href="/services"
                   className="inline-block bg-accent text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-navy btn-press"
                 >
-                  About the workshop
+                  How it works
                 </Link>
                 <Link
                   href="/games"

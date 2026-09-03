@@ -70,8 +70,8 @@ export default function RootLayout({
               <Link href="/about" className="hover:text-navy transition-colors">
                 About
               </Link>
-              <Link href="/workshop" className="hover:text-navy transition-colors">
-                Workshop
+              <Link href="/services" className="hover:text-navy transition-colors">
+                Services
               </Link>
               <a
                 href="mailto:pelinsu@mottoworkshop.com"
