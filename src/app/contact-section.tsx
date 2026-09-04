@@ -15,8 +15,13 @@ export default function ContactSection() {
         className="note inline-block bg-note-cream p-6 sm:p-7 mt-2"
         style={{ "--tilt": "0.7deg" } as CSSProperties}
       >
-        <p className="text-gray leading-relaxed mb-6 max-w-xl">
+        <p className="text-gray leading-relaxed mb-3 max-w-xl">
           Hiring for a senior or lead design role, or want to talk about a project?
+        </p>
+        <p className="text-sm text-gray leading-relaxed mb-6 max-w-xl">
+          I read every message myself and reply within a day. If you can, say what the
+          work is and when you need to decide. That is usually enough for me to tell you
+          whether I am the right person for it.
         </p>
         <div className="flex flex-wrap gap-3">
           <a
