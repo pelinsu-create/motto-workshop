@@ -128,7 +128,7 @@ export default function WorkshopPage() {
 
         {/* Who the session is for, a checklist in the journal */}
         <section className="py-10 border-t border-border">
-          <h2 className={`${headingClass} mb-4`}>Who Is It For?</h2>
+          <h2 className={`${headingClass} mb-4`}>Who is it for?</h2>
           <div className="space-y-3 max-w-2xl">
             {AUDIENCE.map((item) => (
               <div key={item} className="flex gap-2.5 items-start text-sm">
@@ -141,7 +141,7 @@ export default function WorkshopPage() {
 
         {/* The three hour agenda, each part pasted in on its own post-it */}
         <section className="py-10 border-t border-border">
-          <h2 className={`${headingClass} mb-8`}>The Three Hour Workshop</h2>
+          <h2 className={`${headingClass} mb-8`}>The three hour workshop</h2>
           <div className="grid gap-6 md:grid-cols-3 md:gap-5">
             {PARTS.map((part, i) => (
               <div
@@ -179,7 +179,7 @@ export default function WorkshopPage() {
 
         {/* Games */}
         <section className="py-10 border-t border-border">
-          <h2 className={`${headingClass} mb-4`}>Try the Games First</h2>
+          <h2 className={`${headingClass} mb-4`}>Try the games first</h2>
           <p className="text-gray leading-relaxed mb-6 max-w-2xl">
             Hallucination Hunter, Bad Idea Bingo and Hat Roulette are playable now, free,
             no account. In the session we play them against your own project.
@@ -195,7 +195,7 @@ export default function WorkshopPage() {
         {/* Transcript Analyzer */}
         <section className="py-10 border-t border-border">
           <p className="section-label mb-3">Tool</p>
-          <h2 className={`${headingClass} mb-4`}>Transcript Analyzer</h2>
+          <h2 className={`${headingClass} mb-4`}>Transcript analyzer</h2>
           <p className="text-gray leading-relaxed mb-6 max-w-2xl">
             Upload interview transcripts and get structured insights with confidence
             ratings, quotes, and bias flags. Sample interviews are included, no account
@@ -211,7 +211,7 @@ export default function WorkshopPage() {
 
         {/* What you leave with, a checklist on a taped post-it */}
         <section className="py-10 border-t border-border">
-          <h2 className={`${headingClass} mb-8`}>What You Leave With</h2>
+          <h2 className={`${headingClass} mb-8`}>What you leave with</h2>
           <div className="note bg-note-cream p-6 sm:p-7" style={{ "--tilt": "0.8deg" } as CSSProperties}>
             <span className="tape" aria-hidden="true" />
             <div className="grid md:grid-cols-2 gap-4">

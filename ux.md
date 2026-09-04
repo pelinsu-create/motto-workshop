@@ -23,5 +23,6 @@ Who this site serves and what matters to them. Read before any customer-facing w
 
 ## Voice and rules
 - Plain, concrete, calm. No hype words, no em or en dashes anywhere, sentence-length claims that can be verified
+- Headings are sentence case, never Title Case. A section that makes a claim gets a heading that states the claim, not one that names the section. Structural headings (Outcomes, Key findings, Reflection) stay plain
 - Never publish: fake testimonials, unverified statistics (e.g. earnings claims), pre-review promises that are not implemented
 - Visual language: calm paper (dot grid, white notes, one blue tape tone, pastel 3D illustration family, serif headings). Motion only where it communicates; reduced-motion always respected

@@ -24,7 +24,7 @@ export default function LizSmartOffice() {
         ]}
       />
 
-      <Block heading="The Product">
+      <Block heading="Companies were paying for floors nobody sat on">
         <p>
           LIZ lets people reserve a desk or workspace, see real-time occupancy, and pull
           reports on how space is used. Companies were paying for floors nobody sat on,
@@ -32,7 +32,7 @@ export default function LizSmartOffice() {
         </p>
       </Block>
 
-      <Block heading="My Responsibility">
+      <Block heading="What I worked on">
         <p>
           I worked on three parts of the product. I redesigned the workspace manager
           setup flow and insights page based on customer feedback, fixed usability issues
@@ -41,7 +41,7 @@ export default function LizSmartOffice() {
         </p>
       </Block>
 
-      <Block heading="Booker App: Simplifying the Date Picker">
+      <Block heading="Booker app: simplifying the date picker">
         <p>
           The Booker app is where an employee books a desk, and it was where people fell
           out of the flow. I focused on two components: the date picker and the tab bar.
@@ -56,7 +56,7 @@ export default function LizSmartOffice() {
         </p>
       </Block>
 
-      <Block heading="Admin Insights: Built From Scratch">
+      <Block heading="Admin insights: built from scratch">
         <p>
           Working with the product manager, I designed an insights page for admins that
           did not exist before.
@@ -85,7 +85,7 @@ export default function LizSmartOffice() {
         />
       </Block>
 
-      <Block heading="Teams App">
+      <Block heading="Teams app">
         <p>
           The Teams app had to look and feel like Teams. I designed it with the
           Microsoft component library so it feels native inside the client.
@@ -122,7 +122,7 @@ export default function LizSmartOffice() {
         />
       </Block>
 
-      <NextCase href="/work/stakeholder-map" title="Who Uses What, and Why It Varies" />
+      <NextCase href="/work/stakeholder-map" title="87 stakeholders, three company types, one map" />
     </div>
   );
 }

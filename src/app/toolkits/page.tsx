@@ -11,7 +11,7 @@ export default function Toolkits() {
       <section className="py-24 md:py-32 min-h-[60vh] flex flex-col justify-center">
         <p className="section-label mb-4">Coming Soon</p>
         <h1 className="text-4xl md:text-5xl font-semibold text-navy leading-tight mb-6">
-          Workshop Toolkits
+          Workshop toolkits
         </h1>
         <p className="text-lg text-gray max-w-xl leading-relaxed mb-8">
           An activity library, persona panels, and facilitation guides

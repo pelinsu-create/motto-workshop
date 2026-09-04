@@ -136,7 +136,7 @@ export default function ServicesPage() {
 
         {/* The three weeks */}
         <section className="py-10 border-t border-border">
-          <h2 className={`${headingClass} mb-2`}>Three Weeks</h2>
+          <h2 className={`${headingClass} mb-2`}>Three weeks</h2>
           <p className="text-sm text-gray mb-8 max-w-2xl">
             The kick off is the{" "}
             <Link href="/workshop" className="text-accent hover:text-navy transition-colors">
@@ -180,7 +180,7 @@ export default function ServicesPage() {
 
         {/* What you get */}
         <section className="py-10 border-t border-border">
-          <h2 className={`${headingClass} mb-8`}>What You Get</h2>
+          <h2 className={`${headingClass} mb-8`}>What you get</h2>
           <div className="space-y-5 max-w-2xl">
             {DELIVERABLES.map((item) => (
               <div key={item.title} className="flex gap-2.5 items-start">
@@ -196,7 +196,7 @@ export default function ServicesPage() {
 
         {/* Proof */}
         <section className="py-10 border-t border-border">
-          <h2 className={`${headingClass} mb-4`}>Look Before You Hire Me</h2>
+          <h2 className={`${headingClass} mb-4`}>Look before you hire me</h2>
           <p className="text-sm text-navy leading-relaxed max-w-2xl">
             For a renewable energy client, a sector report and three competitor
             libraries became{" "}

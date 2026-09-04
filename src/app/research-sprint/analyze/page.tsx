@@ -480,7 +480,7 @@ function ResultsView({ results }: { results: Results }) {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h2 className={`text-2xl md:text-3xl text-navy`}>Analysis Results</h2>
+        <h2 className={`text-2xl md:text-3xl text-navy`}>Analysis results</h2>
         <button
           onClick={exportJson}
           className="border border-border text-navy px-4 py-2 rounded-lg text-sm font-medium hover:bg-lavender transition-colors btn-press"

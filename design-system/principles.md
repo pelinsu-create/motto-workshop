@@ -56,4 +56,11 @@ live only in the `:root` block of globals.css.
 
 Plain, concrete, calm. No em or en dashes anywhere, in copy or in code
 comments. No fake testimonials, no unverified statistics, no hype words.
+
+Headings are sentence case, never Title Case, and only proper nouns keep their
+capitals. Where a section makes a claim, the heading states the claim rather
+than naming the section ("Nobody churns, they just keep a spreadsheet open",
+not "The Difference With Internal Products"). Structural headings that carry no
+claim (Outcomes, Key findings, Reflection) stay plain.
+
 See ../ux.md for the full voice rules.

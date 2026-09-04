@@ -24,7 +24,7 @@ export default function TurkishAirlines() {
         ]}
       />
 
-      <Block heading="The Difference With Internal Products">
+      <Block heading="Nobody churns, they just keep a spreadsheet open">
         <p>
           Freight forwarders use these screens because it is their job. If a screen is
           slow or confusing they do not churn. They call someone, or keep a spreadsheet
@@ -34,7 +34,7 @@ export default function TurkishAirlines() {
         </p>
       </Block>
 
-      <Block heading="Terminal Charges">
+      <Block heading="Terminal charges">
         <p>
           A single master air waybill can carry several house waybills, each with its own
           warehouse charges, each independently paid or unpaid. The user needs to answer
@@ -69,7 +69,7 @@ export default function TurkishAirlines() {
         />
       </Block>
 
-      <Block heading="Loadability: Will It Actually Fit">
+      <Block heading="Loadability: will it actually fit">
         <p>
           A forwarder enters dimensions and weight and needs to know which flights can
           carry the shipment. The complication is that a route is not one decision. A
@@ -99,7 +99,7 @@ export default function TurkishAirlines() {
         />
       </Block>
 
-      <Block heading="Working Inside a Design System">
+      <Block heading="Working inside a design system">
         <p>
           Turkish Cargo has an established design system in active use across teams. My
           job was to improve these products without forking it. Consistency is what makes
@@ -107,7 +107,7 @@ export default function TurkishAirlines() {
         </p>
       </Block>
 
-      <Block heading="Bringing AI Into the Practice">
+      <Block heading="Bringing AI into the practice">
         <p>
           The second thread was integrating AI-assisted design practice into that system.
           A design system is a set of agreements, and generative tools are good at
@@ -131,7 +131,7 @@ export default function TurkishAirlines() {
         />
       </Block>
 
-      <Block heading="What I Did">
+      <Block heading="What I did">
         <Outcomes
           items={[
             "Designed terminal charges, warehouse fee and loadability flows against an existing, actively used design system",

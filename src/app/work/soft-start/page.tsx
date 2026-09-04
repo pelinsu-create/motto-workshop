@@ -24,7 +24,7 @@ export default function SoftStart() {
         ]}
       />
 
-      <Block heading="The Design Problem">
+      <Block heading="People arrive with the last meeting still in their heads">
         <p>
           In years of facilitation work I kept seeing the same pattern. People arrived
           with the previous meeting still in their heads, unfinished tasks, unresolved
@@ -34,7 +34,7 @@ export default function SoftStart() {
         </p>
       </Block>
 
-      <Block heading="The Toolkit">
+      <Block heading="The toolkit">
         <p>
           Three short AI-assisted exercises for the first twenty minutes. Each works on
           something different: where people stand on the topic, what role they take, and
@@ -69,7 +69,7 @@ export default function SoftStart() {
         />
       </Block>
 
-      <Block heading="What Made It Work">
+      <Block heading="AI writes the prompts, the facilitator runs the room">
         <p>
           The first twenty minutes are for the group, before the agenda starts. People
           need a moment to arrive. AI writes the prompts, and the facilitator runs the
@@ -77,7 +77,7 @@ export default function SoftStart() {
         </p>
       </Block>
 
-      <Block heading="Tested and Refined">
+      <Block heading="Tested and refined">
         <p>
           Three sessions with a product team at a mid-size technology company in 2024.
           Timing was adjusted between sessions to keep the opener within twenty minutes.
@@ -101,7 +101,7 @@ export default function SoftStart() {
         />
       </Block>
 
-      <Block heading="What Comes Next">
+      <Block heading="What comes next">
         <p>
           Next I want to explore what a shared room means when people work across
           distances and boundaries.

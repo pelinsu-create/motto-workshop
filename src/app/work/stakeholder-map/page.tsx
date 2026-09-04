@@ -24,7 +24,7 @@ export default function StakeholderMap() {
         ]}
       />
 
-      <Block heading="The Challenge">
+      <Block heading="Same category of software, completely different buyers">
         <p>
           The client builds monitoring and prediction tools for renewable energy
           companies. They wanted to know who actually uses these tools, and why that
@@ -37,7 +37,7 @@ export default function StakeholderMap() {
         </p>
       </Block>
 
-      <Block heading="The Approach">
+      <Block heading="The approach">
         <Steps
           items={[
             {
@@ -60,7 +60,7 @@ export default function StakeholderMap() {
         />
       </Block>
 
-      <Block heading="The Map">
+      <Block heading="The map">
         <p>
           Switch between the three company profiles to see how different the actor
           landscapes are.
@@ -83,7 +83,7 @@ export default function StakeholderMap() {
         />
       </Block>
 
-      <Block heading="Key Findings">
+      <Block heading="Key findings">
         <Findings
           items={[
             {
@@ -121,7 +121,7 @@ export default function StakeholderMap() {
         </p>
       </Block>
 
-      <NextCase href="/work/soft-start" title="Soft Start, Sharp Focus" />
+      <NextCase href="/work/soft-start" title="Getting a room ready in the first twenty minutes" />
     </div>
   );
 }

@@ -151,7 +151,7 @@ export default function Home() {
 
       {/* What I do: three notes pinned under the hero */}
       <section className="py-16 border-t border-border">
-        <h2 className="text-2xl md:text-3xl text-navy mb-10">How I Work</h2>
+        <h2 className="text-2xl md:text-3xl text-navy mb-10">How I work</h2>
         <div className="grid gap-8 md:grid-cols-3 md:gap-5">
           <Reveal className="h-full">
             <div className="note h-full bg-surface p-6" style={{ "--tilt": "-1.4deg" } as CSSProperties}>
@@ -204,7 +204,7 @@ export default function Home() {
       <section className="py-14 border-t border-border">
         <div className="notebook-page relative px-5 sm:px-8 py-10">
         <div className="flex items-baseline justify-between mb-10">
-          <h2 className="text-2xl md:text-3xl text-navy">Selected Work</h2>
+          <h2 className="text-2xl md:text-3xl text-navy">Selected work</h2>
           <Link href="/work" className="text-sm text-accent font-medium hover:text-navy transition-colors">
             All work <span className="arrow-nudge" aria-hidden="true">&rarr;</span>
           </Link>

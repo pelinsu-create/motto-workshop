@@ -126,7 +126,7 @@ export default function FluffyScoreCaseStudy() {
       <section className="py-16 border-t border-border">
         <StepLabel number={3} title="Synthesis" />
         <h2 className={`text-2xl md:text-3xl text-navy mb-6`}>
-          Five Pillars &rarr; scoring model
+          Five pillars &rarr; one scoring model
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-10">
@@ -235,7 +235,7 @@ export default function FluffyScoreCaseStudy() {
       <section className="py-16 border-t border-border">
         <StepLabel number={6} title="Systems Thinking" />
         <h2 className={`text-2xl md:text-3xl text-navy mb-6`}>
-          Indoor cats &harr; Shelter cats
+          Indoor cats &harr; shelter cats
         </h2>
         <p className="text-gray leading-relaxed mb-8">
           When indoor cat owners learn enrichment principles, they become better adopters, foster parents, and shelter volunteers, creating a reinforcing loop.
