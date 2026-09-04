@@ -84,6 +84,18 @@ const work = [
     blurb:
       "A budget page rebuilt so a project can be priced and tracked on the same table, from heuristic evaluation and eight competitors to a specified component set.",
   },
+  {
+    href: "/work/isbank",
+    tilt: "-0.6deg",
+    stick: "2.5deg",
+    img: "/work/thumb-isbank.jpg",
+    imgAlt: "Pastel 3D illustration of two phones side by side on a platform with a padlock, a clipboard and a stopwatch",
+    tag: "UX Research",
+    title: "Two concepts, and a test that decided between them",
+    year: "2017",
+    blurb:
+      "Two candidate designs for a bank's pre-login screens, scored task by task on SUM and settled with evidence rather than seniority.",
+  },
 ];
 
 export default function Home() {
@@ -112,7 +124,7 @@ export default function Home() {
             href="/work"
             className="inline-block bg-accent text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-navy btn-press"
           >
-            See six projects
+            See seven projects
           </Link>
           <TrackedCTA
             event="hero_book_call"

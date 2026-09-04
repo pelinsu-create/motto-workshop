@@ -164,8 +164,8 @@ export default function Rodeo() {
       </Block>
 
       <NextCase
-        href="/work/turkish-airlines"
-        title="Designing logistics products people are paid to use"
+        href="/work/isbank"
+        title="Two concepts, and a test that decided between them"
       />
     </div>
   );

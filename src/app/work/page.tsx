@@ -101,6 +101,20 @@ const projects = [
     tilt: "0.4deg",
     stick: "-2deg",
   },
+  {
+    href: "/work/isbank",
+    img: "/work/thumb-isbank.jpg",
+    imgAlt: "Pastel 3D illustration of two phones side by side on a platform with a padlock, a clipboard and a stopwatch",
+    tag: "UX Research",
+    title: "Two concepts, and a test that decided between them",
+    year: "2017",
+    role: "UX Researcher · Agency team",
+    blurb:
+      "Two candidate designs for a bank's pre-login screens, scored task by task on SUM and settled with evidence rather than seniority.",
+    tint: "bg-surface",
+    tilt: "-0.6deg",
+    stick: "2.5deg",
+  },
 ];
 
 const tools = [
@@ -153,7 +167,7 @@ export default function Work() {
           className="text-lg text-gray max-w-2xl leading-relaxed fade-rise"
           style={{ animationDelay: "140ms" }}
         >
-          Six projects. For each one I wrote down what my role was, what shipped,
+          Seven projects. For each one I wrote down what my role was, what shipped,
           and what happened after.
         </p>
       </section>
