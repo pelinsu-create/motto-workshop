@@ -90,6 +90,7 @@ const projects = [
   {
     href: "/work/rodeo",
     img: "/work/thumb-rodeo.jpg",
+    anim: "/work/anim-rodeo.mp4",
     imgAlt: "Pastel 3D illustration of a desk with a laptop beside a floating table of rows and columns",
     tag: "Product Design",
     title: "Pricing a project on one dense table",
@@ -103,7 +104,8 @@ const projects = [
   },
   {
     href: "/work/isbank",
-    img: "/work/thumb-isbank.jpg",
+    img: "/work/thumb-isbank-2.jpg",
+    anim: "/work/anim-isbank.mp4",
     imgAlt: "Pastel 3D illustration of two phones side by side on a platform with a padlock, a clipboard and a stopwatch",
     tag: "UX Research",
     title: "Two concepts, and a test that decided between them",
