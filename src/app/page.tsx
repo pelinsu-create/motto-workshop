@@ -53,7 +53,7 @@ const work = [
     img: "/work/thumb-stakeholder-2.jpg",
     anim: "/work/anim-stakeholder.mp4",
     imgAlt: "Pastel 3D illustration of wind turbines and solar panels connected by a network",
-    tag: "Research",
+    tag: "Systems Research",
     title: "87 stakeholders, three company types, one map",
     year: "2025 to 2026",
     blurb:
@@ -72,6 +72,18 @@ const work = [
     blurb:
       "Three AI-assisted exercises for the first twenty minutes, kept as the standard opener.",
   },
+  {
+    href: "/work/rodeo",
+    tilt: "0.4deg",
+    stick: "-2deg",
+    img: "/work/thumb-rodeo.jpg",
+    imgAlt: "Pastel 3D illustration of a desk with a laptop beside a floating table of rows and columns",
+    tag: "Product Design",
+    title: "Pricing a project on one dense table",
+    year: "2019 to 2020",
+    blurb:
+      "A budget page rebuilt so a project can be priced and tracked on the same table, from heuristic evaluation and eight competitors to a specified component set.",
+  },
 ];
 
 export default function Home() {
@@ -82,7 +94,7 @@ export default function Home() {
         <div className="mb-5 fade-rise">
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3.5 py-1.5 text-xs font-medium text-navy">
             <span className="h-2 w-2 rounded-full bg-success" aria-hidden="true" />
-            Open to senior roles and projects
+            Open to senior and lead design roles
           </span>
         </div>
         <p className="section-label mb-4 fade-rise">Senior Product Designer, Netherlands</p>
@@ -100,7 +112,7 @@ export default function Home() {
             href="/work"
             className="inline-block bg-accent text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-navy btn-press"
           >
-            See five projects
+            See six projects
           </Link>
           <TrackedCTA
             event="hero_book_call"

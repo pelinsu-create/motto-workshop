@@ -16,7 +16,7 @@ export default function ContactSection() {
         style={{ "--tilt": "0.7deg" } as CSSProperties}
       >
         <p className="text-gray leading-relaxed mb-6 max-w-xl">
-          Hiring a senior product designer, or want to talk about a project?
+          Hiring for a senior or lead design role, or want to talk about a project?
         </p>
         <div className="flex flex-wrap gap-3">
           <a
@@ -30,6 +30,14 @@ export default function ContactSection() {
             className="inline-block border border-border text-navy px-6 py-3 rounded-lg text-sm font-medium hover:bg-lavender btn-press"
           >
             Book a 20-minute call
+          </TrackedCTA>
+          <TrackedCTA
+            event="contact_cv"
+            href="/Pelinsu_Pelit_CV.pdf"
+            newTab
+            className="inline-block border border-border text-navy px-6 py-3 rounded-lg text-sm font-medium hover:bg-lavender btn-press"
+          >
+            CV (PDF)
           </TrackedCTA>
         </div>
       </div>

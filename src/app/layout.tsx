@@ -103,6 +103,14 @@ export default function RootLayout({
                 Design system
               </Link>
               <a
+                href="/Pelinsu_Pelit_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-navy transition-colors"
+              >
+                CV
+              </a>
+              <a
                 href="mailto:pelinsu@mottoworkshop.com"
                 className="text-accent hover:text-navy transition-colors"
               >

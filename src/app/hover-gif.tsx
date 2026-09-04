@@ -5,7 +5,8 @@ import { useEffect, useRef, useState } from "react";
 
 type HoverGifProps = {
   staticSrc: string;
-  animSrc: string;
+  /** Optional. A card with no animation renders the static thumbnail only. */
+  animSrc?: string;
   alt: string;
   sizes?: string;
   className?: string;
@@ -24,9 +25,10 @@ export default function HoverGif({
 }: HoverGifProps) {
   const [active, setActive] = useState(false);
   const marker = useRef<HTMLSpanElement>(null);
-  const isVideo = animSrc.endsWith(".mp4") || animSrc.endsWith(".webm");
+  const isVideo = !!animSrc && (animSrc.endsWith(".mp4") || animSrc.endsWith(".webm"));
 
   useEffect(() => {
+    if (!animSrc) return;
     const card = marker.current?.closest("a");
     if (!card) return;
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -44,9 +46,9 @@ export default function HoverGif({
       card.removeEventListener("focus", on);
       card.removeEventListener("blur", off);
     };
-  }, []);
+  }, [animSrc]);
 
-  if (active && isVideo) {
+  if (active && isVideo && animSrc) {
     return (
       <>
         <span ref={marker} className="hidden" aria-hidden="true" />
@@ -67,11 +69,11 @@ export default function HoverGif({
     <>
       <span ref={marker} className="hidden" aria-hidden="true" />
       <Image
-        src={active ? animSrc : staticSrc}
+        src={active && animSrc ? animSrc : staticSrc}
         alt={alt}
         fill
         sizes={sizes}
-        unoptimized={active}
+        unoptimized={active && !!animSrc}
         className={className}
       />
     </>

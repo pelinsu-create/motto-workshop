@@ -62,7 +62,7 @@ const projects = [
     img: "/work/thumb-stakeholder-2.jpg",
     anim: "/work/anim-stakeholder.mp4",
     imgAlt: "Pastel 3D illustration of spinning wind turbines and solar panels connected by a network",
-    tag: "Research",
+    tag: "Systems Research",
     title: "87 stakeholders, three company types, one map",
     year: "2025 to 2026",
     role: "UX Researcher · Client work",
@@ -86,6 +86,20 @@ const projects = [
     tint: "bg-surface",
     tilt: "-0.5deg",
     stick: "2deg",
+  },
+  {
+    href: "/work/rodeo",
+    img: "/work/thumb-rodeo.jpg",
+    imgAlt: "Pastel 3D illustration of a desk with a laptop beside a floating table of rows and columns",
+    tag: "Product Design",
+    title: "Pricing a project on one dense table",
+    year: "2019 to 2020",
+    role: "UX Designer and Researcher",
+    blurb:
+      "A budget page rebuilt so a project can be priced and tracked on the same table, from heuristic evaluation and eight competitors to a specified component set.",
+    tint: "bg-surface",
+    tilt: "0.4deg",
+    stick: "-2deg",
   },
 ];
 
@@ -139,7 +153,7 @@ export default function Work() {
           className="text-lg text-gray max-w-2xl leading-relaxed fade-rise"
           style={{ animationDelay: "140ms" }}
         >
-          Five projects. For each one I wrote down what my role was, what shipped,
+          Six projects. For each one I wrote down what my role was, what shipped,
           and what happened after.
         </p>
       </section>

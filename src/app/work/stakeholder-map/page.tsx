@@ -2,18 +2,18 @@ import type { Metadata } from "next";
 import { CaseHero, Block, Steps, Findings, Outcomes, NextCase, Figure, LiveEmbed } from "../case-shell";
 
 export const metadata: Metadata = {
-  title: "Who Uses What, and Why It Varies | Pelinsu Pelit",
+  title: "87 stakeholders, three company types, one map | Pelinsu Pelit",
   description:
-    "Comparative stakeholder mapping for a renewable energy SaaS client. 87 stakeholders across three company types.",
+    "Comparative ecosystem mapping for a renewable energy SaaS client. 87 actors across three company types, with tools, handoffs and structural tensions.",
 };
 
 export default function StakeholderMap() {
   return (
     <div className="max-w-3xl mx-auto px-6">
       <CaseHero
-        tags="Stakeholder Research · Systems Mapping · Sector Analysis"
-        title="Who Uses What, and Why It Varies"
-        standfirst="Turning sector reports into interactive maps that show who uses what, and why it looks different at every company."
+        tags="Systems Mapping · Ecosystem Research · Sector Analysis"
+        title="87 stakeholders, three company types, one map"
+        standfirst="One product category, three completely different actor landscapes. Mapping who is in the room, what they hold and what breaks between them, so the roadmap could be aimed at people rather than at systems."
         meta={[
           { label: "Year", value: "2025 to 2026" },
           { label: "Role", value: "UX Researcher" },
