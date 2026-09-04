@@ -48,7 +48,7 @@ export default function Rodeo() {
           items={[
             {
               title: "Heuristic evaluation",
-              body: "Walked the budget flow against usability heuristics and wrote down every place the interface broke one, so the problems had a stated basis rather than a preference behind them.",
+              body: "Walked the budget flow against usability heuristics and wrote down every place the interface broke one, so the problems had a stated basis rather than a preference behind them. The same evaluation covered the project setup screen, where what came out of it reduced setup time by 30%.",
             },
             {
               title: "Comparative analysis, eight competitors",
@@ -159,7 +159,6 @@ export default function Rodeo() {
             "Table hierarchy made legible: navigation separated from sorting, detail moved out of expandable rows into a side drawer, figures set in a face built for numbers",
             "Inline editing for phase titles, dates and descriptions, so a budget is corrected where it is read",
             "New components delivered inside the existing design language, sizes and states specified",
-            "Heuristic evaluation reduced setup time by 30%",
           ]}
         />
       </Block>
