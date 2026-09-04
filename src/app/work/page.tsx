@@ -3,6 +3,7 @@ import type { CSSProperties } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Reveal from "../reveal";
+import ProjectFilter from "../project-filter";
 import HoverGif from "../hover-gif";
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ const projects = [
     anim: "/work/anim-cargo.mp4",
     imgAlt: "Pastel 3D illustration of an air cargo scene where a small plane takes off past freight containers",
     tag: "Product Design",
+    tags: ["Product Design", "Design Systems", "AI"],
     title: "Designing logistics products people are paid to use",
     year: "2025 to 2026",
     role: "Product Designer, contract",
@@ -33,6 +35,7 @@ const projects = [
     anim: "/work/anim-liz.mp4",
     imgAlt: "Pastel 3D illustration of a hybrid office room with desks and a meeting booth",
     tag: "Enterprise SaaS",
+    tags: ["Product Design", "Design Systems"],
     title: "Simplifying hybrid working, from booking to admin insights",
     year: "2021 to 2022",
     role: "UX/UI Designer",
@@ -48,6 +51,7 @@ const projects = [
     anim: "/work/anim-fluffy.mp4",
     imgAlt: "Pastel 3D illustration of a kitten hopping around a climbing tree, from the Fluffy Score app",
     tag: "AI Product",
+    tags: ["AI", "Research", "Product Design"],
     title: "Fluffy Score: an AI home assessment tool",
     year: "2026",
     role: "Research, design and build",
@@ -63,6 +67,7 @@ const projects = [
     anim: "/work/anim-stakeholder.mp4",
     imgAlt: "Pastel 3D illustration of spinning wind turbines and solar panels connected by a network",
     tag: "Systems Research",
+    tags: ["Research"],
     title: "87 stakeholders, three company types, one map",
     year: "2025 to 2026",
     role: "UX Researcher · Client work",
@@ -78,6 +83,7 @@ const projects = [
     anim: "/work/anim-workshop.mp4",
     imgAlt: "Pastel 3D illustration of a workshop room with a sticky note wall and round table",
     tag: "Facilitation",
+    tags: ["Facilitation", "AI"],
     title: "Getting a room ready in the first twenty minutes",
     year: "2024",
     role: "Workshop Designer · Facilitator",
@@ -92,6 +98,7 @@ const projects = [
     img: "/work/thumb-rodeo.jpg",
     imgAlt: "Pastel 3D illustration of a desk with a laptop beside a floating table of rows and columns",
     tag: "Product Design",
+    tags: ["Product Design", "Research", "Design Systems"],
     title: "Pricing a project on one dense table",
     year: "2019 to 2020",
     role: "UX Designer and Researcher",
@@ -106,6 +113,7 @@ const projects = [
     img: "/work/thumb-isbank.jpg",
     imgAlt: "Pastel 3D illustration of two phones side by side on a platform with a padlock, a clipboard and a stopwatch",
     tag: "UX Research",
+    tags: ["Research", "Facilitation"],
     title: "Two concepts, and a test that decided between them",
     year: "2017",
     role: "UX Researcher · Agency team",
@@ -173,10 +181,13 @@ export default function Work() {
       </section>
 
       <section className="pb-4">
-        <div className="space-y-6">
-          {projects.map((p, i) => (
-            <Reveal key={p.href} delay={Math.min(i * 70, 210)}>
-              <Link
+        <ProjectFilter
+          items={projects.map((p, i) => ({
+            id: p.href,
+            tags: p.tags,
+            node: (
+              <Reveal delay={Math.min(i * 70, 210)}>
+                <Link
                 href={p.href}
                 className={`group note flex items-center ${p.tint}`}
                 style={{ "--tilt": p.tilt } as CSSProperties}
@@ -205,10 +216,11 @@ export default function Work() {
                     />
                   </div>
                 </div>
-              </Link>
-            </Reveal>
-          ))}
-        </div>
+                </Link>
+              </Reveal>
+            ),
+          }))}
+        />
       </section>
 
       <section className="pt-10 pb-14 mt-8 border-t border-border">

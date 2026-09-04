@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ProjectFilter from "../project-filter";
 import {
   MethodCard,
   CardVisual,
@@ -206,6 +207,33 @@ export default function DesignSystemPage() {
           <Pill tone="rose">Rose</Pill>
           <Pill tone="mustard">Mustard</Pill>
         </div>
+      </Section>
+
+      <Section
+        label="Components"
+        title="Filter chips"
+        intro="Toggle buttons above a list. Both states carry a border, so a chip does not resize when it is selected, and the row stays hidden until JavaScript lands, since a filter cannot work without it."
+      >
+        <ProjectFilter
+          label="Filter the example list"
+          items={[
+            {
+              id: "example-research",
+              tags: ["Research"],
+              node: <p className="text-sm text-navy">A research project</p>,
+            },
+            {
+              id: "example-design",
+              tags: ["Product Design"],
+              node: <p className="text-sm text-navy">A product design project</p>,
+            },
+            {
+              id: "example-both",
+              tags: ["Research", "Product Design"],
+              node: <p className="text-sm text-navy">One that is both</p>,
+            },
+          ]}
+        />
       </Section>
 
       <Section

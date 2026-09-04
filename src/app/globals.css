@@ -130,6 +130,16 @@ h1, h2, h3 {
   transform: none;
 }
 
+/* Controls that cannot work without JavaScript, such as the project topic
+   filter. Same contract as the reveal above: hidden until the js class
+   lands, so nobody is offered a dead button. */
+.js-only {
+  display: none;
+}
+.js .js-only {
+  display: flex;
+}
+
 /* Clickable cards: slight lift, deeper shadow, image eases to 1.02 */
 .card-lift {
   transition:
