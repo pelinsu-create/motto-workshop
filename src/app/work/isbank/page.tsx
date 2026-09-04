@@ -57,7 +57,7 @@ export default function Isbank() {
           items={[
             {
               title: "Both concepts, same tasks",
-              body: "First impressions of the pre-login screen, finding login, switching user account, changing the password, and whether people noticed and understood the new features.",
+              body: "Five minutes of interview, fifteen minutes of tasks, five minutes of reaction cards, run on iOS and Android. First impressions of the pre-login screen, finding login, switching user account, changing the password, and whether people noticed and understood the new features.",
             },
             {
               title: "No think aloud, deliberately",
@@ -73,16 +73,6 @@ export default function Isbank() {
             },
           ]}
         />
-        <Figure
-          src="/work/isbank-session.jpg"
-          alt="Session structure: a five minute interview, a fifteen minute usability test and a five minute desirability test"
-          caption="One session, three parts. Five minutes of interview, fifteen of tasks, five of reaction cards, repeated across iOS and Android."
-        />
-        <Figure
-          src="/work/isbank-photos.jpg"
-          alt="Photographs of the design workshop, the observation room and the test lab"
-          caption="The workshop, the observation room and the lab. Test in progress on the door."
-        />
       </Block>
 
       <Block heading="Neither concept won outright, which is what made the result useful">
@@ -92,11 +82,6 @@ export default function Isbank() {
           percentage point of each other. A single verdict would have thrown away most of
           what the test found.
         </p>
-        <Figure
-          src="/work/isbank-task-analysis.jpg"
-          alt="Analysis of one task on both designs, with the tapped areas marked and the SUM score for each"
-          caption="One task, both designs. What people found, what they tapped instead, and the score that came out of it."
-        />
         <Figure
           src="/work/isbank-sum-scores.jpg"
           alt="Bar chart of SUM scores task by task, with the two designs side by side on each task"
