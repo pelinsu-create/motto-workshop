@@ -111,6 +111,14 @@ export default function RootLayout({
                 CV
               </a>
               <a
+                href="https://www.linkedin.com/in/pelinsupelit/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-navy transition-colors"
+              >
+                LinkedIn
+              </a>
+              <a
                 href="mailto:pelinsu@mottoworkshop.com"
                 className="text-accent hover:text-navy transition-colors"
               >
