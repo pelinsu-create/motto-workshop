@@ -1,5 +1,6 @@
 import Stripe from "stripe";
 import { NextRequest, NextResponse } from "next/server";
+import { rateLimit } from "../../lib/rate-limit";
 
 function getStripe() {
   return new Stripe(process.env.STRIPE_SECRET_KEY || "", {
@@ -8,6 +9,9 @@ function getStripe() {
 }
 
 export async function POST(req: NextRequest) {
+  const limited = rateLimit(req, "checkout", 10);
+  if (limited) return limited;
+
   try {
     const { plan } = await req.json();
 

@@ -1,5 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { NextRequest, NextResponse } from "next/server";
+import { rateLimit } from "../../lib/rate-limit";
 
 function getClient() {
   return new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
@@ -173,6 +174,9 @@ Output JSON:
 };
 
 export async function POST(req: NextRequest) {
+  const limited = rateLimit(req, "analyze", 10);
+  if (limited) return limited;
+
   try {
     const { transcripts, methods, context }: AnalysisRequest = await req.json();
 

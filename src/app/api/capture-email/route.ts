@@ -1,11 +1,15 @@
 import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
+import { rateLimit } from "../../lib/rate-limit";
 
 function getResend() {
   return new Resend(process.env.RESEND_API_KEY);
 }
 
 export async function POST(req: NextRequest) {
+  const limited = rateLimit(req, "capture-email", 3);
+  if (limited) return limited;
+
   try {
     const { email } = await req.json();
 

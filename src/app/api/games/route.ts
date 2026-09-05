@@ -1,5 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { NextRequest, NextResponse } from "next/server";
+import { rateLimit } from "../../lib/rate-limit";
 
 export const maxDuration = 30;
 
@@ -40,6 +41,9 @@ Respond with exactly one JSON object, no markdown fences, no extra text:
 };
 
 export async function POST(req: NextRequest) {
+  const limited = rateLimit(req, "games", 20);
+  if (limited) return limited;
+
   try {
     const { game, challenge } = await req.json();
 
